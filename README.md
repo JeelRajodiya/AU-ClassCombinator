@@ -1,1 +1,1 @@
-"# plagiarism-checker" 
+# plagiarism-checker

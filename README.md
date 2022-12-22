@@ -1,7 +1,14 @@
 # plagiarism-checker
 
-# this is my comment
+# course combinations
 
-#okay this is the latest change
-
-Jeel
+1. ENR101
+2. Section 1 ,Sat [08:00 to 09:30]
+   [03-10-2022 to 31-12-2022],Sat [09:30 to 11:00]
+   [03-10-2022 to 31-12-2022],Section 2 ,Sat [11:00 to 12:30]
+   [03-10-2022 to 31-12-2022],Sat [13:00 to 14:30]
+   [03-10-2022 to 31-12-2022],Section 3 ,Sat [14:30 to 16:00]
+   [03-10-2022 to 31-12-2022],Sat [16:00 to 17:30]
+   [03-10-2022 to 31-12-2022],Section 4 ,Tue [16:00 to 17:30]
+   [03-10-2022 to 31-12-2022],Tue [17:30 to 19:00]
+   [03-10-2022 to 31-12-2022]

@@ -24,7 +24,7 @@ ENR102 Section 1
 CSE108 Section 1
 ENR100 Section 2
 
-Set 1:
+Set 4:
 ENR102 Section 2
 ENR100 Section 2
 CSE108 Section 2

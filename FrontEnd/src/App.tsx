@@ -7,5 +7,6 @@ import monsoon from "./Data/monsoon.json";
 export default function App() {
 	const cd = new CourseDirectory(winter, monsoon);
 	console.log(cd.getActiveCourse("ENR102"));
+
 	return <>ok</>;
 }

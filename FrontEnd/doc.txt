@@ -1,0 +1,6 @@
+1 Page Document
+- Background And motivation
+- Purpose or objective
+- Methodology (Methods, Data)
+- Results and Discussion 
+- Conclusion (Or Outcome)

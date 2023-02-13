@@ -4,3 +4,6 @@
 - Methodology (Methods, Data)
 - Results and Discussion 
 - Conclusion (Or Outcome)
+
+Course Explorer: To browse through all the courses  (a option to switch between winter to monsoon)
+Course Combinator: to see all the section combination of selected courses

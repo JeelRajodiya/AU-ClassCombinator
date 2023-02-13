@@ -1,11 +1,14 @@
-import fs from "fs";
+// import * as fs from "fs";
 
 class CourseDirectory {
 	private winter: any;
-	constructor() {
-		this.winter = JSON.parse(fs.readdirSync("./Data/winter.json"));
+	constructor(winter: any, monsoon: any) {
+		this.winter = winter;
+		this.monsoon = monsoon;
 	}
 	public getWinter() {
 		return this.winter;
 	}
 }
+
+export default CourseDirectory;

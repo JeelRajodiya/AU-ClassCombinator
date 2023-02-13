@@ -1,17 +1,15 @@
 {
-    "compilerOptions": {
-        "baseUrl": "./src",
-        "jsx": "react",
-        "moduleResolution": "Node",
-        "paths": {
-            "~*": [
-                "./*"
-            ]
-        },
-        "strict": true,
-        "target": "ES2015"
-    },
-    "include": [
-        "src/**/*"
-    ]
+	"compilerOptions": {
+		"baseUrl": "./src",
+		"jsx": "react",
+		"moduleResolution": "Node",
+		"paths": {
+			"~*": ["./*"]
+		},
+		"strict": true,
+		"target": "ES2015",
+		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true
+	},
+	"include": ["src/**/*"]
 }

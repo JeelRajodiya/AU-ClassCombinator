@@ -51,14 +51,18 @@ class CourseDirectory {
 		let day = parseInt(date[0]);
 		let month = parseInt(loadsh.trimStart(date[1], "0"));
 		let year = parseInt(date[2]);
-		console.log(date);
+		// console.log(date);
 		return new Date(year, month, day);
 	}
 	private checkForTimeConflict(course1Time: string[], course2Time: string[]) {
 		let course1StartTime = this.strToTime(course1Time[0]);
-		let course1EndTime = this.strToTime(course1Time[1]);
+		let course1EndTime = this.strToTime(
+			course1Time[course1Time.length - 1]
+		);
 		let course2StartTime = this.strToTime(course2Time[0]);
-		let course2EndTime = this.strToTime(course2Time[1]);
+		let course2EndTime = this.strToTime(
+			course2Time[course1Time.length - 1]
+		);
 		if (
 			(course1StartTime <= course2StartTime &&
 				course2StartTime <= course1EndTime) ||
@@ -74,12 +78,12 @@ class CourseDirectory {
 		let course1EndDate = this.strToDate(course1Date[1]);
 		let course2StartDate = this.strToDate(course2Date[0]);
 		let course2EndDate = this.strToDate(course2Date[1]);
-		console.log(
-			course1StartDate,
-			course1EndDate,
-			course2StartDate,
-			course2EndDate
-		);
+		// console.log(
+		// 	course1StartDate,
+		// 	course1EndDate,
+		// 	course2StartDate,
+		// 	course2EndDate
+		// );
 		if (
 			(course1StartDate <= course2StartDate &&
 				course2StartDate <= course1EndDate) ||

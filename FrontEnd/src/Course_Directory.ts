@@ -153,6 +153,53 @@ class CourseDirectory {
 
 		return false;
 	}
+	private getTotalSections(code: string) {
+		const course = this.getActiveSemCourseByCode(code);
+		return Object.keys(course["Sections"]).map(
+			(section) => `${code}-${parseInt(section)}`
+		);
+	}
+	private getNumberCombinations(arr: string[][], n: number) {
+		let i,
+			j,
+			k,
+			elem,
+			l = arr.length,
+			childperm,
+			ret: number[][] = [];
+		if (n == 1) {
+			for (i = 0; i < arr.length; i++) {
+				for (j = 0; j < arr[i].length; j++) {
+					ret.push([arr[i][j]]);
+				}
+			}
+			return ret;
+		} else {
+			for (i = 0; i < l; i++) {
+				elem = arr.shift();
+				for (j = 0; j < elem!.length; j++) {
+					childperm = this.getNumberCombinations(arr.slice(), n - 1);
+					for (k = 0; k < childperm.length; k++) {
+						ret.push([elem![j]].concat(childperm[k]));
+					}
+				}
+			}
+			return ret;
+		}
+	}
+	public generatePossibleCombinations(codes: string[]) {
+		let totalSections = [];
+		for (let code of codes) {
+			totalSections.push(this.getTotalSections(code));
+		}
+
+		const combination = this.getNumberCombinations(
+			totalSections,
+			codes.length
+		);
+
+		console.log(combination);
+	}
 }
 
 export default CourseDirectory;

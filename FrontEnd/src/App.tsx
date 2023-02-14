@@ -6,7 +6,7 @@ import monsoon from "./Data/monsoon.json";
 
 export default function App() {
 	const cd = new CourseDirectory(winter, monsoon);
-	console.log(cd.getActiveCourse("ENR102"));
+	console.log(cd.checkForConflict("ENR102", 1, "CSE108", 2));
 
 	return <>ok</>;
 }

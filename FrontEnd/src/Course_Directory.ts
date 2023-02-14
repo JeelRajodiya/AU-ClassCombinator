@@ -63,6 +63,12 @@ class CourseDirectory {
 		let course2EndTime = this.strToTime(
 			course2Time[course1Time.length - 1]
 		);
+		// console.log(
+		// 	course1StartTime,
+		// 	course1EndTime,
+		// 	course2StartTime,
+		// 	course2EndTime
+		// );
 		if (
 			(course1StartTime <= course2StartTime &&
 				course2StartTime <= course1EndTime) ||
@@ -99,7 +105,7 @@ class CourseDirectory {
 		const sectionStr = String(section);
 		const course = this.getActiveSemCourseByCode(code);
 		const sectionObj = course.Sections[sectionStr];
-
+		// console.log(sectionObj);
 		return sectionObj;
 	}
 	private checkForDayConflict(
@@ -166,7 +172,7 @@ class CourseDirectory {
 			elem,
 			l = arr.length,
 			childperm,
-			ret: number[][] = [];
+			ret: string[][] = [];
 		if (n == 1) {
 			for (i = 0; i < arr.length; i++) {
 				for (j = 0; j < arr[i].length; j++) {
@@ -193,12 +199,42 @@ class CourseDirectory {
 			totalSections.push(this.getTotalSections(code));
 		}
 
-		const combination = this.getNumberCombinations(
+		const combinationWithClashes = this.getNumberCombinations(
 			totalSections,
 			codes.length
 		);
+		// console.log(combinationWithClashes);
+		const finalCombinations: string[][] = [];
+		let parseCombinationCode = (c: string) => c.split("-");
+		for (let i = 0; i < combinationWithClashes.length; i++) {
+			let activeCombination = combinationWithClashes[i];
+			let doesHaveClashes = false;
 
-		console.log(combination);
+			for (let j = 0; j < activeCombination.length; j++) {
+				for (let k = 0; k < activeCombination.length; k++) {
+					if (k == j) {
+						continue;
+					}
+					let course1 = parseCombinationCode(activeCombination[j]);
+					let course2 = parseCombinationCode(activeCombination[k]);
+
+					let code1 = course1[0];
+					let code2 = course2[0];
+					let section1 = Number(course1[1]);
+					let section2 = Number(course2[1]);
+
+					if (
+						this.checkForConflict(code1, section1, code2, section2)
+					) {
+						doesHaveClashes = true;
+					}
+				}
+			}
+			if (!doesHaveClashes) {
+				finalCombinations.push(activeCombination);
+			}
+		}
+		console.log(finalCombinations);
 	}
 }
 

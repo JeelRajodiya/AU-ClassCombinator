@@ -1,21 +1,21 @@
 import React from "react";
-
-export default function CourseItem() {
+import { Course } from "./../Course_Directory";
+import "./../styles/courseItem.css";
+export default function CourseItem(props: { course: Course }) {
 	return (
-		<div id="courseItem-container">
-			<div id="courseItem-left">
-				<div id="courseItem-left-top">
-					<h1>ENR100</h1>
-					<p>Introduction to Environmental Science</p>
-				</div>
-				<div id="courseItem-left-bottom">
-					<p>3.0 Credits</p>
-					<p>3.0 Credits</p>
-				</div>
+		<div className="course-item">
+			<div className="code">Code : {props.course.Code}</div>
+			<div className="name">Name : {props.course.Name}</div>
+			<div className="credits">Credits : {props.course.Credits}</div>
+			<div className="prereq">
+				Prerequisite : {props.course.Prerequisite}
 			</div>
-			<div id="courseItem-right">
-				<p>3.0 Credits</p>
-				<p>3.0 Credits</p>
+			<div className="description">
+				Description : {props.course.Description}
+			</div>
+			<div className="semester">Semester : {props.course.Semester}</div>
+			<div className="faculty">
+				Faculties: {props.course.Faculties.join(", ")}
 			</div>
 		</div>
 	);

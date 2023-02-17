@@ -16,7 +16,7 @@ type Course = {
 		};
 	};
 };
-
+export type { Course };
 class CourseDirectory {
 	private winter: Course[];
 	private monsoon: Course[];

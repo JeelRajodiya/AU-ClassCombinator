@@ -1,0 +1,13 @@
+.course-item {
+	border: 1px solid #0d4992;
+	color: white;
+	padding: 1em;
+	margin: 5px 0;
+	font-family: Arial, Helvetica, sans-serif;
+	border-radius: 5px;
+	width: min(90%, 700px);
+}
+
+.course-item > div {
+	padding: 0.5em;
+}

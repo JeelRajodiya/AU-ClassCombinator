@@ -60,8 +60,9 @@ class CourseDirectory {
 			course1Time[course1Time.length - 1]
 		);
 		let course2StartTime = this.strToTime(course2Time[0]);
+		// console.log(course1Time);
 		let course2EndTime = this.strToTime(
-			course2Time[course1Time.length - 1]
+			course2Time[course2Time.length - 1]
 		);
 		// console.log(
 		// 	course1StartTime,
@@ -124,7 +125,7 @@ class CourseDirectory {
 			course1Time,
 			course2Time
 		);
-		console.log(timeConflict, dateConflict);
+		// console.log(timeConflict, dateConflict);
 		if (dateConflict && timeConflict) {
 			return true;
 		}
@@ -203,6 +204,7 @@ class CourseDirectory {
 			totalSections,
 			codes.length
 		);
+
 		// console.log(combinationWithClashes);
 		const finalCombinations: string[][] = [];
 		let parseCombinationCode = (c: string) => c.split("-");

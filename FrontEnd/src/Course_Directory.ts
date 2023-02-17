@@ -71,10 +71,10 @@ class CourseDirectory {
 		// 	course2EndTime
 		// );
 		if (
-			(course1StartTime <= course2StartTime &&
-				course2StartTime <= course1EndTime) ||
-			(course1StartTime <= course2EndTime &&
-				course2EndTime <= course1EndTime)
+			(course1StartTime < course2StartTime &&
+				course2StartTime < course1EndTime) ||
+			(course1StartTime < course2EndTime &&
+				course2EndTime < course1EndTime)
 		) {
 			return true;
 		}
@@ -92,10 +92,10 @@ class CourseDirectory {
 		// 	course2EndDate
 		// );
 		if (
-			(course1StartDate <= course2StartDate &&
-				course2StartDate <= course1EndDate) ||
-			(course1StartDate <= course2EndDate &&
-				course2EndDate <= course1EndDate)
+			(course1StartDate < course2StartDate &&
+				course2StartDate < course1EndDate) ||
+			(course1StartDate < course2EndDate &&
+				course2EndDate < course1EndDate)
 		) {
 			return true;
 		}

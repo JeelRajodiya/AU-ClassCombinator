@@ -6,14 +6,7 @@ import monsoon from "./Data/monsoon.json";
 
 export default function App() {
 	const cd = new CourseDirectory(winter, monsoon);
-	console.log(
-		cd.generatePossibleCombinations([
-			"ENR102",
-			"COM102",
-			"ENR100",
-			"FDP101",
-		])
-	);
+	console.log(cd.search("ok"));
 
 	return <>ok</>;
 }

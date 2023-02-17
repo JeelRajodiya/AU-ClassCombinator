@@ -1,10 +1,26 @@
 // import * as fs from "fs";
 import loadsh from "lodash";
 
+type Course = {
+	Code: string;
+	Level: string;
+	Name: string;
+	Credits: string;
+	Faculties: string[];
+	Semester: string;
+	Prerequisite: string;
+	Description: string;
+	Sections: {
+		[key: string]: {
+			[key: string]: string[][];
+		};
+	};
+};
+
 class CourseDirectory {
-	private winter: any;
-	private monsoon: any;
-	private activeSem: any;
+	private winter: Course[];
+	private monsoon: Course[];
+	private activeSem: Course[];
 
 	constructor(winter: any, monsoon: any) {
 		this.winter = winter;
@@ -105,7 +121,7 @@ class CourseDirectory {
 	private getDateAndTimeOfCourse(code: string, section: number) {
 		const sectionStr = String(section);
 		const course = this.getActiveSemCourseByCode(code);
-		const sectionObj = course.Sections[sectionStr];
+		const sectionObj = course?.Sections[sectionStr];
 		// console.log(sectionObj);
 		return sectionObj;
 	}
@@ -141,8 +157,8 @@ class CourseDirectory {
 		const course1Data = this.getDateAndTimeOfCourse(code1, section1);
 		const course2Data = this.getDateAndTimeOfCourse(code2, section2);
 		let sameDays = [];
-		for (let day of Object.keys(course1Data)) {
-			if (course2Data.hasOwnProperty(day)) {
+		for (let day of Object.keys(course1Data!)) {
+			if (course2Data?.hasOwnProperty(day)) {
 				sameDays.push(day);
 			}
 		}
@@ -150,8 +166,8 @@ class CourseDirectory {
 			return false;
 		}
 		for (let day of sameDays) {
-			const course1Day = course1Data[day];
-			const course2Day = course2Data[day];
+			const course1Day = course1Data![day];
+			const course2Day = course2Data![day];
 			const conflict = this.checkForDayConflict(course1Day, course2Day);
 			if (conflict) {
 				return true;
@@ -162,7 +178,7 @@ class CourseDirectory {
 	}
 	private getTotalSections(code: string) {
 		const course = this.getActiveSemCourseByCode(code);
-		return Object.keys(course["Sections"]).map(
+		return Object.keys(course!["Sections"]).map(
 			(section) => `${code}-${parseInt(section)}`
 		);
 	}
@@ -236,7 +252,27 @@ class CourseDirectory {
 				finalCombinations.push(activeCombination);
 			}
 		}
-		console.log(finalCombinations);
+		// console.log(finalCombinations);
+	}
+	private toTitleCase(str: string) {
+		return str.replace(/\w\S*/g, function (txt) {
+			return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+		});
+	}
+	public search(query: string) {
+		const courses = this.getSemActive();
+		const results: Course[] = [];
+		for (let course of courses) {
+			if (
+				course.Code.includes(query.toUpperCase()) ||
+				course.Description.includes(query) ||
+				course.Faculties.join(" ").includes(this.toTitleCase(query)) ||
+				course.Name.includes(this.toTitleCase(query))
+			) {
+				results.push(course);
+			}
+		}
+		return results;
 	}
 }
 

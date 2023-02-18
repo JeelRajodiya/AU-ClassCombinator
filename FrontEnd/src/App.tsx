@@ -6,7 +6,7 @@ import monsoon from "./Data/monsoon.json";
 import SearchBar from "./components/SearchBar";
 import "./styles/app.css";
 import CourseExplorer from "./components/CourseExplorer";
-
+import SemesterSwitch from "./components/SemesterSwitch";
 export default function App() {
 	const cd = new CourseDirectory(winter, monsoon);
 	console.log(cd.search("ok"));
@@ -15,6 +15,7 @@ export default function App() {
 	return (
 		<main>
 			<SearchBar query={query} setQuery={setQuery}></SearchBar>
+			<SemesterSwitch cd={cd} />
 			<CourseExplorer query={query} cd={cd} />
 		</main>
 	);

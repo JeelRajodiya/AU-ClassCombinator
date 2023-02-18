@@ -1,9 +1,9 @@
 input {
-	background-color: #101927;
+	/* background-color: #101927; */
 	outline: none;
 
 	border-bottom: 1px solid #101927;
-	color: #fff;
+	/* color: #fff; */
 	/* font-size: 1.2rem; */
 	width: min(80%, 700px);
 	border: solid 1px #204074;
@@ -22,7 +22,7 @@ input::placeholder {
 	flex-direction: row;
 	/* align-items: center; */
 	justify-content: center;
-	margin-bottom: 1em;
+	/* margin-bottom: 1em; */
 }
 
 #search-icon {

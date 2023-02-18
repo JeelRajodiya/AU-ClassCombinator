@@ -22,7 +22,7 @@ export default function CourseExplorer(props: {
 			}}
 		>
 			{courses.map((course) => (
-				<CourseItem course={course}></CourseItem>
+				<CourseItem key={course.Code} course={course}></CourseItem>
 			))}
 		</div>
 	);

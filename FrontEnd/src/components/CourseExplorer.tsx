@@ -7,6 +7,8 @@ import monsoon from "../Data/monsoon.json";
 export default function CourseExplorer(props: {
 	query: string;
 	cd: CourseDirectory;
+	selected: string[];
+	setSelected: React.Dispatch<React.SetStateAction<string[]>>;
 }) {
 	// const cd = new CourseDirectory(winter, monsoon);
 	const courses = props.cd.search(props.query);
@@ -22,7 +24,12 @@ export default function CourseExplorer(props: {
 			}}
 		>
 			{courses.map((course) => (
-				<CourseItem key={course.Code} course={course}></CourseItem>
+				<CourseItem
+					selected={props.selected}
+					setSelected={props.setSelected}
+					key={course.Code}
+					course={course}
+				></CourseItem>
 			))}
 		</div>
 	);

@@ -1,9 +1,28 @@
 import React from "react";
 import { Course } from "./../Course_Directory";
 import "./../styles/courseItem.css";
-export default function CourseItem(props: { course: Course }) {
+export default function CourseItem(props: {
+	course: Course;
+	selected: string[];
+	setSelected: React.Dispatch<React.SetStateAction<string[]>>;
+}) {
 	return (
-		<div className="course-item">
+		<div
+			onClick={() => {
+				if (props.selected.includes(props.course.Code)) {
+					props.setSelected(
+						props.selected.filter(
+							(code) => code !== props.course.Code
+						)
+					);
+				} else {
+					props.setSelected([...props.selected, props.course.Code]);
+				}
+			}}
+			className={`course-item  ${
+				props.selected.includes(props.course.Code) ? "selected" : ""
+			} `}
+		>
 			<div className="field-wrapper">
 				<span className="key">
 					<strong>Code: </strong>

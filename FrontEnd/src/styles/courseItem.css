@@ -12,3 +12,7 @@
 	padding: 0.3em;
 	border-top: 1px solid rgba(5, 97, 189, 0.444);
 }
+
+.selected {
+	background-color: rgba(5, 65, 231, 0.271);
+}

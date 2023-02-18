@@ -4,14 +4,30 @@ import { styled } from "@mui/material/styles";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch, { SwitchProps } from "@mui/material/Switch";
 import "./../styles/semesterSwitch.css";
-export default function SemesterSwitch(props: { cd: CourseDirectory }) {
+export default function SemesterSwitch(props: {
+	cd: CourseDirectory;
+	setCD: any;
+}) {
+	const [checked, setChecked] = React.useState(
+		props.cd.activeSemName === "Monsoon" ? true : false
+	);
 	return (
 		<div className="semester-switch">
 			<span style={{ paddingRight: 12, fontSize: "1.1em" }}>winter</span>
 
 			<FormControlLabel
 				label="monsoon"
-				checked={false}
+				onChange={() => {
+					if (props.cd.activeSemName === "Winter") {
+						props.cd.changeActiveSemToMonsoon();
+						setChecked(true);
+					} else {
+						setChecked(false);
+						props.cd.changeActiveSemToWinter();
+					}
+					props.setCD(props.cd);
+				}}
+				checked={checked}
 				control={<IOSSwitch sx={{ mx: 2 }} defaultChecked />}
 			/>
 		</div>

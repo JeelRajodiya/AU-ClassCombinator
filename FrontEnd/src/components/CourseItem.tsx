@@ -46,6 +46,12 @@ export default function CourseItem(props: { course: Course }) {
 					<span className="value">{props.course.Description}</span>
 				</div>
 			) : null}
+			<div className="field-wrapper">
+				<span className="key">
+					<strong>Semester: </strong>
+				</span>
+				<span className="value">{props.course.Semester}</span>
+			</div>
 		</div>
 	);
 }

@@ -21,20 +21,24 @@ class CourseDirectory {
 	private winter: Course[];
 	private monsoon: Course[];
 	private activeSem: Course[];
+	public activeSemName: string;
 
 	constructor(winter: any, monsoon: any) {
 		this.winter = winter;
 		this.monsoon = monsoon;
 		this.activeSem = this.winter;
+		this.activeSemName = "Winter";
 	}
 	public getSemActive() {
 		return this.activeSem;
 	}
 	public changeActiveSemToWinter() {
 		this.activeSem = this.winter;
+		this.activeSemName = "Winter";
 	}
 	public changeActiveSemToMonsoon() {
 		this.activeSem = this.monsoon;
+		this.activeSemName = "Monsoon";
 	}
 	public getWinter() {
 		return this.winter;

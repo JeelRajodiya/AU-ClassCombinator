@@ -8,14 +8,13 @@ import "./styles/app.css";
 import CourseExplorer from "./components/CourseExplorer";
 import SemesterSwitch from "./components/SemesterSwitch";
 export default function App() {
-	const cd = new CourseDirectory(winter, monsoon);
-	console.log(cd.search("ok"));
+	const [cd, setCD] = React.useState(new CourseDirectory(winter, monsoon));
 	const [query, setQuery] = React.useState("ENR");
 
 	return (
 		<main>
 			<SearchBar query={query} setQuery={setQuery}></SearchBar>
-			<SemesterSwitch cd={cd} />
+			<SemesterSwitch cd={cd} setCD={setCD} />
 			<CourseExplorer query={query} cd={cd} />
 		</main>
 	);

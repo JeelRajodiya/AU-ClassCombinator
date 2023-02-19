@@ -8,6 +8,7 @@ import "./styles/app.css";
 import CourseExplorer from "./components/CourseExplorer";
 import SemesterSwitch from "./components/SemesterSwitch";
 import ActionBar from "./components/ActionBar";
+import Combinator from "./components/Combinator";
 export default function App() {
 	const [cd, setCD] = React.useState(new CourseDirectory(winter, monsoon));
 	const [query, setQuery] = React.useState("ENR");
@@ -16,21 +17,31 @@ export default function App() {
 	React.useEffect(() => {
 		setCombinations(cd.generatePossibleCombinations(selected));
 	}, [selected]);
+	const [isCombinatorOpen, setIsCombinatorOpen] = React.useState(false);
 
 	return (
 		<main>
-			<SearchBar query={query} setQuery={setQuery}></SearchBar>
-			<SemesterSwitch cd={cd} setCD={setCD} />
-			<CourseExplorer
-				selected={selected}
-				setSelected={setSelected}
-				query={query}
-				cd={cd}
-			/>
+			{isCombinatorOpen ? (
+				<Combinator cd={cd} combinations={combinations} />
+			) : (
+				<>
+					<SearchBar query={query} setQuery={setQuery}></SearchBar>
+					<SemesterSwitch cd={cd} setCD={setCD} />
+					<CourseExplorer
+						selected={selected}
+						setSelected={setSelected}
+						query={query}
+						cd={cd}
+					/>
+				</>
+			)}
+
 			<ActionBar
 				selected={selected}
 				combinations={combinations}
 				setSelected={setSelected}
+				isCombinatorOpen={isCombinatorOpen}
+				setIsCombinatorOpen={setIsCombinatorOpen}
 			/>
 		</main>
 	);

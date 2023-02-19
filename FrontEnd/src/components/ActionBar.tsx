@@ -5,6 +5,8 @@ type ActionBarProps = {
 	selected: string[];
 	setSelected: any;
 	combinations: string[][];
+	isCombinatorOpen: boolean;
+	setIsCombinatorOpen: any;
 };
 
 export default function ActionBar(props: ActionBarProps) {
@@ -19,7 +21,13 @@ export default function ActionBar(props: ActionBarProps) {
 			>
 				Clear All
 			</button>
-			<button>Go</button>
+			<button
+				onClick={() => {
+					props.setIsCombinatorOpen(!props.isCombinatorOpen);
+				}}
+			>
+				Go
+			</button>
 		</div>
 	);
 }

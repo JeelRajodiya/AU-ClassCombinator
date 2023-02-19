@@ -12,6 +12,10 @@ export default function App() {
 	const [cd, setCD] = React.useState(new CourseDirectory(winter, monsoon));
 	const [query, setQuery] = React.useState("ENR");
 	const [selected, setSelected] = React.useState<string[]>([]);
+	const [combinations, setCombinations] = React.useState<string[][]>([]);
+	React.useEffect(() => {
+		setCombinations(cd.generatePossibleCombinations(selected));
+	}, [selected]);
 
 	return (
 		<main>
@@ -23,7 +27,11 @@ export default function App() {
 				query={query}
 				cd={cd}
 			/>
-			<ActionBar selected={selected} setSelected={setSelected} />
+			<ActionBar
+				selected={selected}
+				combinations={combinations}
+				setSelected={setSelected}
+			/>
 		</main>
 	);
 }

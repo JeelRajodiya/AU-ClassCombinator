@@ -256,7 +256,7 @@ class CourseDirectory {
 				finalCombinations.push(activeCombination);
 			}
 		}
-		// console.log(finalCombinations);
+		return finalCombinations;
 	}
 	private toTitleCase(str: string) {
 		return str.replace(/\w\S*/g, function (txt) {

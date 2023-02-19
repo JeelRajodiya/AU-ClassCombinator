@@ -91,10 +91,10 @@ class CourseDirectory {
 		// 	course2EndTime
 		// );
 		if (
-			(course1StartTime < course2StartTime &&
+			(course1StartTime <= course2StartTime &&
 				course2StartTime < course1EndTime) ||
-			(course1StartTime < course2EndTime &&
-				course2EndTime < course1EndTime)
+			(course2StartTime <= course1StartTime &&
+				course1StartTime < course2EndTime)
 		) {
 			return true;
 		}
@@ -112,10 +112,10 @@ class CourseDirectory {
 		// 	course2EndDate
 		// );
 		if (
-			(course1StartDate < course2StartDate &&
-				course2StartDate < course1EndDate) ||
-			(course1StartDate < course2EndDate &&
-				course2EndDate < course1EndDate)
+			(course1StartDate <= course2StartDate &&
+				course2StartDate <= course1EndDate) ||
+			(course1StartDate <= course2EndDate &&
+				course2EndDate <= course1EndDate)
 		) {
 			return true;
 		}
@@ -145,7 +145,7 @@ class CourseDirectory {
 			course1Time,
 			course2Time
 		);
-		// console.log(timeConflict, dateConflict);
+		console.log(timeConflict, dateConflict);
 		if (dateConflict && timeConflict) {
 			return true;
 		}
@@ -173,6 +173,7 @@ class CourseDirectory {
 			const course1Day = course1Data![day];
 			const course2Day = course2Data![day];
 			const conflict = this.checkForDayConflict(course1Day, course2Day);
+			console.log(conflict);
 			if (conflict) {
 				return true;
 			}

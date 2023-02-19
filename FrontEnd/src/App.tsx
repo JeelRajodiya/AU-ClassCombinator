@@ -7,6 +7,7 @@ import SearchBar from "./components/SearchBar";
 import "./styles/app.css";
 import CourseExplorer from "./components/CourseExplorer";
 import SemesterSwitch from "./components/SemesterSwitch";
+import ActionBar from "./components/ActionBar";
 export default function App() {
 	const [cd, setCD] = React.useState(new CourseDirectory(winter, monsoon));
 	const [query, setQuery] = React.useState("ENR");
@@ -22,6 +23,7 @@ export default function App() {
 				query={query}
 				cd={cd}
 			/>
+			<ActionBar selected={selected} setSelected={setSelected} />
 		</main>
 	);
 }

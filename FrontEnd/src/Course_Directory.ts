@@ -285,21 +285,24 @@ class CourseDirectory {
 		const section = course?.Sections[sec];
 
 		const days = Object.keys(section!);
-		return section;
+		const times = days.map((day) => section![day][0]);
+		const formattedTimes = times.map(
+			(time) => time[0] + "-" + time[time.length - 1]
+		);
+
+		const formattedResult = [];
+		for (let i = 0; i < days.length; i++) {
+			formattedResult.push(`${days[i]} ${formattedTimes[i]} `);
+		}
+		return formattedResult;
 	}
 	public combineCourseAndSection(codeNSec: string[]): any {
-		type Section = {
-			[key: string]: {
-				[key: string]: string[][];
-			};
-		};
-		let section: Section = {};
-		let resultMap = {};
-		let result = "";
+		const result: any = {};
 		for (let code of codeNSec) {
-			section = this.getScheduleFromCodeAndSection(code);
-			for (let day of Object.keys(section)) {
-			}
+			const [codeOnly, sec] = code.split("-");
+			const course = this.getActiveSemCourseByCode(codeOnly);
+			const section = course?.Sections[sec];
+			result[code] = section;
 		}
 		return result;
 	}

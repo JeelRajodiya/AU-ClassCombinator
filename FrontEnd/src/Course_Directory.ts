@@ -279,7 +279,7 @@ class CourseDirectory {
 		}
 		return results;
 	}
-	public getScheduleFromCodeAndSection(codeNSec: string): any {
+	public getScheduleFromCodeAndSection(codeNSec: string): string[] {
 		const [code, sec] = codeNSec.split("-");
 		const course = this.getActiveSemCourseByCode(code);
 		const section = course?.Sections[sec];
@@ -296,15 +296,22 @@ class CourseDirectory {
 		}
 		return formattedResult;
 	}
-	public combineCourseAndSection(codeNSec: string[]): any {
-		const result: any = {};
-		for (let code of codeNSec) {
-			const [codeOnly, sec] = code.split("-");
-			const course = this.getActiveSemCourseByCode(codeOnly);
-			const section = course?.Sections[sec];
-			result[code] = section;
+	public getUsedDays(codeNSecs: string[]): string[] {
+		let days: string[] = [];
+		let code: string;
+		let sec: string;
+
+		for (let codeNSec of codeNSecs) {
+			[code, sec] = codeNSec.split("-");
+			let course = this.getActiveSemCourseByCode(code);
+			let section = course?.Sections[sec];
+			for (let day of Object.keys(section!)) {
+				if (!days.includes(day)) {
+					days.push(day);
+				}
+			}
 		}
-		return result;
+		return days;
 	}
 }
 

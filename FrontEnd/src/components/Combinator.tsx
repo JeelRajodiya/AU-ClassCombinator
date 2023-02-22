@@ -11,17 +11,28 @@ export default function Combinator(props: CombinatorProps) {
 		<div className="combinator">
 			<h1>Combinator</h1>
 			{props.combinations.map((combination) => (
-				<div className="combination-entry">
-					{combination.map((code) => (
-						<>
-							<span className="combinator-code">{code}</span>
-							<span className="combinator-code">
-								{props.cd.getFormattedTimeFromCodeAndSection(
-									code
-								)}
-							</span>
-						</>
-					))}
+				<div className="combination-entry-wrapper">
+					<div className="combination-entry">
+						{combination.map((code) => (
+							<div className="combinator-course">
+								<span className="combinator-code">{code}</span>
+								<div className="combinator-schedule">
+									{props.cd
+										.getScheduleFromCodeAndSection(code)
+										.map((e) => (
+											<div>{e}</div>
+										))}
+								</div>
+							</div>
+						))}
+					</div>
+					<div className="days-to-go">
+						{props.cd.getUsedDays(combination).join(", ")}
+						<div>
+							{7 - props.cd.getUsedDays(combination).length}{" "}
+							holidays in a week
+						</div>
+					</div>
 				</div>
 			))}
 		</div>

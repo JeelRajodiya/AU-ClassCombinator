@@ -1,4 +1,5 @@
 import React from "react";
+import CourseDirectory from "./../Course_Directory";
 import "./../styles/actionBar.css";
 
 type ActionBarProps = {
@@ -7,13 +8,16 @@ type ActionBarProps = {
 	combinations: string[][];
 	isCombinatorOpen: boolean;
 	setIsCombinatorOpen: any;
+	cd: CourseDirectory;
 };
 
 export default function ActionBar(props: ActionBarProps) {
 	return (
 		<div className="action-bar">
 			<span>{props.selected.length} Courses Selected</span>
-			{props.combinations.length} Combinations
+			<span>{props.combinations.length} Combinations</span>
+			<span>{props.cd.sumCredits(props.selected)} Credits</span>
+
 			<button
 				onClick={() => {
 					props.setSelected([]);

@@ -313,6 +313,15 @@ class CourseDirectory {
 		}
 		return days;
 	}
+	public sumCredits(selected: string[]): number {
+		let totalCredits = 0;
+		for (let code of selected) {
+			totalCredits += Number(
+				this.getActiveSemCourseByCode(code)!.Credits
+			);
+		}
+		return totalCredits;
+	}
 }
 
 export default CourseDirectory;

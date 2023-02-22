@@ -21,6 +21,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	margin-bottom: 10em;
 }
 .combinator-code {
 	padding: 0 10px;

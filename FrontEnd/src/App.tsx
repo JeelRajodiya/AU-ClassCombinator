@@ -38,6 +38,7 @@ export default function App() {
 			)}
 
 			<ActionBar
+				cd={cd}
 				selected={selected}
 				combinations={combinations}
 				setSelected={setSelected}

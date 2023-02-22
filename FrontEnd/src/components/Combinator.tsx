@@ -13,7 +13,14 @@ export default function Combinator(props: CombinatorProps) {
 			{props.combinations.map((combination) => (
 				<div className="combination-entry">
 					{combination.map((code) => (
-						<span className="combinator-code">{code}</span>
+						<>
+							<span className="combinator-code">{code}</span>
+							<span className="combinator-code">
+								{props.cd.getFormattedTimeFromCodeAndSection(
+									code
+								)}
+							</span>
+						</>
 					))}
 				</div>
 			))}

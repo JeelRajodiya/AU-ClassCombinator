@@ -279,6 +279,33 @@ class CourseDirectory {
 		}
 		return results;
 	}
+	public getScheduleFromCodeAndSection(codeNSec: string): any {
+		const [code, sec] = codeNSec.split("-");
+		const course = this.getActiveSemCourseByCode(code);
+		const section = course?.Sections[sec];
+
+		const days = Object.keys(section!);
+		const times = days.map((day) => section![day][0]);
+		const formattedTimes = times.map(
+			(time) => time[0] + "-" + time[time.length - 1]
+		);
+
+		const formattedResult = [];
+		for (let i = 0; i < days.length; i++) {
+			formattedResult.push(`${days[i]} ${formattedTimes[i]} `);
+		}
+		return formattedResult;
+	}
+	public combineCourseAndSection(codeNSec: string[]): any {
+		const result: any = {};
+		for (let code of codeNSec) {
+			const [codeOnly, sec] = code.split("-");
+			const course = this.getActiveSemCourseByCode(codeOnly);
+			const section = course?.Sections[sec];
+			result[code] = section;
+		}
+		return result;
+	}
 }
 
 export default CourseDirectory;

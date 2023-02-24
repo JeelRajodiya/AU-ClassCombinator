@@ -5,13 +5,14 @@ input {
 	border-bottom: 1px solid #101927;
 	/* color: #fff; */
 	/* font-size: 1.2rem; */
-	width: min(80%, 700px);
+	width: min(80%, 1000px);
 	border: solid 1px #204074;
 	border-radius: 5px;
 	border-right: none;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 	padding: 0.5em 1em;
+	font-size: 1em;
 }
 input::placeholder {
 	color: #2b5eae;

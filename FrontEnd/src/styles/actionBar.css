@@ -6,13 +6,13 @@
 	z-index: 100;
 	/* background-color: rgb(221, 231, 238); */
 	/* background-color: rgb(191, 226, 232); */
-	background-color: rgb(148, 176, 253);
+	background-color: rgb(162, 187, 255);
 
 	/* box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1), 1px 2px 1px rgba(0, 0, 0, 0.2),
 		1px 2px 1px rgba(0, 0, 0, 0.2); */
 	padding: 10px;
 	width: min(100%, 800px);
-	/* border-radius: 10px; */
+	border-radius: 10px;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	font-size: small;
 	left: 50%;

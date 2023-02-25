@@ -22,7 +22,7 @@
 }
 
 .selected {
-	background-color: rgba(48, 96, 228, 0.316);
+	background-color: rgba(149, 177, 255, 0.316);
 }
 .check-icon {
 	align-self: flex-end;

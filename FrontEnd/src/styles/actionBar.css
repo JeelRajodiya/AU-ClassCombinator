@@ -5,11 +5,12 @@
 	/* margin: 10px 0; */
 	z-index: 100;
 	/* background-color: rgb(221, 231, 238); */
-	background-color: rgb(232, 231, 231);
+	/* background-color: rgb(191, 226, 232); */
+	background-color: rgb(148, 176, 253);
 
 	/* box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1), 1px 2px 1px rgba(0, 0, 0, 0.2),
 		1px 2px 1px rgba(0, 0, 0, 0.2); */
-	padding: 15px;
+	padding: 10px;
 	width: min(100%, 800px);
 	/* border-radius: 10px; */
 	border: 1px solid rgba(0, 0, 0, 0.2);
@@ -21,4 +22,15 @@
 	justify-content: space-around;
 
 	/* justify-content: center; */
+}
+button {
+	border: none;
+	outline: none;
+	height: 2em;
+	border-radius: 5px;
+}
+button:hover {
+	cursor: pointer;
+	background-color: rgb(3, 73, 203);
+	color: white;
 }

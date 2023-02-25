@@ -27,6 +27,12 @@
 }
 .combinator-code {
 	padding: 0 10px;
+	background-color: rgb(0, 37, 110);
+	border-radius: 5px;
+	padding: 5px 10px;
+	font-size: 0.9em;
+	color: white;
+	font-family: sans-serif;
 }
 .days-to-go {
 	width: max-content;

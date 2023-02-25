@@ -22,6 +22,10 @@ export default function App() {
 
 	return (
 		<main>
+			<meta
+				name="viewport"
+				content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+			/>
 			{isCombinatorOpen ? (
 				<Combinator cd={cd} combinations={combinations} />
 			) : (

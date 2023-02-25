@@ -14,7 +14,7 @@ type ActionBarProps = {
 export default function ActionBar(props: ActionBarProps) {
 	return (
 		<div className="action-bar">
-			<span>{props.selected.length} Courses Selected</span>
+			<span>{props.selected.length} Selected</span>
 			<span>{props.combinations.length} Combinations</span>
 			<span>{props.cd.sumCredits(props.selected)} Credits</span>
 

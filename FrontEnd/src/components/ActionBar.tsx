@@ -15,7 +15,13 @@ export default function ActionBar(props: ActionBarProps) {
 	return (
 		<div className="action-bar">
 			<span>{props.selected.length} Selected</span>
-			<span>{props.combinations.length} Combinations</span>
+			<span
+				style={{
+					color: props.combinations.length === 0 ? "red" : "black",
+				}}
+			>
+				{props.combinations.length} Combinations
+			</span>
 			<span>{props.cd.sumCredits(props.selected)} Credits</span>
 
 			<button

@@ -30,9 +30,9 @@
 	background-color: rgb(0, 37, 110);
 	border-radius: 5px;
 	padding: 5px 10px;
-	font-size: 0.9em;
+	font-size: 0.8em;
 	color: white;
-	font-family: sans-serif;
+	/* font-family: sans-serif; */
 }
 .days-to-go {
 	width: max-content;

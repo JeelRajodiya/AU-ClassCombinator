@@ -311,8 +311,16 @@ class CourseDirectory {
 				}
 			}
 		}
-		return days;
+		return this.sortWeekdays(days);
 	}
+	private sortWeekdays(weekdays: string[]): string[] {
+		const daysInOrder = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+		weekdays.sort(
+			(a, b) => daysInOrder.indexOf(a) - daysInOrder.indexOf(b)
+		);
+		return weekdays;
+	}
+
 	public sumCredits(selected: string[]): number {
 		let totalCredits = 0;
 		for (let code of selected) {

@@ -28,9 +28,11 @@ export default function Combinator(props: CombinatorProps) {
 					</div>
 					<div className="days-to-go">
 						Active Days:{" "}
-						{props.cd.getUsedDays(combination).join(", ")}
+						<u>{props.cd.getUsedDays(combination).join(", ")}</u>
 						<div>
-							{7 - props.cd.getUsedDays(combination).length}{" "}
+							<u>
+								{7 - props.cd.getUsedDays(combination).length}
+							</u>{" "}
 							holidays in a week
 						</div>
 					</div>

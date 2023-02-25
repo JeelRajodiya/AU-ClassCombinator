@@ -36,7 +36,10 @@ export default function ActionBar(props: ActionBarProps) {
 				onClick={() => {
 					props.setIsCombinatorOpen(!props.isCombinatorOpen);
 				}}
-				disabled={props.selected.length === 0}
+				disabled={
+					props.selected.length === 0 ||
+					props.combinations.length === 0
+				}
 			>
 				{!props.isCombinatorOpen ? "Go" : "Back"}
 			</button>

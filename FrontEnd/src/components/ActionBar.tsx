@@ -22,7 +22,7 @@ export default function ActionBar(props: ActionBarProps) {
 				onClick={() => {
 					props.setSelected([]);
 				}}
-				disabled={props.isCombinatorOpen}
+				disabled={props.isCombinatorOpen || props.selected.length === 0}
 			>
 				Clear All
 			</button>
@@ -30,6 +30,7 @@ export default function ActionBar(props: ActionBarProps) {
 				onClick={() => {
 					props.setIsCombinatorOpen(!props.isCombinatorOpen);
 				}}
+				disabled={props.selected.length === 0}
 			>
 				{!props.isCombinatorOpen ? "Go" : "Back"}
 			</button>

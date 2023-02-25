@@ -6,15 +6,15 @@
 	border-radius: 5px;
 	width: min(90%, 700px);
 	font-size: 0.9em;
-	background-color: rgb(233, 233, 233);
+	/* background-color: rgb(233, 233, 233); */
 	/* transition: box-shadow 100ms linear; */
 	display: flex;
 	flex-direction: column;
 	/* transition: border 100ms linear; */
+	box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.392);
+	border: 1px solid rgba(0, 0, 0, 0.156);
 }
 .course-item:hover {
-	/* box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.392); */
-	border: 1px solid rgba(0, 0, 0, 0.156);
 }
 .course-item > div {
 	padding: 0.3em;

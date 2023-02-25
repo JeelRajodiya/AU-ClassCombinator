@@ -22,7 +22,12 @@ export default function ActionBar(props: ActionBarProps) {
 			>
 				{props.combinations.length} Combinations
 			</span>
-			<span>{props.cd.sumCredits(props.selected)} Credits</span>
+			<span>
+				<span className="credits">
+					{props.cd.sumCredits(props.selected)}
+				</span>{" "}
+				Credits
+			</span>
 
 			<button
 				onClick={() => {

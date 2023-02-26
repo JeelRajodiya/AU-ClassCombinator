@@ -286,14 +286,26 @@ class CourseDirectory {
 
 		const days = Object.keys(section!);
 		const times = days.map((day) => section![day][0]);
-		const formattedTimes = times.map(
-			(time) => time[0] + "-" + time[time.length - 1]
-		);
+
+		console.log(times);
+		const formattedTimes = times.map((time) => {
+			if (time.length % 2 === 0) {
+				let allTimes = [];
+				allTimes.push(" ");
+				for (let t = 0; t < time.length; t++) {
+					allTimes.push([time[t] + "-" + time[++t]]);
+				}
+				return allTimes;
+			} else {
+				return [time[0] + "-" + time[time.length - 1]];
+			}
+		});
 
 		const formattedResult = [];
 		for (let i = 0; i < days.length; i++) {
 			formattedResult.push(`${days[i]} ${formattedTimes[i]} `);
 		}
+		console.log(formattedResult);
 		return formattedResult;
 	}
 	public getUsedDays(codeNSecs: string[]): string[] {

@@ -11,16 +11,28 @@ export default function Combinator(props: CombinatorProps) {
 		<div className="combinator">
 			<h1>Combinator</h1>
 			{props.combinations.map((combination) => (
-				<div className="combination-entry-wrapper">
+				<div
+					className="combination-entry-wrapper"
+					key={String(Math.random() * 1000)}
+				>
 					<div className="combination-entry">
 						{combination.map((code) => (
-							<div className="combinator-course">
+							<div
+								className="combinator-course"
+								key={String(Math.random() * 1000)}
+							>
 								<span className="combinator-code">{code}</span>
 								<div className="combinator-schedule">
 									{props.cd
 										.getScheduleFromCodeAndSection(code)
 										.map((e) => (
-											<div>{e}</div>
+											<div
+												key={String(
+													Math.random() * 1000
+												)}
+											>
+												{e}
+											</div>
 										))}
 								</div>
 							</div>

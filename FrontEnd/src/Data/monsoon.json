@@ -234,7 +234,188 @@
         "Prerequisite": null,
         "Description": "None,[ No prerequisites.  This course is for first year level undergraduate students.  Students who have successfully completed EPP291, or equivalent, cannot opt for this course. ]",
         "Sections": {
-            "1": {}
+            "1": {
+                "Tue": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            },
+            "6": {
+                "Wed": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            },
+            "3": {
+                "Mon": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            },
+            "4": {
+                "Tue": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            },
+            "5": {
+                "Tue": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            },
+            "7": {
+                "Mon": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            },
+            "2": {
+                "Mon": [
+                    [
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "09-01-2023",
+                        "17-02-2023",
+                        "31-10-2022",
+                        "16-12-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "09-01-2023",
+                        "17-02-2023",
+                        "31-10-2022",
+                        "16-12-2022"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -1422,7 +1603,158 @@
         "Prerequisite": null,
         "Description": "This course begins with a discussion on how individual and group identities are created and maintained and in turn how it affects behavior. Several classical and neo-classical theories from the disciplines of psychology and social psychology would be discussed. The understanding of these concepts and theories would facilitate the understanding of groups and organisations in future courses. It would equip the students to develop people skills and enable them to deal with issues such as improving productivity, job satisfaction, motivation, learning etc. in organisations. The course would promote self-awareness and interpersonal awareness and students\u2019 ability to work in groups and in organizational settings. The course would focus on concepts which facilitate the understanding of the \u2018Self\u2019 and \u2018Identity\u2019 followed by its implication on human behaviour.,",
         "Sections": {
-            "5": {}
+            "5": {
+                "Mon": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "09-01-2023",
+                        "17-02-2023",
+                        "31-10-2022",
+                        "16-12-2022"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "09-01-2023",
+                        "17-02-2023",
+                        "31-10-2022",
+                        "16-12-2022"
+                    ]
+                ]
+            },
+            "6": {
+                "Tue": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "09-01-2023",
+                        "17-02-2023",
+                        "31-10-2022",
+                        "16-12-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "09-01-2023",
+                        "17-02-2023",
+                        "31-10-2022",
+                        "16-12-2022"
+                    ]
+                ]
+            },
+            "3": {
+                "Mon": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            },
+            "4": {
+                "Tue": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "10-02-2023"
+                    ]
+                ]
+            },
+            "1": {
+                "Tue": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "01-08-2022",
+                        "15-11-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "01-08-2022",
+                        "15-11-2022"
+                    ]
+                ]
+            },
+            "2": {
+                "Mon": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -2698,7 +3030,102 @@
                     ]
                 ]
             },
-            "4": {}
+            "4": {
+                "Tue": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            },
+            "2": {
+                "Tue": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "01-08-2022",
+                        "20-11-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "01-08-2022",
+                        "20-11-2022"
+                    ]
+                ]
+            },
+            "3": {
+                "Wed": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "01-08-2022",
+                        "20-11-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "01-08-2022",
+                        "20-11-2022"
+                    ]
+                ]
+            },
+            "5": {
+                "Mon": [
+                    [
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "09-01-2023",
+                        "17-02-2023",
+                        "31-10-2022",
+                        "16-12-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "09-01-2023",
+                        "17-02-2023",
+                        "31-10-2022",
+                        "16-12-2022"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -5293,7 +5720,194 @@
         "Prerequisite": null,
         "Description": "This course is an introduction to the basic concepts and standards underlying the financial accounting systems. It aims to build upon the important accounting concepts and principles including revenue recognition, inventory, depreciation, and understanding the accounting equation. The course focuses initially on how to record economic events in the accounting records (i.e., bookkeeping and accrual accounting) and how to prepare and interpret the primary financial statements that summarize a firm's economic transactions (i.e., the balance sheet, the income statement, and the statement of cash flows). The course adopts a decision-maker perspective of accounting by emphasizing the relation between accounting data and the underlying economic events that generated them thereby enabling the students to read, understand and analyse financial statements through ratio analysis. The course also explores the areas of financial shenanigans wherein the students will be able to learn how companies use financial statements to disguise economic reality.,",
         "Sections": {
-            "4": {}
+            "4": {
+                "Mon": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "09-01-2023",
+                        "17-02-2023",
+                        "31-10-2022",
+                        "15-12-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "09-01-2023",
+                        "17-02-2023",
+                        "31-10-2022",
+                        "15-12-2022"
+                    ]
+                ]
+            },
+            "6": {
+                "Tue": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "14-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "14-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            },
+            "2": {
+                "Mon": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "15-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "15-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            },
+            "3": {
+                "Tue": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            },
+            "7": {
+                "Mon": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "13-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "13-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            },
+            "1": {
+                "Tue": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "01-08-2022",
+                        "07-11-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "01-08-2022",
+                        "07-11-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "19:00",
+                        "20:30"
+                    ],
+                    [
+                        "16-08-2022",
+                        "16-09-2022"
+                    ]
+                ]
+            },
+            "5": {
+                "Tue": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "09-01-2023",
+                        "17-02-2023",
+                        "31-10-2022",
+                        "14-12-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "09-01-2023",
+                        "17-02-2023",
+                        "31-10-2022",
+                        "14-12-2022"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -7315,7 +7929,40 @@
         "Prerequisite": null,
         "Description": "None,[ Is open to anyone who has completed class 12 or the equivalent with Physics and Mathematics as subjects. ]",
         "Sections": {
-            "1": {}
+            "1": {
+                "Mon": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "09:30",
+                        "11:00",
+                        "12:30",
+                        "13:00",
+                        "14:30",
+                        "16:00",
+                        "17:30",
+                        "19:00"
+                    ],
+                    [
+                        "09-01-2023",
+                        "17-02-2023",
+                        "21-11-2022",
+                        "16-12-2022",
+                        "31-10-2022",
+                        "19-11-2022"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -7330,7 +7977,32 @@
         "Prerequisite": null,
         "Description": "The course invites students to critically examine 1) the ways in which we present ourselves to social audiences and are ascribed identities around gender & sexuality, class, caste, and tribe/ethnicity 2) how differences in social identification become expectations of appropriate behavior and how these codes of conduct are perceived, negotiated, subverted and mobilized in diverse contexts and 3) hierarchies that cohere around difference. The course will largely focus on contemporary forms of social identification but present them as historically and culturally situated, and mediated by global flows. In particular, we will consider the contradictory effects of new technologies and markets for contemporary forms of social identification and inequality, and the utility of difference for accruing cultural capital in a market economy. Course content is drawn from a range of academic fields of inquiry including anthropology, sociology, literature and cultural studies.\u00a0,",
         "Sections": {
-            "1": {}
+            "1": {
+                "Tue": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -7345,7 +8017,34 @@
         "Prerequisite": null,
         "Description": "None,[ Is open to anyone who has completed class 12 or the equivalent with Physics and Mathematics as subjects.  ]",
         "Sections": {
-            "1": {}
+            "1": {
+                "Tue": [
+                    [
+                        "14:30",
+                        "16:00",
+                        "17:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "14:30",
+                        "16:00",
+                        "17:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -7361,7 +8060,32 @@
         "Description": "None",
         "Sections": {
             "1947": {},
-            "1": {}
+            "1": {
+                "Mon": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -7376,7 +8100,32 @@
         "Prerequisite": null,
         "Description": ", ",
         "Sections": {
-            "1": {}
+            "1": {
+                "Mon": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -7416,7 +8165,32 @@
                     ]
                 ]
             },
-            "2": {}
+            "2": {
+                "Mon": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -7467,7 +8241,32 @@
         "Prerequisite": null,
         "Description": "This course introduces students to the basic modes of inquiry in the humanities. Students engage with a set of foundational humanities texts that address questions emerging at the interface of philosophy, history, and literary studies. Students read primary sources in translation from a number of literary traditions such as Telugu, Persian, Tamil, Sanskrit, and Kashmiri sources. Alongside these primary sources, students are introduced to major theoretical perspectives from which to read and interpret these sources.  The course introduces students to early arguments about what distinguishes the human and natural sciences; problematizes and studies the human experience as represented in literature, philosophy and history; and concludes by thinking about the future of the humanities both in India and globally. ,",
         "Sections": {
-            "1": {}
+            "1": {
+                "Tue": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -7663,7 +8462,32 @@
         "Prerequisite": null,
         "Description": "This course satisfies the core requirements for some of the students of the Bachelor's programmes in the Economics and Business majors. It may be taken as a GER by students of Bachelor programmes of other disciplines.                              This course is a second course in Calculus. It broadens and deepens a students knowledge of elementary Calculus. The course covers some applications of definite integrals to Volumes, Arc Length and Areas, Integrals of Exponential and Logarithmic Functions and applications, some new techniques of Integration- including Integration by Parts and Partial Fractions, Differential Equations and Applications, Taylor Series with applications and an Introduction to Partial Derivatives.The applications are drawn from many fieldsincluding Economics, Physics and Engineering.The course is aimed at first-year or second-year undergraduate students of any field who have the correct preparation. A familiarity with the contents of Introductory Calculus (MAT 142) is assumed,",
         "Sections": {
-            "1": {}
+            "1": {
+                "Mon": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -7726,7 +8550,32 @@
         "Prerequisite": null,
         "Description": "       This course introduces students to some of the main themes of philosophical ethics. Students will approach the subject through a close study of classical readings by Aristotle, Immanuel Kant, and John Stuart Mill, as well as contemporary work by such authors as Julia Driver, Amartya Sen, and Margaret Urban Walker. Among the fundamental questions to be discussed are 'what makes a life go well or poorly?', 'what makes a person good or bad?',  and 'what makes an action right or wrong?'.\u00a0This is a core course for students minoring in philosophy and an elective for students majoring in PHL. Other students may take the course to fulfill their GER requirements.                                                                         ,",
         "Sections": {
-            "1": {}
+            "1": {
+                "Mon": [
+                    [
+                        "16:00",
+                        "17:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "16:00",
+                        "17:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -8066,7 +8915,32 @@
         "Prerequisite": null,
         "Description": "None",
         "Sections": {
-            "1": {}
+            "1": {
+                "Tue": [
+                    [
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -8786,7 +9660,32 @@
         "Prerequisite": null,
         "Description": "None",
         "Sections": {
-            "1": {}
+            "1": {
+                "Wed": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -10654,7 +11553,32 @@
         "Prerequisite": null,
         "Description": "None",
         "Sections": {
-            "1": {}
+            "1": {
+                "Tue": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -11031,7 +11955,54 @@
         "Prerequisite": null,
         "Description": "None",
         "Sections": {
-            "2": {}
+            "2": {
+                "Tue": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            },
+            "1": {
+                "Tue": [
+                    [
+                        "17:30",
+                        "19:00"
+                    ],
+                    [
+                        "01-08-2022",
+                        "20-11-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "17:30",
+                        "19:00"
+                    ],
+                    [
+                        "01-08-2022",
+                        "20-11-2022"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -11362,7 +12333,79 @@
         "Prerequisite": null,
         "Description": "[ Ideally the student should have passed class 12th with Mathematics,  if that is not the case, MAT142 will provide sufficient foundations. ]",
         "Sections": {
-            "1": {}
+            "1": {
+                "Tue": [
+                    [
+                        "09:30",
+                        "11:00",
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:30",
+                        "11:00",
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            },
+            "2": {
+                "Tue": [
+                    [
+                        "11:00",
+                        "12:30",
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            },
+            "3": {
+                "Thu": [
+                    [
+                        "11:00",
+                        "12:30",
+                        "14:30",
+                        "16:00",
+                        "17:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -11532,7 +12575,67 @@
         "Prerequisite": null,
         "Description": "The course is aimed to give exposure to programming paradigms and to develop the problem solving ability. The course would introduce the concepts of computer programming. Following topics would be covered during the course:           Problem solving using Algorithms and Flowcharts; Programming paradigms; Foundations of Python and C programming; Visual programming; Operators; Control statements; Input/output operations; Decision making and branching; Type conversions; Collections; Functions; String; File management; Exception handling. ,",
         "Sections": {
-            "1": {}
+            "1": {
+                "Mon": [
+                    [
+                        "09:30",
+                        "11:00",
+                        "13:00",
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            },
+            "2": {
+                "Fri": [
+                    [
+                        "09:30",
+                        "11:00",
+                        "13:00",
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "09-01-2023",
+                        "17-02-2023",
+                        "31-10-2022",
+                        "16-12-2022"
+                    ]
+                ]
+            },
+            "3": {
+                "Tue": [
+                    [
+                        "13:00",
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -11891,7 +12994,32 @@
                     ]
                 ]
             },
-            "1": {}
+            "1": {
+                "Tue": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -12882,7 +14010,103 @@
         "Prerequisite": null,
         "Description": "[ Class 12th with mathematics is necessary. ]",
         "Sections": {
-            "2": {}
+            "2": {
+                "Tue": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            },
+            "1": {
+                "Mon": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            },
+            "3": {
+                "Tue": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            },
+            "4": {
+                "Sat": [
+                    [
+                        "11:00",
+                        "12:30",
+                        "13:00",
+                        "14:30",
+                        "16:00",
+                        "17:30",
+                        "19:00"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ]
+            }
         }
     },
     {
@@ -14173,6 +15397,987 @@
         "Semester": "Monsoon",
         "Prerequisite": null,
         "Description": "None",
+        "Sections": {
+            "1": {
+                "Mon": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "29-08-2022",
+                        "23-09-2022"
+                    ]
+                ],
+                "Tue": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "29-08-2022",
+                        "23-09-2022"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "29-08-2022",
+                        "23-09-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "29-08-2022",
+                        "23-09-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "29-08-2022",
+                        "23-09-2022"
+                    ]
+                ]
+            },
+            "2": {
+                "Mon": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "29-08-2022",
+                        "23-09-2022"
+                    ]
+                ],
+                "Tue": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "29-08-2022",
+                        "23-09-2022"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "29-08-2022",
+                        "23-09-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "29-08-2022",
+                        "23-09-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "29-08-2022",
+                        "23-09-2022"
+                    ]
+                ]
+            },
+            "3": {
+                "Mon": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "05-09-2022",
+                        "30-09-2022"
+                    ]
+                ],
+                "Tue": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "05-09-2022",
+                        "30-09-2022"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "05-09-2022",
+                        "30-09-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "05-09-2022",
+                        "30-09-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "05-09-2022",
+                        "30-09-2022"
+                    ]
+                ]
+            },
+            "4": {
+                "Mon": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "05-09-2022",
+                        "30-09-2022"
+                    ]
+                ],
+                "Tue": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "05-09-2022",
+                        "30-09-2022"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "05-09-2022",
+                        "30-09-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "05-09-2022",
+                        "30-09-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "05-09-2022",
+                        "30-09-2022"
+                    ]
+                ]
+            },
+            "5": {
+                "Mon": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "26-09-2022",
+                        "21-10-2022"
+                    ]
+                ],
+                "Tue": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "26-09-2022",
+                        "21-10-2022"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "26-09-2022",
+                        "21-10-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "26-09-2022",
+                        "21-10-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "26-09-2022",
+                        "21-10-2022"
+                    ]
+                ]
+            },
+            "6": {
+                "Mon": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "26-09-2022",
+                        "21-10-2022"
+                    ]
+                ],
+                "Tue": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "26-09-2022",
+                        "21-10-2022"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "26-09-2022",
+                        "21-10-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "26-09-2022",
+                        "21-10-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "26-09-2022",
+                        "21-10-2022"
+                    ]
+                ]
+            },
+            "7": {
+                "Mon": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "03-10-2022",
+                        "28-10-2022"
+                    ]
+                ],
+                "Tue": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "03-10-2022",
+                        "28-10-2022"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "03-10-2022",
+                        "28-10-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "03-10-2022",
+                        "28-10-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "03-10-2022",
+                        "28-10-2022"
+                    ]
+                ]
+            },
+            "8": {
+                "Mon": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "03-10-2022",
+                        "28-10-2022"
+                    ]
+                ],
+                "Tue": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "03-10-2022",
+                        "28-10-2022"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "03-10-2022",
+                        "28-10-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "03-10-2022",
+                        "28-10-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "03-10-2022",
+                        "28-10-2022"
+                    ]
+                ]
+            }
+        }
+    },
+    {
+        "Code": "FDP103",
+        "Level": "Undergraduate",
+        "Name": "Neighbourhoods",
+        "Credits": "3",
+        "Faculties": [
+            "Amrita Bihani",
+            "Atul Kumar",
+            "Bhargav Adhvaryu",
+            "Bijal Mehta",
+            "Fenil Shah",
+            "Mahendra Singh  Rao",
+            "Ratna Ghosal",
+            "Shilpa Pandit",
+            "Sonal Yadav",
+            "Souvik Sen Gupta",
+            "Sudhir Pandey",
+            "Sujo Thomas"
+        ],
+        "Semester": "Monsoon",
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {
+            "1": {
+                "Mon": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "29-08-2022",
+                        "23-09-2022"
+                    ]
+                ],
+                "Tue": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "29-08-2022",
+                        "23-09-2022"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "29-08-2022",
+                        "23-09-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "29-08-2022",
+                        "23-09-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "29-08-2022",
+                        "23-09-2022"
+                    ]
+                ]
+            },
+            "2": {
+                "Mon": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "29-08-2022",
+                        "23-09-2022"
+                    ]
+                ],
+                "Tue": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "29-08-2022",
+                        "23-09-2022"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "29-08-2022",
+                        "23-09-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "29-08-2022",
+                        "23-09-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "29-08-2022",
+                        "23-09-2022"
+                    ]
+                ]
+            },
+            "3": {
+                "Mon": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "05-09-2022",
+                        "30-09-2022"
+                    ]
+                ],
+                "Tue": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "05-09-2022",
+                        "30-09-2022"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "05-09-2022",
+                        "30-09-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "05-09-2022",
+                        "30-09-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "05-09-2022",
+                        "30-09-2022"
+                    ]
+                ]
+            },
+            "4": {
+                "Mon": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "05-09-2022",
+                        "30-09-2022"
+                    ]
+                ],
+                "Tue": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "05-09-2022",
+                        "30-09-2022"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "05-09-2022",
+                        "30-09-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "05-09-2022",
+                        "30-09-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "05-09-2022",
+                        "30-09-2022"
+                    ]
+                ]
+            },
+            "5": {
+                "Mon": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "26-09-2022",
+                        "21-10-2022"
+                    ]
+                ],
+                "Tue": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "26-09-2022",
+                        "21-10-2022"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "26-09-2022",
+                        "21-10-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "26-09-2022",
+                        "21-10-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "26-09-2022",
+                        "21-10-2022"
+                    ]
+                ]
+            },
+            "6": {
+                "Mon": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "26-09-2022",
+                        "21-10-2022"
+                    ]
+                ],
+                "Tue": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "26-09-2022",
+                        "21-10-2022"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "26-09-2022",
+                        "21-10-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "26-09-2022",
+                        "21-10-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "26-09-2022",
+                        "21-10-2022"
+                    ]
+                ]
+            },
+            "7": {
+                "Mon": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "03-10-2022",
+                        "28-10-2022"
+                    ]
+                ],
+                "Tue": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "03-10-2022",
+                        "28-10-2022"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "03-10-2022",
+                        "28-10-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "03-10-2022",
+                        "28-10-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "03-10-2022",
+                        "28-10-2022"
+                    ]
+                ]
+            },
+            "8": {
+                "Mon": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "03-10-2022",
+                        "28-10-2022"
+                    ]
+                ],
+                "Tue": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "03-10-2022",
+                        "28-10-2022"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "03-10-2022",
+                        "28-10-2022"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:45",
+                        "12:30",
+                        "13:30",
+                        "16:00"
+                    ],
+                    [
+                        "03-10-2022",
+                        "28-10-2022"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "09:45",
+                        "12:30"
+                    ],
+                    [
+                        "03-10-2022",
+                        "28-10-2022"
+                    ]
+                ]
+            }
+        }
+    },
+    {
+        "Code": "FDP104",
+        "Level": "Undergraduate",
+        "Name": "Water",
+        "Credits": "3",
+        "Faculties": [
+            "Aditi Singhal",
+            "Ashim Rai",
+            "Ashutosh Kumar",
+            "Charu Singh",
+            "Chirag Trivedi",
+            "Guillaume Wadia",
+            "Hetal Jhaveri",
+            "Jayendra Bhalodiya",
+            "Maryam Kaveshgar",
+            "Ravi Miglani",
+            "Saptam Patel",
+            "Shomen Mukherjee",
+            "Snigdha Khuntia",
+            "Vivek Bhatt",
+            "Zalak Shah"
+        ],
+        "Semester": "Monsoon",
+        "Prerequisite": null,
+        "Description": "The two extreme points from where we look at water could be \"Water is life, and clean water means health\" - Audrey Hepburn, or an extremely scary angle e.g., \"World War III will be fought over water\"\u2013 Special Broadcasting Service (Aug 17, 2017). Both highlight the urgency for us to act - as citizens and as scientists. However, how much do we think of water? How much do we know of this resource apart from what we have read in our school textbooks? Is the water crisis real? Are we taking the right decisions today to secure a better future for the coming generations? How can I, as an individual and as a community participate in the process? Also, as the driver for all forms of life on earth, water is an excellent solvent, however, this excellent solvent\u2019s characteristic, when combined with its flow, makes it a potent carrier of pollutants and pathogenic microorganisms that are often harmful to health. So, what makes water safe to consume and use for many other purposes? Is the water in surface and groundwater bodies in the Ahmedabad area safe for all forms of life? Is it potable? This course will turn students into aware citizens of the country by enabling them to ask relevant questions around the subject of water.                                        ,",
         "Sections": {
             "1": {
                 "Mon": [

@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"description": "",
 	"scripts": {
-		"start": "vite --host",
+		"start": "vite --host --port 3000",
 		"build": "vite build",
 		"preview": "vite preview",
 		"typecheck": "tsc --noEmit",

@@ -287,7 +287,7 @@ class CourseDirectory {
 		const days = Object.keys(section!);
 		const times = days.map((day) => section![day][0]);
 
-		console.log(times);
+		// console.log(times);
 		const formattedTimes = times.map((time) => {
 			if (time.length % 2 === 0 && time.length > 2) {
 				let allTimes = [];
@@ -295,7 +295,7 @@ class CourseDirectory {
 				for (let t = 0; t < time.length; t++) {
 					allTimes.push([time[t] + "-" + time[++t]]);
 				}
-				return allTimes;
+				return allTimes.join(",  ");
 			} else {
 				return [time[0] + "-" + time[time.length - 1]];
 			}
@@ -305,7 +305,7 @@ class CourseDirectory {
 		for (let i = 0; i < days.length; i++) {
 			formattedResult.push(`${days[i]} ${formattedTimes[i]} `);
 		}
-		console.log(formattedResult);
+		// console.log(formattedResult);
 		return formattedResult;
 	}
 	public getUsedDays(codeNSecs: string[]): string[] {

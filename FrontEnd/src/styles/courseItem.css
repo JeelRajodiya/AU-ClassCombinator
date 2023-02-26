@@ -3,7 +3,7 @@
 	padding: 1em;
 	margin: 5px 0;
 	/* font-family: Verdana, Geneva, Tahoma, sans-serif; */
-	border-radius: 5px;
+	border-radius: 10px;
 	width: min(90%, 700px);
 	font-size: 0.9em;
 	/* background-color: rgb(233, 233, 233); */
@@ -52,8 +52,10 @@
 	width: 8ch;
 	text-align: center;
 }
-.course-item:hover {
-	box-shadow: -1px 2px 5px rgba(0, 0, 0, 0.392);
+.course-item:hover,
+.selected {
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	border-radius: 20px;
 }
 .value {
 	padding: 0.3em;

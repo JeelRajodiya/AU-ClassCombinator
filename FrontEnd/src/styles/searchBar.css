@@ -19,6 +19,17 @@ input {
 input::placeholder {
 	font-size: 1em;
 }
+input,
+#search-icon {
+	box-shadow: -1px 2px 1px rgba(0, 0, 0, 0.392);
+}
+input:focus {
+	border: 1px solid rgba(6, 141, 251, 0.37);
+}
+
+#search-icon:active {
+	box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.392);
+}
 #searchBar-container {
 	display: flex;
 	flex-direction: row;

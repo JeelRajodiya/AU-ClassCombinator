@@ -7,15 +7,15 @@
 	width: min(90%, 700px);
 	font-size: 0.9em;
 	/* background-color: rgb(233, 233, 233); */
-	/* transition: box-shadow 100ms linear; */
+	transition: box-shadow 75ms linear;
 	display: flex;
 	flex-direction: column;
+
 	/* transition: border 100ms linear; */
 	box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.392);
 	border: 1px solid rgba(0, 0, 0, 0.156);
 }
-.course-item:hover {
-}
+
 .course-item > div {
 	padding: 0.3em;
 	/* border-top: 1px solid black; */
@@ -42,12 +42,15 @@
 .key {
 	background-color: rgba(35, 77, 205, 0.622);
 	color: white;
-	padding: 0.4em 0.5rem;
+	padding: 0.4em 1rem;
 	border-radius: 5px;
 	margin: 0 5px;
 	height: min-content;
-	width: 11ch;
+	width: 8ch;
 	text-align: center;
+}
+.course-item:hover {
+	box-shadow: -1px 2px 5px rgba(0, 0, 0, 0.392);
 }
 .value {
 	padding: 0.3em;

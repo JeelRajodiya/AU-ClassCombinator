@@ -7,6 +7,9 @@ import "./../styles/semesterSwitch.css";
 export default function SemesterSwitch(props: {
 	cd: CourseDirectory;
 	setCD: any;
+	query: string;
+	setQuery: any;
+	setSelected: any;
 }) {
 	const [checked, setChecked] = React.useState(
 		props.cd.activeSemName === "Monsoon" ? true : false
@@ -23,6 +26,9 @@ export default function SemesterSwitch(props: {
 						props.cd.changeActiveSemToMonsoon();
 					}
 					props.setCD(props.cd);
+					props.setSelected([]);
+					props.setQuery(props.query + " ");
+					setTimeout(() => props.setQuery(props.query), 100);
 				}}
 			>
 				<option value="winter">Winter 2023</option>

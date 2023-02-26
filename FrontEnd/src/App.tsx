@@ -31,7 +31,13 @@ export default function App() {
 			) : (
 				<>
 					<SearchBar query={query} setQuery={setQuery}></SearchBar>
-					<SemesterSwitch cd={cd} setCD={setCD} />
+					<SemesterSwitch
+						query={query}
+						setQuery={setQuery}
+						cd={cd}
+						setCD={setCD}
+						setSelected={setSelected}
+					/>
 					<CourseExplorer
 						selected={selected}
 						setSelected={setSelected}

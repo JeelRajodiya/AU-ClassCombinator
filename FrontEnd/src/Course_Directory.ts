@@ -289,7 +289,7 @@ class CourseDirectory {
 
 		console.log(times);
 		const formattedTimes = times.map((time) => {
-			if (time.length % 2 === 0) {
+			if (time.length % 2 === 0 && time.length > 2) {
 				let allTimes = [];
 				allTimes.push(" ");
 				for (let t = 0; t < time.length; t++) {

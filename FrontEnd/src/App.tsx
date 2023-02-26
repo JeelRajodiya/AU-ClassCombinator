@@ -12,7 +12,7 @@ import Combinator from "./components/Combinator";
 export default function App() {
 	const [cd, setCD] = React.useState(new CourseDirectory(winter, monsoon));
 	const [query, setQuery] = React.useState("ENR");
-	console.log(cd.getScheduleFromCodeAndSection("ENR100-1"));
+	// console.log(cd.getScheduleFromCodeAndSection("ENR100-1"));
 	const [selected, setSelected] = React.useState<string[]>([]);
 	const [combinations, setCombinations] = React.useState<string[][]>([]);
 	React.useEffect(() => {

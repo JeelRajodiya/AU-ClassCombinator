@@ -145,7 +145,7 @@ class CourseDirectory {
 			course1Time,
 			course2Time
 		);
-		console.log(timeConflict, dateConflict);
+		// console.log(timeConflict, dateConflict);
 		if (dateConflict && timeConflict) {
 			return true;
 		}
@@ -173,7 +173,7 @@ class CourseDirectory {
 			const course1Day = course1Data![day];
 			const course2Day = course2Data![day];
 			const conflict = this.checkForDayConflict(course1Day, course2Day);
-			console.log(conflict);
+			// console.log(conflict);
 			if (conflict) {
 				return true;
 			}

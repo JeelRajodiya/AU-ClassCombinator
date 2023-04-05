@@ -124,10 +124,13 @@ def scrape(file_name):
 		DateArray = []
 		activeSection = ''
 		activeDay = ''
+		if course.count("[Bi-Semester]") > 0:
+			isBiSem = True
+		else:
+			isBiSem = False
 		lines = course.split("\n")
 		lines = list(filter(lambda a: a.replace(" ", "") != "", lines))
 
-		# print(lines)
 		Code = lines[0].split(",")[0]
 		Level = lines[0].split(",")[1]
 		Level = Level.strip(" ").strip("[").strip("]")
@@ -148,7 +151,7 @@ def scrape(file_name):
 			Prerequisite = None
 			n = 4
 		Description = lines[n + 1]
-		print(Code)
+		# print(Code)
 		for i in lines[n + 2:]:
 			i = i.strip(",")
 			i = i.replace(" ", ",")
@@ -206,6 +209,7 @@ def scrape(file_name):
 		    "Credits": Credits,
 		    "Faculties": Faculties,
 		    "Semester": Semester,
+		    "isBiSem": isBiSem,
 		    "Prerequisite": Prerequisite,
 		    "Description": Description,
 		    "Sections": Sections

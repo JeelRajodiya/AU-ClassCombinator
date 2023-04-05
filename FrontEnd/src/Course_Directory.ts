@@ -15,6 +15,7 @@ type Course = {
 			[key: string]: string[][];
 		};
 	};
+	isBiSem: boolean;
 };
 export type { Course };
 class CourseDirectory {

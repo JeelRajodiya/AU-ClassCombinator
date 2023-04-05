@@ -85,6 +85,16 @@ export default function CourseItem(props: {
 				</span>
 				<span className="value">{props.course.Semester}</span>
 			</div>
+			{props.course.isBiSem ? (
+				<div className="field-wrapper">
+					<span className="key">
+						<strong>Bi-Sem: </strong>
+					</span>
+					<span className="value">True</span>
+				</div>
+			) : (
+				""
+			)}
 		</div>
 	);
 }

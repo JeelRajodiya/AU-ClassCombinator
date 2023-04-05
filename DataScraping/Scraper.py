@@ -222,11 +222,11 @@ def scrape(file_name):
 def scrape_semesters(file_names):
 	for file_name in file_names:
 		scrape(file_name)
-	semesters = []
-	for file_name in file_names:
-		semesters.extend(
-		    json.loads(open(f'{file_name.split("_")[2]}.json').read()))
-	json.dump(semesters, open("semesters.json", "w"), indent=4)
+	# semesters = []
+	# for file_name in file_names:
+	# 	semesters.extend(
+	# 	    json.loads(open(f'{file_name.split("_")[2]}.json').read()))
+	# json.dump(semesters, open("semesters.json", "w"), indent=4)
 
 
 filenames = ["course_directory_monsoon", "course_directory_winter"]

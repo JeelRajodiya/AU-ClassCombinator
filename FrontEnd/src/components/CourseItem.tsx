@@ -1,7 +1,10 @@
 import React from "react";
 import { Course } from "./../Course_Directory";
 import "./../styles/courseItem.css";
+// @ts-ignore
 import RadioUncheckedIcon from "./../assets/radio_button_unchecked.png";
+// @ts-ignore
+
 import CheckIcon from "./../assets/check.png";
 export default function CourseItem(props: {
 	course: Course;

@@ -77,11 +77,14 @@ class CourseDirectory {
 	}
 	private checkForTimeConflict(course1Time: string[], course2Time: string[]) {
 		let course1StartTime = this.strToTime(course1Time[0]);
+		// Bug Here
 		let course1EndTime = this.strToTime(
 			course1Time[course1Time.length - 1]
 		);
 		let course2StartTime = this.strToTime(course2Time[0]);
 		// console.log(course1Time);
+		// Bug Here
+
 		let course2EndTime = this.strToTime(
 			course2Time[course2Time.length - 1]
 		);
@@ -146,7 +149,7 @@ class CourseDirectory {
 			course1Time,
 			course2Time
 		);
-		// console.log(timeConflict, dateConflict);
+		// console.log(dateConflict, timeConflict);
 		if (dateConflict && timeConflict) {
 			return true;
 		}
@@ -174,7 +177,7 @@ class CourseDirectory {
 			const course1Day = course1Data![day];
 			const course2Day = course2Data![day];
 			const conflict = this.checkForDayConflict(course1Day, course2Day);
-			// console.log(conflict);
+			console.log(conflict, day);
 			if (conflict) {
 				return true;
 			}

@@ -9,6 +9,7 @@ import CourseExplorer from "./components/CourseExplorer";
 import SemesterSwitch from "./components/SemesterSwitch";
 import ActionBar from "./components/ActionBar";
 import Combinator from "./components/Combinator";
+import { Analytics } from "@vercel/analytics/react";
 export default function App() {
 	const [cd, setCD] = React.useState(new CourseDirectory(winter, monsoon));
 	const [query, setQuery] = React.useState("ENR");
@@ -26,6 +27,8 @@ export default function App() {
 				name="viewport"
 				content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 			/>
+
+			<Analytics />
 			{isCombinatorOpen ? (
 				<Combinator cd={cd} combinations={combinations} />
 			) : (

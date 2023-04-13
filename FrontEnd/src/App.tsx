@@ -29,6 +29,16 @@ export default function App() {
 			/>
 
 			<Analytics />
+			<h1
+				style={{
+					fontSize: "1em",
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "center",
+				}}
+			>
+				AU Class Combinator
+			</h1>
 			{isCombinatorOpen ? (
 				<Combinator cd={cd} combinations={combinations} />
 			) : (

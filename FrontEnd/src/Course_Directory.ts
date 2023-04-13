@@ -1,5 +1,5 @@
 // import * as fs from "fs";
-import loadsh from "lodash";
+import loadsh, { filter } from "lodash";
 
 type Course = {
 	Code: string;
@@ -75,25 +75,39 @@ class CourseDirectory {
 		// console.log(date);
 		return new Date(year, month, day);
 	}
-	private checkForTimeConflict(course1Time: string[], course2Time: string[]) {
-		let course1StartTime = this.strToTime(course1Time[0]);
-		// Bug Here
-		let course1EndTime = this.strToTime(
-			course1Time[course1Time.length - 1]
-		);
-		let course2StartTime = this.strToTime(course2Time[0]);
-		// console.log(course1Time);
-		// Bug Here
+	private organizeTime(time: string[]) {
+		let organizedTime: string[][] = [];
+		for (let i = 0; i < time.length; i += 2) {
+			organizedTime.push([time[i], time[i + 1]]);
+		}
+		// convert [ [ "13:00","14:30"] , ["14:30","16:00"] ] to [["13:00","16:00]]
+		for (let i = 0; i < organizedTime.length - 1; i++) {
+			if (organizedTime[i][1] === organizedTime[i + 1][0]) {
+				organizedTime[i][1] = organizedTime[i + 1][1];
+				organizedTime.splice(i + 1, 1);
+				i--;
+			}
+		}
+		// remove duplicate time pairs
 
-		let course2EndTime = this.strToTime(
-			course2Time[course2Time.length - 1]
-		);
-		// console.log(
-		// 	course1StartTime,
-		// 	course1EndTime,
-		// 	course2StartTime,
-		// 	course2EndTime
-		// );
+		let organizedTime2: string[][] = [];
+		for (let i = 0; i < organizedTime.length; i++) {
+			if (!organizedTime2.includes(organizedTime[i])) {
+				organizedTime2.push(organizedTime[i]);
+			}
+		}
+
+		console.log(time, "=>", organizedTime);
+		return organizedTime;
+	}
+	private checkTimeConflictByPairs(
+		course1Pair: string[],
+		course2Pair: string[]
+	): boolean {
+		let course1StartTime = this.strToTime(course1Pair[0]);
+		let course1EndTime = this.strToTime(course1Pair[1]);
+		let course2StartTime = this.strToTime(course2Pair[0]);
+		let course2EndTime = this.strToTime(course2Pair[1]);
 		if (
 			(course1StartTime <= course2StartTime &&
 				course2StartTime < course1EndTime) ||
@@ -101,6 +115,31 @@ class CourseDirectory {
 				course1StartTime < course2EndTime)
 		) {
 			return true;
+		}
+		return false;
+	}
+	private checkForTimeConflict(course1Time: string[], course2Time: string[]) {
+		// console.log(course1Time, this.organizeTime(course1Time), "Ok");
+
+		let course1TimeOrganized = this.organizeTime(course1Time);
+		let course2TimeOrganized = this.organizeTime(course2Time);
+		// console.log(
+		// 	course1StartTime,
+		// 	course1EndTime,
+		// 	course2StartTime,
+		// 	course2EndTime
+		// );
+		for (let i = 0; i < course1TimeOrganized.length; i++) {
+			for (let j = 0; j < course2TimeOrganized.length; j++) {
+				if (
+					this.checkTimeConflictByPairs(
+						course1TimeOrganized[i],
+						course2TimeOrganized[j]
+					)
+				) {
+					return true;
+				}
+			}
 		}
 		return false;
 	}
@@ -141,6 +180,7 @@ class CourseDirectory {
 		const course1Time = course1Day[0];
 		const course2Date = course2Day[1];
 		const course2Time = course2Day[0];
+
 		const dateConflict = this.checkForDateConflict(
 			course1Date,
 			course2Date

@@ -10,6 +10,7 @@ type CombinatorProps = {
 };
 
 export default function Combinator(props: CombinatorProps) {
+	let combinationCount = 0;
 	return (
 		<div className="combinator">
 			<div className="combination-entry-wrapper selection">
@@ -52,6 +53,7 @@ export default function Combinator(props: CombinatorProps) {
 					className="combination-entry-wrapper"
 					key={String(Math.random() * 1000)}
 				>
+					<div> Combination {++combinationCount}</div>
 					<div className="combination-entry">
 						{combination.map((code) => (
 							<div

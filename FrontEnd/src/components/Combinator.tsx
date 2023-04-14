@@ -12,7 +12,6 @@ type CombinatorProps = {
 export default function Combinator(props: CombinatorProps) {
 	return (
 		<div className="combinator">
-			<h1>Combinator</h1>
 			<div className="combination-entry-wrapper selection">
 				<h4>
 					<u>Selected Courses</u>
@@ -46,6 +45,8 @@ export default function Combinator(props: CombinatorProps) {
 					))}
 				</div>
 			</div>
+			<div className="line"></div>
+			<h2>Combinations</h2>
 			{props.combinations.map((combination) => (
 				<div
 					className="combination-entry-wrapper"

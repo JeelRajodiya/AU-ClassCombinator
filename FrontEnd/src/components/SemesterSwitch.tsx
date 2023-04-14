@@ -11,16 +11,14 @@ export default function SemesterSwitch(props: {
 	setQuery: any;
 	setSelected: any;
 }) {
-	const [checked, setChecked] = React.useState(
-		props.cd.activeSemName === "Monsoon" ? true : false
-	);
 	return (
 		<div className="semester-switch">
 			{/* selection of monsoon and winter */}
 			<select
 				className="semester-select"
+				value={props.cd.activeSemName}
 				onChange={(e) => {
-					if (e.target.value === "winter") {
+					if (e.target.value === "Winter") {
 						props.cd.changeActiveSemToWinter();
 					} else {
 						props.cd.changeActiveSemToMonsoon();
@@ -31,8 +29,8 @@ export default function SemesterSwitch(props: {
 					setTimeout(() => props.setQuery(props.query), 100);
 				}}
 			>
-				<option value="winter">Winter 2023</option>
-				<option value="monsoon">Monsoon 2022</option>
+				<option value="Winter">Winter 2023</option>
+				<option value="Monsoon">Monsoon 2022</option>
 			</select>
 		</div>
 	);

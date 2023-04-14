@@ -15,9 +15,14 @@ export default function App() {
 	const [query, setQuery] = React.useState("");
 	// console.log(cd.getScheduleFromCodeAndSection("ENR100-1"));
 	const [selected, setSelected] = React.useState<string[]>([]);
+	React.useEffect(() => {
+		localStorage.getItem("selected") &&
+			setSelected(JSON.parse(localStorage.getItem("selected")!));
+	}, []);
 	const [combinations, setCombinations] = React.useState<string[][]>([]);
 	React.useEffect(() => {
 		setCombinations(cd.generatePossibleCombinations(selected));
+		localStorage.setItem("selected", JSON.stringify(selected));
 	}, [selected]);
 	const [isCombinatorOpen, setIsCombinatorOpen] = React.useState(false);
 

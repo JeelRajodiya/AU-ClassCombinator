@@ -6,7 +6,7 @@ export default function SearchBar(props: { query: string; setQuery: any }) {
 	return (
 		<div id="searchBar-container">
 			<input
-				placeholder="ENR100"
+				placeholder="Search for courses ... "
 				value={props.query}
 				onChange={(e) => {
 					props.setQuery(e.target.value);

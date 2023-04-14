@@ -12,7 +12,7 @@ import Combinator from "./components/Combinator";
 import { Analytics } from "@vercel/analytics/react";
 export default function App() {
 	const [cd, setCD] = React.useState(new CourseDirectory(winter, monsoon));
-	const [query, setQuery] = React.useState("ENR");
+	const [query, setQuery] = React.useState("");
 	// console.log(cd.getScheduleFromCodeAndSection("ENR100-1"));
 	const [selected, setSelected] = React.useState<string[]>([]);
 	const [combinations, setCombinations] = React.useState<string[][]>([]);

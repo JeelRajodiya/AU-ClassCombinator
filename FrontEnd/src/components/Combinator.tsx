@@ -2,6 +2,7 @@ import { padding } from "@mui/system";
 import React from "react";
 import CourseDirectory from "./../Course_Directory";
 import "./../styles/combinator.css";
+import TimeTable from "./TimeTable";
 type CombinatorProps = {
 	cd: CourseDirectory;
 	combinations: string[][];
@@ -11,6 +12,43 @@ type CombinatorProps = {
 
 export default function Combinator(props: CombinatorProps) {
 	let combinationCount = 0;
+	let timeTables: string[][] = [];
+	function transformArrayToObject(inputArray: Array<Array<string>>): {
+		[key: string]: Array<string>;
+	} {
+		const outputObject: { [key: string]: Array<string> } = {};
+
+		inputArray.forEach((item) => {
+			const [day, time] = item;
+			if (outputObject[day]) {
+				outputObject[day].push(time);
+			} else {
+				outputObject[day] = [time];
+			}
+		});
+		// remove duplicates
+		Object.keys(outputObject).forEach((key) => {
+			outputObject[key] = outputObject[key].filter(
+				(value, index, self) => self.indexOf(value) === index
+			);
+		});
+
+		// sort, 8:00 should be before 13:00
+		Object.keys(outputObject).forEach((key) => {
+			outputObject[key] = outputObject[key].sort((a, b) => {
+				const aTime = a.split(":");
+				const bTime = b.split(":");
+				if (aTime[0] === bTime[0]) {
+					return parseInt(aTime[1]) - parseInt(bTime[1]);
+				} else {
+					return parseInt(aTime[0]) - parseInt(bTime[0]);
+				}
+			});
+		});
+
+		return outputObject;
+	}
+
 	return (
 		<div className="combinator">
 			<div className="combination-entry-wrapper selection">
@@ -64,27 +102,39 @@ export default function Combinator(props: CombinatorProps) {
 								<div className="combinator-schedule">
 									{props.cd
 										.getScheduleFromCodeAndSection(code)
-										.map((e) => (
-											<div
-												key={String(
-													Math.random() * 1000
-												)}
-											>
-												{e}
-											</div>
-										))}
+										.map((e) => {
+											timeTables.push(e.split(" "));
+											return (
+												<div
+													key={String(
+														Math.random() * 1000
+													)}
+												>
+													{e}
+												</div>
+											);
+										})}
 								</div>
 							</div>
 						))}
 					</div>
-					<div className="days-to-go">
-						Active Days:{" "}
-						<u>{props.cd.getUsedDays(combination).join(", ")}</u>
-						<div>
+					<div className="time-table">
+						<TimeTable
+							timeTable={transformArrayToObject(timeTables)}
+						/>
+						<div className="days-to-go">
+							Active Days:{" "}
 							<u>
-								{7 - props.cd.getUsedDays(combination).length}
-							</u>{" "}
-							holidays in a week
+								{props.cd.getUsedDays(combination).join(", ")}
+							</u>
+							<div>
+								<u>
+									{7 -
+										props.cd.getUsedDays(combination)
+											.length}
+								</u>{" "}
+								holidays in a week
+							</div>
 						</div>
 					</div>
 				</div>

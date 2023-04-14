@@ -59,3 +59,36 @@
 .combinator-course:hover {
 	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.392);
 }
+
+.selected-course-card {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 1em;
+	border-top: 1px solid black;
+	/* width: 100%; */
+	justify-content: space-between;
+	white-space: pre-wrap;
+}
+.selected-courses-wrapper {
+	width: 100%;
+	margin: 1em 0;
+}
+.delete-selected-button {
+	background-color: rgba(255, 0, 0, 0.207);
+	border: none;
+	outline: none;
+	cursor: pointer;
+	border: 1px solid red;
+}
+.delete-selected-button:hover {
+	color: white;
+	background-color: red;
+}
+.delete-selected-button:disabled {
+	border: none;
+}
+.delete-selected-button:disabled:hover {
+	background-color: rgba(255, 0, 0, 0.207);
+	color: black;
+}

@@ -29,20 +29,26 @@ export default function App() {
 			/>
 
 			<Analytics />
-			<h1
-				style={{
-					fontSize: "1em",
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "center",
-				}}
-			>
-				AU Class Combinator
-			</h1>
+
 			{isCombinatorOpen ? (
-				<Combinator cd={cd} combinations={combinations} />
+				<Combinator
+					cd={cd}
+					selected={selected}
+					setSelected={setSelected}
+					combinations={combinations}
+				/>
 			) : (
 				<>
+					<h1
+						style={{
+							fontSize: "1em",
+							display: "flex",
+							alignItems: "center",
+							justifyContent: "center",
+						}}
+					>
+						AU Class Combinator
+					</h1>
 					<SearchBar query={query} setQuery={setQuery}></SearchBar>
 					<SemesterSwitch
 						query={query}

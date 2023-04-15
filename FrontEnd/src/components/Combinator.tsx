@@ -45,6 +45,7 @@ export default function Combinator(props: CombinatorProps) {
 				}
 			});
 		});
+		timeTables = [];
 
 		return outputObject;
 	}

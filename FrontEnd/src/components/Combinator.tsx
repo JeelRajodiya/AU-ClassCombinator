@@ -103,7 +103,7 @@ export default function Combinator(props: CombinatorProps) {
 									{props.cd
 										.getScheduleFromCodeAndSection(code)
 										.map((e) => {
-											timeTables.push(e.split(" "));
+											timeTables.push(e.split(/[ ,]+/));
 											return (
 												<div
 													key={String(

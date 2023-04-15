@@ -12,6 +12,7 @@ type ActionBarProps = {
 };
 
 export default function ActionBar(props: ActionBarProps) {
+	let [clearAllCount, setClearAllCount] = React.useState(0);
 	return (
 		<div className="action-bar">
 			<span>{props.selected.length} Selected</span>
@@ -30,14 +31,21 @@ export default function ActionBar(props: ActionBarProps) {
 			</span>
 
 			<button
+				className={`${clearAllCount > 0 ? "red" : ""} action-bar-btn`}
 				onClick={() => {
-					props.setSelected([]);
+					if (clearAllCount < 1) {
+						setClearAllCount((e) => e + 1);
+					} else {
+						setClearAllCount(0);
+						props.setSelected([]);
+					}
 				}}
 				disabled={props.isCombinatorOpen || props.selected.length === 0}
 			>
-				Clear All
+				{clearAllCount < 1 ? "Clear All" : "Sure?"}
 			</button>
 			<button
+				className="action-bar-btn"
 				onClick={() => {
 					props.setIsCombinatorOpen(!props.isCombinatorOpen);
 				}}

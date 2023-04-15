@@ -10,9 +10,9 @@
 
 	/* box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1), 1px 2px 1px rgba(0, 0, 0, 0.2),
 		1px 2px 1px rgba(0, 0, 0, 0.2); */
-	padding: 10px;
+	padding: 5px;
 	width: min(100%, 800px);
-	border-radius: 10px;
+	/* border-radius: 10px; */
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	font-size: small;
 	left: 50%;
@@ -23,14 +23,28 @@
 
 	/* justify-content: center; */
 }
-button {
+.action-bar-btn {
 	border: none;
 	outline: none;
-	height: 2em;
+	height: 100%;
+	padding: 0.5em;
+	background-color: #f3eee8;
 	border-radius: 5px;
+	text-transform: uppercase;
+	font-weight: bold;
+
+	font-size: 1em;
 }
-button:hover {
+.action-bar-btn:hover {
 	cursor: pointer;
-	background-color: rgb(3, 73, 203);
+	background-color: rgb(34, 101, 224);
 	color: white;
+}
+.red {
+	color: red;
+	border: 1px solid red;
+}
+button:hover.red {
+	background-color: rgba(255, 129, 129, 0.621);
+	color: red;
 }

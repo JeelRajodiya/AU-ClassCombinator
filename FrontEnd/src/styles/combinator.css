@@ -80,6 +80,8 @@
 	outline: none;
 	cursor: pointer;
 	border: 1px solid red;
+	border-radius: 5px;
+	padding: 0.5em;
 }
 .delete-selected-button:hover {
 	color: white;

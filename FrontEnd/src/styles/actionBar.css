@@ -14,7 +14,7 @@
 	width: min(100%, 800px);
 	/* border-radius: 10px; */
 	border: 1px solid rgba(0, 0, 0, 0.2);
-	font-size: 0.6rem;
+	font-size: 0.8rem;
 	left: 50%;
 	transform: translateX(-50%);
 	display: flex;
@@ -52,7 +52,7 @@ button:hover.red {
 	transition: padding 100ms linear;
 	padding: 0.6em 3em;
 	border-radius: 8px;
-	box-shadow: black -1px 2px 2px;
+	box-shadow: black -1px 1px 1px;
 	border: 2px solid transparent;
 }
 .go-btn:hover {

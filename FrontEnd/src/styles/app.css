@@ -14,7 +14,7 @@ main {
 	/* display: flex; */
 	/* flex-direction: column; */
 	/* justify-content: center; */
-	transform: translateY(40vh);
+	transform: translateY(30vh);
 	transition: transform 0.5s ease-in-out;
 
 	/* align-items: center; */

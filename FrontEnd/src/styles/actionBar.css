@@ -27,13 +27,13 @@
 	border: none;
 	outline: none;
 	height: 100%;
-	padding: 0.5em;
+	padding: 0.3em;
 	background-color: #f3eee8;
 	border-radius: 5px;
 	text-transform: uppercase;
 	font-weight: bold;
 
-	font-size: 1em;
+	font-size: small;
 }
 .action-bar-btn:hover {
 	cursor: pointer;
@@ -47,4 +47,26 @@
 button:hover.red {
 	background-color: rgba(255, 129, 129, 0.621);
 	color: red;
+}
+.go-btn {
+	transition: padding 100ms linear;
+	padding: 0.6em 3em;
+	border-radius: 8px;
+	box-shadow: black -1px 2px 2px;
+	border: 2px solid transparent;
+}
+.go-btn:hover {
+	padding: 0.6em 3.5em;
+	/* box-shadow: black 0px 0px 2px; */
+}
+.go-btn:active {
+	border: 2px solid black;
+}
+.go-btn.enabled {
+	/* background-color: rgb(34, 101, 224); */
+	/* color: white; */
+	color: white;
+	background-color: rgb(34, 101, 224);
+	/* border: 1px solid blue; */
+	/* padding: 1em; */
 }

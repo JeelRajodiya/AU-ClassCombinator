@@ -1,8 +1,7 @@
 import React from "react";
 import CourseDirectory from "../Course_Directory";
 import CourseItem from "./CourseItem";
-import winter from "../Data/winter.json";
-import monsoon from "../Data/monsoon.json";
+import type { Course } from "../Course_Directory";
 
 export default function CourseExplorer(props: {
 	query: string;
@@ -11,11 +10,15 @@ export default function CourseExplorer(props: {
 	setSelected: React.Dispatch<React.SetStateAction<string[]>>;
 }) {
 	// const cd = new CourseDirectory(winter, monsoon);
-	const courses = props.cd.search(props.query);
+	let courses: Course[];
+	if (props.query === "") {
+		courses = [];
+	} else {
+		courses = props.cd.search(props.query.trim());
+	}
 
 	return (
 		<div
-			className="course-explorer"
 			style={{
 				display: "flex",
 				justifyContent: "center",

@@ -14,7 +14,7 @@
 	width: min(100%, 800px);
 	/* border-radius: 10px; */
 	border: 1px solid rgba(0, 0, 0, 0.2);
-	font-size: small;
+	font-size: 0.6rem;
 	left: 50%;
 	transform: translateX(-50%);
 	display: flex;
@@ -33,7 +33,7 @@
 	text-transform: uppercase;
 	font-weight: bold;
 
-	font-size: small;
+	font-size: 1em;
 }
 .action-bar-btn:hover {
 	cursor: pointer;

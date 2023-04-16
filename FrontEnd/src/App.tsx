@@ -64,9 +64,9 @@ export default function App() {
 						/>
 					</div>
 					<div
-						className={`searching-elements ${
+						className={` ${
 							query === "" ? "default-height" : "expended"
-						}`}
+						} course-explorer-wrapper`}
 					>
 						<CourseExplorer
 							selected={selected}

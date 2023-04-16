@@ -36,3 +36,16 @@ main {
 .default-height > .title {
 	font-size: xx-large;
 }
+.course-explorer-wrapper {
+}
+.course-explorer-wrapper.default-height {
+	transition: transform 0.5s ease-in-out;
+
+	opacity: 0;
+}
+
+.course-explorer-wrapper.expended {
+	transition: transform 250ms ease-in-out, opacity 600ms ease-out;
+
+	opacity: 1;
+}

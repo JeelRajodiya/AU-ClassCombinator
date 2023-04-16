@@ -27,7 +27,7 @@
 	border: none;
 	outline: none;
 	height: 100%;
-	padding: 0.5em;
+	padding: 0.3em;
 	background-color: #f3eee8;
 	border-radius: 5px;
 	text-transform: uppercase;
@@ -47,4 +47,15 @@
 button:hover.red {
 	background-color: rgba(255, 129, 129, 0.621);
 	color: red;
+}
+.go-btn {
+	transition: padding 100ms linear;
+	padding: 1em 2em;
+}
+.go-btn.enabled {
+	/* background-color: rgb(34, 101, 224); */
+	/* color: white; */
+	color: blue;
+	border: 1px solid blue;
+	/* padding: 1em; */
 }

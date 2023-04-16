@@ -24,6 +24,7 @@ export default function App() {
 		setCombinations(cd.generatePossibleCombinations(selected));
 		localStorage.setItem("selected", JSON.stringify(selected));
 	}, [selected]);
+
 	const [isCombinatorOpen, setIsCombinatorOpen] = React.useState(false);
 
 	return (
@@ -44,30 +45,36 @@ export default function App() {
 				/>
 			) : (
 				<>
-					<h1
-						style={{
-							fontSize: "1em",
-							display: "flex",
-							alignItems: "center",
-							justifyContent: "center",
-						}}
+					<div
+						className={`searching-elements ${
+							query === "" ? "default-height" : "expended"
+						}`}
 					>
-						AU Class Combinator
-					</h1>
-					<SearchBar query={query} setQuery={setQuery}></SearchBar>
-					<SemesterSwitch
-						query={query}
-						setQuery={setQuery}
-						cd={cd}
-						setCD={setCD}
-						setSelected={setSelected}
-					/>
-					<CourseExplorer
-						selected={selected}
-						setSelected={setSelected}
-						query={query}
-						cd={cd}
-					/>
+						<h1 className="title">AU Class Combinator</h1>
+						<SearchBar
+							query={query}
+							setQuery={setQuery}
+						></SearchBar>
+						<SemesterSwitch
+							query={query}
+							setQuery={setQuery}
+							cd={cd}
+							setCD={setCD}
+							setSelected={setSelected}
+						/>
+					</div>
+					<div
+						className={`searching-elements ${
+							query === "" ? "default-height" : "expended"
+						}`}
+					>
+						<CourseExplorer
+							selected={selected}
+							setSelected={setSelected}
+							query={query}
+							cd={cd}
+						/>
+					</div>
 				</>
 			)}
 

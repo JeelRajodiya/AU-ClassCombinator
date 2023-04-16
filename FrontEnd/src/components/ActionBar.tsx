@@ -45,7 +45,12 @@ export default function ActionBar(props: ActionBarProps) {
 				{clearAllCount < 1 ? "Clear All" : "Sure?"}
 			</button>
 			<button
-				className="action-bar-btn"
+				className={`action-bar-btn go-btn ${
+					props.selected.length === 0 ||
+					props.combinations.length === 0
+						? "disabled"
+						: "enabled"
+				}`}
 				onClick={() => {
 					props.setIsCombinatorOpen(!props.isCombinatorOpen);
 				}}

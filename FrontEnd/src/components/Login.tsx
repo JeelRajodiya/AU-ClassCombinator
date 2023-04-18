@@ -3,6 +3,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
 import { GoogleLogin } from "@react-oauth/google";
 import { Navigate } from "react-router";
+import "../styles/login.css";
 type Credentials = {
 	aud: string;
 	azp: string;
@@ -20,13 +21,12 @@ type Credentials = {
 	picture: string;
 	sub: string;
 };
-//please work this time
 
 export default function Login() {
 	let [isError, setIsError] = React.useState(false);
 	let [isLogin, setIsLogin] = React.useState(false);
 	return (
-		<div>
+		<div className="container">
 			<GoogleOAuthProvider clientId="51730502551-mkkokhpvqbutmqbjsfifnhcdvghe8va9.apps.googleusercontent.com">
 				<GoogleLogin
 					onSuccess={(credentialResponse) => {

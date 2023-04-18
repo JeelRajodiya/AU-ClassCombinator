@@ -88,7 +88,6 @@ export default function App() {
 				isCombinatorOpen={isCombinatorOpen}
 				setIsCombinatorOpen={setIsCombinatorOpen}
 			/>
-			<Link to="/login">Login</Link>
 		</main>
 	);
 }

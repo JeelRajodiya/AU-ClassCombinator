@@ -10,6 +10,8 @@ import SemesterSwitch from "./components/SemesterSwitch";
 import ActionBar from "./components/ActionBar";
 import Combinator from "./components/Combinator";
 import { Analytics } from "@vercel/analytics/react";
+import { Link } from "react-router-dom";
+
 export default function App() {
 	const [cd, setCD] = React.useState(new CourseDirectory(winter, monsoon));
 	const [query, setQuery] = React.useState("");
@@ -86,6 +88,7 @@ export default function App() {
 				isCombinatorOpen={isCombinatorOpen}
 				setIsCombinatorOpen={setIsCombinatorOpen}
 			/>
+			<Link to="/login">Login</Link>
 		</main>
 	);
 }

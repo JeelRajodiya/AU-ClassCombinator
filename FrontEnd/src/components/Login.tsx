@@ -9,6 +9,7 @@ export default function Login() {
 				<GoogleLogin
 					onSuccess={(credentialResponse) => {
 						console.log(jwt_decode(credentialResponse.credential!));
+						//work
 					}}
 					onError={() => {
 						console.log("Login Failed");

@@ -37,6 +37,7 @@ export default function Login() {
 						).hd;
 						if (host === "ahduni.edu.in") {
 							console.log("Login Successful");
+							setIsLogin(true);
 						} else {
 							console.log("Login Failed");
 							setIsError(true);

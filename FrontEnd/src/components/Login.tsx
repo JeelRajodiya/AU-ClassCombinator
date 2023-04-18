@@ -43,5 +43,5 @@ export default function Login() {
 				/>
 			</GoogleOAuthProvider>
 		</div>
-	); //
+	);
 }

@@ -24,6 +24,7 @@ type Credentials = {
 
 export default function Login() {
 	let [isError, setIsError] = React.useState(false);
+	let [isLogin, setIsLogin] = React.useState(false);
 	return (
 		<div>
 			<GoogleOAuthProvider clientId="51730502551-mkkokhpvqbutmqbjsfifnhcdvghe8va9.apps.googleusercontent.com">
@@ -35,7 +36,6 @@ export default function Login() {
 							) as Credentials
 						).hd;
 						if (host === "ahduni.edu.in") {
-							<Navigate to="/Home"></Navigate>;
 							console.log("Login Successful");
 						} else {
 							console.log("Login Failed");
@@ -57,6 +57,7 @@ export default function Login() {
 					</p>
 				</div>
 			)}
+			{isLogin && <Navigate to="/Home" />}
 		</div>
 	);
 }

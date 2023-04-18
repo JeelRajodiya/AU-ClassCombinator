@@ -2,6 +2,7 @@ import React from "react";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
 import { GoogleLogin } from "@react-oauth/google";
+import { Navigate } from "react-router";
 type Credentials = {
 	aud: string;
 	azp: string;
@@ -22,6 +23,7 @@ type Credentials = {
 //please work this time
 
 export default function Login() {
+	let [isError, setIsError] = React.useState(false);
 	return (
 		<div>
 			<GoogleOAuthProvider clientId="51730502551-mkkokhpvqbutmqbjsfifnhcdvghe8va9.apps.googleusercontent.com">
@@ -33,16 +35,28 @@ export default function Login() {
 							) as Credentials
 						).hd;
 						if (host === "ahduni.edu.in") {
+							<Navigate to="/Home"></Navigate>;
 							console.log("Login Successful");
 						} else {
 							console.log("Login Failed");
+							setIsError(true);
 						}
 					}}
 					onError={() => {
 						console.log("Login Failed");
+						setIsError(true);
 					}}
 				/>
 			</GoogleOAuthProvider>
+			{isError && (
+				<div>
+					<p>
+						Please login with your AHD email address. If you are
+						already logged in with your AHD email address, please
+						logout and try again.
+					</p>
+				</div>
+			)}
 		</div>
 	);
 }

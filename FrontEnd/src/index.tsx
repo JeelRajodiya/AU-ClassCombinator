@@ -7,11 +7,11 @@ import "./styles/global.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
 	{
-		path: "/",
+		path: "/Home",
 		element: <App />,
 	},
 	{
-		path: "/login",
+		path: "/",
 		element: <Login />,
 	},
 ]);

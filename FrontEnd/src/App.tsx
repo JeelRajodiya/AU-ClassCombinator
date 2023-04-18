@@ -52,7 +52,7 @@ export default function App() {
 							query === "" ? "default-height" : "expended"
 						}`}
 					>
-						<h1 className="title">AU Class Combinator</h1>
+						<h1 className="title">Class Combinator</h1>
 						<SearchBar
 							query={query}
 							setQuery={setQuery}

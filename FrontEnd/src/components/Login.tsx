@@ -27,7 +27,7 @@ export default function Login() {
 	let [isLogin, setIsLogin] = React.useState(false);
 	return (
 		<div className="container">
-			<h2>Login with university email access the Combinator</h2>
+			<h2>Login with your university email to access the Combinator</h2>
 			<GoogleOAuthProvider clientId="51730502551-mkkokhpvqbutmqbjsfifnhcdvghe8va9.apps.googleusercontent.com">
 				<GoogleLogin
 					theme="filled_blue"

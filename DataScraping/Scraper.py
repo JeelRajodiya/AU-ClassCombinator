@@ -140,7 +140,7 @@ def scrape(file_name):
 		Semester = lines[4]
 
 		# if there is no faculty added to the course then the course is not added to the json file
-		if Faculties[0] == "Not added" and float(Credits) < 1.5:
+		if Faculties[0] == "Not added":
 			continue
 
 		# if there is a prerequisite then it is added to the json file then the index of the description is changed

@@ -827,20 +827,6 @@
         }
     },
     {
-        "Code": "MKT611",
-        "Level": "Graduate Master's",
-        "Name": "Marketing Research",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "This course introduces the students to the field of marketing research and provides an understanding as to how it can help managers in making better marketing decisions. It aims to provide students with a background in research methods, to introduce them to the issues related to conducting marketing research, data analysis, and methods of evaluation related to marketing. Knowledge of these topics will enable students to both implement and evaluate marketing research during their professional careers.,",
-        "Sections": {}
-    },
-    {
         "Code": "MKT651",
         "Level": "Graduate Master's",
         "Name": "Integrated Marketing Communication",
@@ -1867,20 +1853,6 @@
         }
     },
     {
-        "Code": "TOD221",
-        "Level": "Undergraduate",
-        "Name": "Operations Management",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": ",View/Print Outline, ",
-        "Sections": {}
-    },
-    {
         "Code": "ECO544",
         "Level": "Graduate Master's",
         "Name": "Urban Informal Economy",
@@ -1955,20 +1927,6 @@
                 ]
             }
         }
-    },
-    {
-        "Code": "EFB203",
-        "Level": "Undergraduate",
-        "Name": "Business Designing and Planning",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "EFB101 Introduction to Entrepreneurship",
-        "Sections": {}
     },
     {
         "Code": "EFB502",
@@ -2969,20 +2927,6 @@
         }
     },
     {
-        "Code": "MAT142",
-        "Level": "Undergraduate",
-        "Name": "Introductory Calculus",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "                     This course is one of the core requirements for the Bachelor's programmes in Economics and Business. Students of Bachelor's programmes of other disciplines may take it to fulfill the GER.Calculus is an important mathematical discipline that deals with change and motion. It\u00a0 is extremely useful not only in physics, and engineering, but also in many other diverse areas including, biological sciences, business and economics. This course is a comprehensive introduction to the elementary concepts of calculus namely,\u00a0 Limits, Derivatives and Integrals with some of their applications, including\u00a0 related rates, linearization and differentials, optimization and numerical algorithms like newtons method.\u00a0The applications are drawn from many fields and include related rates, linearization and differentials, optimization and\u00a0 numerical algorithms like newton's method.The course is aimed at first-year undergraduate students of any field. A familiarity with high-school mathematics upto 10th grade\u00a0 is assumed.\u00a0                                                                                                                                                                                              ,",
-        "Sections": {}
-    },
-    {
         "Code": "COM701",
         "Level": "Graduate Doctoral",
         "Name": "Research Writing",
@@ -3084,20 +3028,6 @@
         }
     },
     {
-        "Code": "TOD533",
-        "Level": "Graduate Master's",
-        "Name": "Advanced Business Analytics",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "TOD531 Introduction to Analytics/TOD531 Analytics Lab,[ Basic R  ]",
-        "Sections": {}
-    },
-    {
         "Code": "MKT103",
         "Level": "Undergraduate",
         "Name": "Marketing Management",
@@ -3179,20 +3109,6 @@
                 ]
             }
         }
-    },
-    {
-        "Code": "STA101",
-        "Level": "Undergraduate",
-        "Name": "Introductory Statistics",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "          This course provides an introduction to the elementary concepts of probability and statistics with specific reference to their applications to business, economics and management. Topics covered include: probability distributions, Bayesian inference, hypothesis testing, confidence intervals, sampling methods, experimental designs and linear regression,",
-        "Sections": {}
     },
     {
         "Code": "EFB608",
@@ -3400,20 +3316,6 @@
                 ]
             }
         }
-    },
-    {
-        "Code": "STA100",
-        "Level": "Undergraduate",
-        "Name": "Probability",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": "MAT100 Calculus and Differential Equations/MAT100 Multivariate Calculus",
-        "Description": " Probability Theory is the study of chance. It forms an important pillar of which statistics & data science have been built.This course is an introduction to probability for a diverse audience. The course covers the fundamental concepts & basic examples, assuming no prior knowledge of the subject.The major topics include: Discrete & Continuous sample spaces & probability; random variables, distribution, independence, expectation, conditional expectations & probabilities, generating functions & limit theorems.         ,",
-        "Sections": {}
     },
     {
         "Code": "ECO212",
@@ -3667,20 +3569,6 @@
                 ]
             }
         }
-    },
-    {
-        "Code": "TOD323",
-        "Level": "Undergraduate",
-        "Name": "Operations Strategy",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "Operations Strategy is a major source of competitive advantage in for-profit business and a route to maximize social welfare in not-for-profit enterprises. It is about organizing resources (people, materials & technology) to delivery viable and valuable product to the customer. The course focuses on how firms can organise and acquire resources that allow them to achieve this goal.\u00a0,",
-        "Sections": {}
     },
     {
         "Code": "FAC311",
@@ -4202,20 +4090,6 @@
         }
     },
     {
-        "Code": "TOD322",
-        "Level": "Undergraduate",
-        "Name": "Supply Chain Management",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "Today\u2019s firms need to create & manage a synchronized supply chain to ensure all value adding competencies of the suppliers are transferred to the customers. At the same time, it is important that the supply chain in linked to the overall strategy of the firm and closely linked with achievement of the strategic goals. ",
-        "Sections": {}
-    },
-    {
         "Code": "ECO201",
         "Level": "Undergraduate",
         "Name": "Intermediate Microeconomics",
@@ -4362,20 +4236,6 @@
                 ]
             }
         }
-    },
-    {
-        "Code": "TOD331",
-        "Level": "Undergraduate",
-        "Name": "Supply Chain Analytics",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "Not added",
-        "Sections": {}
     },
     {
         "Code": "MKT623",
@@ -5500,20 +5360,6 @@
         }
     },
     {
-        "Code": "TOD301",
-        "Level": "Undergraduate",
-        "Name": "Simulation Modeling ",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "TODS101 Basic Statistics and Mathematics,[ Any course with basic learning of probability and probability distributions will suffice. Course is offered  to all students of Ahmedabad University, who fulfil this prerequisite. ]",
-        "Sections": {}
-    },
-    {
         "Code": "FAC223",
         "Level": "Undergraduate",
         "Name": "Tax Procedure",
@@ -5645,20 +5491,6 @@
                 ]
             }
         }
-    },
-    {
-        "Code": "EFB202",
-        "Level": "Undergraduate",
-        "Name": "Establishing and Growing Ventures",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "EFB101 Introduction to Entrepreneurship",
-        "Sections": {}
     },
     {
         "Code": "MGT642",
@@ -5997,20 +5829,6 @@
         }
     },
     {
-        "Code": "ECO699",
-        "Level": "Graduate Master's",
-        "Name": "Dissertation",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
-    },
-    {
         "Code": "FAC635",
         "Level": "Graduate Master's",
         "Name": "Financial Modelling",
@@ -6330,20 +6148,6 @@
         }
     },
     {
-        "Code": "TOD212",
-        "Level": "Undergraduate",
-        "Name": "Decision Sciences",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "STA100 Probability, ,PREQ_OR,STA101 Introductory Statistics/STA101 Statistics",
-        "Sections": {}
-    },
-    {
         "Code": "DES102",
         "Level": "Undergraduate",
         "Name": "Visual Communication and Graphic  Design",
@@ -6640,34 +6444,6 @@
         }
     },
     {
-        "Code": "MUS101",
-        "Level": "Undergraduate",
-        "Name": "Inside Indian Music",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "This course is taught by Prachi Vaidya-Dublay under the category PVA-GER. \u201cWhat is Indian? What is Music?\u201d Such questions intrigue us often. MUS101 tries to address these questions by exploring and interrogating the existing genres of Indian Music like Tribal-Folk, Classical-Art, Popular, Devotional and Fusion Music. It focuses on the key principles of music that formulate these genres and connect them to each other, the connection which eventually weaves the complex and diverse fabric called \u2018Indian Music\u2019. The course also tries to understand the relationship of culture and music through the dynamics of above mentioned genres. This course combines Theory and Practice thus students are expected to perform some vocals and also do some writing during the course.\u00a0,",
-        "Sections": {}
-    },
-    {
-        "Code": "MUS103",
-        "Level": "Undergraduate",
-        "Name": "Culturing the Voice",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "This course is taught by Prachi Vaidya-Dublay under the category PVA-GER. It specially is designed for aspiring Voice Professionals. It tires to explore the Idea of Voice on both physical and metaphorical levels. All those who wish to use their voice professionally in their respective fields and careers will find intensive practical sessions in Voice Culture Course useful, which will include Yoga-PraNayaam, Breathing Awareness Exercises and Special Training in Voice and Speech Building. Voice Acting and Story Telling are important segments of this course. Along with the Readings of English Play and Urdu Poetry Recitation, Readings in Hindi, Sanskrit and in some other regional languages also will be encouraged during this course. It may please be noted that this is a Practical Course with some writing required.\u00a0\u00a0,",
-        "Sections": {}
-    },
-    {
         "Code": "BIO554",
         "Level": "Graduate Master's",
         "Name": "Forensic Biotechnology",
@@ -6760,20 +6536,6 @@
         }
     },
     {
-        "Code": "SPS102",
-        "Level": "Undergraduate",
-        "Name": "Identity, Inequality and Difference",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "The course invites students to critically examine 1) the ways in which we present ourselves to social audiences and are ascribed identities around gender & sexuality, class, caste, and tribe/ethnicity 2) how differences in social identification become expectations of appropriate behavior and how these codes of conduct are perceived, negotiated, subverted and mobilized in diverse contexts and 3) hierarchies that cohere around difference. The course will largely focus on contemporary forms of social identification but present them as historically and culturally situated, and mediated by global flows. In particular, we will consider the contradictory effects of new technologies and markets for contemporary forms of social identification and inequality, and the utility of difference for accruing cultural capital in a market economy. Course content is drawn from a range of academic fields of inquiry including anthropology, sociology, literature and cultural studies.\u00a0,",
-        "Sections": {}
-    },
-    {
         "Code": "PHY121",
         "Level": "Undergraduate",
         "Name": "Laboratory Physics - Mechanics",
@@ -6827,22 +6589,6 @@
         }
     },
     {
-        "Code": "SPS103",
-        "Level": "Undergraduate",
-        "Name": "Politics in Independent India",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {
-            "1947": {}
-        }
-    },
-    {
         "Code": "BIO101",
         "Level": "Undergraduate",
         "Name": "Introductory Biology",
@@ -6886,134 +6632,6 @@
                 ]
             }
         }
-    },
-    {
-        "Code": "HST101",
-        "Level": "Undergraduate",
-        "Name": "Ahmedabad as a Gateway to the World",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "The city of Ahmedabad has been at the crossroads of major historical currents. A key commercial centre of western India, Ahmedabad was at the vanguard of industrialisation in modern India. Ahmedabad via the coastal port cities such as Surat was a gateway to the sea routes of the Indian Ocean via the Arabian Sea, home to influences from West Asia as well as peninsular South Asia. Although the city functioned as a political and administrative centre, it had a strong tradition of craft goods production, merchant entrepreneurship, and banking and financial services.\u00a0 It maintained thriving trade contacts with\u00a0 neighbouring towns and port cities as well as imperial centres at Delhi and Agra. In 1700 AD, Ahmedabad was, by some estimates, the sixth most populous city in the world[1]. Today, it continues as one of the most populous cities in India, a key node of national politics as well as business and urban development initiatives and emblematic of the opportunities and challenges before contemporary Indian society, wherein modernist development paradigms have been superimposed on traditional social structures.\u00a0The course will help students understand the city as an arena for economic activities (industry, trade and commerce, and informal work), merchant communities, entrepreneurship, city life and culture, and global engagement over the centuries. It will also examine the causes and consequences of conflicts over material and symbolic resources, which have been key to the social organisation of the city. It examines various efforts at urban development charting the city\u2019s built form for the future. Through a combination of lectures, classroom discussions, and projects the course encourages students to analyse these historical and contemporary processes in Ahmedabad in the wider historical context of Gujarat. Through these experiences, students will receive an introduction to disciplinary concepts and theories that will be built upon systematically by later courses in the student\u2019s chosen major.\u2018Ahmedabad as a Gateway to the World\u2019 is a mandatory course for all BA students majoring in History or SPS (Social and Political Sciences), and for all Integrated MBA students. [1] According to the Financial Times. See https://www.youtube.com/watch?v=pMs5xapBewM&t=5s. ,",
-        "Sections": {}
-    },
-    {
-        "Code": "PHI215",
-        "Level": "Undergraduate",
-        "Name": "Introduction to Indian Philosophy",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": "",
-        "Description": "PREQ_OR",
-        "Sections": {}
-    },
-    {
-        "Code": "LIT105",
-        "Level": "Undergraduate",
-        "Name": "Urdu Prose and Poetry",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
-    },
-    {
-        "Code": "SAN101",
-        "Level": "Undergraduate",
-        "Name": "Learning Sanskrit Through Sanskrit Literature: Elementary",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "This course is the first of a set of two courses where students will learn scholastic Sanskrit through exercises drawn from various Sanskrit literary sources, such as well-known subh\u0101\u1e63itas, Pa\u00f1catantra, V\u0101lm\u012bki R\u0101m\u0101ya\u1e47a, etc. In this course, students will be introduced gradually to various aspects of Sanskrit morphology and syntax so as to enable them to read simple Sanskrit sentences and verses. Exercises (sentences, verses and passages) for each class will be drawn from original Sanskrit works (brief description below), and will be chosen so as to exemplify the key grammatical features which need to be explained.            The Pa\u00f1catantra is a famous collection of Sanskrit stories, in verse and prose, dated to around the second/third century CE and is considered a n\u012bti\u015b\u0101stra (a treatise on government or political science). The V\u0101lm\u012bki R\u0101m\u0101ya\u1e47a is one of the two famous Indian epics, a mammoth work comprising nearly 24,000 verses and which is of monumental importance and legacy.  Each class will be divided into three segments: a revision of the past lesson(s) (and review of assigned after-class exercises), the scheduled lesson, and in-class exercises taken from Sanskrit literature. There will also be surprise tests to further reinforce the learning of various grammatical features.   This course will prepare students to take the second of this set of courses, wherein students will study more advanced syntactical aspects of the language. These two courses will prepare students with the adequate training in Sanskrit grammar to begin their study of original Sanskrit works. Knowledge of the Devan\u0101gar\u012b script is not a prerequisite for this course.,",
-        "Sections": {}
-    },
-    {
-        "Code": "SPS255",
-        "Level": "Undergraduate",
-        "Name": "Introduction to Comparative Politics",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
-    },
-    {
-        "Code": "PER101",
-        "Level": "Undergraduate",
-        "Name": "Introduction to Persian I",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {
-            "30": {}
-        }
-    },
-    {
-        "Code": "HST210",
-        "Level": "Undergraduate",
-        "Name": "Research Methods II: What is History?",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None,[ Students should ideally have completed a course in the Divisions of Humanities and Languages or Social Sciences ]",
-        "Sections": {}
-    },
-    {
-        "Code": "HST220",
-        "Level": "Undergraduate",
-        "Name": "Science, Technology, and the Making of the Modern World",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "        The world as we know it today is characterised by a high degree of globalisation, by the political and economic prominence of industrialised nations, and by the primacy given to science and technology in most societies.How did such a world come about? The course explores this question by tracing the development of modern science and technology and its relationship with imperialism and other engines of globalisation in the last five centuries. In it we will look at a range of viewpoints, thus trying to move away from a purely Eurocentric account. ,",
-        "Sections": {}
-    },
-    {
-        "Code": "PSY210",
-        "Level": "Undergraduate",
-        "Name": "Cognitive Psychology",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "PSY101 Introduction to Psychology",
-        "Sections": {}
     },
     {
         "Code": "MAT 146",
@@ -7097,50 +6715,6 @@
                     ]
                 ]
             }
-        }
-    },
-    {
-        "Code": "PHI100",
-        "Level": "Undergraduate",
-        "Name": "Introduction to Western Philosophy",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
-    },
-    {
-        "Code": "PHI120",
-        "Level": "Undergraduate",
-        "Name": "Introduction to Ethical Theory: Virtues, Vices and Values",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "       This course introduces students to some of the main themes of philosophical ethics. Students will approach the subject through a close study of classical readings by Aristotle, Immanuel Kant, and John Stuart Mill, as well as contemporary work by such authors as Julia Driver, Amartya Sen, and Margaret Urban Walker. Among the fundamental questions to be discussed are 'what makes a life go well or poorly?', 'what makes a person good or bad?',  and 'what makes an action right or wrong?'.\u00a0This is a core course for students minoring in philosophy and an elective for students majoring in PHL. Other students may take the course to fulfill their GER requirements.                                                                         ,",
-        "Sections": {}
-    },
-    {
-        "Code": "SPS202",
-        "Level": "Undergraduate",
-        "Name": "Family, Community, Nation",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": "",
-        "Description": "PREQ_OR",
-        "Sections": {
-            "5": {}
         }
     },
     {
@@ -7332,34 +6906,6 @@
                 ]
             }
         }
-    },
-    {
-        "Code": "PSY220",
-        "Level": "Undergraduate",
-        "Name": "Social Psychology",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "The course titled \u2018Social Psychology\u2019 is a core course towards a major in Psychology. The students will be introduced to the fundamental concepts, principles and theories in social psychology to then review these in light of the changing times that we live in. The course introduces the idea of social psychologies getting refracted in different social, political and cultural contexts as contrasted to a default universal social psychology. After setting the tone, the course discusses the research methods in social psychology critiquing some key studies as required, while also identifying the advances in social cognition through neuroscience research. The key elements of the study are individual cognition, affect and behavior in the implied and/or actual presence of others, interpersonal behavior- principles and theories therein, esp., focusing on pro-social behavior and aggression and group processes, where the key step level changes that happen in human behavior as a consequence of group affiliation. Throughout the course, applications in different contexts, with an interdisciplinary lens, are introduced and examined in detail.\u00a0,",
-        "Sections": {}
-    },
-    {
-        "Code": "PHY731",
-        "Level": "Graduate Doctoral",
-        "Name": "Atmospheric Physics",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
     },
     {
         "Code": "BIO106",
@@ -7673,62 +7219,6 @@
         }
     },
     {
-        "Code": "SPA111",
-        "Level": "Undergraduate",
-        "Name": "Conversational Spanish - I",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
-    },
-    {
-        "Code": "JAP111",
-        "Level": "Undergraduate",
-        "Name": "Conversational Japanese - I",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "This course will serve as one of the core/method/major specific components for Bachelor of Art (BA) in Philosophy, History and Languages (PHL) and as a free elective and General Education Requirements (GER) for students across the schools at Ahmedabad University.",
-        "Sections": {}
-    },
-    {
-        "Code": "RES101",
-        "Level": "Undergraduate",
-        "Name": "Introduction to Research Methodology",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "This course introduces students to one of the ways in which we acquire knowledge about the world\u2014Doing Research. Research is an attempt to understand the world through systematic study\u2014that is, through identification of a problem, question, or hypothesis; selection of methods to investigate the question, collecting data, interpreting data, and reporting findings. The process of designing and doing research is a mix of various elements including the world view and social location of the researcher (researcher positionality), the selection of what one wants to investigate (research problem/question), and how one goes about doing it (research methods). This introductory and project-based course will familiarize students with the philosophical underpinnings of research, and enable them to identify, compare and contrast different qualitative and quantitative research methods suitable for answering a question, apply their understanding to design a research project in small groups, collect and analyse data, and demonstrate basics of academic writing.,",
-        "Sections": {}
-    },
-    {
-        "Code": "PSY280",
-        "Level": "Undergraduate",
-        "Name": "Abnormal Psychology",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "This course is intended to provide students an overview of the field of Clinical Psychology and will cover the basics of psycho-pathology, psycho-diagnostics and psycho-therapeutics. The course goes into details regarding the history of the science, as well as contemporary domains of Clinical Psychology such as Forensic Psychology and Neuro Psychology.                                                   \u00a0Students will also be introduced to the wide spectrum of various psychological disorders with origins in childhood (ADHD, Autism) to the disorders commonly found in the geriatric population such as Dementia. The students will be briefed regarding the various assessment and psychotherapeutic strategies used by clinical psychologists in their daily practice. By the end of the course, students will have a basic understanding of the range of psychological disorders, assessment and psychotherapeutic services that clinical psychologists provide to clients. ,",
-        "Sections": {}
-    },
-    {
         "Code": " PSY310",
         "Level": "Undergraduate",
         "Name": "Lab in Psychology",
@@ -7801,20 +7291,6 @@
                 ]
             }
         }
-    },
-    {
-        "Code": "PHI110",
-        "Level": "Undergraduate",
-        "Name": "Introduction to Islamic Philosophy",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
     },
     {
         "Code": "PHY313",
@@ -8034,50 +7510,6 @@
         }
     },
     {
-        "Code": "PSY252",
-        "Level": "Undergraduate",
-        "Name": "Health Psychology",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": "PSY101 Introduction to Psychology",
-        "Description": "Health psychology focuses on how biological, social and psychological factors                    influence health and illness. This course is designed to give students a broad overview of the field of health psychology. The course is designed to introduce the history, evolution and interdisciplinary nature of health psychology and the mind body connection. It also examines how various socio- cultural differences affect diseases, preventive and health promotive behaviour. The course will help students understand why individuals are healthy, and how do they cope with various illnesses, factors which affect disease progression and recovery, wellness and illness. The course focuses on the role of stress in illness; how the endocrine system and the other systems respond to alleviated stress level, role of certain lifestyle factors, such as smoking or weight control; and specific chronic illnesses, such as cancer and heart disease.The course aims to impart basic skills to handle stress, weight, or pain management, smoking cessation, and risky sexual or health related behaviors.,",
-        "Sections": {}
-    },
-    {
-        "Code": "IHS501",
-        "Level": "Graduate Master's",
-        "Name": "Key Concepts in Social Theory",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": "[ None for PhD students in humanities and social sciences. Masters\u2019 and undergraduate students should have taken at least one writing course",
-        "Description": "None",
-        "Sections": {}
-    },
-    {
-        "Code": "HST 203",
-        "Level": "Undergraduate",
-        "Name": "Global History Lab: A History of the World since 1300",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {
-            "1300": {}
-        }
-    },
-    {
         "Code": "STA 355",
         "Level": "Undergraduate",
         "Name": "Stochastic Processes",
@@ -8113,20 +7545,6 @@
                 ]
             }
         }
-    },
-    {
-        "Code": "PHI235",
-        "Level": "Undergraduate",
-        "Name": "Philosophy of Psychology",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
     },
     {
         "Code": "PHI335",
@@ -8166,34 +7584,6 @@
         }
     },
     {
-        "Code": "PVA 171",
-        "Level": "Undergraduate",
-        "Name": "Theatre and Society",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
-    },
-    {
-        "Code": "PHI 360",
-        "Level": "Undergraduate",
-        "Name": "Political Philosophy",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "PHI 100 Introduction to Western Philosophy/PHI100 Introduction to Western Philosophy, PHI 120 Introduction to Ethical Theory: Virtues, Vices and Values/PHI120 Introduction to Ethical Theory: Virtues, Vices and Values, PHI200 History of Modern Philosophy: Metaphysics and Epistemology, PHI 250 Justice in a Global Context/PHI250 Justice in a Global Context, PHL 201 Text and Interpretation/PHL201 Text and Interpretation, PHL301 Foundation Seminar, PHL110 Introduction to Philosophy: Knowledge, Reality, and the Self, PHL115 Philosophy as a Way of Life",
-        "Sections": {}
-    },
-    {
         "Code": "PHI 260",
         "Level": "Undergraduate",
         "Name": "Political Philosophy",
@@ -8229,20 +7619,6 @@
                 ]
             }
         }
-    },
-    {
-        "Code": "LIT120",
-        "Level": "Undergraduate",
-        "Name": "Introduction to Hindi Literature",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None,[ Students should be able to speak, read and write Hindi to take this course. ]",
-        "Sections": {}
     },
     {
         "Code": "MAT585",
@@ -8320,20 +7696,6 @@
         }
     },
     {
-        "Code": "JAP211",
-        "Level": "Undergraduate",
-        "Name": "Intermediate Conversational Japanese - I",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "JAP-101 Japanese for beginners, ,PREQ_OR,JAP111 Conversational Japanese - I, JAP112 Conversational Japanese - II,PREQ_OR,PHL132 Introduction to Japanese, JAP102 Introduction to Japanese,PREQ_OR,PHL132 Introduction to Japanese, JAP112 Conversational Japanese - II",
-        "Sections": {}
-    },
-    {
         "Code": "MAT 312",
         "Level": "Undergraduate",
         "Name": "Abstract Algebra",
@@ -8369,76 +7731,6 @@
                 ]
             }
         }
-    },
-    {
-        "Code": "PSY325",
-        "Level": "Undergraduate",
-        "Name": "Thinking and Reasoning",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "Thinking and Reasoning is an elective course for BA Psychology majors and is mainly (but not exclusively) aimed at BA Psychology students. Also, any student who is interested in the psychology of thinking and reasoning (and fulfilled the prerequisite of Introduction to Psychology) can opt for this course. ",
-        "Sections": {}
-    },
-    {
-        "Code": "PSY350",
-        "Level": "Undergraduate",
-        "Name": "Counselling Psychology",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": ", PSY252 Health Psychology, PSY272 Industrial and Organisational Psychology, PSY280 Abnormal Psychology,PREQ_OR,PSY280 Abnormal Psychology,PREQ_OR,PSY252 Health Psychology,[ PSY101 is mandatory, the student needs to have completed any one of the three pre-requisites in OR (either Health Psychology or Personality and individual differences or Abnormal Psychology ]",
-        "Sections": {}
-    },
-    {
-        "Code": "PSY 401",
-        "Level": "Undergraduate",
-        "Name": "Psychological Assessment and Testing",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "PSY 235 Psychophysics lab/ PSY310 Lab in Psychology, ",
-        "Sections": {}
-    },
-    {
-        "Code": "SPS400",
-        "Level": "Undergraduate",
-        "Name": "Thesis/Capstone Project Proposal Course",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "SPS300 Qualitative Research Methods, SPS 301 History of the \\'Social\\'",
-        "Sections": {}
-    },
-    {
-        "Code": "HST 201",
-        "Level": "Undergraduate",
-        "Name": "Trade and Religion in the Indian Ocean World",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
     },
     {
         "Code": "SPS 304",
@@ -8658,20 +7950,6 @@
         }
     },
     {
-        "Code": "GER 111",
-        "Level": "Undergraduate",
-        "Name": "Conversational German I",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "        This elementary German language course aims to equip new learners with the ability to use German for \u2018everyday\u2019 purposes. It aims to expose students to aspects of German culture and history. As an introductory course it aims to engender an appreciation for the language and its culture(s). This is the first of four courses in Conversational German.Students are expected to undertake daily practice by revising 1-2 hours a week outside of class.This language course will have three sessions every week of a duration of 1 hour each.This course is open to all students across the University.,",
-        "Sections": {}
-    },
-    {
         "Code": "PHY410",
         "Level": "Undergraduate",
         "Name": "General Relativity, Black holes & Cosmology",
@@ -8821,90 +8099,6 @@
         }
     },
     {
-        "Code": "SPS351",
-        "Level": "Undergraduate",
-        "Name": "Studying migration: Cultural politics of human mobility",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "Migration is typically defined as a change in residence across administrative borders. What prompts people to leave home, whatever their attachments and grievances with \u201chome\u201d may be? How do they leave, where do they go and how do they make new homes in new places? Keeping in mind that capability to move differs, how does gender, class, caste, region, religion, and so on affect migration? How is the sociocultural and economic organisation of the origin and destination region refashioned through migration? These are some of the questions the course will ask students to engage with.",
-        "Sections": {}
-    },
-    {
-        "Code": "SPS353",
-        "Level": "Undergraduate",
-        "Name": "Political Psychology",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "What does it mean to study biopolitics, personality, cognitive, and affective psychology; and intergroup relations? How does cognitive and emotional processes of national leaders and citizens influence their decision-making processes and outcomes? What are the promises, and perils, of political psychology that invites individual decision makers' lived experience to converse with, and contest, abstract disciplinary theories and categories? In this practice-intensive seminar, we explore political psychology and some quantitive methods with specific attention to their subvert, generated, evolved understandings of politics, power, and its dynamics. Readings draws on exemplary political psychologies as well as discussions of quantitive methods and methodologies in social science. Students will have the opportunity to redesign political psychology research projects related to students' own primary areas of interests and will be expected to make significantly weekly commitments to R programming practices. The seminar/hands-on workshop is intended as preparation for senior and junior students planning to conduct research for their undergraduate thesis, but those interested in a capstone project and the ontological, epistemological, political, and psychological implication of studying power from individuals are also welcomed.\u00a0,",
-        "Sections": {}
-    },
-    {
-        "Code": "SPS354",
-        "Level": "Undergraduate",
-        "Name": "Caste and the Contemporary",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "This course introduces students to caste as an analytical category in studying social and cultural processes. Making use of ethnographies, letters, memoirs, and autobiographies, students will engage writings on caste both as subject and method. What does it mean to write about caste in the contemporary? How do they inform one another? Rather than demonstrate a customary prevalence of caste in the present-day, the course explores the contours of contemporary theory the lens of caste. The experiential alongside anthropological modes of understanding serve as interrogative strands throughout the course. When it is not reduced to a singular concept around time, the contemporary becomes a unique vantage point to critically locate how we have come to inhabit the social and the ethical. Further, the course is designed to bring in global perspectives around caste and does not limit it to an isolated regional phenomenon.The course is valuable to students who are interested in questions around social hierarchy, ethics, and experience.,",
-        "Sections": {}
-    },
-    {
-        "Code": "PER201",
-        "Level": "Undergraduate",
-        "Name": "Intermediate Persian",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "Not added",
-        "Sections": {}
-    },
-    {
-        "Code": "GER211",
-        "Level": "Undergraduate",
-        "Name": "Intermediate Conversational German - I",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "Not added",
-        "Sections": {}
-    },
-    {
-        "Code": "MUS104",
-        "Level": "Undergraduate",
-        "Name": "Fundamentals of Music and Sound",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "Not added",
-        "Sections": {}
-    },
-    {
         "Code": "BIO319",
         "Level": "Undergraduate",
         "Name": "Physiology of excitable cells",
@@ -8940,20 +8134,6 @@
                 ]
             }
         }
-    },
-    {
-        "Code": "MUS105",
-        "Level": "Undergraduate",
-        "Name": "A Glimpse into the World of Hindustani Music",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "Not added",
-        "Sections": {}
     },
     {
         "Code": "BIO200",
@@ -9261,48 +8441,6 @@
         }
     },
     {
-        "Code": "PSY101",
-        "Level": "Undergraduate",
-        "Name": "Introduction to Psychology",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
-    },
-    {
-        "Code": "CHY101",
-        "Level": "Undergraduate",
-        "Name": "Organic Chemistry",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "CHY100 Chemistry,[ Fundamental aspects of chemistry and chemical principles; emphasis on structure, bonding, and stoichiometry ]",
-        "Sections": {}
-    },
-    {
-        "Code": "ECE504",
-        "Level": "Graduate Master's",
-        "Name": "Internet of Things",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "EVD220 Embedded System Design, ",
-        "Sections": {}
-    },
-    {
         "Code": "CSE340",
         "Level": "Undergraduate",
         "Name": "Operating Systems",
@@ -9377,141 +8515,6 @@
         }
     },
     {
-        "Code": "ECE209",
-        "Level": "Undergraduate",
-        "Name": "Digital Design",
-        "Credits": "4",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {
-            "1": {
-                "Mon": [
-                    [
-                        "10:00",
-                        "11:00"
-                    ],
-                    [
-                        "31-07-2023",
-                        "26-11-2023"
-                    ]
-                ],
-                "Wed": [
-                    [
-                        "10:00",
-                        "11:00",
-                        "13:00",
-                        "14:00",
-                        "14:00",
-                        "15:00"
-                    ],
-                    [
-                        "31-07-2023",
-                        "26-11-2023",
-                        "31-07-2023",
-                        "26-11-2023",
-                        "31-07-2023",
-                        "26-11-2023"
-                    ]
-                ],
-                "Fri": [
-                    [
-                        "10:00",
-                        "11:00"
-                    ],
-                    [
-                        "31-07-2023",
-                        "26-11-2023"
-                    ]
-                ]
-            },
-            "2": {
-                "Mon": [
-                    [
-                        "10:00",
-                        "11:00"
-                    ],
-                    [
-                        "31-07-2023",
-                        "26-11-2023"
-                    ]
-                ],
-                "Wed": [
-                    [
-                        "10:00",
-                        "11:00"
-                    ],
-                    [
-                        "31-07-2023",
-                        "26-11-2023"
-                    ]
-                ],
-                "Fri": [
-                    [
-                        "10:00",
-                        "11:00",
-                        "13:00",
-                        "14:00",
-                        "14:00",
-                        "15:00"
-                    ],
-                    [
-                        "31-07-2023",
-                        "26-11-2023",
-                        "31-07-2023",
-                        "26-11-2023",
-                        "31-07-2023",
-                        "26-11-2023"
-                    ]
-                ]
-            },
-            "3": {
-                "Mon": [
-                    [
-                        "10:00",
-                        "11:00",
-                        "13:00",
-                        "14:00",
-                        "14:00",
-                        "15:00"
-                    ],
-                    [
-                        "31-07-2023",
-                        "26-11-2023",
-                        "31-07-2023",
-                        "26-11-2023",
-                        "31-07-2023",
-                        "26-11-2023"
-                    ]
-                ],
-                "Wed": [
-                    [
-                        "10:00",
-                        "11:00"
-                    ],
-                    [
-                        "31-07-2023",
-                        "26-11-2023"
-                    ]
-                ],
-                "Fri": [
-                    [
-                        "10:00",
-                        "11:00"
-                    ],
-                    [
-                        "31-07-2023",
-                        "26-11-2023"
-                    ]
-                ]
-            }
-        }
-    },
-    {
         "Code": "MAT101",
         "Level": "Undergraduate",
         "Name": "Discrete Mathematics",
@@ -9555,132 +8558,6 @@
                 ]
             }
         }
-    },
-    {
-        "Code": "ENR503",
-        "Level": "Graduate Master's",
-        "Name": "Machine Vision, Learning and Applications",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "[ Understanding of basic programming, calculus, differential equations, statistics and mathematical concepts. Student has to explain how he/she is qualified to pursue the course in case if the prerequisite criteria are not met and must receive approval from instructor before registering the course. ]",
-        "Sections": {}
-    },
-    {
-        "Code": "CSE516",
-        "Level": "Graduate Master's",
-        "Name": "Probabilistic Graphical Models",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
-    },
-    {
-        "Code": "HRT221",
-        "Level": "Undergraduate",
-        "Name": "Conservation and Preservation Science",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
-    },
-    {
-        "Code": "CSE100",
-        "Level": "Undergraduate",
-        "Name": "Fundamentals of Computer Programming",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "The course is aimed to give exposure to programming paradigms and to develop the problem solving ability. The course would introduce the concepts of computer programming. Following topics would be covered during the course:           Problem solving using Algorithms and Flowcharts; Programming paradigms; Foundations of Python and C programming; Visual programming; Operators; Control statements; Input/output operations; Decision making and branching; Type conversions; Collections; Functions; String; File management; Exception handling. ,",
-        "Sections": {}
-    },
-    {
-        "Code": "CSD100",
-        "Level": "Undergraduate",
-        "Name": "Introduction to Data Science",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "Data science is an interdisciplinary area that involves recording, storing and analyzing data to gain insights and knowledge for decision making. This introductory course provides a foundation in data science for first year undergraduate students. The course covers data science process and its life cycle, data collection using sampling/surveys, ordering/organizing, data processing and visualization of data through charts and maps.  Statistical fundamentals needed for analysis and interpretation of data are covered along with cases and examples related to real life applications of data science.,",
-        "Sections": {}
-    },
-    {
-        "Code": "CSD101",
-        "Level": "Undergraduate",
-        "Name": "Fundamentals of Data Science",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "Data science is an interdisciplinary area that involves recording, storing and analyzing data to gain insights and knowledge for decision making. This is an intermediate level course providing foundation in data science and programming for first year undergraduate students. The course covers data science process and its life cycle, data collection using sampling/surveys, ordering/organizing, statistical analysis and visualization of data. Cases, examples and practical applications of data science are discussed using spreadsheet and python programming.\u00a0,",
-        "Sections": {}
-    },
-    {
-        "Code": "CSD102",
-        "Level": "Undergraduate",
-        "Name": "Data Science",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "CSD100 Introduction to Data Science, ",
-        "Sections": {}
-    },
-    {
-        "Code": "CHY100",
-        "Level": "Undergraduate",
-        "Name": "Chemistry",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "This introductory chemistry course covers fundamentals of inorganic and physical chemistry. It focuses primarily on important inorganic concepts like transition elements, coordination chemistry, acids and bases. It also gives an insight to physical concepts like chemical kinetics, equilibrium, electrochemistry and solution chemistry. Along with this, the course gives an overview and hands-on experience to important instrumental techniques used in inorganic and physical chemistry. This course makes the basis for some of the specialized topics of chemical engineering curriculum.\u00a0\u00a0,",
-        "Sections": {}
-    },
-    {
-        "Code": "PHY714",
-        "Level": "Graduate Doctoral",
-        "Name": "Special Topic : Introduction to Quantum Field Theory",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None,[ List of topics on which prior knowledge required: familiarity with the following graduate level physics subjects: Advanced Classical Mechanics (Lagrangian and Hamiltonian mechanics), Advanced Quantum Mechanics (theory of angular momentum, annihilation and creation operators), Special Relativity, Electrodynamics. ]",
-        "Sections": {}
     },
     {
         "Code": "CSE205",
@@ -9818,132 +8695,6 @@
         }
     },
     {
-        "Code": "CHE211",
-        "Level": "Undergraduate",
-        "Name": "Material and Energy Balance",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
-    },
-    {
-        "Code": "ENR203",
-        "Level": "Undergraduate",
-        "Name": "Material Science and Engineering",
-        "Credits": "2",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "[ Applied Physics, Math ]",
-        "Sections": {}
-    },
-    {
-        "Code": "ENR205",
-        "Level": "Undergraduate",
-        "Name": "Thermodynamics-1",
-        "Credits": "2",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "This course covers the fundamental principles of thermodynamics and physical chemistry as applied to energy systems. This course provides a foundation in fundamental thermodynamic phenomena, including the first and second laws of thermodynamics, thermodynamic properties and equations of state.,",
-        "Sections": {}
-    },
-    {
-        "Code": "CSE518",
-        "Level": "Graduate Master's",
-        "Name": "Artificial Intelligence",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "CSC104 Introduction to Computation and Programming, CSC210 Data Structures and Algorithms/CSE210 Data Structures and Algorithms, MAT101 Discrete Mathematics, ",
-        "Sections": {}
-    },
-    {
-        "Code": "MEC200",
-        "Level": "Undergraduate",
-        "Name": "Kinematics and Structure of Machines",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "MAT200 Linear Algebra, MEC210 Strength of Materials",
-        "Sections": {}
-    },
-    {
-        "Code": "CHE212",
-        "Level": "Undergraduate",
-        "Name": "Mechanical Operations",
-        "Credits": "2",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
-    },
-    {
-        "Code": "MEC301",
-        "Level": "Undergraduate",
-        "Name": "Dynamics of Machines and Vibrations",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "MAT203 Differential Equations and Linear Algebra, ,[ # A preliminary knowledge of the vectors, vector diagrams, computation of resultant vectors will be useful.\\\\\\\\r\\\\\\\\n# A preliminary knowledge of the velocity and acceleration principles in mechanisms will be useful.\\\\\\\\r\\\\\\\\nHowever, a recapitulation of the preliminary concepts will be provided at the beginning of course ]",
-        "Sections": {}
-    },
-    {
-        "Code": "CHE311",
-        "Level": "Undergraduate",
-        "Name": "Chemical Reaction Engineering-I",
-        "Credits": "2",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "This course will cover the principles involved in the selection and design of chemical reactors for homogeneous reactions.,",
-        "Sections": {}
-    },
-    {
-        "Code": "ENR305",
-        "Level": "Undergraduate",
-        "Name": "Sensors, Instruments and Experimentation",
-        "Credits": "2",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "Teaching scheme : 4 Hours of lab/week :  Credits 2          \u00a0Introduction to construction and characteristics of sensors. Experiments involving application of sensors for physical quantities like temperature, pressure, force, torque, strain, velocity, acceleration, linear and angular speed and displacement, volumetric and mass flow rates,  illumination, and sound level etc. Introduction to calibration of sensors and data acquisition systems. ,",
-        "Sections": {}
-    },
-    {
         "Code": "MAT248",
         "Level": "Undergraduate",
         "Name": "Applied Linear Algebra",
@@ -10001,185 +8752,6 @@
                 ]
             }
         }
-    },
-    {
-        "Code": "MEC302",
-        "Level": "Undergraduate",
-        "Name": "Design,Materials and Manufacturing",
-        "Credits": "4",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "ENR203 Material Science and Engineering, ENR204 Mechanics of Rigid Bodies, MEC0000 Materials and Process of Manufacture/MEC205 Materials and Process of Manufacture, MEC206 Computer Aided Design and Manufacturing, ENR100 Visualisation, ENR101 Product Realisation",
-        "Sections": {}
-    },
-    {
-        "Code": "CHE312",
-        "Level": "Undergraduate",
-        "Name": "Experiments in Fluid Flow  and Heat Transfer",
-        "Credits": "1.5",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "CHE201 Fluid Mechanics, ",
-        "Sections": {}
-    },
-    {
-        "Code": "CSE332",
-        "Level": "Undergraduate",
-        "Name": "Operating Systems",
-        "Credits": "4",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "CSE100 Fundamentals of Computer Programming, CSE205 Data Structures, CSE2XX Computer Organization and Architecture/CSE206 Computer Organization and Architecture",
-        "Sections": {
-            "1": {
-                "Mon": [
-                    [
-                        "13:00",
-                        "14:00",
-                        "14:00",
-                        "15:00"
-                    ],
-                    [
-                        "31-07-2023",
-                        "26-11-2023",
-                        "31-07-2023",
-                        "26-11-2023"
-                    ]
-                ],
-                "Tue": [
-                    [
-                        "09:30",
-                        "11:00"
-                    ],
-                    [
-                        "31-07-2023",
-                        "26-11-2023"
-                    ]
-                ],
-                "Thu": [
-                    [
-                        "09:30",
-                        "11:00"
-                    ],
-                    [
-                        "31-07-2023",
-                        "26-11-2023"
-                    ]
-                ]
-            },
-            "2": {
-                "Tue": [
-                    [
-                        "09:30",
-                        "11:00"
-                    ],
-                    [
-                        "31-07-2023",
-                        "26-11-2023"
-                    ]
-                ],
-                "Wed": [
-                    [
-                        "13:00",
-                        "14:00",
-                        "14:00",
-                        "15:00"
-                    ],
-                    [
-                        "31-07-2023",
-                        "26-11-2023",
-                        "31-07-2023",
-                        "26-11-2023"
-                    ]
-                ],
-                "Thu": [
-                    [
-                        "09:30",
-                        "11:00"
-                    ],
-                    [
-                        "31-07-2023",
-                        "26-11-2023"
-                    ]
-                ]
-            },
-            "3": {
-                "Tue": [
-                    [
-                        "09:30",
-                        "11:00"
-                    ],
-                    [
-                        "31-07-2023",
-                        "26-11-2023"
-                    ]
-                ],
-                "Thu": [
-                    [
-                        "09:30",
-                        "11:00"
-                    ],
-                    [
-                        "31-07-2023",
-                        "26-11-2023"
-                    ]
-                ],
-                "Fri": [
-                    [
-                        "13:00",
-                        "14:00",
-                        "14:00",
-                        "15:00"
-                    ],
-                    [
-                        "31-07-2023",
-                        "26-11-2023",
-                        "31-07-2023",
-                        "26-11-2023"
-                    ]
-                ]
-            }
-        }
-    },
-    {
-        "Code": "CSE526",
-        "Level": "Graduate Master's",
-        "Name": "Advanced Computer Arithmetic: Algorithms and Sub-systems",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": "ECE209 Digital Design",
-        "Description": "                This is an elective for the BTech CSE/ICT program (can be taken by BS in CS students, if they have the pre-requisite), and an elective for the MTech CSE program.\u00a0This course would cover the following (tentative) topics:\u00a0 Review of Digital Sequential Circuits: \u2022Finite State Machines (FSM),\u2022Review of RTL/pipelined systems Arithmetic-Logic and Datapath Sub-systems (Logic Structures / Algorithms, and Implementations): \u2022Arbiter (FSM) with predefined priority order, arbiter with request order \u2022Pseudo-Random number generator based on Linear Feedback Shift-Registers (LFSR), modular and standard LFSR \u2022Error Correcting Codes: LFSR based CRC, and Hamming7-4 and 12-8 codes\u2022 Insertion Sort digital implementationDigital Logic/Structures for Adders:  \u2022Bit-serial adder \u2022Ripple-carry adder\u2022Carry-skip or bypass adder, multi-level skipping \u2022Carry-select adder (multi-level) \u2022Conditional-sum adder \u2022Carry look-ahead adder (based on propagate and generate signals), multi-level look-ahead blocks \u2022Prefix-tree adders: Radix-2 and radix-4 Brent-Kung adder, Kogge-Stone adder, Sklansky adder, Arbitrarily drawn prefix-tree structures\u2022Hybrid adders: Carry select adder with look-ahead block, Carry select adder with prefix-tree (Brent-Kung or Kooge-Stone) block (aka \u201csparse-tree adder\u201d) \u2022Carry-Save Adder (CSA) tree for multi-operand addition: Wallace and Dadda tree adder structures based on FA and HA\u2022Concept of column based counting: 3-to-2 counters, 5-to-3 counters, 10-to-4 counters \u2022Multi-operand (serial) addition using one CSA and one Carry Propagate Adder (CPA) \u2022Signed-number trick (complementing sign-bit and placing -1 in the MSB column) applied to multi-operand additions    Digital Logic/Structures for Multipliers\u2022Unsigned Multiplier (serial left-shift or right-shift algorithm) \u2022Unsigned Array Multiplier and its parallelogram/rectangular structure \u2022Radix-2, radix-4 and radix-8 Booth encoding based multiplier (for signed operands)  \u2022Modified Baugh-Wooley Multiplier (for signed operands) and its parallelogram/rectangular structure \u2022Divide and conquer multipliers (for unsigned operands) \u2022Squaring circuit (single operand multiplier, with reduced partial products) Digital Logic/Structures for Division: Non-restoring method, and restoring method, SRT (Sweeney, Robertson and Tocher) algorithm, Goldschmidt algorithmDigital Logic/Structures for Mathematical functions: \u2022 Introduction to Fixed-Point (FXP) number system and related quantization error\u2022 CORDIC Algorithm (circular/rectangular/hyperbolic versions with rotational/vectoring modes), for approximation of math functions\u2022 Newton-Raphson method (for reciprocal, for division, for reciprocal of sqr_root)\u00a0\u2022 Piece-Wise-Linear-Approximation of math functions (based on Look-up table method)\u00a0NOTE: Many of the above topics would be taught, with the help of relevant Verilog HDL codes and Logisim tool                                                                                                                                                 ,",
-        "Sections": {}
-    },
-    {
-        "Code": "CSE525",
-        "Level": "Graduate Master's",
-        "Name": "Theory of Computing",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "CSC210 Data Structures and Algorithms/CSE210 Data Structures and Algorithms, CSC310 Advanced Data Structures and Algorithms/CSE310 Advanced Data Structures and Algorithms, MAT101 Discrete Mathematics",
-        "Sections": {}
     },
     {
         "Code": "ECE302",
@@ -10264,132 +8836,6 @@
         }
     },
     {
-        "Code": "MAT281",
-        "Level": "Undergraduate",
-        "Name": "Multivariable Calculus",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "[ Class 12th with mathematics is necessary. ]",
-        "Sections": {}
-    },
-    {
-        "Code": "ENR486",
-        "Level": "Undergraduate",
-        "Name": "BTech Thesis-1",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "NA,",
-        "Sections": {}
-    },
-    {
-        "Code": "CSE543",
-        "Level": "Graduate Master's",
-        "Name": "MOOC: Mathematics for Machine Learning Specialization",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
-    },
-    {
-        "Code": "MEC405",
-        "Level": "Undergraduate",
-        "Name": "Learning Factory Project",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "Not added",
-        "Sections": {}
-    },
-    {
-        "Code": "CHE440",
-        "Level": "Undergraduate",
-        "Name": "Process Design and Economics",
-        "Credits": "2",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "CHE170 Introduction to Materials Science and Engineering, CHE201 Fluid Mechanics, CHE204 Mass Transfer Operations - I, CHE211 Material and Energy Balance, CHE300 Mass Transfer Operations - II, ,[ Above are few courses listed as prerequsites . However for understanding entire chemical engineeirng  is recommended to know ]",
-        "Sections": {}
-    },
-    {
-        "Code": "CSE540",
-        "Level": "Graduate Master's",
-        "Name": "Cloud Computing",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "CSC330 Computer Networks/CSE330 Computer Networks, CSC340 Operating Systems/CSE340 Operating Systems, COSC201 Data Structures and Algorithms, CSC102 Object Oriented Programming",
-        "Sections": {}
-    },
-    {
-        "Code": "CHE504",
-        "Level": "Graduate Master's",
-        "Name": "Catalysis and Catalytic Processes",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "Study of catalysts and catalytic process is highly interdisciplinary in nature combining the concepts and applications from domains such as Chemistry, ChemicalEngineering and Material Science. This course covers the fundamentals of catalysis and has been designed to cater the need of students coming from these diverse areas. This course includes basic modes of catalytic action, classification and key concepts, Industrial applications of catalysts, desired characteristics, synthesis and characterization techniques as well as kinetics of catalytic reactions.Course Content includes:\u00a0 1. Classification and introduction to catalysis2. Surface chemistry3. Materials perspective4. Analytical aspects5. Reactivity and Kinetics of catalytic reactions6. Mechanistic aspects7. Hands on laboratory based experiments on catalysis                                                               ,",
-        "Sections": {}
-    },
-    {
-        "Code": "CHE300",
-        "Level": "Undergraduate",
-        "Name": "Mass Transfer Operations - II",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "CHE204 Mass Transfer Operations - I, CHE221 Thermodynamics - II, ",
-        "Sections": {}
-    },
-    {
-        "Code": "CHE503",
-        "Level": "Graduate Master's",
-        "Name": "Pollution Control",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "BIO104 Environmental Science",
-        "Sections": {}
-    },
-    {
         "Code": "CSC201",
         "Level": "Undergraduate",
         "Name": "Computer Organisation",
@@ -10425,299 +8871,5 @@
                 ]
             }
         }
-    },
-    {
-        "Code": "ECE502",
-        "Level": "Graduate Master's",
-        "Name": "VLSI Design",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": "EVD210 Computer Organisation/CSC201 Computer Organisation",
-        "Description": "This is an elective for the BTech CSE/ICT program (can be taken by BS in CS students, if they have the pre-requisite), and an elective for the MTech CSE program.\u00a0This course will cover:Trends in VLSI industry; MOS Cap; IV characteristics of MOSFET; CMOS inverter and VTC characteristics; CMOS standard and compound gates and transistor sizing; skewed gates, RC delay analysis of CMOS gates; Gate layout and Lambda rules; Logical effort method for delay analysis; power dissipation (dynamic and static power), Pseudo-NMOS gates, pass-transistor gates, dynamic logic circuits \u2013 domino gates, etc.          ,",
-        "Sections": {}
-    },
-    {
-        "Code": "ECE310",
-        "Level": "Undergraduate",
-        "Name": "Wireless Communications",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "MAT200 Linear Algebra, ",
-        "Sections": {}
-    },
-    {
-        "Code": "MEC510",
-        "Level": "Graduate Master's",
-        "Name": "Automobile Engineering",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "The course will cover the various components of an automobile system such as engine, transmission system, braking system, suspension system, axle and steering system. The competency of analyzing the performance of vehicle is developed through this course. The students will be exposed to different aspects of an automobile such as wheel alignment and balancing,\u00a0 and exhaust emissions control techniques. Finally, it provides an overview of the influential automobile technologies such as electric vehicles and hybrid vehicles, etc.  Unit-1 Introduction to Automobile EngineeringOverview of automobilesUnit-2 IC Engines",
-        "Sections": {}
-    },
-    {
-        "Code": "THE670",
-        "Level": "Graduate Master's",
-        "Name": "Thesis/Project Progress Assessment - I",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "-,",
-        "Sections": {}
-    },
-    {
-        "Code": "CSE300",
-        "Level": "Undergraduate",
-        "Name": "Software Engineering",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "NA,",
-        "Sections": {}
-    },
-    {
-        "Code": "THE671",
-        "Level": "Graduate Master's",
-        "Name": "Thesis / Project Progress Assessment - 2",
-        "Credits": "2",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "-,",
-        "Sections": {}
-    },
-    {
-        "Code": "THE672",
-        "Level": "Graduate Master's",
-        "Name": "Thesis / Project Progress Assessment - 3",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "-,",
-        "Sections": {}
-    },
-    {
-        "Code": "THE673",
-        "Level": "Graduate Master's",
-        "Name": "Thesis / Project Progress Assessment - 4",
-        "Credits": "4",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "-,",
-        "Sections": {}
-    },
-    {
-        "Code": "CHE574",
-        "Level": "Graduate Master's",
-        "Name": "Special Topic: Instrumental Methods of Analysis",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
-    },
-    {
-        "Code": "CSP513",
-        "Level": "Graduate Master's",
-        "Name": "Special Topic: Applied Deep learning for Wireless Networks",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "-,",
-        "Sections": {}
-    },
-    {
-        "Code": "ENR852",
-        "Level": "Graduate Doctoral",
-        "Name": "Special Topics in Engineering - Reinforcement Learning",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
-    },
-    {
-        "Code": "ENR100",
-        "Level": "Undergraduate",
-        "Name": "Visualisation",
-        "Credits": "1.5",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": ",View/Print Outline, ",
-        "Sections": {}
-    },
-    {
-        "Code": "ENR101",
-        "Level": "Undergraduate",
-        "Name": "Product Realisation",
-        "Credits": "1.5",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
-    },
-    {
-        "Code": "CHE402",
-        "Level": "Undergraduate",
-        "Name": "Chemical Process Simulation",
-        "Credits": "2",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "Not added",
-        "Sections": {}
-    },
-    {
-        "Code": "MEC403",
-        "Level": "Undergraduate",
-        "Name": "Manufacturing Systems and Operations",
-        "Credits": "2",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "MEC0000 Materials and Process of Manufacture/MEC205 Materials and Process of Manufacture, ",
-        "Sections": {}
-    },
-    {
-        "Code": "MEC404 ",
-        "Level": "Undergraduate",
-        "Name": "Integrated Mechanical Laboratory II",
-        "Credits": "2",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": ",View/Print Outline, ",
-        "Sections": {}
-    },
-    {
-        "Code": "MEC405",
-        "Level": "Undergraduate",
-        "Name": "Learning Factory Project",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": ",View/Print Outline, ",
-        "Sections": {}
-    },
-    {
-        "Code": "MAT203",
-        "Level": "Undergraduate",
-        "Name": "Differential Equations and Linear Algebra",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
-    },
-    {
-        "Code": "ENR204",
-        "Level": "Undergraduate",
-        "Name": "Mechanics of Rigid Bodies",
-        "Credits": "2",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "[ Intermediate physics, Math ]",
-        "Sections": {}
-    },
-    {
-        "Code": "ENR303",
-        "Level": "Undergraduate",
-        "Name": "Introduction to Composites",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "Not added",
-        "Sections": {}
-    },
-    {
-        "Code": "ENR704",
-        "Level": "Graduate Doctoral",
-        "Name": "Collaborative Research Project - I",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
     }
 ]

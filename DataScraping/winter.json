@@ -3870,6 +3870,20 @@
         }
     },
     {
+        "Code": "DES301",
+        "Level": "Undergraduate",
+        "Name": "Design Project",
+        "Credits": "6",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "DES203 Design Thinking and Problem Solving, DES101 Fundamentals of Design",
+        "Sections": {}
+    },
+    {
         "Code": "ECO521",
         "Level": "Graduate Master's",
         "Name": "Time Series Econometrics",
@@ -4686,6 +4700,20 @@
         }
     },
     {
+        "Code": "HRT699",
+        "Level": "Graduate Master's",
+        "Name": "Thesis",
+        "Credits": "12",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
+    },
+    {
         "Code": "MGT627",
         "Level": "Graduate Master's",
         "Name": "Future of Work",
@@ -5121,6 +5149,20 @@
         }
     },
     {
+        "Code": "HRT502",
+        "Level": "Graduate Master's",
+        "Name": "Immersion",
+        "Credits": "1.5",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "HRTG511 Heritage and Conservation Discourses/HRT511 Heritage and Conservation Discourses/HRT511 Heritage Discourses and Frameworks/HRTG511 Heritage Discourses and Frameworks",
+        "Sections": {}
+    },
+    {
         "Code": "MKT312",
         "Level": "Undergraduate",
         "Name": "Essentials of Marketing Research",
@@ -5232,6 +5274,20 @@
         }
     },
     {
+        "Code": "PRJ679",
+        "Level": "Graduate Master's",
+        "Name": "Route Camp",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
+    },
+    {
         "Code": "FAC125",
         "Level": "Undergraduate",
         "Name": "Business Taxation",
@@ -5304,6 +5360,20 @@
                 ]
             }
         }
+    },
+    {
+        "Code": "INT572",
+        "Level": "Graduate Master's",
+        "Name": "Semester-long Internship",
+        "Credits": "12",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Not added",
+        "Sections": {}
     },
     {
         "Code": "HRT622",
@@ -5867,6 +5937,20 @@
         }
     },
     {
+        "Code": "ECO699",
+        "Level": "Graduate Master's",
+        "Name": "Dissertation",
+        "Credits": "9",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Not added",
+        "Sections": {}
+    },
+    {
         "Code": "TOD310",
         "Level": "Undergraduate",
         "Name": "Predictive Analytics for Business",
@@ -5976,6 +6060,76 @@
                 ]
             }
         }
+    },
+    {
+        "Code": "TOD499",
+        "Level": "Undergraduate",
+        "Name": "Undergraduate Thesis",
+        "Credits": "6",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Not added",
+        "Sections": {}
+    },
+    {
+        "Code": "EFB499",
+        "Level": "Undergraduate",
+        "Name": "Undergraduate Thesis",
+        "Credits": "6",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Not added",
+        "Sections": {}
+    },
+    {
+        "Code": "FAC499",
+        "Level": "Undergraduate",
+        "Name": "Undergraduate Thesis",
+        "Credits": "6",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Not added",
+        "Sections": {}
+    },
+    {
+        "Code": "MGT499",
+        "Level": "Undergraduate",
+        "Name": "Undergraduate Thesis",
+        "Credits": "6",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Not added",
+        "Sections": {}
+    },
+    {
+        "Code": "MKT499",
+        "Level": "Undergraduate",
+        "Name": "Undergraduate Thesis",
+        "Credits": "6",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Not added",
+        "Sections": {}
     },
     {
         "Code": "BPS103",
@@ -8852,6 +9006,90 @@
         }
     },
     {
+        "Code": "HST499",
+        "Level": "Undergraduate",
+        "Name": "Undergraduate Thesis",
+        "Credits": "6",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Not added",
+        "Sections": {}
+    },
+    {
+        "Code": "PHL499",
+        "Level": "Undergraduate",
+        "Name": "Undergraduate Thesis",
+        "Credits": "6",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Not added",
+        "Sections": {}
+    },
+    {
+        "Code": "PSY499",
+        "Level": "Undergraduate",
+        "Name": "Undergraduate Thesis",
+        "Credits": "6",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Not added",
+        "Sections": {}
+    },
+    {
+        "Code": "SPS499",
+        "Level": "Undergraduate",
+        "Name": "Undergraduate Thesis",
+        "Credits": "6",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Not added",
+        "Sections": {}
+    },
+    {
+        "Code": "CSC499",
+        "Level": "Undergraduate",
+        "Name": "Undergraduate Thesis",
+        "Credits": "6",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Not added",
+        "Sections": {}
+    },
+    {
+        "Code": "PHY499",
+        "Level": "Undergraduate",
+        "Name": "Undergraduate Thesis",
+        "Credits": "6",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Not added",
+        "Sections": {}
+    },
+    {
         "Code": "BIO548",
         "Level": "Graduate Master's",
         "Name": "Cytogenetics",
@@ -9443,6 +9681,51 @@
                     [
                         "11:00",
                         "12:00"
+                    ],
+                    [
+                        "09-01-2023",
+                        "23-04-2023"
+                    ]
+                ]
+            }
+        }
+    },
+    {
+        "Code": "MEC206",
+        "Level": "Undergraduate",
+        "Name": "Computer Aided Design and Manufacturing",
+        "Credits": "4",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "CSC106 Basic Programming Languages/CSE106 Basic Programming Languages, ENR203 Material Science and Engineering, MEC210 Strength of Materials, ENR100 Visualisation",
+        "Sections": {
+            "1": {
+                "Tue": [
+                    [
+                        "11:00",
+                        "12:30",
+                        "13:00",
+                        "14:00",
+                        "14:00",
+                        "15:00"
+                    ],
+                    [
+                        "09-01-2023",
+                        "23-04-2023",
+                        "09-01-2023",
+                        "23-04-2023",
+                        "09-01-2023",
+                        "23-04-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "11:00",
+                        "12:30"
                     ],
                     [
                         "09-01-2023",
@@ -10557,6 +10840,20 @@
         }
     },
     {
+        "Code": "CSE543",
+        "Level": "Graduate Master's",
+        "Name": "MOOC: Mathematics for Machine Learning Specialization",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
+    },
+    {
         "Code": "CHE400",
         "Level": "Undergraduate",
         "Name": "Process Synthesis and Integration",
@@ -10803,6 +11100,43 @@
         }
     },
     {
+        "Code": "CSE511",
+        "Level": "Graduate Master's",
+        "Name": "Algorithms and Optimisation for Big Data",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "MAT 2XX Probability and Stochastic Processes/MAT277 Probability and Stochastic Processes, MAT101 Discrete Mathematics, MAT200 Linear Algebra",
+        "Sections": {
+            "1": {
+                "Tue": [
+                    [
+                        "16:00",
+                        "17:30"
+                    ],
+                    [
+                        "09-01-2023",
+                        "23-04-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "16:00",
+                        "17:30"
+                    ],
+                    [
+                        "09-01-2023",
+                        "23-04-2023"
+                    ]
+                ]
+            }
+        }
+    },
+    {
         "Code": "CSE250",
         "Level": "Undergraduate",
         "Name": "Database Management Systems",
@@ -10984,6 +11318,37 @@
         }
     },
     {
+        "Code": "CSE521",
+        "Level": "Graduate Master's",
+        "Name": "Big Data Analytics",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "EVD511 High Performance Computing/ECE503 High Performance Computing, CSC520 Data Analytics and Visualisation/CSE520 Data Analytics and Visualisation",
+        "Sections": {
+            "1": {
+                "Sat": [
+                    [
+                        "09:30",
+                        "11:00",
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "09-01-2023",
+                        "23-04-2023",
+                        "09-01-2023",
+                        "23-04-2023"
+                    ]
+                ]
+            }
+        }
+    },
+    {
         "Code": "MAT502",
         "Level": "Graduate Master's",
         "Name": "Advanced Statistics",
@@ -11056,6 +11421,132 @@
                 ]
             }
         }
+    },
+    {
+        "Code": "THE674",
+        "Level": "Graduate Master's",
+        "Name": "Thesis / Project Progress Assessment - 5",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
+    },
+    {
+        "Code": "THE675",
+        "Level": "Graduate Master's",
+        "Name": "Thesis / Project Progress Assessment - 6",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
+    },
+    {
+        "Code": "THE676",
+        "Level": "Graduate Master's",
+        "Name": "Thesis / Project Progress Assessment - 7",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
+    },
+    {
+        "Code": "THE677",
+        "Level": "Graduate Master's",
+        "Name": "Thesis / Project Progress Assessment - 8",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
+    },
+    {
+        "Code": "THE699",
+        "Level": "Graduate Master's",
+        "Name": "MTech Thesis Evaluation",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
+    },
+    {
+        "Code": "CHE574",
+        "Level": "Graduate Master's",
+        "Name": "Special Topic: Instrumental Methods of Analysis",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
+    },
+    {
+        "Code": "CSP514",
+        "Level": "Graduate Master's",
+        "Name": "Special Topic: IOT application for 5G wireless networks",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
+    },
+    {
+        "Code": "CHE851",
+        "Level": "Graduate Doctoral",
+        "Name": "Special Topics in Chemical Engineering - Understanding Nanoscience and Nanotechnology",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
+    },
+    {
+        "Code": "ENR852",
+        "Level": "Graduate Doctoral",
+        "Name": "Special Topics in Engineering - Reinforcement Learning",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
     },
     {
         "Code": "ENR100",
@@ -11231,6 +11722,34 @@
                 ]
             }
         }
+    },
+    {
+        "Code": "ENR704",
+        "Level": "Graduate Doctoral",
+        "Name": "Collaborative Research Project - I",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
+    },
+    {
+        "Code": "ENR705",
+        "Level": "Graduate Doctoral",
+        "Name": "Collaborative Research Project - II",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
     },
     {
         "Code": "FDP101",

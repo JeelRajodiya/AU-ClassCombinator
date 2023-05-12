@@ -1,3 +1,7 @@
 {
-	"redirects": [{ "source": "/Home", "destination": "/" }]
+	"redirects": [
+		{ "source": "/Home", "destination": "/" },
+		{ "source": "/home", "destination": "/" },
+		{ "source": "/test", "destination": "/" }
+	]
 }

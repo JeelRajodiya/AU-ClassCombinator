@@ -264,6 +264,20 @@
                         "09-01-2023",
                         "17-02-2023"
                     ]
+                ],
+                "Sat": [
+                    [
+                        "08:00",
+                        "09:30",
+                        "17:30",
+                        "19:00"
+                    ],
+                    [
+                        "11-02-2023",
+                        "12-02-2023",
+                        "04-02-2023",
+                        "05-02-2023"
+                    ]
                 ]
             },
             "6": {
@@ -1665,6 +1679,50 @@
         "Prerequisite": null,
         "Description": "This course begins with a discussion on how individual and group identities are created and maintained and in turn how it affects behavior. Several classical and neo-classical theories from the disciplines of psychology and social psychology would be discussed. The understanding of these concepts and theories would facilitate the understanding of groups and organisations in future courses. It would equip the students to develop people skills and enable them to deal with issues such as improving productivity, job satisfaction, motivation, learning etc. in organisations. The course would promote self-awareness and interpersonal awareness and students\u2019 ability to work in groups and in organizational settings. The course would focus on concepts which facilitate the understanding of the \u2018Self\u2019 and \u2018Identity\u2019 followed by its implication on human behaviour.,",
         "Sections": {
+            "4": {
+                "Tue": [
+                    [
+                        "11:00",
+                        "12:30",
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "11:00",
+                        "12:30",
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "31-10-2022",
+                        "16-12-2022",
+                        "09-01-2023",
+                        "17-02-2023"
+                    ]
+                ],
+                "Sat": [
+                    [
+                        "08:00",
+                        "09:30",
+                        "08:00",
+                        "09:30"
+                    ],
+                    [
+                        "28-01-2023",
+                        "29-01-2023",
+                        "28-01-2023",
+                        "29-01-2023"
+                    ]
+                ]
+            },
             "5": {
                 "Mon": [
                     [
@@ -1740,6 +1798,16 @@
                         "17-02-2023"
                     ]
                 ],
+                "Wed": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "18-01-2023",
+                        "19-01-2023"
+                    ]
+                ],
                 "Fri": [
                     [
                         "11:00",
@@ -1752,36 +1820,6 @@
                         "16-12-2022",
                         "09-01-2023",
                         "17-02-2023"
-                    ]
-                ]
-            },
-            "4": {
-                "Tue": [
-                    [
-                        "11:00",
-                        "12:30",
-                        "11:00",
-                        "12:30"
-                    ],
-                    [
-                        "31-10-2022",
-                        "16-12-2022",
-                        "09-01-2023",
-                        "17-02-2023"
-                    ]
-                ],
-                "Thu": [
-                    [
-                        "11:00",
-                        "12:30",
-                        "11:00",
-                        "12:30"
-                    ],
-                    [
-                        "31-10-2022",
-                        "16-12-2022",
-                        "09-01-2023",
-                        "10-02-2023"
                     ]
                 ]
             },
@@ -6294,7 +6332,7 @@
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "[ Either STA101 OR STA 202 is a prerequisite for this course. ]",
+        "Description": "EPP100 Microeconomics/ECO100 Microeconomics, MAT142 Introductory Calculus, ,PREQ_OR,ECO200 Managerial Economics,[ Either STA101 OR STA 202 is a prerequisite; Either ECO100 or ECO200 is a prerequisite; MAT142 is a prerequisite ]",
         "Sections": {
             "1": {
                 "Tue": [
@@ -7399,7 +7437,7 @@
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "None",
+        "Description": ",View/Print Outline, ",
         "Sections": {
             "1": {
                 "Sat": [
@@ -7409,6 +7447,33 @@
                     ],
                     [
                         "01-08-2022",
+                        "20-11-2022"
+                    ]
+                ]
+            }
+        }
+    },
+    {
+        "Code": "COM594",
+        "Level": "Graduate Master's",
+        "Name": "Introduction to Negotiation",
+        "Credits": "1.5",
+        "Faculties": [
+            "Sudhir Pandey"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {
+            "1": {
+                "Sun": [
+                    [
+                        "08:00",
+                        "09:30"
+                    ],
+                    [
+                        "26-09-2022",
                         "20-11-2022"
                     ]
                 ]
@@ -8047,7 +8112,7 @@
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": ",View/Print Outline, ",
+        "Description": "This is a MOOC offered online. This was offered as a special case to one candidate in lieu of a course she had not cleared in the previous year.\u00a0,",
         "Sections": {
             "1": {
                 "Sat": [
@@ -8343,7 +8408,7 @@
         "Semester": "Monsoon",
         "isBiSem": true,
         "Prerequisite": null,
-        "Description": "None,[ Is open to anyone who has completed class 12 or the equivalent with Physics and Mathematics as subjects. ]",
+        "Description": "[ Is open to anyone who has completed class 12 or the equivalent with Physics and Mathematics as subjects. ]",
         "Sections": {
             "1": {
                 "Mon": [
@@ -8368,8 +8433,8 @@
                         "12:30",
                         "13:00",
                         "14:30",
-                        "16:00",
                         "17:30",
+                        "19:00",
                         "17:30",
                         "19:00"
                     ],
@@ -8380,10 +8445,10 @@
                         "16-12-2022",
                         "31-10-2022",
                         "16-12-2022",
-                        "09-01-2023",
-                        "17-02-2023",
                         "31-10-2022",
-                        "19-11-2022"
+                        "19-11-2022",
+                        "07-01-2023",
+                        "17-02-2023"
                     ]
                 ]
             }
@@ -8472,20 +8537,20 @@
                 ],
                 "Thu": [
                     [
+                        "13:00",
+                        "14:30",
                         "14:30",
                         "16:00",
                         "14:30",
                         "16:00",
-                        "16:00",
-                        "17:30",
                         "16:00",
                         "17:30"
                     ],
                     [
+                        "09-01-2023",
+                        "16-02-2023",
                         "31-10-2022",
                         "16-12-2022",
-                        "09-01-2023",
-                        "17-02-2023",
                         "09-01-2023",
                         "17-02-2023",
                         "31-10-2022",
@@ -9074,9 +9139,8 @@
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": "COM105 Academic Reading",
-        "Description": "In this course, we will critically examine entities such as family, caste, class, community, language and nation, and ask how they generate powerful and sometimes conflicting loyalties among individuals. Are such associations natural and primordial, or contingent and historical? Do they have an economic rationale? How do the actions of state, law, and civil society mediate these attachments?  ",
+        "Description": "Family, Community, Nation is a core course in the Social and Political Sciences major and can serve as a Social Science GER for students from other Majors",
         "Sections": {
-            "5": {},
             "1": {
                 "Mon": [
                     [
@@ -9228,9 +9292,8 @@
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "None",
+        "Description": "This is the first of a set of two courses that will be taken by all students enrolling for a Diploma (30 credits) or Certificate (15 credits) in Critical Thinking and the Liberal Arts.  COM 211 will be open to 2nd and 3rd year students. The materials and assignments for this course will be pitched at a slightly lower level than for COM 311.           Critical thinking skills help us evaluate the information/social world we encounter carefully. This is especially pertinent for our times since we are bombarded with all kinds of information and misinformation, and further, feel obliged to respond immediately but intelligently. From phishing calls that ask for sensitive financial information to the recent government circular that implied that a COVID vaccine would be ready by independence day, the world we inhabit today requires us to be critical. This course teaches how to critique constructively. It will enable learners to develop tools and techniques with which to examine the increasingly complex and at times elusive information that now reaches us every day.   The careful evaluation of information requires that we do not take what is given at obvious face value. Instead, we ask questions of situations, texts, issues, institutions, and people including ourselves. Accordingly, in this course, we will practice asking questions as we 1) read/view/listen to information and 2) express ideas, such that we learn to identify unstated assumptions and beliefs. Since academic writing is based on this premise of careful evaluation of evidence, the course also introduces students to some of the basic mechanics of academic writing, specifically, identification of sources, accurate summarising of arguments including their limitations, and citation.  ,",
         "Sections": {
-            "211": {},
             "1": {
                 "Mon": [
                     [
@@ -10365,13 +10428,12 @@
         "Name": "Introductions to Data Structures and Algorithms",
         "Credits": "3",
         "Faculties": [
-            " (not In Use) Karishma Dalal",
             "Sayan Goswami"
         ],
         "Semester": "Monsoon",
         "isBiSem": false,
-        "Prerequisite": "CSE100 Fundamentals of Computer Programming",
-        "Description": "The course covers basic data structures and techniques for design and analysis of data structures with a rich set of applications in computer science, computational sciences, and operations research. The course will begin by covering the basic data structures like Lists, Stacks, Queues, Binary Search Trees, Heaps, etc. We will also introduce tools and techniques for computational analysis of these basic data structures. The latter half of this course will cover more advanced data structures such as Height Balanced Search Trees, Hash Tables, and Graphs and introduce divide and conquer algorithms for sorting and searching, and algorithms for graphs. The programming language used in the implementation of the data structures and algorithms is C.,",
+        "Prerequisite": null,
+        "Description": "MAT142 Introductory Calculus, , CSE100 Fundamentals of Computer Programming,PREQ_OR,CSE100 Fundamentals of Computer Programming",
         "Sections": {
             "1": {
                 "Mon": [
@@ -10707,7 +10769,7 @@
         }
     },
     {
-        "Code": "PVA 181",
+        "Code": "PVA181",
         "Level": "Undergraduate",
         "Name": "Music and Society",
         "Credits": "3",
@@ -10744,7 +10806,7 @@
         }
     },
     {
-        "Code": "PVA 141",
+        "Code": "PVA141",
         "Level": "Undergraduate",
         "Name": "How Music Shapes Cities -- Varanasi to NYC",
         "Credits": "3",
@@ -10781,7 +10843,7 @@
         }
     },
     {
-        "Code": "PVA 161",
+        "Code": "PVA161",
         "Level": "Undergraduate",
         "Name": "Janavak: Voice of the People Folk traditions of India",
         "Credits": "3",
@@ -10812,7 +10874,7 @@
         }
     },
     {
-        "Code": "PVA 171",
+        "Code": "PVA171",
         "Level": "Undergraduate",
         "Name": "Theatre and Society",
         "Credits": "3",
@@ -12149,12 +12211,13 @@
         "Name": "Research Project - II",
         "Credits": "3",
         "Faculties": [
-            "Aditya Vaishya"
+            "Aditya Vaishya",
+            "Alok Shukla"
         ],
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "Not added",
+        "Description": ",View/Print Outline, ",
         "Sections": {
             "1": {
                 "Mon": [
@@ -12236,7 +12299,7 @@
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "Not added",
+        "Description": ",View/Print Outline, ",
         "Sections": {
             "1": {
                 "Mon": [
@@ -13087,16 +13150,12 @@
                         "12:30",
                         "11:00",
                         "12:30",
-                        "14:30",
-                        "16:00",
                         "16:00",
                         "17:30"
                     ],
                     [
                         "31-10-2022",
                         "16-12-2022",
-                        "09-01-2023",
-                        "17-02-2023",
                         "09-01-2023",
                         "17-02-2023",
                         "31-10-2022",
@@ -14143,8 +14202,8 @@
         ],
         "Semester": "Monsoon",
         "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "MAT200 Linear Algebra, MEC210 Strength of Materials",
+        "Prerequisite": "",
+        "Description": "PREQ_OR",
         "Sections": {
             "1": {
                 "Tue": [
@@ -15337,7 +15396,7 @@
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "None",
+        "Description": "NA,",
         "Sections": {
             "1": {
                 "Sat": [
@@ -15555,13 +15614,12 @@
         "Name": "Integrated Mechanical Laboratory II",
         "Credits": "2",
         "Faculties": [
-            "Sunil Kale",
             "Sunil Kale"
         ],
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "Not added",
+        "Description": ",View/Print Outline, ",
         "Sections": {
             "1": {
                 "Tue": [
@@ -15617,7 +15675,7 @@
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "Not added",
+        "Description": ",View/Print Outline, ",
         "Sections": {
             "1": {
                 "Mon": [

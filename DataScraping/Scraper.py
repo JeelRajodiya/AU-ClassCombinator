@@ -145,7 +145,10 @@ def scrape(file_name):
 
 		# if there is a prerequisite then it is added to the json file then the index of the description is changed
 		if lines[5].split(",")[0] == "PREQ_OR":
-			Prerequisite = lines[5].split(",")[1]
+			try: 
+				Prerequisite = lines[5].split(",")[1]
+			except:
+				print(lines[5])
 			n = 5
 		else:
 			Prerequisite = None

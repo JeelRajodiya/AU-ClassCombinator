@@ -57,6 +57,7 @@ export default function Login() {
 				</div>
 			)}
 			{isLogin && <Navigate to="/Home" />}
+			{/* {<Navigate to="/Home" />} */}
 		</div>
 	);
 }

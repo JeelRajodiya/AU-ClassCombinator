@@ -16,40 +16,31 @@ export default function Combinator(props: CombinatorProps) {
 	function transformArrayToObject(inputArray: Array<Array<string>>): {
 		[key: string]: Array<string>;
 	} {
-		const outputObject: { [key: string]: Array<string> } = {};
+		for (let i = 0; i < inputArray.length; i++) {
+			inputArray[i] = inputArray[i].filter((e) => e !== "");
+		}
 
-		inputArray.forEach((item) => {
-			const [day, time] = item;
-			if (outputObject[day]) {
-				outputObject[day].push(time);
+		let outputObject: { [key: string]: Array<string> } = {};
+		for (let i = 0; i < inputArray.length; i++) {
+			if (outputObject.hasOwnProperty(inputArray[i][0])) {
+				outputObject[inputArray[i][0]] = outputObject[
+					inputArray[i][0]
+				].concat(inputArray[i].slice(1));
 			} else {
-				outputObject[day] = [time];
+				outputObject[inputArray[i][0]] = inputArray[i].slice(1);
 			}
-		});
-		// remove duplicates
-		Object.keys(outputObject).forEach((key) => {
-			outputObject[key] = outputObject[key].filter(
-				(value, index, self) => self.indexOf(value) === index
-			);
-		});
-
-		// sort, 8:00 should be before 13:00
-		Object.keys(outputObject).forEach((key) => {
+		}
+		for (let key in outputObject) {
 			outputObject[key] = outputObject[key].sort((a, b) => {
-				const aTime = a.split(":");
-				const bTime = b.split(":");
-				if (aTime[0] === bTime[0]) {
-					return parseInt(aTime[1]) - parseInt(bTime[1]);
-				} else {
-					return parseInt(aTime[0]) - parseInt(bTime[0]);
-				}
+				return Number(a.split(":")[0]) - Number(b.split(":")[0]);
 			});
-		});
-		timeTables = [];
-
+		}
 		return outputObject;
 	}
-
+	function processTimetable(timeTable: string[][]) {
+		timeTables = [];
+		return transformArrayToObject(timeTable);
+	}
 	return (
 		<div className="combinator">
 			<div className="combination-entry-wrapper selection">
@@ -93,6 +84,7 @@ export default function Combinator(props: CombinatorProps) {
 					key={String(Math.random() * 1000)}
 				>
 					<div> Combination {++combinationCount}</div>
+
 					<div className="combination-entry">
 						{combination.map((code) => (
 							<div
@@ -120,9 +112,8 @@ export default function Combinator(props: CombinatorProps) {
 						))}
 					</div>
 					<div className="time-table">
-						<TimeTable
-							timeTable={transformArrayToObject(timeTables)}
-						/>
+						<TimeTable timeTable={processTimetable(timeTables)} />
+
 						<div className="days-to-go">
 							Active Days:{" "}
 							<u>

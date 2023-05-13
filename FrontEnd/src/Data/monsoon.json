@@ -6539,6 +6539,20 @@
         }
     },
     {
+        "Code": "ECO699",
+        "Level": "Graduate Master's",
+        "Name": "Dissertation",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
+    },
+    {
         "Code": "FAC635",
         "Level": "Graduate Master's",
         "Name": "Financial Modelling",
@@ -8402,6 +8416,20 @@
                 ]
             }
         }
+    },
+    {
+        "Code": "PHY731",
+        "Level": "Graduate Doctoral",
+        "Name": "Atmospheric Physics",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
     },
     {
         "Code": "BIO106",
@@ -11070,6 +11098,141 @@
         }
     },
     {
+        "Code": "ECE209",
+        "Level": "Undergraduate",
+        "Name": "Digital Design",
+        "Credits": "4",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {
+            "1": {
+                "Mon": [
+                    [
+                        "10:00",
+                        "11:00"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "10:00",
+                        "11:00",
+                        "13:00",
+                        "14:00",
+                        "14:00",
+                        "15:00"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023",
+                        "01-08-2023",
+                        "26-11-2023",
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "10:00",
+                        "11:00"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ]
+            },
+            "2": {
+                "Mon": [
+                    [
+                        "10:00",
+                        "11:00"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "10:00",
+                        "11:00"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "10:00",
+                        "11:00",
+                        "13:00",
+                        "14:00",
+                        "14:00",
+                        "15:00"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023",
+                        "01-08-2023",
+                        "26-11-2023",
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ]
+            },
+            "3": {
+                "Mon": [
+                    [
+                        "10:00",
+                        "11:00",
+                        "13:00",
+                        "14:00",
+                        "14:00",
+                        "15:00"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023",
+                        "01-08-2023",
+                        "26-11-2023",
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "10:00",
+                        "11:00"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "10:00",
+                        "11:00"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ]
+            }
+        }
+    },
+    {
         "Code": "MAT101",
         "Level": "Undergraduate",
         "Name": "Discrete Mathematics",
@@ -11481,6 +11644,34 @@
         }
     },
     {
+        "Code": "CSD100",
+        "Level": "Undergraduate",
+        "Name": "Introduction to Data Science",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Data science is an interdisciplinary area that involves recording, storing and analyzing data to gain insights and knowledge for decision making. This introductory course provides a foundation in data science for first year undergraduate students. The course covers data science process and its life cycle, data collection using sampling/surveys, ordering/organizing, data processing and visualization of data through charts and maps.  Statistical fundamentals needed for analysis and interpretation of data are covered along with cases and examples related to real life applications of data science.,",
+        "Sections": {}
+    },
+    {
+        "Code": "CSD101",
+        "Level": "Undergraduate",
+        "Name": "Fundamentals of Data Science",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Data science is an interdisciplinary area that involves recording, storing and analyzing data to gain insights and knowledge for decision making. This is an intermediate level course providing foundation in data science and programming for first year undergraduate students. The course covers data science process and its life cycle, data collection using sampling/surveys, ordering/organizing, statistical analysis and visualization of data. Cases, examples and practical applications of data science are discussed using spreadsheet and python programming.\u00a0,",
+        "Sections": {}
+    },
+    {
         "Code": "CSD102",
         "Level": "Undergraduate",
         "Name": "Data Science",
@@ -11666,6 +11857,20 @@
                 ]
             }
         }
+    },
+    {
+        "Code": "PHY714",
+        "Level": "Graduate Doctoral",
+        "Name": "Special Topic : Introduction to Quantum Field Theory",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None,[ List of topics on which prior knowledge required: familiarity with the following graduate level physics subjects: Advanced Classical Mechanics (Lagrangian and Hamiltonian mechanics), Advanced Quantum Mechanics (theory of angular momentum, annihilation and creation operators), Special Relativity, Electrodynamics. ]",
+        "Sections": {}
     },
     {
         "Code": "CSE205",
@@ -12410,6 +12615,129 @@
         }
     },
     {
+        "Code": "CSE332",
+        "Level": "Undergraduate",
+        "Name": "Operating Systems",
+        "Credits": "4",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "CSE100 Fundamentals of Computer Programming, CSE205 Data Structures, CSE2XX Computer Organization and Architecture/CSE206 Computer Organization and Architecture",
+        "Sections": {
+            "1": {
+                "Mon": [
+                    [
+                        "13:00",
+                        "14:00",
+                        "14:00",
+                        "15:00"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023",
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ],
+                "Tue": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ]
+            },
+            "2": {
+                "Tue": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "13:00",
+                        "14:00",
+                        "14:00",
+                        "15:00"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023",
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ]
+            },
+            "3": {
+                "Tue": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "13:00",
+                        "14:00",
+                        "14:00",
+                        "15:00"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023",
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ]
+            }
+        }
+    },
+    {
         "Code": "CSE526",
         "Level": "Graduate Master's",
         "Name": "Advanced Computer Arithmetic: Algorithms and Sub-systems",
@@ -12721,6 +13049,34 @@
                 ]
             }
         }
+    },
+    {
+        "Code": "ENR486",
+        "Level": "Undergraduate",
+        "Name": "BTech Thesis-1",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "NA,",
+        "Sections": {}
+    },
+    {
+        "Code": "CSE543",
+        "Level": "Graduate Master's",
+        "Name": "MOOC: Mathematics for Machine Learning Specialization",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
     },
     {
         "Code": "MEC405",
@@ -13148,6 +13504,135 @@
         }
     },
     {
+        "Code": "THE670",
+        "Level": "Graduate Master's",
+        "Name": "Thesis/Project Progress Assessment - I",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "-,",
+        "Sections": {}
+    },
+    {
+        "Code": "CSE300",
+        "Level": "Undergraduate",
+        "Name": "Software Engineering",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "NA,",
+        "Sections": {
+            "1": {
+                "Sat": [
+                    [
+                        "09:30",
+                        "11:00",
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023",
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ]
+            }
+        }
+    },
+    {
+        "Code": "THE671",
+        "Level": "Graduate Master's",
+        "Name": "Thesis / Project Progress Assessment - 2",
+        "Credits": "2",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "-,",
+        "Sections": {}
+    },
+    {
+        "Code": "THE672",
+        "Level": "Graduate Master's",
+        "Name": "Thesis / Project Progress Assessment - 3",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "-,",
+        "Sections": {}
+    },
+    {
+        "Code": "THE673",
+        "Level": "Graduate Master's",
+        "Name": "Thesis / Project Progress Assessment - 4",
+        "Credits": "4",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "-,",
+        "Sections": {}
+    },
+    {
+        "Code": "CHE574",
+        "Level": "Graduate Master's",
+        "Name": "Special Topic: Instrumental Methods of Analysis",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
+    },
+    {
+        "Code": "CSP513",
+        "Level": "Graduate Master's",
+        "Name": "Special Topic: Applied Deep learning for Wireless Networks",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "-,",
+        "Sections": {}
+    },
+    {
+        "Code": "ENR852",
+        "Level": "Graduate Doctoral",
+        "Name": "Special Topics in Engineering - Reinforcement Learning",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
+    },
+    {
         "Code": "ENR100",
         "Level": "Undergraduate",
         "Name": "Visualisation",
@@ -13232,6 +13717,43 @@
         }
     },
     {
+        "Code": "MEC403",
+        "Level": "Undergraduate",
+        "Name": "Manufacturing Systems and Operations",
+        "Credits": "2",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "MEC0000 Materials and Process of Manufacture/MEC205 Materials and Process of Manufacture, ",
+        "Sections": {
+            "1": {
+                "Mon": [
+                    [
+                        "10:00",
+                        "11:00"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "10:00",
+                        "11:00"
+                    ],
+                    [
+                        "01-08-2023",
+                        "26-11-2023"
+                    ]
+                ]
+            }
+        }
+    },
+    {
         "Code": "MEC404 ",
         "Level": "Undergraduate",
         "Name": "Integrated Mechanical Laboratory II",
@@ -13269,6 +13791,20 @@
                 ]
             }
         }
+    },
+    {
+        "Code": "MEC405",
+        "Level": "Undergraduate",
+        "Name": "Learning Factory Project",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": ",View/Print Outline, ",
+        "Sections": {}
     },
     {
         "Code": "MAT203",
@@ -13388,5 +13924,19 @@
                 ]
             }
         }
+    },
+    {
+        "Code": "ENR704",
+        "Level": "Graduate Doctoral",
+        "Name": "Collaborative Research Project - I",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
     }
 ]

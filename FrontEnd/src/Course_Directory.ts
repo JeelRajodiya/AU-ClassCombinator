@@ -107,7 +107,7 @@ class CourseDirectory {
 			}
 		}
 
-		console.log(time, "=>", organizedTime);
+		// console.log(time, "=>", organizedTime);
 		return organizedTime;
 	}
 	private checkTimeConflictByPairs(
@@ -227,7 +227,7 @@ class CourseDirectory {
 			const course1Day = course1Data![day];
 			const course2Day = course2Data![day];
 			const conflict = this.checkForDayConflict(course1Day, course2Day);
-			console.log(conflict, day);
+			// console.log(conflict, day);
 			if (conflict) {
 				return true;
 			}

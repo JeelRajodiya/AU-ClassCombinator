@@ -49,3 +49,13 @@ main {
 
 	opacity: 1;
 }
+
+.update-status {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	font-size: 0.8em;
+	color: rgba(0, 0, 0, 0.55);
+}

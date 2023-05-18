@@ -11,7 +11,6 @@ import ActionBar from "./components/ActionBar";
 import Combinator from "./components/Combinator";
 import { Analytics } from "@vercel/analytics/react";
 import { Link } from "react-router-dom";
-import ReactGA from "react-ga";
 
 export default function App() {
 	const [cd, setCD] = React.useState(new CourseDirectory(winter, monsoon));
@@ -21,8 +20,6 @@ export default function App() {
 	React.useEffect(() => {
 		localStorage.getItem("selected") &&
 			setSelected(JSON.parse(localStorage.getItem("selected")!));
-		ReactGA.initialize("G-GYBC6J6YZY");
-		ReactGA.pageview(window.location.pathname + window.location.search);
 	}, []);
 	const [combinations, setCombinations] = React.useState<string[][]>([]);
 	React.useEffect(() => {

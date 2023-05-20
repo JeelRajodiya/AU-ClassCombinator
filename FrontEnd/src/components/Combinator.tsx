@@ -3,6 +3,7 @@ import React from "react";
 import CourseDirectory from "./../Course_Directory";
 import "./../styles/combinator.css";
 import TimeTable from "./TimeTable";
+import Table from './Table';
 type CombinatorProps = {
 	cd: CourseDirectory;
 	combinations: string[][];
@@ -13,6 +14,26 @@ type CombinatorProps = {
 export default function Combinator(props: CombinatorProps) {
 	let combinationCount = 0;
 	let timeTables: string[][] = [];
+
+///////////////////////////////////////////////----------SAMPLE DATA
+	const table = {
+		Mon: [
+		  { time: '10:00-11:00', course: 'ENR203 S-1' },
+		  { time: '11:00-12:30', course: 'FAC114 S-1' },
+		  { time: '13:00-14:30', course: 'ENR305 S-2' },
+		  { time: '18:00-19:30', course: 'ENR305 S-2' },
+		],
+		Tue: [],
+		Wed: [],
+		Thu: [],
+		Fri: [
+		  { time: '10:00-11:00', course: 'ENR200 S-1' },
+		  { time: '14:00-15:00', course: 'ENR200 S-1' },
+		],
+		Sat: [],
+		Sun: [],
+	  };
+
 	function transformArrayToObject(inputArray: Array<Array<string>>): {
 		[key: string]: Array<string>;
 	} {
@@ -112,8 +133,8 @@ export default function Combinator(props: CombinatorProps) {
 						))}
 					</div>
 					<div className="time-table">
-						<TimeTable timeTable={processTimetable(timeTables)} />
-
+					<Table timetable={table} />
+						{/* <TimeTable timeTable={processTimetable(timeTables)} /> */}
 						<div className="days-to-go">
 							Active Days:{" "}
 							<u>

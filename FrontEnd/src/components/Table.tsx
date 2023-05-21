@@ -27,16 +27,17 @@ const Table: React.FC<{ timetable: TimetableData }> = (props) => {
 	const edges: string[] = [];
 	const courses: string[] = [];
 	const colours: string[] = [
-		"#0b246a",
-		"#3c8dfd",
-		"#1E8449",
-		"#edbb30",
-		"#CB4335",
-		"#273746",
-		"#0E6655",
-		"#7D3C98",
-		"#F39C12",
+		"#0b246a", // Dark Blue
+		"#3c8dfd", // Light Blue
+		"#1E8449", // Dark Green
+		"#edbb30", // Yellow
+		"#CB4335", // Red
+		"#273746", // Dark Gray
+		"#0E6655", // Teal
+		"#7D3C98", // Purple
+		"#F39C12", // Orange
 	];
+
 	const divs: {
 		className: string;
 		data: string;

@@ -112,6 +112,7 @@ export default function Combinator(props: CombinatorProps) {
 											let dayNTime = e.split(/[ ,]+/);
 											let day = dayNTime[0];
 											let time = dayNTime.slice(1);
+
 											unprocessedTable[day].push({
 												time,
 												course: code,
@@ -132,7 +133,7 @@ export default function Combinator(props: CombinatorProps) {
 						))}
 					</div>
 					<div className="time-table">
-
+						<div className="schedule-title">Schedule</div>
 						<Table timetable={processTable(unprocessedTable)} />
 
 						<div className="days-to-go">

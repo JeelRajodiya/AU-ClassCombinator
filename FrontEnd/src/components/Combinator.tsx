@@ -134,8 +134,8 @@ export default function Combinator(props: CombinatorProps) {
 						))}
 					</div>
 					<div className="time-table">
-						{/* <Table timetable={table} /> */}
-						<TimeTable timeTable={processTimetable(timeTables)} />
+						<Table timetable={table} />
+						{/* <TimeTable timeTable={processTimetable(timeTables)} /> */}
 						<div className="days-to-go">
 							Active Days:{" "}
 							<u>

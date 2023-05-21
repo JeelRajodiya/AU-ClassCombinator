@@ -28,6 +28,7 @@ const Table: React.FC<{ timetable: TimetableData }> = (props) => {
 	const courses: string[] = [];
 	const colours: string[] = [
 		"#fe744c",
+		"#0b246a",
 		"#3c8dfd",
 		"#1E8449",
 		"#edbb30",
@@ -36,7 +37,6 @@ const Table: React.FC<{ timetable: TimetableData }> = (props) => {
 		"#0E6655",
 		"#7D3C98",
 		"#F39C12",
-		"#AE0000",
 	];
 	const divs: {
 		className: string;

@@ -31,7 +31,6 @@ const Table: React.FC<{ timetable: TimetableData }> = (props) => {
 		"#0b246a",
 		"#3c8dfd",
 		"#1E8449",
-		"#CB4335",
 		"#edbb30",
 		"#CB4335",
 		"#273746",

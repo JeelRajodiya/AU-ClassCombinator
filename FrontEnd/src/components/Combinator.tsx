@@ -1,9 +1,8 @@
-import { padding } from "@mui/system";
 import React from "react";
 import CourseDirectory from "./../Course_Directory";
 import "./../styles/combinator.css";
-import TimeTable from "./TimeTable";
 import Table from "./Table";
+import { TimetableData } from "./Table";
 type CombinatorProps = {
 	cd: CourseDirectory;
 	combinations: string[][];
@@ -13,55 +12,48 @@ type CombinatorProps = {
 
 export default function Combinator(props: CombinatorProps) {
 	let combinationCount = 0;
-	let timeTables: string[][] = [];
 
-	///////////////////////////////////////////////----------SAMPLE DATA
-	const table = {
-		Mon: [
-			{ time: "10:00-11:00", course: "ENR203-1" },
-			{ time: "11:00-12:30", course: "FAC114-1" },
-			{ time: "13:00-14:30", course: "ENR305-2" },
-			{ time: "18:00-19:30", course: "ENR305-2" },
-		],
+	let unprocessedTable = {
+		Mon: [],
 		Tue: [],
 		Wed: [],
 		Thu: [],
-		Fri: [
-			{ time: "10:00-11:00", course: "ENR200-1" },
-			{ time: "14:00-15:00", course: "ENR200-1" },
-		],
+		Fri: [],
 		Sat: [],
 		Sun: [],
 	};
-
-	function transformArrayToObject(inputArray: Array<Array<string>>): {
-		[key: string]: Array<string>;
-	} {
-		for (let i = 0; i < inputArray.length; i++) {
-			inputArray[i] = inputArray[i].filter((e) => e !== "");
-		}
-
-		let outputObject: { [key: string]: Array<string> } = {};
-		for (let i = 0; i < inputArray.length; i++) {
-			if (outputObject.hasOwnProperty(inputArray[i][0])) {
-				outputObject[inputArray[i][0]] = outputObject[
-					inputArray[i][0]
-				].concat(inputArray[i].slice(1));
-			} else {
-				outputObject[inputArray[i][0]] = inputArray[i].slice(1);
+	function processTable(unprocessedTable: any): TimetableData {
+		// unprocessed has Mon = [{course:"CSE105",time:["9:00-10:00","10:00-11:00"]},{course:"CSE105",time:["9:00-10:00","10:00-11:00"]}]
+		// processed has Mon = [{course:"CSE105",time:"9:00-10:00"},{course:"CSE105",time:"10:00-11:00"}]
+		let processedTable: any = {
+			Mon: [],
+			Tue: [],
+			Wed: [],
+			Thu: [],
+			Fri: [],
+			Sat: [],
+			Sun: [],
+		};
+		for (let day in unprocessedTable) {
+			for (let i = 0; i < unprocessedTable[day].length; i++) {
+				for (let j = 0; j < unprocessedTable[day][i].time.length; j++) {
+					if (unprocessedTable[day][i].time[j] === "") {
+						continue;
+					}
+					processedTable[day].push({
+						course: unprocessedTable[day][i].course,
+						time: unprocessedTable[day][i].time[j],
+					});
+				}
 			}
 		}
-		for (let key in outputObject) {
-			outputObject[key] = outputObject[key].sort((a, b) => {
-				return Number(a.split(":")[0]) - Number(b.split(":")[0]);
-			});
+		// empty the unprocessed table
+		for (let day in unprocessedTable) {
+			unprocessedTable[day] = [];
 		}
-		return outputObject;
+		return processedTable;
 	}
-	function processTimetable(timeTable: string[][]) {
-		timeTables = [];
-		return transformArrayToObject(timeTable);
-	}
+
 	return (
 		<div className="combinator">
 			<div className="combination-entry-wrapper selection">
@@ -117,8 +109,14 @@ export default function Combinator(props: CombinatorProps) {
 									{props.cd
 										.getScheduleFromCodeAndSection(code)
 										.map((e) => {
-											console.log(code, e);
-											timeTables.push(e.split(/[ ,]+/));
+											let dayNTime = e.split(/[ ,]+/);
+											let day = dayNTime[0];
+											let time = dayNTime.slice(1);
+											unprocessedTable[day].push({
+												time,
+												course: code,
+											});
+
 											return (
 												<div
 													key={String(
@@ -134,8 +132,7 @@ export default function Combinator(props: CombinatorProps) {
 						))}
 					</div>
 					<div className="time-table">
-						{/* <Table timetable={table} /> */}
-						<TimeTable timeTable={processTimetable(timeTables)} />
+						<Table timetable={processTable(unprocessedTable)} />
 						<div className="days-to-go">
 							Active Days:{" "}
 							<u>

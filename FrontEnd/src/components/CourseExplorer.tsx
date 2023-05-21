@@ -30,7 +30,7 @@ export default function CourseExplorer(props: {
 				<CourseItem
 					selected={props.selected}
 					setSelected={props.setSelected}
-					key={course.Code}
+					key={course.Code + course.Credits}
 					course={course}
 				></CourseItem>
 			))}

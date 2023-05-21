@@ -15,7 +15,7 @@
     --dark-brown: #8b5a59;
 }
 .container-main{
-    width: 83vw;
+    max-width: 83vw;
     background-color: var(--offwhite);
     border-radius: 10px;
     padding-top: 10px;

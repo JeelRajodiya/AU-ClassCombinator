@@ -132,7 +132,9 @@ export default function Combinator(props: CombinatorProps) {
 						))}
 					</div>
 					<div className="time-table">
+
 						<Table timetable={processTable(unprocessedTable)} />
+
 						<div className="days-to-go">
 							Active Days:{" "}
 							<u>

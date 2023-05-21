@@ -27,14 +27,17 @@ const Table: React.FC<{ timetable: TimetableData }> = (props) => {
 	const edges: string[] = [];
 	const courses: string[] = [];
 	const colours: string[] = [
-		"#8bbba2",
-		"#b488df",
-		"#f77650",
-		"#f2b699",
-		"#b15a59",
-		"#d0b7e8",
-		"#f5ceb4",
-		"#8b5a59",
+		"#fe744c",
+		"#0b246a",
+		"#3c8dfd",
+		"#1E8449",
+		"#CB4335",
+		"#edbb30",
+		"#CB4335",
+		"#273746",
+		"#0E6655",
+		"#7D3C98",
+		"#F39C12",
 	];
 	const divs: {
 		className: string;
@@ -70,7 +73,11 @@ const Table: React.FC<{ timetable: TimetableData }> = (props) => {
 	const uniqueCourses = [...new Set(courses)];
 
 	uniqueCourses.forEach((course, i) => {
-		coursesToColour[course] = colours[i];
+		if (i >= colours.length) {
+			coursesToColour[course] = colours[i - colours.length];
+		} else {
+			coursesToColour[course] = colours[i];
+		}
 	});
 
 	uniqueEdges.forEach((edge, i) => {

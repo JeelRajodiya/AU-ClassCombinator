@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/searchBar.css";
+import "./SearchBar.css";
 import SearchIcon from "@mui/icons-material/Search";
 
 export default function SearchBar(props: { query: string; setQuery: any }) {

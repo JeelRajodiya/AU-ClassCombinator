@@ -1,6 +1,6 @@
 import React from "react";
-import CourseDirectory from "./../Course_Directory";
-import "./../styles/actionBar.css";
+import CourseDirectory from "../../Course_Directory";
+import "./ActionBar.css";
 
 type ActionBarProps = {
 	selected: string[];

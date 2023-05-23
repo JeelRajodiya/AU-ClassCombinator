@@ -1,9 +1,9 @@
 import * as React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
-import Login from "./components/Login";
+import Login from "./components/Login/Login";
 import ReactDOM from "react-dom/client";
-import "./styles/global.css";
+import "./global.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
 	{

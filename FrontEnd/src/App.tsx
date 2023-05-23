@@ -3,12 +3,12 @@ import { TextField } from "@mui/material";
 import CourseDirectory from "./Course_Directory";
 import winter from "./Data/winter.json";
 import monsoon from "./Data/monsoon.json";
-import SearchBar from "./components/SearchBar";
-import "./styles/app.css";
-import CourseExplorer from "./components/CourseExplorer";
-import SemesterSwitch from "./components/SemesterSwitch";
-import ActionBar from "./components/ActionBar";
-import Combinator from "./components/Combinator";
+import SearchBar from "./components/SearchBar/SearchBar";
+import "./App.css";
+import CourseExplorer from "./components/CourseExplorer/CourseExplorer";
+import SemesterSwitch from "./components/SemesterSwitch/SemesterSwitch";
+import ActionBar from "./components/ActionBar/ActionBar";
+import Combinator from "./components/Combinator/Combinator";
 import { Analytics } from "@vercel/analytics/react";
 import { Link } from "react-router-dom";
 

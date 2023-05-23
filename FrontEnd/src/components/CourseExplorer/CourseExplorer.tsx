@@ -1,7 +1,7 @@
 import React from "react";
-import CourseDirectory from "../Course_Directory";
-import CourseItem from "./CourseItem";
-import type { Course } from "../Course_Directory";
+import CourseDirectory from "../../Course_Directory";
+import CourseItem from "../CourseItem/CourseItem";
+import type { Course } from "../../Course_Directory";
 
 export default function CourseExplorer(props: {
 	query: string;

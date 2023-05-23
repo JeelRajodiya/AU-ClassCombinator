@@ -1,7 +1,7 @@
 import React from "react";
-import CourseDirectory from "../Course_Directory";
+import CourseDirectory from "../../Course_Directory";
 
-import "./../styles/semesterSwitch.css";
+import "./SemesterSwitch.css";
 export default function SemesterSwitch(props: {
 	cd: CourseDirectory;
 	setCD: any;

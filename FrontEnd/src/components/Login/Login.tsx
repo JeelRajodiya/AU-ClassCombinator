@@ -3,7 +3,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
 import { GoogleLogin } from "@react-oauth/google";
 import { Navigate } from "react-router";
-import "../styles/login.css";
+import "./Login.css";
 type Credentials = {
 	aud: string;
 	azp: string;

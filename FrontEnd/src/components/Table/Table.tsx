@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef } from "react";
-import "../styles/table.css";
+import "./Table.css";
 
 interface TimetableItem {
 	time: string;

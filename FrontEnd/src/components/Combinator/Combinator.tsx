@@ -1,8 +1,8 @@
 import React from "react";
-import CourseDirectory from "./../Course_Directory";
-import "./../styles/combinator.css";
-import Table from "./Table";
-import { TimetableData } from "./Table";
+import CourseDirectory from "../../Course_Directory";
+import "./Combinator.css";
+import Table from "../Table/Table";
+import { TimetableData } from "../Table/Table";
 type CombinatorProps = {
 	cd: CourseDirectory;
 	combinations: string[][];
@@ -112,7 +112,7 @@ export default function Combinator(props: CombinatorProps) {
 											let dayNTime = e.split(/[ ,]+/);
 											let day = dayNTime[0];
 											let time = dayNTime.slice(1);
-
+											//@ts-ignore
 											unprocessedTable[day].push({
 												time,
 												course: code,

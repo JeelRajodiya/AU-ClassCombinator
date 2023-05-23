@@ -1,9 +1,9 @@
-<!-- # plagiarism-checker -->
-
+https://classcombinator.com
 # course combinator
-I'm here too!!!
 
-Live demo is available at https://course-directory-blue.vercel.app/
+
+Live demo is available at https://course-directory-blue.vercel.app/ 
+
 
 ## Description
 

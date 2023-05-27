@@ -10,6 +10,37 @@ type CombinatorProps = {
 	setSelected: React.Dispatch<React.SetStateAction<string[]>>;
 };
 
+function SelectedCoursesCard({
+	parentProps,
+	code,
+}: {
+	parentProps: CombinatorProps;
+	code: string;
+}) {
+	return (
+		<div
+			className="selected-course-card"
+			key={String(Math.random() * 1000)}
+		>
+			<span className="combinator-code">{code}</span>
+			<span>{parentProps.cd.getActiveSemCourseByCode(code)!.Name}</span>
+			<button
+				disabled={parentProps.selected.length <= 1}
+				onClick={() => {
+					if (parentProps.selected.length > 1) {
+						parentProps.setSelected(
+							parentProps.selected.filter((e) => e !== code)
+						);
+					}
+				}}
+				className="delete-selected-button"
+			>
+				Delete
+			</button>
+		</div>
+	);
+}
+
 export default function Combinator(props: CombinatorProps) {
 	let combinationCount = 0;
 
@@ -62,30 +93,7 @@ export default function Combinator(props: CombinatorProps) {
 				</h4>
 				<div className="selected-courses-wrapper">
 					{props.selected.map((code) => (
-						<div
-							className="selected-course-card"
-							key={String(Math.random() * 1000)}
-						>
-							<span className="combinator-code">{code}</span>
-							<span>
-								{props.cd.getActiveSemCourseByCode(code)!.Name}
-							</span>
-							<button
-								disabled={props.selected.length <= 1}
-								onClick={() => {
-									if (props.selected.length > 1) {
-										props.setSelected(
-											props.selected.filter(
-												(e) => e !== code
-											)
-										);
-									}
-								}}
-								className="delete-selected-button"
-							>
-								Delete
-							</button>
-						</div>
+						<SelectedCoursesCard parentProps={props} code={code} />
 					))}
 				</div>
 			</div>

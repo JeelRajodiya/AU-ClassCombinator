@@ -56,11 +56,8 @@ function CombinationDetails(props: {
 		</div>
 	);
 }
-
-export default function Combinator(props: CombinatorProps) {
-	let combinationCount = 0;
-
-	let unprocessedTable = {
+function getEmptyTable() {
+	return {
 		Mon: [],
 		Tue: [],
 		Wed: [],
@@ -69,18 +66,15 @@ export default function Combinator(props: CombinatorProps) {
 		Sat: [],
 		Sun: [],
 	};
+}
+export default function Combinator(props: CombinatorProps) {
+	let combinationCount = 0;
+
+	let unprocessedTable = getEmptyTable();
 	function processTable(unprocessedTable: any): TimetableData {
 		// unprocessed has Mon = [{course:"CSE105",time:["9:00-10:00","10:00-11:00"]},{course:"CSE105",time:["9:00-10:00","10:00-11:00"]}]
 		// processed has Mon = [{course:"CSE105",time:"9:00-10:00"},{course:"CSE105",time:"10:00-11:00"}]
-		let processedTable: any = {
-			Mon: [],
-			Tue: [],
-			Wed: [],
-			Thu: [],
-			Fri: [],
-			Sat: [],
-			Sun: [],
-		};
+		let processedTable: any = getEmptyTable();
 		for (let day in unprocessedTable) {
 			for (let i = 0; i < unprocessedTable[day].length; i++) {
 				for (let j = 0; j < unprocessedTable[day][i].time.length; j++) {

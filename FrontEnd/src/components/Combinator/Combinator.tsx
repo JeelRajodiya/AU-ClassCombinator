@@ -41,6 +41,22 @@ function SelectedCoursesCard({
 	);
 }
 
+function CombinationDetails(props: {
+	cd: CourseDirectory;
+	combination: string[];
+}) {
+	return (
+		<div className="days-to-go">
+			Active Days:{" "}
+			<u>{props.cd.getUsedDays(props.combination).join(", ")}</u>
+			<div>
+				<u>{7 - props.cd.getUsedDays(props.combination).length}</u>{" "}
+				holidays in a week
+			</div>
+		</div>
+	);
+}
+
 export default function Combinator(props: CombinatorProps) {
 	let combinationCount = 0;
 
@@ -143,21 +159,10 @@ export default function Combinator(props: CombinatorProps) {
 					<div className="time-table">
 						<div className="schedule-title">Schedule</div>
 						<Table timetable={processTable(unprocessedTable)} />
-
-						<div className="days-to-go">
-							Active Days:{" "}
-							<u>
-								{props.cd.getUsedDays(combination).join(", ")}
-							</u>
-							<div>
-								<u>
-									{7 -
-										props.cd.getUsedDays(combination)
-											.length}
-								</u>{" "}
-								holidays in a week
-							</div>
-						</div>
+						<CombinationDetails
+							cd={props.cd}
+							combination={combination}
+						/>
 					</div>
 				</div>
 			))}

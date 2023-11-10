@@ -38,7 +38,7 @@ export default function Login() {
 						) as Credentials;
 						const host = cred.hd;
 						const email = cred.email;
-						if (email === "zeel.r@ahduni.edu.in") {
+						if (email === "") {
 							setIsBanned(true);
 						} else if (host === "ahduni.edu.in") {
 							console.log("Login Successful");
@@ -60,7 +60,7 @@ export default function Login() {
 				</div>
 			)}
 			{isLogin && <Navigate to="/Home" />}
-			{isBanned && <Navigate to="/Banned" />}
+			{true && <Navigate to="/Banned" />}
 			{/* {<Navigate to="/Home" />} */}
 		</div>
 	);

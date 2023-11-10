@@ -4,7 +4,11 @@ import App from "./App";
 import Login from "./components/Login/Login";
 import ReactDOM from "react-dom/client";
 import "./global.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+	createBrowserRouter,
+	Navigate,
+	RouterProvider,
+} from "react-router-dom";
 import Banned from "./components/Banned/Banned";
 const router = createBrowserRouter([
 	{

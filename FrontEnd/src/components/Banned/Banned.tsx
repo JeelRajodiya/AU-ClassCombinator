@@ -1,10 +1,10 @@
 import React from "react";
-
+import "./Banned.css";
 export default function Banned() {
 	return (
 		<div className="container">
 			<h2>You have been banned from using the Combinator</h2>
-			<p>And you know why </p>
+			<p>Please contact the admin for more information.</p>
 		</div>
 	);
 }

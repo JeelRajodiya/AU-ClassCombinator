@@ -60,7 +60,7 @@ export default function Login() {
 				</div>
 			)}
 			{isLogin && <Navigate to="/Home" />}
-			{true && <Navigate to="/Banned" />}
+			{isBanned && <Navigate to="/Banned" />}
 			{/* {<Navigate to="/Home" />} */}
 		</div>
 	);

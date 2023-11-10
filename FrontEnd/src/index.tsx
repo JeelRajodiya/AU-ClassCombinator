@@ -5,6 +5,7 @@ import Login from "./components/Login/Login";
 import ReactDOM from "react-dom/client";
 import "./global.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Banned from "./components/Banned/Banned";
 const router = createBrowserRouter([
 	{
 		path: "/Home",
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <Login />,
+	},
+	{
+		path: "/Banned",
+		element: <Banned />,
 	},
 ]);
 

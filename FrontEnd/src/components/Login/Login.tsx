@@ -25,6 +25,7 @@ type Credentials = {
 export default function Login() {
 	let [isError, setIsError] = React.useState(false);
 	let [isLogin, setIsLogin] = React.useState(false);
+	let [isBanned, setIsBanned] = React.useState(false);
 	return (
 		<div className="container">
 			<h2>Login with your university email to access the Combinator</h2>
@@ -32,12 +33,14 @@ export default function Login() {
 				<GoogleLogin
 					theme="filled_blue"
 					onSuccess={(credentialResponse) => {
-						const host = (
-							jwt_decode(
-								credentialResponse.credential!
-							) as Credentials
-						).hd;
-						if (host === "ahduni.edu.in") {
+						const cred = jwt_decode(
+							credentialResponse.credential!
+						) as Credentials;
+						const host = cred.hd;
+						const email = cred.email;
+						if (email === "zeel.r@ahduni.edu.in") {
+							setIsBanned(true);
+						} else if (host === "ahduni.edu.in") {
 							console.log("Login Successful");
 							setIsLogin(true);
 						} else {
@@ -57,6 +60,7 @@ export default function Login() {
 				</div>
 			)}
 			{isLogin && <Navigate to="/Home" />}
+			{isBanned && <Navigate to="/Banned" />}
 			{/* {<Navigate to="/Home" />} */}
 		</div>
 	);

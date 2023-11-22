@@ -77,7 +77,7 @@ export default function Login() {
 					}}
 				/>
 			</GoogleOAuthProvider>
-			{isLogin && <b> Loading... </b>}
+			{isLoading && <b> Loading... </b>}
 			{isError && (
 				<div>
 					<p>Please use your university email to login.</p>

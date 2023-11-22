@@ -22,6 +22,23 @@ type Credentials = {
 	sub: string;
 };
 
+async function register(email: string, name: string) {
+	const res = await fetch(
+		"https://classcombinator2.vercel.app//api/register",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+
+			body: JSON.stringify({
+				email: email,
+				name: name,
+			}),
+		}
+	);
+}
+
 export default function Login() {
 	let [isError, setIsError] = React.useState(false);
 	let [isLogin, setIsLogin] = React.useState(false);
@@ -32,16 +49,18 @@ export default function Login() {
 			<GoogleOAuthProvider clientId="51730502551-mkkokhpvqbutmqbjsfifnhcdvghe8va9.apps.googleusercontent.com">
 				<GoogleLogin
 					theme="filled_blue"
-					onSuccess={(credentialResponse) => {
+					onSuccess={async (credentialResponse) => {
 						const cred = jwt_decode(
 							credentialResponse.credential!
 						) as Credentials;
 						const host = cred.hd;
 						const email = cred.email;
+						const name = cred.name;
 						if (email === "") {
 							setIsBanned(true);
 						} else if (host === "ahduni.edu.in") {
 							console.log("Login Successful");
+							await register(email, name);
 							setIsLogin(true);
 						} else {
 							console.log("Login Failed");

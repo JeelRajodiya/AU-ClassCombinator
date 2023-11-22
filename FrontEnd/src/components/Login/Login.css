@@ -20,10 +20,16 @@
 	height: 50px;
 }
 .sub-title {
-	font-size: 20px;
+	font-size: sm;
 	display: flex;
+	width: 100%;
+
+	display: flex;
+	justify-content: flex-end;
+	line-height: 0.5;
 }
 .title {
 	font-size: xx-large;
+	line-height: 0.5;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

@@ -52,7 +52,6 @@ export default function Login() {
 				<div>
 					<h1 className="title">Class Combinator</h1>
 					<span className="sub-title">
-						New URL &nbsp;
 						<a href="https://classcombinator.vercel.app">
 							classcombinator.vercel.app
 						</a>

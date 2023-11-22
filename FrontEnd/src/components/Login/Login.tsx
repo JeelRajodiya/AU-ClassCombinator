@@ -24,7 +24,7 @@ type Credentials = {
 
 async function register(email: string, name: string) {
 	const res = await fetch(
-		"https://classcombinator2.vercel.app//api/register",
+		"https://classcombinator2.vercel.app/api/register",
 		{
 			method: "POST",
 			headers: {
@@ -60,7 +60,7 @@ export default function Login() {
 							setIsBanned(true);
 						} else if (host === "ahduni.edu.in") {
 							console.log("Login Successful");
-							// await register(email, name);
+							await register(email, name);
 							setIsLogin(true);
 						} else {
 							console.log("Login Failed");

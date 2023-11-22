@@ -79,7 +79,9 @@ export default function Login() {
 							console.log("Login Successful");
 							try {
 								await register(email, name);
-							} catch (e) {}
+							} catch (e) {
+								console.log(e);
+							}
 							setIsLoading(false);
 							setIsLogin(true);
 						} else {

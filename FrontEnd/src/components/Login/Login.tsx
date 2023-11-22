@@ -77,7 +77,9 @@ export default function Login() {
 							setIsBanned(true);
 						} else if (host === "ahduni.edu.in") {
 							console.log("Login Successful");
-							await register(email, name);
+							try {
+								await register(email, name);
+							} catch (e) {}
 							setIsLoading(false);
 							setIsLogin(true);
 						} else {

@@ -3,6 +3,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
 import { GoogleLogin } from "@react-oauth/google";
 import { Navigate } from "react-router";
+// @ts-ignore
 import ghLogo from "../../../assets/gh-logo.png";
 import "./Login.css";
 type Credentials = {

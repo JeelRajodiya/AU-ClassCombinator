@@ -653,6 +653,73 @@
         }
     },
     {
+        "Code": "HRT571",
+        "Level": "Graduate Master's",
+        "Name": "Indigenous Knowledge Systems Management",
+        "Credits": "1.5",
+        "Faculties": [
+            "Vijay Ramchandani"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "HRTG511 Heritage and Conservation Discourses/HRT511 Heritage and Conservation Discourses/HRT511 Heritage Discourses and Frameworks/HRTG511 Heritage Discourses and Frameworks",
+        "Sections": {
+            "1": {
+                "Mon": [
+                    [
+                        "08:00",
+                        "09:30"
+                    ],
+                    [
+                        "17-02-2024",
+                        "25-02-2024"
+                    ]
+                ],
+                "Tue": [
+                    [
+                        "08:00",
+                        "09:30"
+                    ],
+                    [
+                        "17-02-2024",
+                        "25-02-2024"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "08:00",
+                        "09:30"
+                    ],
+                    [
+                        "17-02-2024",
+                        "25-02-2024"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "08:00",
+                        "09:30"
+                    ],
+                    [
+                        "17-02-2024",
+                        "25-02-2024"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "08:00",
+                        "09:30"
+                    ],
+                    [
+                        "17-02-2024",
+                        "25-02-2024"
+                    ]
+                ]
+            }
+        }
+    },
+    {
         "Code": "MGT111",
         "Level": "Undergraduate",
         "Name": "Identity and Behaviour",
@@ -894,18 +961,63 @@
         }
     },
     {
-        "Code": "EFB203",
-        "Level": "Undergraduate",
-        "Name": "Business Designing and Planning",
-        "Credits": "3",
+        "Code": "HRT612",
+        "Level": "Graduate Master's",
+        "Name": "Ethics and Professional Practices for Heritage Management",
+        "Credits": "1.5",
         "Faculties": [
-            "Not added"
+            "Neel Chapagain"
         ],
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "EFB101 Introduction to Entrepreneurship",
-        "Sections": {}
+        "Description": "HRTG511 Heritage and Conservation Discourses/HRT511 Heritage and Conservation Discourses/HRT511 Heritage Discourses and Frameworks/HRTG511 Heritage Discourses and Frameworks",
+        "Sections": {
+            "1": {
+                "Mon": [
+                    [
+                        "08:00",
+                        "09:30",
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "11-03-2024",
+                        "05-04-2024",
+                        "26-02-2024",
+                        "01-03-2024"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "08:00",
+                        "09:30",
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "11-03-2024",
+                        "05-04-2024",
+                        "26-02-2024",
+                        "01-03-2024"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "08:00",
+                        "09:30",
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "11-03-2024",
+                        "05-04-2024",
+                        "26-02-2024",
+                        "01-03-2024"
+                    ]
+                ]
+            }
+        }
     },
     {
         "Code": "EFB502",
@@ -1449,7 +1561,7 @@
                     ],
                     [
                         "02-01-2024",
-                        "16-02-2024"
+                        "14-04-2024"
                     ]
                 ],
                 "Wed": [
@@ -1459,7 +1571,7 @@
                     ],
                     [
                         "02-01-2024",
-                        "16-02-2024"
+                        "14-04-2024"
                     ]
                 ]
             }
@@ -2051,7 +2163,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "TOD531 Introduction to Analytics/TOD531 Analytics Lab,[ Basic R  ]",
+        "Description": "TOD531 Introduction to Analytics/TOD531 Analytics Lab,[ Basic R and Python ]",
         "Sections": {
             "1": {
                 "Sat": [
@@ -2578,20 +2690,6 @@
         }
     },
     {
-        "Code": "COM121",
-        "Level": "Undergraduate",
-        "Name": "Formal Logic",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Winter",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "None",
-        "Sections": {}
-    },
-    {
         "Code": "FAC637",
         "Level": "Graduate Master's",
         "Name": "Business Valuation",
@@ -2602,7 +2700,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "FAC534 Advanced Corporate Finance/FAC534 Strategic Corporate Finance, FAC331 Corporate Finance, FAC532 Financial Management - I, FAC533 Financial Management - II,[ Any good students who passes 2nd/3rd year of BBA, BCom, BA(Econ) or PhD(Fin/Eco/Mgt) students can take this course ]",
+        "Description": "FAC534 Advanced Corporate Finance/FAC534 Strategic Corporate Finance, FAC331 Corporate Finance, FAC532 Financial Management - I, FAC533 Financial Management - II,PREQ_OR,FAC331 Corporate Finance, FAC532 Financial Management - I, FAC533 Financial Management - II,[ Any good students who passes 2nd/3rd year of BBA, BCom, BA(Econ) or PhD(Fin/Eco/Mgt) students can take this course ]",
         "Sections": {
             "1": {
                 "Tue": [
@@ -2874,10 +2972,10 @@
                         "16-02-2024"
                     ]
                 ],
-                "Thu": [
+                "Wed": [
                     [
-                        "16:00",
-                        "17:30"
+                        "08:00",
+                        "09:30"
                     ],
                     [
                         "02-01-2024",
@@ -2931,20 +3029,6 @@
                 ]
             }
         }
-    },
-    {
-        "Code": "DES103",
-        "Level": "Undergraduate",
-        "Name": "Biomimicry With Playfulness",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Winter",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "Nature is the best example of good design. Taking inspiration from nature has been an important part of human evolution. There are many examples of good designs which have been inspired by nature. Biomimicry is studying elements from nature: form, colour, function, movement, life cycle, growth, etc. and using it as an inspiration for designing products, spaces, visuals for communication, systems, etc.Today in our modern world and our way of life, we are moving away from our natural connection with nature. It is all the more critical that we study its various inspects to learn and use it as an inspiration for good design. The whole area of Biomimicry, Bionics, etc, has developed a lot and there is a lot more awareness about this field in current times. Toys are also recognized today as playing an important role in learning, development, building cultural connect and socio-emotional bonds and as part of the entertainment sector. Toys are a part of unstructured play and a means to create playful experiences.  In this course, we will study nature with a new perspective and explore possibilities of using it to ideate and design toys or playful elements.,",
-        "Sections": {}
     },
     {
         "Code": "DES202",
@@ -3290,7 +3374,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "This course is intended for people seeking to integrate supply chain management (SCM) with analytics. Students will discover and solve problems in various domains of a supply chain, from source, make, move to sell, EOQ, forecasting and linear programming. Upon completion, you will learn concrete data analytics skills and tools to improve supply chain performance.,",
+        "Description": "In today's dynamic business landscape, effective decision-making is the linchpin of success for organizations striving to achieve efficiency and profitability. The ever-evolving complexities of global supply chains, along with the need for precise and agile decision-making, have led to a growing demand for professionals adept in the art of Supply Chain Analytics.",
         "Sections": {
             "1": {
                 "Mon": [
@@ -3428,20 +3512,6 @@
         }
     },
     {
-        "Code": "DGT232",
-        "Level": "Undergraduate",
-        "Name": "Digital Experience Design",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Winter",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "Digital practices are altering the way we archive, interpret and communicate knowledge resources to diverse audiences. This course blends digital practice, technical skills and narrative building techniques to train students in archiving, interpretation and designing digital experiences. Students will engage with technologies primarily used for digital preservation like Virtual Reality, Augmented Reality, Photogrammetry, LiDAR, and other tools for knowledge communication through digital medium.\u00a0,",
-        "Sections": {}
-    },
-    {
         "Code": "ECO321",
         "Level": "Undergraduate",
         "Name": "Empirical Research Methods In Economics ,(Subject to Academic Council Approval)",
@@ -3503,7 +3573,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "The course introduces students to interactive media and visualisation techniques through hands-on projects and practical exercises. Students will learn various digital and Generative AI tools for creating interactive media, visualisation, and digital exhibits for knowledge dissemination in a peer-to-peer context and public communication. Students will delve into various forms of interactive media, including creating timelines, graphs, network maps, non-linear interactive text stories, 360 walkthroughs, websites and visualisation dashboards. The course will introduce students to creative coding, enabling them to craft custom visualisations, animations, and generative art. By engaging in these projects, students will understand how to effectively convey information in an interactive and visually engaging manner for projects., ",
+        "Description": "The course introduces students to interactive media and visualisation techniques through hands-on projects and practical exercises. Students will learn various digital and Generative AI tools for creating interactive media, visualisation, and digital exhibits for knowledge dissemination in a peer-to-peer context and public communication. Students will delve into various forms of interactive media, including creating timelines, graphs, network maps, non-linear interactive text stories, 360 walkthroughs, websites and visualisation dashboards. The course will introduce students to creative coding, enabling them to craft custom visualisations, animations, and generative art. By engaging in these projects, students will understand how to effectively convey information in an interactive and visually engaging manner for projects.,",
         "Sections": {
             "1": {
                 "Mon": [
@@ -3540,7 +3610,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "This course provides an introduction to the socio-political and economic realities of information communication technology (ICT) of entertainment and commerce in India. The course will explore how the emergence of ICT has impacted various sectors of Indian society and economy, such as media, entertainment, and e-commerce, and how it has transformed the way people consume and access information. Through a series of case studies, students will examine the socio-economic and cultural implications of ICT in India and critically analyze the opportunities and challenges associated with its use., ",
+        "Description": "This course provides an introduction to the socio-political and economic realities of information communication technology (ICT) of entertainment and commerce in India. The course will explore how the emergence of ICT has impacted various sectors of Indian society and economy, such as media, entertainment, and e-commerce, and how it has transformed the way people consume and access information. Through a series of case studies, students will examine the socio-economic and cultural implications of ICT in India and critically analyze the opportunities and challenges associated with its use.,",
         "Sections": {
             "1": {
                 "Tue": [
@@ -3836,20 +3906,6 @@
         }
     },
     {
-        "Code": "TOD303",
-        "Level": "Undergraduate",
-        "Name": "Introduction to Optimization ,(Subject to Academic Council Approval)",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Winter",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "MAT142 Introductory Calculus",
-        "Sections": {}
-    },
-    {
         "Code": "TOD602",
         "Level": "Graduate Master's",
         "Name": "Advanced Statistical Techniques ,(Subject to Academic Council Approval)",
@@ -3897,7 +3953,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "Not added",
+        "Description": "ECO201 Intermediate Microeconomics, ECO640 Empirical Research Methods in Economics/ECO620 Empirical Research Methods in Economics",
         "Sections": {
             "1": {
                 "Tue": [
@@ -3977,6 +4033,20 @@
             "1": {
                 "Mon": [
                     [
+                        "11:00",
+                        "12:30",
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "02-01-2024",
+                        "17-01-2024",
+                        "05-02-2024",
+                        "09-02-2024"
+                    ]
+                ],
+                "Tue": [
+                    [
                         "13:00",
                         "14:30",
                         "13:00",
@@ -3984,23 +4054,9 @@
                     ],
                     [
                         "02-01-2024",
-                        "19-01-2024",
+                        "17-01-2024",
                         "05-02-2024",
                         "09-02-2024"
-                    ]
-                ],
-                "Tue": [
-                    [
-                        "11:00",
-                        "12:30",
-                        "11:00",
-                        "12:30"
-                    ],
-                    [
-                        "05-02-2024",
-                        "09-02-2024",
-                        "02-01-2024",
-                        "19-01-2024"
                     ]
                 ],
                 "Wed": [
@@ -4016,30 +4072,16 @@
                     ],
                     [
                         "02-01-2024",
-                        "19-01-2024",
+                        "17-01-2024",
                         "05-02-2024",
                         "09-02-2024",
                         "02-01-2024",
-                        "19-01-2024",
+                        "17-01-2024",
                         "05-02-2024",
                         "09-02-2024"
                     ]
                 ],
                 "Thu": [
-                    [
-                        "11:00",
-                        "12:30",
-                        "11:00",
-                        "12:30"
-                    ],
-                    [
-                        "05-02-2024",
-                        "09-02-2024",
-                        "02-01-2024",
-                        "19-01-2024"
-                    ]
-                ],
-                "Fri": [
                     [
                         "13:00",
                         "14:30",
@@ -4048,7 +4090,21 @@
                     ],
                     [
                         "02-01-2024",
-                        "19-01-2024",
+                        "17-01-2024",
+                        "05-02-2024",
+                        "09-02-2024"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "11:00",
+                        "12:30",
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "02-01-2024",
+                        "17-01-2024",
                         "05-02-2024",
                         "09-02-2024"
                     ]
@@ -4189,7 +4245,7 @@
         "Description": "This course is an introduction to the basic concepts and standards underlying the financial accounting systems. It aims to build upon the important accounting concepts and principles including revenue recognition, inventory, depreciation, and understanding the accounting equation. The course focuses initially on how to record economic events in the accounting records (i.e., bookkeeping and accrual accounting) and how to prepare and interpret the primary financial statements that summarize a firm's economic transactions (i.e., the balance sheet, the income statement, and the statement of cash flows). The course adopts a decision-maker perspective of accounting by emphasizing the relation between accounting data and the underlying economic events that generated them thereby enabling the students to read, understand and analyse financial statements through ratio analysis. The course also explores the areas of financial shenanigans wherein the students will be able to learn how companies use financial statements to disguise economic reality.,",
         "Sections": {
             "1": {
-                "Tue": [
+                "Mon": [
                     [
                         "08:00",
                         "09:30"
@@ -4199,7 +4255,7 @@
                         "14-04-2024"
                     ]
                 ],
-                "Thu": [
+                "Wed": [
                     [
                         "08:00",
                         "09:30"
@@ -4211,20 +4267,20 @@
                 ]
             },
             "2": {
-                "Mon": [
+                "Tue": [
                     [
-                        "16:00",
-                        "17:30"
+                        "17:30",
+                        "19:00"
                     ],
                     [
                         "02-01-2024",
                         "14-04-2024"
                     ]
                 ],
-                "Fri": [
+                "Thu": [
                     [
-                        "16:00",
-                        "17:30"
+                        "17:30",
+                        "19:00"
                     ],
                     [
                         "02-01-2024",
@@ -5152,7 +5208,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "The Constitution of India is the Supreme Law of the land. It has been offered as an elective to introduce the students to this supreme law.    The Course gives an overview of the various fundamental aspects of the Constitution and tries to throw light on its existing legal framework. The course also aims to bring out the critical aspects of the working of the Constitution for debates and discussions. The course provides an integrated orientation to the basic constitutional framework, its working, and important existing challenges. It also familiarises the student with the present challenges before our Constitution. The Course has two modules. \u2022Module I - The Fundamentals of the Indian Constitution This module includes making our constitutions and their fundamentals. It discusses the fundamental rights duties and Directive Principles of State Policy. \u2022Module II - The Pillars of the Indian Constitution This module discusses three pillars of our Constitutions viz Legislation, Executive, and Judiciary. It also discusses their inter-relations. ,",
+        "Description": "The Constitution of India is the Supreme Law of the land. It has been offered as an elective to introduce the students to this supreme law.    The Course gives an overview of the various fundamental aspects of the Constitution and tries to throw light on its existing legal framework. The course also aims to bring out the critical aspects of the working of the Constitution for debates and discussions. The course provides an integrated orientation to the basic constitutional framework, its working, and important existing challenges. It also familiarises the student with the present challenges before our Constitution. The Course discusses two important aspects\u00a0The Fundamentals of the Indian Constitution which will include the making of our constitutions and their fundamentals and discussion on the fundamental rights duties and Directive Principles of State Policy.The Pillars of the Indian Constitution\u00a0will discuss three pillars of our Constitution viz Legislation, Executive, and Judiciary and its inter-relations.,",
         "Sections": {
             "1": {
                 "Tue": [
@@ -5228,6 +5284,34 @@
                 ]
             }
         }
+    },
+    {
+        "Code": "HRT622",
+        "Level": "Graduate Master's",
+        "Name": "Urban Heritage Management",
+        "Credits": "1.5",
+        "Faculties": [
+            "To Be Announced "
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "HRTG511 Heritage and Conservation Discourses/HRT511 Heritage and Conservation Discourses/HRT511 Heritage Discourses and Frameworks/HRTG511 Heritage Discourses and Frameworks",
+        "Sections": {}
+    },
+    {
+        "Code": "HRT623",
+        "Level": "Graduate Master's",
+        "Name": "Nature & Environment Conservation and Management",
+        "Credits": "1.5",
+        "Faculties": [
+            "To Be Announced "
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "HRTG511 Heritage and Conservation Discourses/HRT511 Heritage and Conservation Discourses/HRT511 Heritage Discourses and Frameworks/HRTG511 Heritage Discourses and Frameworks",
+        "Sections": {}
     },
     {
         "Code": "INS521",
@@ -5668,7 +5752,7 @@
         "Code": "ECO699",
         "Level": "Graduate Master's",
         "Name": "Dissertation",
-        "Credits": "6",
+        "Credits": "9",
         "Faculties": [
             "Not added"
         ],
@@ -6484,7 +6568,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "None",
+        "Description": "This ENABLE course is a Major Elective for the CHM students. ",
         "Sections": {
             "1": {
                 "Tue": [
@@ -6693,7 +6777,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "None",
+        "Description": "This course will introduce students to the history of modern India. It is a survey course that extensively reviews the various aspects of the British colonial rule over the Indian subcontinent. The period covered is roughly between 1850s to 1940s. In the first couple of weeks, we will acquaint ourselves with the state and society in the Indian subcontinent before the advent of the colonial rule. However, the bulk of the course will examine in detail the impact of British imperial rule on India. We will explore the major political, social and cultural events with a focus on three themes: Caste, Print media and Nation. We will examine the emergence of caste as a form of politics; as an ideological battle-ground; and as a discourse. We will also engage with different vernacular publics that emerged through the rise of print in the nineteenth century India to explore the circulation and dissemination of the idea of the Indian nation. Gender and religion will be some of the other overlapping themes we will explore. ",
         "Sections": {
             "1": {
                 "Tue": [
@@ -6925,7 +7009,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "MAT281 Multivariable Calculus",
+        "Description": "[ Any course covering elementary differential geometry of curves and surfaces ]",
         "Sections": {
             "1": {
                 "Mon": [
@@ -7087,7 +7171,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "STA100 Probability, MAT 146 Intermediate Calculus/MAT146 Intermediate Calculus, MAT 246 Linear Algebra/MAT246 Linear Algebra,PREQ_OR,MAT 246 Linear Algebra/MAT246 Linear Algebra, STA100 Probability",
+        "Description": "STA100 Probability, MAT 146 Intermediate Calculus/MAT146 Intermediate Calculus, MAT 246 Linear Algebra/MAT246 Linear Algebra,PREQ_OR,MAT 246 Linear Algebra/MAT246 Linear Algebra",
         "Sections": {
             "1": {
                 "Tue": [
@@ -7171,7 +7255,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "PSY161 Personality and Individual Differences, PSY101 Introduction to Psychology,PREQ_OR,PSY215 Developmental Psychology, PSY 101 Introduction to Psychology/PSY101 Introduction to Psychology",
+        "Description": "PSY101 Introduction to Psychology, PSY161 Personality and Individual Differences, PSY215 Developmental Psychology,PREQ_OR,PSY215 Developmental Psychology",
         "Sections": {
             "1": {
                 "Mon": [
@@ -7374,7 +7458,9 @@
                         "02-01-2024",
                         "14-04-2024"
                     ]
-                ],
+                ]
+            },
+            "2": {
                 "Fri": [
                     [
                         "13:00",
@@ -7561,7 +7647,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "COM101 Effective Reading and Comprehension Skills",
+        "Description": "COM102 Advanced Writing",
         "Sections": {
             "1": {
                 "Tue": [
@@ -8010,7 +8096,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "COM102 Advanced Writing,PREQ_OR,COM101 Effective Reading and Comprehension Skills",
+        "Description": "COM102 Advanced Writing",
         "Sections": {
             "1": {
                 "Tue": [
@@ -8188,7 +8274,7 @@
     {
         "Code": "PVA102",
         "Level": "Undergraduate",
-        "Name": "Exploring the Black Box ,(Subject to Academic Council Approval)",
+        "Name": "Exploring the Black Box",
         "Credits": "3",
         "Faculties": [
             "Not added"
@@ -8196,7 +8282,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "Taught in the first half of Winter 2024, this intensive course is a Core Course for the Integrated Arts Programme. It will serve as a means to build skills and sensibilities in a range of visual and performance-oriented arts. Through hands-on introduction to the properties of the Black Box, it will show students how these properties - visual, auditory, and spatial - can be brought into their own artistic practice. The course will have three practice-based components led by eminent practitioners: (a) ideation and production of an art installation; (b) construction of a theatrical narrative around the installation; (c) video-making that simultaneously enhances the experience of theatre and visual art and actively intervenes in those practices. The art works created during the course will have the city as their main thematic. The course will have lecture sessions to help contextualise urban engagements and diverse artistic practices to which the student will be exposed and to elaborate on what is meant by integrated and expanded arts.\u00a0,",
+        "Description": "This module-based intensive course is a Core Course for the Integrated Arts Programme. It will serve as a means to build skills and sensibilities in a range of visual and performance-oriented arts. Through hands-on introduction to the properties of the Black Box, it will show students how these properties - visual, auditory, and spatial - can be brought into their own artistic practice. The course will have three practice-based components led by eminent practitioners: (a) ideation and production of an art installation; (b) construction of a theatrical narrative around the installation; (c) video-making that simultaneously enhances the experience of theatre and visual art and actively intervenes in those practices. The art works created during the course will have the city as their main thematic. The course will have lecture sessions to help contextualise urban engagements and diverse artistic practices to which the student will be exposed and to elaborate on what is meant by integrated and expanded arts.\u00a0,",
         "Sections": {}
     },
     {
@@ -9005,13 +9091,13 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "CSD102 Data Science/CSD102 Advanced Level Data Science, CSE100 Fundamentals of Computer Programming",
+        "Description": "CSD102 Data Science/CSD102 Advanced Level Data Science, CSE100 Fundamentals of Computer Programming,ANTIREQ_OR,CSE100 Fundamentals of Computer Programming",
         "Sections": {
             "1": {
-                "Wed": [
+                "Tue": [
                     [
-                        "09:30",
-                        "11:00"
+                        "13:00",
+                        "14:30"
                     ],
                     [
                         "02-01-2024",
@@ -9237,7 +9323,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "None",
+        "Description": "The Probability and Stochastic Process (PSP) is an undergraduate math course aimed at teaching the fundamentals of probability and random processes to model the uncertainty in human\u2019s daily life and applied the knowledge gain into the field of engineering like Finance, Biology, Signal Processing and Communications, Biomedical, Data Analytics, Computer Science etc.           This course is a core subject of CSE undergraduate programs at the School of Engineering and Applied Science. The course is designed to develop the student\u2019s various soft skills like problem-solving, teamwork, critical thinking, and Monte Carlo simulation framework to model uncertainty. ,",
         "Sections": {
             "1": {
                 "Tue": [

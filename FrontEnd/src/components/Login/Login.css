@@ -30,6 +30,6 @@
 }
 .title {
 	font-size: xx-large;
-	line-height: 0.5;
+	/* line-height: 0.5; */
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

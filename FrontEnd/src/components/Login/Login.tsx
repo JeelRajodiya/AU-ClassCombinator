@@ -3,6 +3,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
 import { GoogleLogin } from "@react-oauth/google";
 import { Navigate } from "react-router";
+import ghLogo from "../../../assets/gh-logo.png";
 import "./Login.css";
 type Credentials = {
 	aud: string;
@@ -46,7 +47,21 @@ export default function Login() {
 	let [isLoading, setIsLoading] = React.useState(false);
 	return (
 		<div className="container">
-			<h2>Login with your university email to access the Combinator</h2>
+			<div className="title-bar">
+				<div>
+					<h1 className="title">Class Combinator</h1>
+					<span className="sub-title">
+						New URL &nbsp;
+						<a href="https://classcombinator.vercel.app">
+							classcombinator.vercel.app
+						</a>
+					</span>
+				</div>
+				<a href="https://github.com/JeelRajodiya/AU-ClassCombinator">
+					<img src={ghLogo} className="gh_logo" alt="logo" />
+				</a>
+			</div>
+			<h4>Login with your university email to access the Combinator</h4>
 			<GoogleOAuthProvider clientId="51730502551-mkkokhpvqbutmqbjsfifnhcdvghe8va9.apps.googleusercontent.com">
 				<GoogleLogin
 					theme="filled_blue"

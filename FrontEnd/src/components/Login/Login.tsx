@@ -43,6 +43,7 @@ export default function Login() {
 	let [isError, setIsError] = React.useState(false);
 	let [isLogin, setIsLogin] = React.useState(false);
 	let [isBanned, setIsBanned] = React.useState(false);
+	let [isLoading, setIsLoading] = React.useState(false);
 	return (
 		<div className="container">
 			<h2>Login with your university email to access the Combinator</h2>
@@ -53,6 +54,7 @@ export default function Login() {
 						const cred = jwt_decode(
 							credentialResponse.credential!
 						) as Credentials;
+						setIsLoading(true);
 						const host = cred.hd;
 						const email = cred.email;
 						const name = cred.name;
@@ -61,9 +63,11 @@ export default function Login() {
 						} else if (host === "ahduni.edu.in") {
 							console.log("Login Successful");
 							await register(email, name);
+							setIsLoading(false);
 							setIsLogin(true);
 						} else {
 							console.log("Login Failed");
+							setIsLoading(false);
 							setIsError(true);
 						}
 					}}
@@ -73,6 +77,7 @@ export default function Login() {
 					}}
 				/>
 			</GoogleOAuthProvider>
+			{isLogin && <b> Loading... </b>}
 			{isError && (
 				<div>
 					<p>Please use your university email to login.</p>

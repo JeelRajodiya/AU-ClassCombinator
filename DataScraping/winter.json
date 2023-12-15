@@ -621,7 +621,7 @@
         "Name": "Strategic Corporate Finance",
         "Credits": "3",
         "Faculties": [
-            "Prateek Jain"
+            "To Be Announced "
         ],
         "Semester": "Winter",
         "isBiSem": false,
@@ -1620,7 +1620,7 @@
         "Name": "Security Analysis and Portfolio Management",
         "Credits": "3",
         "Faculties": [
-            "Hemil Shah"
+            "To Be Announced "
         ],
         "Semester": "Winter",
         "isBiSem": false,
@@ -1630,8 +1630,8 @@
             "1": {
                 "Mon": [
                     [
-                        "08:00",
-                        "09:30"
+                        "13:00",
+                        "14:30"
                     ],
                     [
                         "02-01-2024",
@@ -1640,8 +1640,8 @@
                 ],
                 "Wed": [
                     [
-                        "08:00",
-                        "09:30"
+                        "13:00",
+                        "14:30"
                     ],
                     [
                         "02-01-2024",
@@ -1865,7 +1865,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "None,[ Students interested in understanding issues in economic development. ]",
+        "Description": "[ Students interested in understanding issues in economic development. ]",
         "Sections": {
             "1": {
                 "Tue": [
@@ -2039,6 +2039,7 @@
         "Name": "Performance Management",
         "Credits": "3",
         "Faculties": [
+            "Jinal Parikh",
             "Poonam Dugar"
         ],
         "Semester": "Winter",
@@ -3031,6 +3032,43 @@
         }
     },
     {
+        "Code": "DES103",
+        "Level": "Undergraduate",
+        "Name": "Biomimicry With Playfulness",
+        "Credits": "3",
+        "Faculties": [
+            "To Be Announced "
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Nature is the best example of good design. Taking inspiration from nature has been an important part of human evolution. There are many examples of good designs which have been inspired by nature. Biomimicry is studying elements from nature: form, colour, function, movement, life cycle, growth, etc. and using it as an inspiration for designing products, spaces, visuals for communication, systems, etc.Today in our modern world and our way of life, we are moving away from our natural connection with nature. It is all the more critical that we study its various inspects to learn and use it as an inspiration for good design. The whole area of Biomimicry, Bionics, etc, has developed a lot and there is a lot more awareness about this field in current times. Toys are also recognized today as playing an important role in learning, development, building cultural connect and socio-emotional bonds and as part of the entertainment sector. Toys are a part of unstructured play and a means to create playful experiences.  In this course, we will study nature with a new perspective and explore possibilities of using it to ideate and design toys or playful elements.,",
+        "Sections": {
+            "1": {
+                "Mon": [
+                    [
+                        "16:00",
+                        "17:30"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "16:00",
+                        "17:30"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ]
+            }
+        }
+    },
+    {
         "Code": "DES202",
         "Level": "Undergraduate",
         "Name": "Interaction Design and User Experience",
@@ -3514,7 +3552,7 @@
     {
         "Code": "ECO321",
         "Level": "Undergraduate",
-        "Name": "Empirical Research Methods In Economics ,(Subject to Academic Council Approval)",
+        "Name": "Empirical Research Methods In Economics",
         "Credits": "3",
         "Faculties": [
             "Aranya Chakraborty"
@@ -3522,7 +3560,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "Not added",
+        "Description": "[ Any econometrics or Advanced statistics class ]",
         "Sections": {
             "1": {
                 "Mon": [
@@ -3551,7 +3589,7 @@
     {
         "Code": "TOD444",
         "Level": "Undergraduate",
-        "Name": "Transport Analytics and Modelling ,(Subject to Academic Council Approval)",
+        "Name": "Transport Analytics and Modelling",
         "Credits": "3",
         "Faculties": [
             "Not added"
@@ -3676,7 +3714,7 @@
     {
         "Code": "FAC639",
         "Level": "Graduate Master's",
-        "Name": "Modelling Randomness in Financial Markets ,(Subject to Academic Council Approval)",
+        "Name": "Modelling Randomness in Financial Markets ,(Subject to Academic Council Approval) >>2506",
         "Credits": "3",
         "Faculties": [
             "To Be Announced "
@@ -3833,7 +3871,7 @@
     {
         "Code": "FAC638",
         "Level": "Graduate Master's",
-        "Name": "Fixed Income Securities ,(Subject to Academic Council Approval)",
+        "Name": "Fixed Income Securities ,(Subject to Academic Council Approval) >>2507",
         "Credits": "3",
         "Faculties": [
             "Mayank Patel"
@@ -3841,7 +3879,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "FAC112 Corporate Accounting - II/FAC112 Corporate Accounting, FAC114 Financial Accounting, FAC331 Corporate Finance,[ Basic Familiarity with MS Excel ]",
+        "Description": "[ Basic Familiarity with MS Excel ]",
         "Sections": {
             "1": {
                 "Mon": [
@@ -3870,7 +3908,7 @@
     {
         "Code": "MKT661",
         "Level": "Graduate Master's",
-        "Name": "Luxury Marketing ,(Subject to Academic Council Approval)",
+        "Name": "Luxury Marketing ,(Subject to Academic Council Approval) >>2517",
         "Credits": "3",
         "Faculties": [
             "Atul Kumar"
@@ -3908,7 +3946,7 @@
     {
         "Code": "TOD602",
         "Level": "Graduate Master's",
-        "Name": "Advanced Statistical Techniques ,(Subject to Academic Council Approval)",
+        "Name": "Advanced Statistical Techniques ,(Subject to Academic Council Approval) >>2525",
         "Credits": "3",
         "Faculties": [
             "Abhinandan Sinha"
@@ -3945,7 +3983,7 @@
     {
         "Code": "ECO440",
         "Level": "Undergraduate",
-        "Name": "Economics of Labour and Discrimination ,(Subject to Academic Council Approval)",
+        "Name": "Economics of Labour and Discrimination ,(Subject to Academic Council Approval) >>2530",
         "Credits": "3",
         "Faculties": [
             "Pallavi Vyas"
@@ -3953,7 +3991,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "ECO201 Intermediate Microeconomics, ECO640 Empirical Research Methods in Economics/ECO620 Empirical Research Methods in Economics",
+        "Description": "ECO201 Intermediate Microeconomics, EPP220 Mathematical Economics and Econometrics/ECO220 Econometrics",
         "Sections": {
             "1": {
                 "Tue": [
@@ -3982,7 +4020,7 @@
     {
         "Code": "MGT643",
         "Level": "Graduate Master's",
-        "Name": "International Business Strategy: Challenges and Opportunities ,(Subject to Academic Council Approval)",
+        "Name": "International Business Strategy: Challenges and Opportunities ,(Subject to Academic Council Approval) >>2533",
         "Credits": "3",
         "Faculties": [
             "To Be Announced "
@@ -4019,7 +4057,7 @@
     {
         "Code": "HRT635",
         "Level": "Graduate Master's",
-        "Name": "Heritage Global Commons, Negotiations and Distributed Network Technologies ,(Subject to Academic Council Approval)",
+        "Name": "Heritage Global Commons, Negotiations and Distributed Network Technologies ,(Subject to Academic Council Approval) >>2534",
         "Credits": "3",
         "Faculties": [
             "A Damodaran",
@@ -4107,6 +4145,43 @@
                         "17-01-2024",
                         "05-02-2024",
                         "09-02-2024"
+                    ]
+                ]
+            }
+        }
+    },
+    {
+        "Code": "HRT513",
+        "Level": "Graduate Master's",
+        "Name": "Epics   and Heritage Landscapes of India ,(Subject to Academic Council Approval) >>2548",
+        "Credits": "3",
+        "Faculties": [
+            "Molly Kaushal"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Not added",
+        "Sections": {
+            "1": {
+                "Tue": [
+                    [
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
                     ]
                 ]
             }
@@ -4424,7 +4499,7 @@
                         "11:00"
                     ],
                     [
-                        "02-01-2024",
+                        "09-01-2024",
                         "14-04-2024"
                     ]
                 ],
@@ -4434,7 +4509,7 @@
                         "11:00"
                     ],
                     [
-                        "02-01-2024",
+                        "09-01-2024",
                         "14-04-2024"
                     ]
                 ]
@@ -5044,6 +5119,51 @@
                     [
                         "02-01-2024",
                         "16-02-2024"
+                    ]
+                ]
+            }
+        }
+    },
+    {
+        "Code": "INT574",
+        "Level": "Graduate Master's",
+        "Name": "Venture Studio Fellowship",
+        "Credits": "12",
+        "Faculties": [
+            "Tanvi Rangwala"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {
+            "1": {
+                "Tue": [
+                    [
+                        "16:00",
+                        "17:30",
+                        "17:30",
+                        "19:00"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024",
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "16:00",
+                        "17:30",
+                        "17:30",
+                        "19:00"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024",
+                        "02-01-2024",
+                        "14-04-2024"
                     ]
                 ]
             }
@@ -6096,6 +6216,20 @@
         }
     },
     {
+        "Code": "BIO790",
+        "Level": "Graduate Doctoral",
+        "Name": "Rotation in Lab",
+        "Credits": "4",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
+    },
+    {
         "Code": "PHY111",
         "Level": "Undergraduate",
         "Name": "Classical Mechanics",
@@ -6521,6 +6655,37 @@
         }
     },
     {
+        "Code": "LIT210",
+        "Level": "Undergraduate",
+        "Name": "Literature for Life",
+        "Credits": "3",
+        "Faculties": [
+            "Kunal  Basu"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {
+            "1": {
+                "Sat": [
+                    [
+                        "14:30",
+                        "16:00",
+                        "16:00",
+                        "17:30"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024",
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ]
+            }
+        }
+    },
+    {
         "Code": "HST103",
         "Level": "Undergraduate",
         "Name": "Legacies of Empire: From the Mauryas to the Mughals",
@@ -6531,7 +6696,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "None,[ Although it is offered as a Core Course for History Major, the course may be of interest for students doing Majors in Political Science, Economics, and Management Studies.  ]",
+        "Description": "[ Although it is offered as a Core Course for History Major, the course may be of interest for students doing Majors in Political Science, Economics, and Management Studies. ]",
         "Sections": {
             "1": {
                 "Tue": [
@@ -6670,6 +6835,95 @@
         }
     },
     {
+        "Code": "CHY101",
+        "Level": "Undergraduate",
+        "Name": "Chemistry Practicals",
+        "Credits": "1.5",
+        "Faculties": [
+            "To Be Announced "
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None,[ 10+2 level Chemistry, Fundamental aspects of chemistry ]",
+        "Sections": {
+            "1": {
+                "Mon": [
+                    [
+                        "13:00",
+                        "14:30",
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "02-01-2024",
+                        "10-02-2024",
+                        "02-01-2024",
+                        "10-02-2024"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "13:00",
+                        "14:30",
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "02-01-2024",
+                        "10-02-2024",
+                        "02-01-2024",
+                        "10-02-2024"
+                    ]
+                ],
+                "Sat": [
+                    [
+                        "13:00",
+                        "14:30",
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "02-01-2024",
+                        "20-01-2024",
+                        "02-01-2024",
+                        "20-01-2024"
+                    ]
+                ]
+            },
+            "2": {
+                "Tue": [
+                    [
+                        "13:00",
+                        "14:30",
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "02-01-2024",
+                        "10-02-2024",
+                        "02-01-2024",
+                        "10-02-2024"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "13:00",
+                        "14:30",
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "02-01-2024",
+                        "10-02-2024",
+                        "02-01-2024",
+                        "10-02-2024"
+                    ]
+                ]
+            }
+        }
+    },
+    {
         "Code": "PHL301",
         "Level": "Undergraduate",
         "Name": "Foundation Seminar",
@@ -6680,23 +6934,23 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "PHL 201 Text and Interpretation/PHL201 Text and Interpretation,PREQ_OR,PHI 250 Justice in a Global Context/PHI250 Justice in a Global Context,PREQ_OR,PHI225 Advanced Introduction to Indian Philosophy,[ or a 200-Level PHI course. ]",
+        "Description": "PHI120 Introduction to Ethical Theory: Virtues, Vices and Values, PHI200 History of Modern Philosophy: Metaphysics and Epistemology,PREQ_OR,PHI200 History of Modern Philosophy: Metaphysics and Epistemology,[ any other 200-Level PHI course. ]",
         "Sections": {
             "1": {
-                "Tue": [
+                "Mon": [
                     [
-                        "11:00",
-                        "12:30"
+                        "08:00",
+                        "09:30"
                     ],
                     [
                         "02-01-2024",
                         "14-04-2024"
                     ]
                 ],
-                "Thu": [
+                "Fri": [
                     [
-                        "11:00",
-                        "12:30"
+                        "08:00",
+                        "09:30"
                     ],
                     [
                         "02-01-2024",
@@ -6883,46 +7137,13 @@
         "Name": "Conversational Japanese - II",
         "Credits": "3",
         "Faculties": [
-            "Akshay Chudasama"
+            "Not added"
         ],
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
         "Description": "JAP-101 Japanese for beginners, JAP102 Introduction to Japanese, JAP111 Conversational Japanese - I, PHL132 Introduction to Japanese,PREQ_OR,JAP102 Introduction to Japanese,PREQ_OR,JAP111 Conversational Japanese - I,PREQ_OR,PHL132 Introduction to Japanese",
-        "Sections": {
-            "1": {
-                "Tue": [
-                    [
-                        "17:30",
-                        "19:00"
-                    ],
-                    [
-                        "02-01-2024",
-                        "14-04-2024"
-                    ]
-                ],
-                "Thu": [
-                    [
-                        "17:30",
-                        "19:00"
-                    ],
-                    [
-                        "02-01-2024",
-                        "14-04-2024"
-                    ]
-                ],
-                "Fri": [
-                    [
-                        "17:30",
-                        "19:00"
-                    ],
-                    [
-                        "02-01-2024",
-                        "14-04-2024"
-                    ]
-                ]
-            }
-        }
+        "Sections": {}
     },
     {
         "Code": "BIO506",
@@ -7004,36 +7225,13 @@
         "Name": "Introduction to Differential Geometry",
         "Credits": "3",
         "Faculties": [
-            "Ashwin Pande"
+            "Not added"
         ],
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
         "Description": "[ Any course covering elementary differential geometry of curves and surfaces ]",
-        "Sections": {
-            "1": {
-                "Mon": [
-                    [
-                        "16:00",
-                        "17:30"
-                    ],
-                    [
-                        "02-01-2024",
-                        "14-04-2024"
-                    ]
-                ],
-                "Fri": [
-                    [
-                        "16:00",
-                        "17:30"
-                    ],
-                    [
-                        "02-01-2024",
-                        "14-04-2024"
-                    ]
-                ]
-            }
-        }
+        "Sections": {}
     },
     {
         "Code": "PHY732",
@@ -7255,7 +7453,7 @@
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "PSY101 Introduction to Psychology, PSY161 Personality and Individual Differences, PSY215 Developmental Psychology,PREQ_OR,PSY215 Developmental Psychology",
+        "Description": "PSY101 Introduction to Psychology, PSY215 Developmental Psychology",
         "Sections": {
             "1": {
                 "Mon": [
@@ -7805,6 +8003,28 @@
                         "14-04-2024"
                     ]
                 ]
+            },
+            "3": {
+                "Tue": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ]
             }
         }
     },
@@ -7965,6 +8185,20 @@
         }
     },
     {
+        "Code": "BIO 791",
+        "Level": "Graduate Doctoral",
+        "Name": "Research Rotation II",
+        "Credits": "4",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "None",
+        "Sections": {}
+    },
+    {
         "Code": "GER112",
         "Level": "Undergraduate",
         "Name": "Conversational German - II",
@@ -8054,36 +8288,13 @@
         "Name": "Urdu Prose and Poetry II",
         "Credits": "3",
         "Faculties": [
-            "Salmabanu Shaikh"
+            "Not added"
         ],
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
         "Description": "PHL134 Urdu Prose and Poetry/URD201 Urdu Prose and Poetry/LIT105 Urdu Prose and Poetry",
-        "Sections": {
-            "1": {
-                "Mon": [
-                    [
-                        "16:00",
-                        "17:30"
-                    ],
-                    [
-                        "02-01-2024",
-                        "14-04-2024"
-                    ]
-                ],
-                "Fri": [
-                    [
-                        "16:00",
-                        "17:30"
-                    ],
-                    [
-                        "02-01-2024",
-                        "14-04-2024"
-                    ]
-                ]
-            }
-        }
+        "Sections": {}
     },
     {
         "Code": "PVA222",
@@ -8160,6 +8371,80 @@
         }
     },
     {
+        "Code": "LIT230",
+        "Level": "Undergraduate",
+        "Name": "Gira Gujarati",
+        "Credits": "3",
+        "Faculties": [
+            "Chirag Trivedi"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "The course Gira Gujarati aims at introducing the literature written in Gujarati to the course participants.\u00a0 It consists of a variegated and fascinating collection of easy to read Gujarati stories and poems written by a host of celebrated Gujarati writers and poets \u2013 Narsinh Mehta, Narmad, Govardhanram Tripathi, Kanhaiyalal Munshi, M K Gandhi, Pannalal Patel, Zaverchand Meghani, Umashankar Joshi, Mareez, Dhumketu, Joseph Macwan, Ramesh Parekh, Kundanika Kapadia, Raghuveer Chaudhary, Suresh Joshi, Himanshi Shelat, Neerav Patel, Dalpat Chauhan and a few more. Almost all selected texts have been translated into English; a parallel reading of the translation in English could make the Gujarati literary pieces more accessible. ",
+        "Sections": {
+            "1": {
+                "Tue": [
+                    [
+                        "17:30",
+                        "19:00"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "17:30",
+                        "19:00"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ]
+            }
+        }
+    },
+    {
+        "Code": "SPS505",
+        "Level": "Graduate Master's",
+        "Name": "Studying Culture (Graduate)",
+        "Credits": "3",
+        "Faculties": [
+            "Aditi Deo"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Not added",
+        "Sections": {
+            "1": {
+                "Mon": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ]
+            }
+        }
+    },
+    {
         "Code": "MUS105",
         "Level": "Undergraduate",
         "Name": "A Glimpse into the World of Hindustani Music",
@@ -8197,9 +8482,46 @@
         }
     },
     {
+        "Code": "PHY735",
+        "Level": "Graduate Doctoral",
+        "Name": "Stars and galaxies",
+        "Credits": "3",
+        "Faculties": [
+            "Samyaday Choudhury"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Not added",
+        "Sections": {
+            "1": {
+                "Mon": [
+                    [
+                        "08:00",
+                        "09:30"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "08:00",
+                        "09:30"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ]
+            }
+        }
+    },
+    {
         "Code": "PVA130",
         "Level": "Undergraduate",
-        "Name": "Fundamentals of Photography",
+        "Name": "Fundamentals of Photography ,(Subject to Academic Council Approval) >>2484",
         "Credits": "3",
         "Faculties": [
             "To Be Announced "
@@ -8234,9 +8556,40 @@
         }
     },
     {
+        "Code": "PVA127",
+        "Level": "Undergraduate",
+        "Name": "Street Theatre: Raise the Voice",
+        "Credits": "3",
+        "Faculties": [
+            "Savan Zalariya"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Street theatre is a form of performing art that takes place in public spaces, such as streets, parks, or squares. It often involves theatrical performances that address social or political issues, using creative and interactive techniques to engage with the audience. Street theatre is theatre which goes to the people and performed among them, and has potential to create significant awareness about critical issues of society.",
+        "Sections": {
+            "1": {
+                "Mon": [
+                    [
+                        "16:00",
+                        "17:30",
+                        "17:30",
+                        "19:00"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024",
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ]
+            }
+        }
+    },
+    {
         "Code": "BIO330",
         "Level": "Undergraduate",
-        "Name": "Introductory Biophysics ,(Subject to Academic Council Approval)",
+        "Name": "Introductory Biophysics ,(Subject to Academic Council Approval) >>2500",
         "Credits": "3",
         "Faculties": [
             "Ashim Rai",
@@ -8272,9 +8625,46 @@
         }
     },
     {
+        "Code": "MAT515",
+        "Level": "Graduate Master's",
+        "Name": "Combinatorial Enumeration ,(Subject to Academic Council Approval) >>2501",
+        "Credits": "3",
+        "Faculties": [
+            "Manjil  Saikia"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Not added",
+        "Sections": {
+            "1": {
+                "Mon": [
+                    [
+                        "19:00",
+                        "20:30"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "19:00",
+                        "20:30"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ]
+            }
+        }
+    },
+    {
         "Code": "PVA102",
         "Level": "Undergraduate",
-        "Name": "Exploring the Black Box",
+        "Name": "Exploring the Black Box ,(Subject to Academic Council Approval) >>2502",
         "Credits": "3",
         "Faculties": [
             "Not added"
@@ -8288,7 +8678,7 @@
     {
         "Code": "PSY416",
         "Level": "Undergraduate",
-        "Name": "Psychology of Emotions ,(Subject to Academic Council Approval)",
+        "Name": "Psychology of Emotions ,(Subject to Academic Council Approval) >>2503",
         "Credits": "3",
         "Faculties": [
             "Divita Singh"
@@ -8325,7 +8715,7 @@
     {
         "Code": "PSY372",
         "Level": "Undergraduate",
-        "Name": "Applied Social Psychology and Select Laws in India ,(Subject to Academic Council Approval)",
+        "Name": "Applied Social Psychology and Select Laws in India ,(Subject to Academic Council Approval) >>2505",
         "Credits": "3",
         "Faculties": [
             "Shilpa Pandit"
@@ -8362,7 +8752,7 @@
     {
         "Code": "HST199",
         "Level": "Undergraduate",
-        "Name": "The Sweep of History",
+        "Name": "The Sweep of History ,(Subject to Academic Council Approval) >>2516",
         "Credits": "3",
         "Faculties": [
             "Guillaume Wadia"
@@ -8399,7 +8789,7 @@
     {
         "Code": "MUS106",
         "Level": "Undergraduate",
-        "Name": "Khayal for Beginners",
+        "Name": "Khayal for Beginners ,(Subject to Academic Council Approval) >>2518",
         "Credits": "3",
         "Faculties": [
             "Lakshmi Sreeram"
@@ -8436,7 +8826,7 @@
     {
         "Code": "SPS352",
         "Level": "Undergraduate",
-        "Name": "Gender and Citizenship",
+        "Name": "Gender and Citizenship ,(Subject to Academic Council Approval) >>2519",
         "Credits": "3",
         "Faculties": [
             "Maryann Chacko"
@@ -8474,7 +8864,7 @@
     {
         "Code": "HST175",
         "Level": "Undergraduate",
-        "Name": "Sources of Indian Tradition",
+        "Name": "Sources of Indian Tradition ,(Subject to Academic Council Approval) >>2520",
         "Credits": "3",
         "Faculties": [
             "Aditya Chaturvedi"
@@ -8511,7 +8901,7 @@
     {
         "Code": "LIT500",
         "Level": "Graduate Master's",
-        "Name": "The City in World Literature ,(Subject to Academic Council Approval)",
+        "Name": "The City in World Literature",
         "Credits": "3",
         "Faculties": [
             "Pallavi Narayan"
@@ -8548,7 +8938,7 @@
     {
         "Code": "LIT300",
         "Level": "Undergraduate",
-        "Name": "The City in World Literature ,(Subject to Academic Council Approval)",
+        "Name": "The City in World Literature",
         "Credits": "3",
         "Faculties": [
             "Pallavi Narayan"
@@ -8573,6 +8963,45 @@
                     [
                         "16:00",
                         "17:30"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ]
+            }
+        }
+    },
+    {
+        "Code": "RES703",
+        "Level": "Graduate Doctoral",
+        "Name": "Scientific Research Methodology ,(Subject to Academic Council Approval) >>2539",
+        "Credits": "3",
+        "Faculties": [
+            "Ashim Rai",
+            "Bhuvan Pathak",
+            "Ratna Ghosal"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Not added",
+        "Sections": {
+            "1": {
+                "Tue": [
+                    [
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "14:30",
+                        "16:00"
                     ],
                     [
                         "02-01-2024",
@@ -9009,13 +9438,36 @@
         "Name": "Conservation and Preservation Science",
         "Credits": "3",
         "Faculties": [
-            "Not added"
+            "Aditya Prakash Kanth"
         ],
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
         "Description": "None",
-        "Sections": {}
+        "Sections": {
+            "1": {
+                "Tue": [
+                    [
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ]
+            }
+        }
     },
     {
         "Code": "CSE108",
@@ -9840,6 +10292,44 @@
         "Sections": {}
     },
     {
+        "Code": "MAT248",
+        "Level": "Undergraduate",
+        "Name": "Applied Linear Algebra",
+        "Credits": "3",
+        "Faculties": [
+            "Manjil  Saikia",
+            "Pravakar  Paul"
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "MAT103 Calculus,PREQ_OR,MAT142 Introductory Calculus,PREQ_OR,MAT100 Calculus and Differential Equations/MAT100 Multivariate Calculus,PREQ_OR,MAT211 Mathematics for Management",
+        "Sections": {
+            "1": {
+                "Tue": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ]
+            }
+        }
+    },
+    {
         "Code": "MEC300",
         "Level": "Undergraduate",
         "Name": "Control Engineering Theory and Applications",
@@ -9936,9 +10426,17 @@
                 "Wed": [
                     [
                         "09:00",
-                        "10:00"
+                        "10:00",
+                        "11:00",
+                        "12:00",
+                        "12:00",
+                        "13:00"
                     ],
                     [
+                        "02-01-2024",
+                        "14-04-2024",
+                        "02-01-2024",
+                        "14-04-2024",
                         "02-01-2024",
                         "14-04-2024"
                     ]
@@ -9975,7 +10473,7 @@
     {
         "Code": "MEC514",
         "Level": "Graduate Master's",
-        "Name": "Machinery Vibration Analysis ,(Subject to Academic Council Approval)",
+        "Name": "Machinery Vibration Analysis",
         "Credits": "3",
         "Faculties": [
             "Akhand Rai"
@@ -10041,28 +10539,22 @@
                         "14-04-2024"
                     ]
                 ],
+                "Wed": [
+                    [
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ],
                 "Thu": [
                     [
                         "08:00",
                         "09:30"
                     ],
                     [
-                        "02-01-2024",
-                        "14-04-2024"
-                    ]
-                ]
-            },
-            "2": {
-                "Wed": [
-                    [
-                        "11:00",
-                        "12:00",
-                        "12:00",
-                        "13:00"
-                    ],
-                    [
-                        "02-01-2024",
-                        "14-04-2024",
                         "02-01-2024",
                         "14-04-2024"
                     ]
@@ -10261,18 +10753,41 @@
         }
     },
     {
-        "Code": "CSE299",
+        "Code": "DGT251",
         "Level": "Undergraduate",
-        "Name": "Interactive Systems: Analysis and Design ,(Subject to Academic Council Approval)",
+        "Name": " Information Systems: Analysis and Design",
         "Credits": "3",
         "Faculties": [
-            "Not added"
+            "Kunjal Gajjar"
         ],
         "Semester": "Winter",
         "isBiSem": false,
         "Prerequisite": null,
         "Description": "CSC300 Software Engineering/CSE300 Software Engineering, CSE519 Human Computer Interaction",
-        "Sections": {}
+        "Sections": {
+            "1": {
+                "Tue": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:30",
+                        "11:00"
+                    ],
+                    [
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ]
+            }
+        }
     },
     {
         "Code": "CHE400",
@@ -10595,22 +11110,6 @@
                         "12:00"
                     ],
                     [
-                        "02-01-2024",
-                        "14-04-2024"
-                    ]
-                ]
-            },
-            "3": {
-                "Thu": [
-                    [
-                        "13:00",
-                        "14:00",
-                        "14:00",
-                        "15:00"
-                    ],
-                    [
-                        "02-01-2024",
-                        "14-04-2024",
                         "02-01-2024",
                         "14-04-2024"
                     ]
@@ -10950,6 +11449,33 @@
                         "14-04-2024",
                         "02-01-2024",
                         "14-04-2024",
+                        "02-01-2024",
+                        "14-04-2024"
+                    ]
+                ]
+            }
+        }
+    },
+    {
+        "Code": "CDC501",
+        "Level": "Graduate Master's",
+        "Name": "CDC Learning And Development",
+        "Credits": "0",
+        "Faculties": [
+            "To Be Announced "
+        ],
+        "Semester": "Winter",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Not added",
+        "Sections": {
+            "1": {
+                "Fri": [
+                    [
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
                         "02-01-2024",
                         "14-04-2024"
                     ]

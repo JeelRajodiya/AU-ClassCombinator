@@ -3,7 +3,9 @@
 Live demo is available at https://classcombinator.vercel.app/
 
 
-<img src="https://github.com/JeelRajodiya/AU-ClassCombinator/assets/63534268/7e78a366-e9d3-4ac8-be6f-cbc6dd2e983b" alt="image" width="49%" height="auto">
+
+
+<img src="https://github.com/JeelRajodiya/AU-ClassCombinator/assets/63534268/b8d387af-64af-45a1-855d-f448732ce47b" alt="image" width="49%" height="auto">
 <img src="https://github.com/JeelRajodiya/AU-ClassCombinator/assets/63534268/876cdae1-ed6b-4c94-b460-2ca2a5af87bc" alt="image" width="50%" height="auto">
 
 

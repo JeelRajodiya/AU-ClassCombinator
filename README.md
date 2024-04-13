@@ -1,6 +1,6 @@
 # course combinator
 
-Live demo is available at https://classcombinator.vercel.app/
+Live demo is available at https://classcombinator.vercel.app
 
 
 

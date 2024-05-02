@@ -28,7 +28,7 @@ export default function SemesterSwitch(props: {
 				}}
 			>
 				<option value="Winter">Winter 2024</option>
-				<option value="Monsoon">Monsoon 2023</option>
+				<option value="Monsoon">Monsoon 2024</option>
 			</select>
 		</div>
 	);

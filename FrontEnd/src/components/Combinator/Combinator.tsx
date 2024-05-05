@@ -35,7 +35,7 @@ function SelectedCoursesCard({
 				}}
 				className="delete-selected-button"
 			>
-				Delete
+				Remove
 			</button>
 		</div>
 	);
@@ -98,9 +98,8 @@ export default function Combinator(props: CombinatorProps) {
 	return (
 		<div className="combinator">
 			<div className="combination-entry-wrapper selection">
-				<h4>
-					<u>Selected Courses</u>
-				</h4>
+				<strong>Selected Courses</strong>
+
 				<div className="selected-courses-wrapper">
 					{props.selected.map((code) => (
 						<SelectedCoursesCard parentProps={props} code={code} />

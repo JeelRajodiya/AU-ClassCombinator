@@ -1,45 +1,23 @@
 .action-bar {
 	position: fixed;
-	bottom: 0;
+	bottom: 8px;
 	right: 0;
-	/* margin: 10px 0; */
 	z-index: 100;
-	/* background-color: rgb(221, 231, 238); */
-	/* background-color: rgb(191, 226, 232); */
-	background-color: rgb(162, 187, 255);
-
-	/* box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1), 1px 2px 1px rgba(0, 0, 0, 0.2),
-		1px 2px 1px rgba(0, 0, 0, 0.2); */
-	padding: 5px;
-	width: min(100%, 800px);
-	/* border-radius: 10px; */
-	border: 1px solid rgba(0, 0, 0, 0.2);
+	background-color: #d8dff6;
+	padding: 8px;
+	width: min(90%, 800px);
+	border: 1px solid rgba(0, 0, 0,0.5);
 	font-size: 0.8rem;
 	left: 50%;
 	transform: translateX(-50%);
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-between;
+	border-radius: 12px;
+	backdrop-filter: blur(10px);
 
-	/* justify-content: center; */
 }
-.action-bar-btn {
-	border: none;
-	outline: none;
-	height: 100%;
-	padding: 0.3em;
-	background-color: #f3eee8;
-	border-radius: 5px;
-	text-transform: uppercase;
-	font-weight: bold;
 
-	font-size: 1em;
-}
-.action-bar-btn:hover {
-	cursor: pointer;
-	background-color: rgb(34, 101, 224);
-	color: white;
-}
 .red {
 	color: red;
 	border: 1px solid red;
@@ -48,25 +26,27 @@ button:hover.red {
 	background-color: rgba(255, 129, 129, 0.621);
 	color: red;
 }
+.action-bar-btn{
+	padding: 0.5em 1em;
+	border-radius: 8px;
+	border: 2px solid transparent;
+	cursor: pointer;
+	
+}
 .go-btn {
-	transition: padding 100ms linear;
 	padding: 0.6em 3em;
 	border-radius: 8px;
-	box-shadow: black -1px 1px 1px;
 	border: 2px solid transparent;
+	cursor: not-allowed;
 }
-.go-btn:hover {
-	padding: 0.6em 3.5em;
-	/* box-shadow: black 0px 0px 2px; */
+.go-btn.enabled:hover {
+	background-color: rgb(66, 102, 170);
+
 }
-.go-btn:active {
-	border: 2px solid black;
-}
+
 .go-btn.enabled {
-	/* background-color: rgb(34, 101, 224); */
-	/* color: white; */
 	color: white;
-	background-color: rgb(34, 101, 224);
-	/* border: 1px solid blue; */
-	/* padding: 1em; */
+	background-color: rgb(76, 125, 214);
+	cursor: pointer;
+
 }

@@ -71,14 +71,6 @@ export default function CourseItem(props: {
 					{props.course.Faculties.join(", ")}
 				</span>
 			</div>
-			{!props.course.Description.includes("None") ? (
-				<div className="field-wrapper">
-					<span className="key">
-						<strong>Description: </strong>
-					</span>
-					<span className="value">{props.course.Description}</span>
-				</div>
-			) : null}
 			<div className="field-wrapper">
 				<span className="key">
 					<strong>Semester: </strong>

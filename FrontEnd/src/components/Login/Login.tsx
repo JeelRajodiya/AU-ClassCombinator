@@ -48,20 +48,11 @@ export default function Login() {
 	let [isLoading, setIsLoading] = React.useState(false);
 	return (
 		<div className="container">
-			<div className="title-bar">
-				<div>
-					<h1 className="title">Class Combinator</h1>
-					<span className="sub-title">
-						<a href="https://classcombinator.vercel.app">
-							classcombinator.vercel.app
-						</a>
-					</span>
-				</div>
-				<a href="https://github.com/JeelRajodiya/AU-ClassCombinator">
-					<img src={ghLogo} className="gh_logo" alt="logo" />
-				</a>
-			</div>
-			<h4>Login with your university email to access the Combinator</h4>
+			<h1 className="title">Class Combinator</h1>
+
+			<div className="sub-title">Registration has started and the intake is full. 
+			<br/>
+			Quickly! choose a new course and make schedules</div>
 			<GoogleOAuthProvider clientId="51730502551-mkkokhpvqbutmqbjsfifnhcdvghe8va9.apps.googleusercontent.com">
 				<GoogleLogin
 					theme="filled_blue"
@@ -99,12 +90,18 @@ export default function Login() {
 			{isLoading && <b> Loading... </b>}
 			{isError && (
 				<div>
-					<p>Please use your university email to login.</p>
+					<p>Please only use your university email to login.</p>
 				</div>
 			)}
 			{isLogin && <Navigate to="/Home" />}
 			{isBanned && <Navigate to="/Banned" />}
 			{/* {<Navigate to="/Home" />} */}
+			<div className="footer">
+				Contribute to this project on&nbsp;
+				<a target="_" href="https://github.com/JeelRajodiya/AU-ClassCombinator">
+					Github
+				</a>
+			</div>
 		</div>
 	);
 }

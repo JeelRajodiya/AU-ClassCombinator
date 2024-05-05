@@ -1,24 +1,18 @@
 .course-item {
-	/* border: 1px solid black; */
-	padding: 1em;
+	padding: 0.5em;
 	margin: 5px 0;
-	/* font-family: Verdana, Geneva, Tahoma, sans-serif; */
 	border-radius: 10px;
 	width: min(90%, 700px);
 	font-size: 0.9em;
-	/* background-color: rgb(233, 233, 233); */
 	transition: box-shadow 75ms linear;
 	display: flex;
 	flex-direction: column;
-
-	/* transition: border 100ms linear; */
-	box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.392);
+	/* box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.392); */
 	border: 1px solid rgba(0, 0, 0, 0.156);
 }
 
 .course-item > div {
 	padding: 0.3em;
-	/* border-top: 1px solid black; */
 }
 
 .selected {
@@ -28,29 +22,16 @@
 	align-self: flex-end;
 	height: 25px;
 	width: 25px;
+	position: absolute;
+	opacity: 0.5;
 }
-.credits,
-.code {
-	border-radius: 5px;
-	padding: 4px 10px;
-	border: 1px solid rgba(0, 0, 0, 0.156);
-	color: black;
-}
-.code.value,
-.credits.value {
-	display: flex;
-	align-items: center;
-	padding: 0.3em 0.5em;
-}
+
+
 .key {
-	background-color: rgba(35, 77, 205, 0.622);
-	color: white;
-	padding: 0.4em 1rem;
-	border-radius: 5px;
+
 	margin: 0 5px;
-	height: min-content;
-	width: 8ch;
-	text-align: center;
+	text-decoration: underline;
+	
 }
 .course-item:hover,
 .selected {
@@ -58,7 +39,7 @@
 	border-radius: 20px;
 }
 .value {
-	padding: 0.3em;
+	/* padding: 0.3em; */
 }
 .field-wrapper {
 	margin: 0px 0;

@@ -24,6 +24,7 @@ export default function CourseExplorer(props: {
 				justifyContent: "center",
 				alignItems: "center",
 				flexDirection: "column",
+				paddingBottom:"5em"
 			}}
 		>
 			{courses.map((course) => (

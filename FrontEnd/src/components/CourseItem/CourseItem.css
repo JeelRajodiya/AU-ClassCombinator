@@ -9,6 +9,7 @@
 	flex-direction: column;
 	/* box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.392); */
 	border: 1px solid rgba(0, 0, 0, 0.156);
+	cursor: pointer;
 }
 
 .course-item > div {

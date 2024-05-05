@@ -50,9 +50,12 @@ export default function Login() {
 		<div className="container">
 			<h1 className="title">Class Combinator</h1>
 
-			<div className="sub-title">Registration has started and the intake is full. 
-			<br/>
-			Quickly! choose a new course and make schedules</div>
+			<div className="sub-title">
+				<strong>Registration ahead? </strong>
+				<span>
+					Class Combinator is here to help you out!
+				</span>
+			</div>
 			<GoogleOAuthProvider clientId="51730502551-mkkokhpvqbutmqbjsfifnhcdvghe8va9.apps.googleusercontent.com">
 				<GoogleLogin
 					theme="filled_blue"
@@ -98,7 +101,10 @@ export default function Login() {
 			{/* {<Navigate to="/Home" />} */}
 			<div className="footer">
 				Contribute to this project on&nbsp;
-				<a target="_" href="https://github.com/JeelRajodiya/AU-ClassCombinator">
+				<a
+					target="_"
+					href="https://github.com/JeelRajodiya/AU-ClassCombinator"
+				>
 					Github
 				</a>
 			</div>

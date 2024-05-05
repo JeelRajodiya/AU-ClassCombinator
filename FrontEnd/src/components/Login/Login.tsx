@@ -93,7 +93,7 @@ export default function Login() {
 			{isLoading && <b> Loading... </b>}
 			{isError && (
 				<div>
-					<p>Please only use your university email to login.</p>
+					<p style={{color:"red"}}>Please only use your university email to login.</p>
 				</div>
 			)}
 			{isLogin && <Navigate to="/Home" />}

@@ -3956,6 +3956,33 @@
             }
         }
     },
+	{
+        "Code": "CDC501",
+        "Level": "Graduate Master's",
+        "Name": "CDC Learning And Development",
+        "Credits": "0",
+        "Faculties": [
+            "To Be Announced "
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Not added",
+        "Sections": {
+            "2": {
+                "Thu": [
+                    [
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "01-08-2024",
+                        "26-11-2024"
+                    ]
+                ]
+            }
+        }
+    },
     {
         "Code": "ENV591",
         "Level": "Graduate Master's",

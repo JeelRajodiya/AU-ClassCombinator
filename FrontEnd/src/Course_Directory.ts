@@ -27,16 +27,19 @@ class CourseDirectory {
 	constructor(winter: any, monsoon: any) {
 		this.winter = winter;
 		this.monsoon = monsoon;
-		if (
-			localStorage.getItem("activeSem") === "winter" ||
-			localStorage.getItem("activeSem") === null
-		) {
-			this.activeSem = this.winter;
-			this.activeSemName = "Winter";
-		} else {
-			this.activeSem = this.monsoon;
-			this.activeSemName = "Monsoon";
-		}
+		// if (
+		// 	localStorage.getItem("activeSem") === "winter" ||
+		// 	localStorage.getItem("activeSem") === null
+		// ) {
+		// 	this.activeSem = this.winter;
+		// 	this.activeSemName = "Winter";
+		// } else {
+		// 	this.activeSem = this.monsoon;
+		// 	this.activeSemName = "Monsoon";
+		// }
+
+		this.activeSem = this.monsoon;
+		this.activeSemName = "Monsoon";
 	}
 	public getSemActive() {
 		return this.activeSem;

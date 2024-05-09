@@ -12,10 +12,9 @@
 .sub-title {
 	font-size: sm;
 	display: flex;
-	width: 40%;
 	justify-content: center;
 	text-align: center;
-	padding-block:16px ;
+	padding-block: 16px;
 	flex-direction: column;
 }
 .title {

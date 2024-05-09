@@ -236,5 +236,5 @@ def scrape_semesters(file_names):
     # json.dump(semesters, open("semesters.json", "w"), indent=4)
 
 
-filenames = ["course_directory_winter"]
+filenames = ["course_directory_monsoon"]
 scrape_semesters(filenames)

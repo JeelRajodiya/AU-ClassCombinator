@@ -27,8 +27,8 @@ export default function SemesterSwitch(props: {
 					setTimeout(() => props.setQuery(props.query), 100);
 				}}
 			>
-				<option value="Winter">Winter 2024</option>
-				<option value="Monsoon">Monsoon 2023</option>
+				{/* <option value="Winter">Winter 2024</option> */}
+				<option value="Monsoon">Monsoon 2024</option>
 			</select>
 		</div>
 	);

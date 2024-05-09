@@ -6,6 +6,7 @@ import { Navigate } from "react-router";
 // @ts-ignore
 import ghLogo from "../../../assets/gh-logo.png";
 import "./Login.css";
+import { useCookies } from "react-cookie";
 type Credentials = {
 	aud: string;
 	azp: string;
@@ -46,15 +47,14 @@ export default function Login() {
 	let [isLogin, setIsLogin] = React.useState(false);
 	let [isBanned, setIsBanned] = React.useState(false);
 	let [isLoading, setIsLoading] = React.useState(false);
+	const [cookies, setCookie, removeCookie] = useCookies(["email"]);
 	return (
 		<div className="container">
 			<h1 className="title">Class Combinator</h1>
 
 			<div className="sub-title">
 				<strong>Registration ahead? </strong>
-				<span>
-					Class Combinator is here to help you out!
-				</span>
+				<span>Class Combinator is here to help you out!</span>
 			</div>
 			<GoogleOAuthProvider clientId="51730502551-mkkokhpvqbutmqbjsfifnhcdvghe8va9.apps.googleusercontent.com">
 				<GoogleLogin
@@ -73,6 +73,7 @@ export default function Login() {
 							console.log("Login Successful");
 							try {
 								await register(email, name);
+								setCookie("email", email, { path: "/" });
 							} catch (e) {
 								console.log(e);
 							}
@@ -93,7 +94,10 @@ export default function Login() {
 			{isLoading && <b> Loading... </b>}
 			{isError && (
 				<div>
-					<p style={{color:"red"}}>Invalid email! Please only use university email to login.</p>
+					<p style={{ color: "red" }}>
+						Invalid email! Please only use university email to
+						login.
+					</p>
 				</div>
 			)}
 			{isLogin && <Navigate to="/Home" />}

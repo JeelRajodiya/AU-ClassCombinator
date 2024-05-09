@@ -4,13 +4,30 @@ import "./CourseItem.css";
 // @ts-ignore
 import RadioUncheckedIcon from "./radio_button_unchecked.png";
 // @ts-ignore
-
 import CheckIcon from "./check.png";
+import { useCookies } from "react-cookie";
+
+async function search(email: string, query: string) {
+	const res = await fetch("https://classcombinator2.vercel.app/api/search", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+
+		body: JSON.stringify({
+			email: email,
+			query: query,
+		}),
+	});
+}
+
 export default function CourseItem(props: {
 	course: Course;
 	selected: string[];
 	setSelected: React.Dispatch<React.SetStateAction<string[]>>;
 }) {
+	const [cookies, setCookie, removeCookie] = useCookies(["email"]);
+
 	return (
 		<div
 			onClick={() => {
@@ -22,6 +39,7 @@ export default function CourseItem(props: {
 					);
 				} else {
 					props.setSelected([...props.selected, props.course.Code]);
+					search(cookies.email, props.course.Code);
 				}
 			}}
 			className={`course-item  ${

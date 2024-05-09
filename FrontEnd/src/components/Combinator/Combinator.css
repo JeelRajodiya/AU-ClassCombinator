@@ -8,27 +8,22 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	
-
 }
 .combination-entry {
 	align-items: center;
 	/* justify-content: center; */
 	height: 100%;
-	
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  width: 100%;
-  gap: 10px;
 
-	
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	width: 100%;
+	gap: 10px;
 }
 .combinator {
-	
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-inline: 16px;	
+	padding-inline: 16px;
 	padding-bottom: 8em;
 }
 .combinator-code {
@@ -53,7 +48,7 @@
 
 .combinator-course {
 	border: 1px solid rgba(0, 0, 0, 0.147);
-	padding:8px ;
+	padding: 8px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -68,15 +63,26 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	gap:16px;
+	gap: 16px;
 	white-space: pre-wrap;
+}
+
+@media (max-width: 768px) {
+	.selected-course-card > *:nth-last-child(1) {
+		align-self: center;
+		justify-self: flex-end;
+		margin-left: auto;
+	}
+	.selected-course-card {
+		padding-top: 4px;
+		border-top: 1px solid rgba(0, 0, 0, 0.5);
+	}
 }
 .selected-courses-wrapper {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	gap:8px;
-	
+	gap: 8px;
 }
 .delete-selected-button {
 	background-color: rgba(255, 0, 0, 0.207);
@@ -107,7 +113,6 @@
 }
 
 .time-table {
-	
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
@@ -115,12 +120,12 @@
 	justify-content: center;
 }
 .time-table > .schedule-title {
-	font-size:x-large;
+	font-size: x-large;
 	margin-top: 1em;
 	margin-bottom: 0.5em;
 }
 
-.selection{
+.selection {
 	display: flex;
 	flex-direction: column;
 	gap: 16px;

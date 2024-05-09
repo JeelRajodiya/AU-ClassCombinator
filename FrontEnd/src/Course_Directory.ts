@@ -320,18 +320,35 @@ class CourseDirectory {
 	}
 	public search(query: string) {
 		const courses = this.getSemActive();
-		const results: Course[] = [];
+		const results: { course: Course; score: number }[] = [];
 		for (let course of courses) {
-			if (
-				course.Code.includes(query.toUpperCase()) ||
-				course.Description.includes(query) ||
-				course.Faculties.join(" ").includes(this.toTitleCase(query)) ||
-				course.Name.includes(this.toTitleCase(query))
-			) {
-				results.push(course);
+			let score = 0;
+
+			// Match score based on different criteria
+			if (course.Code.replace(" ", "").includes(query.toUpperCase())) {
+				score += 5; // Code match has higher weight
+			}
+			if (course.Description.includes(query)) {
+				score += 3;
+			}
+			if (course.Faculties.join(" ").includes(this.toTitleCase(query))) {
+				score += 2;
+			}
+			if (course.Name.includes(this.toTitleCase(query))) {
+				score += 4;
+			}
+
+			// Push the course along with its score to the results array
+			if (score > 0) {
+				results.push({ course, score });
 			}
 		}
-		return results;
+		results.sort((a, b) => b.score - a.score);
+
+		// Extract only the course objects from the sorted results
+		const sortedCourses = results.map((result) => result.course);
+
+		return sortedCourses;
 	}
 	public getScheduleFromCodeAndSection(codeNSec: string): string[] {
 		const [code, sec] = codeNSec.split("-");

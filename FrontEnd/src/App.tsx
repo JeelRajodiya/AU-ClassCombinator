@@ -10,6 +10,7 @@ import SemesterSwitch from "./components/SemesterSwitch/SemesterSwitch";
 import ActionBar from "./components/ActionBar/ActionBar";
 import Combinator from "./components/Combinator/Combinator";
 import { Analytics } from "@vercel/analytics/react";
+import { Link } from "react-router-dom";
 
 export default function App() {
 	const [cd, setCD] = React.useState(new CourseDirectory(winter, monsoon));
@@ -36,13 +37,7 @@ export default function App() {
 			/>
 
 			<Analytics />
-			<span className="update-status">
-				Updated on 9th May 2024
-				<span style={{ color: "red" }}>
-					{" "}
-					The project is no longer maintained.
-				</span>
-			</span>
+			<span className="update-status">Updated on 9th May 2024</span>
 			{isCombinatorOpen ? (
 				<Combinator
 					cd={cd}

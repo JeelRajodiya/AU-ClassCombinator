@@ -28,10 +28,4 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
-}
-.note {
-	font-size: small;
-	color: rgba(0, 0, 0, 0.75);
-	padding-bottom: 8px;
 }

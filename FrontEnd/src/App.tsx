@@ -37,7 +37,7 @@ export default function App() {
 			/>
 
 			<Analytics />
-			<span className="update-status">Updated on 9th May 2024</span>
+			<span className="update-status">Updated on 16th Nov 2024</span>
 			{isCombinatorOpen ? (
 				<Combinator
 					cd={cd}

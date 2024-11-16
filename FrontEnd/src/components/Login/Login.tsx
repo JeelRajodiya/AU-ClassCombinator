@@ -53,7 +53,9 @@ export default function Login() {
 			<h1 className="title">Class Combinator</h1>
 
 			<div className="sub-title">
-				<strong>Registration ahead? </strong>
+				<span>
+					<strong>Winter 2025</strong> Registration ahead?
+				</span>
 				<span>Class Combinator is here to help you out!</span>
 			</div>
 			<GoogleOAuthProvider clientId="51730502551-mkkokhpvqbutmqbjsfifnhcdvghe8va9.apps.googleusercontent.com">

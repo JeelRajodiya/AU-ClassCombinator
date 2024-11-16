@@ -38,8 +38,8 @@ class CourseDirectory {
 		// 	this.activeSemName = "Monsoon";
 		// }
 
-		this.activeSem = this.monsoon;
-		this.activeSemName = "Monsoon";
+		this.activeSem = this.winter;
+		this.activeSemName = "Winter";
 	}
 	public getSemActive() {
 		return this.activeSem;

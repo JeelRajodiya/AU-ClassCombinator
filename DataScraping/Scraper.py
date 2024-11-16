@@ -124,27 +124,45 @@ def scrape(file_name):
         DateArray = []
         activeSection = ''
         activeDay = ''
+
         if course.count("[Bi-Semester]") > 0:
             isBiSem = True
         else:
             isBiSem = False
+        
         lines = course.split("\n")
         lines = list(filter(lambda a: a.replace(" ", "") != "", lines))
 
-        Code = lines[0].split(",")[0]
-        Level = lines[0].split(",")[1]
-        Level = Level.strip(" ").strip("[").strip("]")
-        Name = lines[1]
-        Credits = lines[2]
-        Faculties = lines[3].split(",")
-        Semester = lines[4]
+        # Code = lines[0].split(",")[0]
+        # Level = lines[0].split(",")[1]
+        # Level = Level.strip(" ").strip("[").strip("]")
+        # Name = lines[1]
+        # Credits = lines[2]
+        # Faculties = lines[3].split(",")
+        # Semester = lines[4]
+
+        # Ensure lines[0] has a valid format before accessing it
+        if len(lines) < 1 or "," not in lines[0]:
+            print(f"Skipping malformed course data: {course}")
+            continue
+
+        # Parse the first line safely
+        parts = lines[0].split(",")
+        Code = parts[0].strip()
+        Level = parts[1].strip(" []") if len(parts) > 1 else "Unknown"
+
+        
+        Name = lines[1] if len(lines) > 1 else "Unknown"
+        Credits = lines[2] if len(lines) > 2 else "Unknown"
+        Faculties = [faculty.strip() for faculty in lines[3].split(",")] if len(lines) > 3 else ["Not added"]
+        Semester = lines[4] if len(lines) > 4 else "Unknown"
 
         # if there is no faculty added to the course then the course is not added to the json file
         if Faculties[0] == "Not added" and float(Credits) < 2:
             continue
 
         # if there is a prerequisite then it is added to the json file then the index of the description is changed
-        if lines[5].split(",")[0] == "PREQ_OR":
+        if len(lines) > 5 and "PREQ_OR" in lines[5]:
             try:
                 Prerequisite = lines[5].split(",")[1]
             except:
@@ -153,7 +171,10 @@ def scrape(file_name):
         else:
             Prerequisite = None
             n = 4
-        Description = lines[n + 1]
+
+        # Description = lines[n + 1]
+        Description = lines[n+1] if len(lines) > n+1 else "No description available"
+
         # print(Code)
         for i in lines[n + 2:]:
             i = i.strip(",")
@@ -236,5 +257,5 @@ def scrape_semesters(file_names):
     # json.dump(semesters, open("semesters.json", "w"), indent=4)
 
 
-filenames = ["course_directory_monsoon"]
+filenames = ["course_directory_winter"]
 scrape_semesters(filenames)

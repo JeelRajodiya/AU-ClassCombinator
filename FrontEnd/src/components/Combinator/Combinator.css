@@ -130,3 +130,42 @@
 	flex-direction: column;
 	gap: 16px;
 }
+
+.available-sections-card {
+	margin: 1rem 0;
+	padding: 1rem;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+}
+
+.sections-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.section-item {
+	padding: 0.5rem;
+	border-radius: 4px;
+}
+
+.available-section {
+	background-color: #d4edda;
+	color: #155724;
+}
+
+.unavailable-section {
+	background-color: #f8d7da;
+	color: #721c24;
+}
+
+.status {
+	font-weight: bold;
+	margin-left: 0.5rem;
+}
+
+.highlighted-section {
+	background-color: #b0e57c; /* Highlight color */
+	font-weight: bold;
+  }
+  

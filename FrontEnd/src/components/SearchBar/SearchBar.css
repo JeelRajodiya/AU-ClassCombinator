@@ -64,6 +64,6 @@ input:focus {
 /* media query for less 768 px */
 @media (max-width: 768px) {
 	#searchBar-container {
-		margin: 0.5rem;
+		margin: 8px;
 	}
 }

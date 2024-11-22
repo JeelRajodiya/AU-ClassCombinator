@@ -78,6 +78,7 @@
 		border-top: 1px solid rgba(0, 0, 0, 0.5);
 	}
 }
+
 .selected-courses-wrapper {
 	width: 100%;
 	display: flex;
@@ -125,47 +126,71 @@
 	margin-bottom: 0.5em;
 }
 
-.selection {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
-}
-
-.available-sections-card {
-	margin: 1rem 0;
+.available-sections{
+	width: min(700px, 95%);
+	/* margin: 0; */
 	padding: 1rem;
-	border: 1px solid #ccc;
-	border-radius: 8px;
+	/* background-color: #2d4f2e; */
+	/* display: flex; */
+	border: 1px solid rgba(0, 0, 0, 0.234);
+	border-radius: 10px;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
-.sections-list {
+  .available-sections-card {
+	border: 1px solid #ddd;
+	padding: 10px;
+	margin-bottom: 10px;
 	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem;
-}
-
-.section-item {
-	padding: 0.5rem;
-	border-radius: 4px;
-}
-
-.available-section {
-	background-color: #d4edda;
-	color: #155724;
-}
-
-.unavailable-section {
-	background-color: #f8d7da;
-	color: #721c24;
-}
-
-.status {
-	font-weight: bold;
-	margin-left: 0.5rem;
-}
-
-.highlighted-section {
-	background-color: #b0e57c; /* Highlight color */
-	font-weight: bold;
+	flex-direction: row;
+	align-items: center;
   }
+  
+  .section-header {
+	font-size: 1.1rem;
+	margin-right: 10px;
+  }
+  
+  .sections-list {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+  }
+  
+  .section-item {
+	padding: 3px 12px;
+	border-radius: 5px;
+	text-align: center;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .unavailable-section {
+	background-color: #ccc;
+	color: #fff;
+	cursor: not-allowed;
+  }
+  
+  .available-section {
+	background-color: #a8d5a2; /* Light green */
+	color: #2d4f2e;
+  }
+  
+  .preferred-section {
+	background-color: #3b7d3b; /* Dark green */
+	color: white;
+  }
+  
+  .section-item:hover {
+	filter: brightness(1.1);
+  }
+  
+  /* Disable hover and active states when pointer events are disabled */
+.section-item.disabled {
+	pointer-events: none;
+	background: none; /* Or whatever your "inactive" background should be */
+	cursor: default;
+  }
+  
   

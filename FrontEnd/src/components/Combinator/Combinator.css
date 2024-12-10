@@ -59,7 +59,7 @@
 	font-size: 16px;
 }
 
-.selected-course-card {
+/* .selected-course-card {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -105,7 +105,7 @@
 .delete-selected-button:disabled:hover {
 	background-color: rgba(255, 0, 0, 0.207);
 	color: black;
-}
+} */
 .line {
 	background-color: rgba(0, 0, 0, 0.605);
 	width: min(750px, 100%);
@@ -126,71 +126,129 @@
 	margin-bottom: 0.5em;
 }
 
-.available-sections{
+.available-sections {
 	width: min(700px, 95%);
-	/* margin: 0; */
 	padding: 1rem;
-	/* background-color: #2d4f2e; */
-	/* display: flex; */
 	border: 1px solid rgba(0, 0, 0, 0.234);
 	border-radius: 10px;
-	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-}
-
+	/* box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); */
+	/* background-color: #f9f9f9; */
+	margin: 0 auto;
+  }
+  
   .available-sections-card {
-	border: 1px solid #ddd;
-	padding: 10px;
-	margin-bottom: 10px;
+	/* border: 1px solid #ddd; */
+	padding: 15px;
+	margin-bottom: 15px;
 	display: flex;
-	flex-direction: row;
-	align-items: center;
+	flex-direction: column;
+	gap: 10px;
+	border-bottom: 1px solid  #ddd;
+	/* border-radius: 10px; */
+	/* background-color: #f9f9f9; */
   }
   
   .section-header {
-	font-size: 1.1rem;
-	margin-right: 10px;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	gap: 10px;
+	font-size: 1.2rem;
+	color: #333;
+	/* padding-bottom: 5px; */
+  }
+  
+  .delete-selected-button {
+	background-color: #ff4c4c;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 5px 10px;
+	font-size: 0.9rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+  }
+  
+  .delete-selected-button:hover {
+	background-color: #ff0000;
+  }
+  
+  .delete-selected-button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
   }
   
   .sections-list {
 	display: flex;
-	gap: 8px;
 	flex-wrap: wrap;
+	gap: 10px;	
+	flex-direction: row;
+	justify-content: left;
+	align-items: center;
+  }
+  
+  .sections-list p {
+	/* width: 100%; */
+	font-weight: bold;
+	color: #555;
+	margin: 0;
   }
   
   .section-item {
-	padding: 3px 12px;
+	padding: 6px 12px;
 	border-radius: 5px;
 	text-align: center;
-	cursor: pointer;
 	font-weight: bold;
-	transition: background-color 0.3s ease, color 0.3s ease;
+	font-size: 0.9rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+	border: 1px solid transparent;
   }
   
   .unavailable-section {
-	background-color: #ccc;
-	color: #fff;
+	background-color: #f0f0f0;
+	color: #888;
 	cursor: not-allowed;
+	border-color: #ddd;
   }
   
   .available-section {
-	background-color: #a8d5a2; /* Light green */
+	background-color: #a8d5a2;
 	color: #2d4f2e;
+	border-color: #8bcf90;
   }
   
   .preferred-section {
-	background-color: #3b7d3b; /* Dark green */
+	background-color: #3b7d3b;
 	color: white;
+	border-color: #3b7d3b;
   }
   
   .section-item:hover {
 	filter: brightness(1.1);
+	transform: scale(1.05);
   }
   
-  /* Disable hover and active states when pointer events are disabled */
-.section-item.disabled {
+  .section-item.disabled {
 	pointer-events: none;
-	background: none; /* Or whatever your "inactive" background should be */
+	background: none;
 	cursor: default;
   }
   
+  @media (max-width: 768px) {
+	.section-header {
+	  font-size: 1rem;
+	  flex-wrap: wrap;
+	  gap: 5px;
+	}
   
+	.delete-selected-button {
+	  padding: 5px 8px;
+	  font-size: 0.8rem;
+	}
+  
+	.section-item {
+	  padding: 6px 12px;
+	  font-size: 0.8rem;
+	}
+}

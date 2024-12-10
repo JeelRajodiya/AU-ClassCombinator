@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CourseDirectory from "../../Course_Directory";
 import "./Combinator.css";
 import Table from "../Table/Table";
@@ -18,33 +18,33 @@ type CombinatorProps = {
   setPreferredSections?: React.Dispatch<React.SetStateAction<PreferredSections>>;  // Add this
 };
 
-function SelectedCoursesCard({
-  parentProps,
-  code,
-}: {
-  parentProps: CombinatorProps;
-  code: string;
-}) {
-  return (
-    <div className="selected-course-card" key={code}>
-      <span className="combinator-code">{code}</span>
-      <span>{parentProps.cd.getActiveSemCourseByCode(code)!.Name}</span>
-      <button
-        disabled={parentProps.selected.length <= 1}
-        onClick={() => {
-          if (parentProps.selected.length > 1) {
-            parentProps.setSelected(
-              parentProps.selected.filter((e) => e !== code)
-            );
-          }
-        }}
-        className="delete-selected-button"
-      >
-        Remove
-      </button>
-    </div>
-  );
-}
+// function SelectedCoursesCard({
+//   parentProps,
+//   code,
+// }: {
+//   parentProps: CombinatorProps;
+//   code: string;
+// }) {
+//   return (
+//     <div className="selected-course-card" key={code}>
+//       <span className="combinator-code">{code}</span>
+//       <span>{parentProps.cd.getActiveSemCourseByCode(code)!.Name}</span>
+//       <button
+//         disabled={parentProps.selected.length <= 1}
+//         onClick={() => {
+//           if (parentProps.selected.length > 1) {
+//             parentProps.setSelected(
+//               parentProps.selected.filter((e) => e !== code)
+//             );
+//           }
+//         }}
+//         className="delete-selected-button"
+//       >
+//         Remove
+//       </button>
+//     </div>
+//   );
+// }
 
 function CombinationDetails(props: {
   cd: CourseDirectory;
@@ -64,19 +64,25 @@ function CombinationDetails(props: {
 }
 
 function AvailableSectionsCard({
+  cd,
   courseCode,
   allSections,
   availableSections,
   combinationSections,
   preferredSections,
   setPreferredSections,
+  setSelected,
+  selected,
 }: {
+  cd: CourseDirectory;
   courseCode: string;
   allSections: string[];
   availableSections: string[];
   combinationSections: string[];
   preferredSections: PreferredSections;
   setPreferredSections: React.Dispatch<React.SetStateAction<PreferredSections>>;
+  setSelected: React.Dispatch<React.SetStateAction<string[]>>;
+  selected: string[];
 }) {
   const handleSectionClick = (section: string) => {
     // Prevent deselection if it's the only available section
@@ -98,12 +104,30 @@ function AvailableSectionsCard({
     });
   };
 
+  // Function to handle course removal
+  const removeCourse = (courseToRemove: string) => {
+    setSelected((prevSelected) =>
+      prevSelected.filter((course) => course !== courseToRemove)
+    );
+  };
+
+  const courseName = cd.getActiveSemCourseByCode(courseCode)?.Name || "Unknown";
+
   return (
     <div className="available-sections-card">
       <div className="section-header">
-        <p>{courseCode}</p>
+        <span className="combinator-code">{courseCode} </span>
+        <span> {courseName}</span>
+      <button
+          className="delete-selected-button"
+          onClick={() => removeCourse(courseCode)}
+          disabled={selected.length <= 1}
+        >
+          Remove
+        </button>
       </div>
       <div className="sections-list">
+        <p>Sections: </p>
         {allSections.map((section) => (
           <div
             className={`section-item ${
@@ -140,6 +164,7 @@ export default function Combinator(props: CombinatorProps) {
   const [preferredSections, setPreferredSections] = React.useState<PreferredSections>({});
 
   let combinationCount = 0;
+  const [filteredCombinationCount, setFilteredCombinationCount] = React.useState<number>(0);
 
   let unprocessedTable = getEmptyTable();
 
@@ -150,6 +175,11 @@ export default function Combinator(props: CombinatorProps) {
       return courseWithSection?.endsWith(`-${preferredSection}`);
     });
   });
+
+  // Update filtered combination count whenever preferredSections change
+  useEffect(() => {
+    setFilteredCombinationCount(filteredCombinations.length);
+  }, [preferredSections, filteredCombinations.length]);
 
   function processTable(unprocessedTable: any): TimetableData {
     let processedTable: any = getEmptyTable();
@@ -198,9 +228,14 @@ export default function Combinator(props: CombinatorProps) {
     return { allSections, availableSections, combinationSections };
   }
 
+  // Scroll to top on component mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []); // Empty dependency array means this runs once on mount
+
   return (
     <div className="combinator">
-      <div className="combination-entry-wrapper selection">
+      {/* <div className="combination-entry-wrapper selection">
         <strong>Selected Courses</strong>
 
         <div className="selected-courses-wrapper">
@@ -209,15 +244,16 @@ export default function Combinator(props: CombinatorProps) {
           ))}
         </div>
       </div>
-      <div className="line"></div>
+      <div className="line"></div> */}
 
-      <h2>Available Sections</h2>
+      <h2>Selected Courses</h2>
       <div className="available-sections">
         {props.selected.map((courseCode) => {
           const { allSections, availableSections, combinationSections } =
             getSectionsData(courseCode);
           return (
             <AvailableSectionsCard
+              cd ={props.cd}
               key={courseCode}
               courseCode={courseCode}
               allSections={allSections}
@@ -225,12 +261,14 @@ export default function Combinator(props: CombinatorProps) {
               combinationSections={combinationSections}
               preferredSections={preferredSections}
               setPreferredSections={setPreferredSections}
+              setSelected={props.setSelected}
+              selected={props.selected}
             />
           );
         })}
       </div>
 
-      <h2>Combinations</h2>
+      <h2>Combinations ({filteredCombinationCount})</h2>
       {filteredCombinations.map((combination) => (
         <div
           className="combination-entry-wrapper"

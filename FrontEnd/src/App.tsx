@@ -8,7 +8,7 @@ import "./App.css";
 import CourseExplorer from "./components/CourseExplorer/CourseExplorer";
 import SemesterSwitch from "./components/SemesterSwitch/SemesterSwitch";
 import ActionBar from "./components/ActionBar/ActionBar";
-import SelectedCourses from "./components/ActionBar/SelectedCourses/SelectedCourses";
+import SelectedCourses from "./components/SelectedCourses/SelectedCourses";
 import Combinator from "./components/Combinator/Combinator";
 
 export default function App() {

@@ -18,34 +18,6 @@ type CombinatorProps = {
   setPreferredSections?: React.Dispatch<React.SetStateAction<PreferredSections>>;  // Add this
 };
 
-// function SelectedCoursesCard({
-//   parentProps,
-//   code,
-// }: {
-//   parentProps: CombinatorProps;
-//   code: string;
-// }) {
-//   return (
-//     <div className="selected-course-card" key={code}>
-//       <span className="combinator-code">{code}</span>
-//       <span>{parentProps.cd.getActiveSemCourseByCode(code)!.Name}</span>
-//       <button
-//         disabled={parentProps.selected.length <= 1}
-//         onClick={() => {
-//           if (parentProps.selected.length > 1) {
-//             parentProps.setSelected(
-//               parentProps.selected.filter((e) => e !== code)
-//             );
-//           }
-//         }}
-//         className="delete-selected-button"
-//       >
-//         Remove
-//       </button>
-//     </div>
-//   );
-// }
-
 function CombinationDetails(props: {
   cd: CourseDirectory;
   combination: string[];
@@ -63,7 +35,7 @@ function CombinationDetails(props: {
   );
 }
 
-function AvailableSectionsCard({
+function CoursesWithAvailableSectionsCard({
   cd,
   courseCode,
   allSections,
@@ -235,24 +207,13 @@ export default function Combinator(props: CombinatorProps) {
 
   return (
     <div className="combinator">
-      {/* <div className="combination-entry-wrapper selection">
-        <strong>Selected Courses</strong>
-
-        <div className="selected-courses-wrapper">
-          {props.selected.map((code) => (
-            <SelectedCoursesCard parentProps={props} code={code} />
-          ))}
-        </div>
-      </div>
-      <div className="line"></div> */}
-
       <h2>Selected Courses</h2>
       <div className="available-sections">
         {props.selected.map((courseCode) => {
           const { allSections, availableSections, combinationSections } =
             getSectionsData(courseCode);
           return (
-            <AvailableSectionsCard
+            <CoursesWithAvailableSectionsCard
               cd ={props.cd}
               key={courseCode}
               courseCode={courseCode}

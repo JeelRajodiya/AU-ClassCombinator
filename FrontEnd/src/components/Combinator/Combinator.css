@@ -59,32 +59,6 @@
 	font-size: 16px;
 }
 
-/* .selected-course-card {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 16px;
-	white-space: pre-wrap;
-}
-
-@media (max-width: 768px) {
-	.selected-course-card > *:nth-last-child(1) {
-		align-self: center;
-		justify-self: flex-end;
-		margin-left: auto;
-	}
-	.selected-course-card {
-		padding-top: 4px;
-		border-top: 1px solid rgba(0, 0, 0, 0.5);
-	}
-}
-
-.selected-courses-wrapper {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-}
 .delete-selected-button {
 	background-color: rgba(255, 0, 0, 0.207);
 	border: none;
@@ -95,6 +69,7 @@
 	padding: 0.5em;
 	font-size: x-small;
 }
+
 .delete-selected-button:hover {
 	color: white;
 	background-color: red;
@@ -105,7 +80,7 @@
 .delete-selected-button:disabled:hover {
 	background-color: rgba(255, 0, 0, 0.207);
 	color: black;
-} */
+} 
 .line {
 	background-color: rgba(0, 0, 0, 0.605);
 	width: min(750px, 100%);
@@ -158,26 +133,6 @@
 	/* padding-bottom: 5px; */
   }
   
-  .delete-selected-button {
-	background-color: #ff4c4c;
-	color: white;
-	border: none;
-	border-radius: 5px;
-	padding: 5px 10px;
-	font-size: 0.9rem;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-  }
-  
-  .delete-selected-button:hover {
-	background-color: #ff0000;
-  }
-  
-  .delete-selected-button:disabled {
-	background-color: #ccc;
-	cursor: not-allowed;
-  }
-  
   .sections-list {
 	display: flex;
 	flex-wrap: wrap;
@@ -195,11 +150,11 @@
   }
   
   .section-item {
-	padding: 6px 12px;
+	padding: 5px 10px;
 	border-radius: 5px;
 	text-align: center;
 	font-weight: bold;
-	font-size: 0.9rem;
+	font-size: 1rem;
 	cursor: pointer;
 	transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 	border: 1px solid transparent;
@@ -242,13 +197,8 @@
 	  gap: 5px;
 	}
   
-	.delete-selected-button {
-	  padding: 5px 8px;
-	  font-size: 0.8rem;
-	}
-  
 	.section-item {
-	  padding: 6px 12px;
+	  padding: 5px 10px;
 	  font-size: 0.8rem;
 	}
 }

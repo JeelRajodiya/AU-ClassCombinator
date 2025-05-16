@@ -54,7 +54,7 @@ export default function Login() {
 
 			<div className="sub-title">
 				<span>
-					<strong>Winter 2025</strong> Registration ahead?
+					<strong>Monsoon 2025</strong> Registration ahead?
 				</span>
 				<span>Class Combinator is here to help you out!</span>
 			</div>

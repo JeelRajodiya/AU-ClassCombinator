@@ -224,6 +224,8 @@ def scrape(file_name):
                 # raise Exception("Error in course: "+Code)
                 pass
 
+        # This line will remove empty entry in Sections dictionary (other course's id is behaving as section for previous code) 
+        Sections = {k: v for k, v in Sections.items() if not (isinstance(v, dict) and not v)}
         # print(Sections)
 
         oneCourseJson = {

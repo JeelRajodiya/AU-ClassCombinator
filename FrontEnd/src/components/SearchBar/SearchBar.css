@@ -60,3 +60,10 @@ input:focus {
 #search-icon:hover {
 	cursor: pointer;
 }
+
+/* media query for less 768 px */
+@media (max-width: 768px) {
+	#searchBar-container {
+		margin: 8px;
+	}
+}

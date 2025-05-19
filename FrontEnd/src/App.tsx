@@ -39,7 +39,7 @@ export default function App() {
 				content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 			/>
 			<Analytics />
-			<span className="update-status">Updated on 16th May 2025</span>
+			<span className="update-status">Updated on 19th May 2025</span>
 
 			{isCombinatorOpen ? (
 				<Combinator

@@ -5,8 +5,10 @@
         "Name": "Effective Reading and Comprehension Skills",
         "Credits": "3",
         "Faculties": [
-            "Preeti Maneck",
-            "To Be Announced"
+            "Gatha Joshipura",
+            "Jalaj Singh",
+            "Parijat  Pandya",
+            "Preeti Maneck"
         ],
         "Semester": "Monsoon",
         "isBiSem": false,
@@ -2089,7 +2091,7 @@
         "Name": "Advanced Writing",
         "Credits": "3",
         "Faculties": [
-            "To Be Announced"
+            "Jalaj Singh"
         ],
         "Semester": "Monsoon",
         "isBiSem": false,
@@ -4555,36 +4557,13 @@
         "Name": "Interactive Media and Visualisation",
         "Credits": "3",
         "Faculties": [
-            "To Be Announced"
+            "Not added"
         ],
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
         "Description": "The course introduces students to interactive media and visualisation techniques through hands-on projects and practical exercises. Students will learn various digital and Generative AI tools for creating interactive media, visualisation, and digital exhibits for knowledge dissemination in a peer-to-peer context and public communication. Students will delve into various forms of interactive media, including creating timelines, graphs, network maps, non-linear interactive text stories, 360 walkthroughs, websites and visualisation dashboards. The course will introduce students to creative coding, enabling them to craft custom visualisations, animations, and generative art. By engaging in these projects, students will understand how to effectively convey information in an interactive and visually engaging manner for projects.,",
-        "Sections": {
-            "1": {
-                "Tue": [
-                    [
-                        "08:00",
-                        "09:30"
-                    ],
-                    [
-                        "04-08-2025",
-                        "23-11-2025"
-                    ]
-                ],
-                "Thu": [
-                    [
-                        "08:00",
-                        "09:30"
-                    ],
-                    [
-                        "04-08-2025",
-                        "23-11-2025"
-                    ]
-                ]
-            }
-        }
+        "Sections": {}
     },
     {
         "Code": "FAC225",
@@ -6327,6 +6306,33 @@
         }
     },
     {
+        "Code": "INS512",
+        "Level": "Graduate Master's",
+        "Name": "Perspective on Real Estate Sector",
+        "Credits": "1",
+        "Faculties": [
+            "Parag Patel"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "Real estate sector is one of the largest industries in India in particular and the most globally recognized sectors in general. It is one of the biggest employers in the country. This sector includes housing, retail, hospitality and commercial. In terms of the market size in India, the industry is expected to grow from US$ 120 billion in 2017 to US$ 1 trillion by 2030. Moreover, the growing FDI in the sector and rapid          urbanization will contribute significantly to the growth and expansion of the real estate industry. Hence, an understanding of this industry is required for management students to explore the job opportunity in this sector. This course is designed to be a primer on the real estate sector in India. This course attempts to provide a glimpse of some relevant areas that need further attention both from the industry and the academic perspective. ,",
+        "Sections": {
+            "1": {
+                "Sat": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "04-08-2025",
+                        "23-11-2025"
+                    ]
+                ]
+            }
+        }
+    },
+    {
         "Code": "FAC635",
         "Level": "Graduate Master's",
         "Name": "Financial Modelling",
@@ -7367,16 +7373,38 @@
         "Description": "Additional Instructions: Is open to anyone who has completed class 12 or the equivalent with Physics and Mathematics as subjects.  ",
         "Sections": {
             "1": {
-                "Mon": [
+                "Tue": [
                     [
-                        "13:00",
-                        "14:30",
-                        "13:00",
-                        "14:30",
-                        "14:30",
-                        "16:00",
-                        "14:30",
-                        "16:00"
+                        "09:30",
+                        "11:00",
+                        "09:30",
+                        "11:00",
+                        "11:00",
+                        "12:30",
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "06-10-2025",
+                        "28-11-2025",
+                        "05-01-2026",
+                        "17-02-2026",
+                        "06-10-2025",
+                        "28-11-2025",
+                        "05-01-2026",
+                        "17-02-2026"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "09:30",
+                        "11:00",
+                        "09:30",
+                        "11:00",
+                        "11:00",
+                        "12:30",
+                        "11:00",
+                        "12:30"
                     ],
                     [
                         "06-10-2025",
@@ -7489,7 +7517,8 @@
         "Credits": "3",
         "Faculties": [
             "Aparajith  Ramnath",
-            "Darshini Mahadevia"
+            "Darshini Mahadevia",
+            "Khusdeep Kaur Malhotra"
         ],
         "Semester": "Monsoon",
         "isBiSem": true,
@@ -7523,6 +7552,28 @@
                         "28-11-2025",
                         "05-01-2026",
                         "17-02-2026"
+                    ]
+                ]
+            },
+            "2": {
+                "Wed": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "04-08-2025",
+                        "23-11-2025"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "04-08-2025",
+                        "23-11-2025"
                     ]
                 ]
             }
@@ -7698,13 +7749,12 @@
         "Name": "Learning Sanskrit Through Sanskrit Literature: Elementary",
         "Credits": "4",
         "Faculties": [
-            "(not In Use) Karishma Dalal",
             "Shishir Saxena"
         ],
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "This course is the first of a set of two courses where students will learn scholastic Sanskrit through exercises drawn from various Sanskrit literary sources, such as well-known subh\u0101\u1e63itas, Pa\u00f1catantra, V\u0101lm\u012bki R\u0101m\u0101ya\u1e47a, etc. In this course, students will be introduced gradually to various aspects of Sanskrit morphology and syntax so as to enable them to read simple Sanskrit sentences and verses. Exercises (sentences, verses and passages) for each class will be drawn from original Sanskrit works (brief description below), and will be chosen so as to exemplify the key grammatical features which need to be explained.            The Pa\u00f1catantra is a famous collection of Sanskrit stories, in verse and prose, dated to around the second/third century CE and is considered a n\u012bti\u015b\u0101stra (a treatise on government or political science). The V\u0101lm\u012bki R\u0101m\u0101ya\u1e47a is one of the two famous Indian epics, a mammoth work comprising nearly 24,000 verses and which is of monumental importance and legacy.Each class will be divided into three segments: a revision of the past lesson(s) (and review of assigned after-class exercises), the scheduled lesson, and in-class exercises taken from Sanskrit literature. There will also be surprise tests to further reinforce the learning of various grammatical features. This course will prepare students to take the second of this set of courses (SAN102), wherein students will study more advanced syntactical aspects of the language. These two courses will prepare students with the adequate training in Sanskrit grammar to begin their study of original Sanskrit works in their second year of Sanskrit study (SAN201 and SAN202). Knowledge of the Devan\u0101gar\u012b script is not a prerequisite for this course. This is a core course for the Minor in Sanskrit Studies.Note: This course introduces students to Sanskrit as a classical language, and therefore, all evaluation during this course (class tests, mid-semester examination and end-semester examination) will be entirely open-book. Students are not expected to learn any tables, etc. by rote.,",
+        "Description": "This course is the first of a set of two courses where students will learn scholastic Sanskrit through exercises drawn from various Sanskrit literary sources, such as well-known subh\u0101\u1e63itas, Pa\u00f1catantra, V\u0101lm\u012bki R\u0101m\u0101ya\u1e47a, etc. In this course, students will be introduced gradually to various aspects of Sanskrit morphology and syntax so as to enable them to read simple Sanskrit sentences and verses. Exercises (sentences, verses and passages) for each class will be drawn from original Sanskrit works (brief description below), and will be chosen so as to exemplify the key grammatical features which need to be explained.            The Pa\u00f1catantra is a famous collection of Sanskrit stories, in verse and prose, dated to around the second/third century CE and is considered a n\u012bti\u015b\u0101stra (a treatise on government or political science). The V\u0101lm\u012bki R\u0101m\u0101ya\u1e47a is one of the two famous Indian epics, a mammoth work comprising nearly 24,000 verses and which is of monumental importance and legacy.Each class will be divided into three segments: a revision of the past lesson(s) (and review of assigned after-class exercises), the scheduled lesson, and in-class exercises taken from Sanskrit literature.\u00a0 This course will prepare students to take the second of this set of courses (SAN102), wherein students will study more advanced syntactical aspects of the language. These two courses will prepare students with the adequate training in Sanskrit grammar to begin their study of original Sanskrit works in their second year of Sanskrit study (SAN201 and SAN202). Knowledge of the Devan\u0101gar\u012b script is not a prerequisite for this course. This is a core course for the Minor in Sanskrit Studies.Note: This course introduces students to Sanskrit as a classical language, and therefore, all evaluation during this course (class tests, mid-semester examination and end-semester examination) will be entirely open-book. Students are not expected to learn any tables, etc. by rote.Please note also that this is a 4-credit course. In addition to the two regular teaching sessions on Monday and Friday (2:30-4 pm), there will be\u00a0a one-hour tutorial session on Wednesday morning. This tutorial will allow students to complete exercises in class, revise the grammatical concepts learned during the week and also seek resolutions to any doubts they may have.,",
         "Sections": {
             "1": {
                 "Mon": [
@@ -7717,10 +7767,10 @@
                         "23-11-2025"
                     ]
                 ],
-                "Thu": [
+                "Wed": [
                     [
-                        "14:30",
-                        "16:00"
+                        "08:00",
+                        "09:30"
                     ],
                     [
                         "04-08-2025",
@@ -7801,6 +7851,16 @@
                         "23-11-2025"
                     ]
                 ],
+                "Wed": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "04-08-2025",
+                        "23-11-2025"
+                    ]
+                ],
                 "Thu": [
                     [
                         "16:00",
@@ -7828,20 +7888,20 @@
         "Description": "Additional Instructions: Is open to anyone who has completed class 12 or the equivalent with Physics and Mathematics as subjects. ",
         "Sections": {
             "1": {
-                "Mon": [
+                "Tue": [
                     [
-                        "11:00",
-                        "12:30"
+                        "16:00",
+                        "17:30"
                     ],
                     [
                         "04-08-2025",
                         "23-11-2025"
                     ]
                 ],
-                "Wed": [
+                "Thu": [
                     [
-                        "11:00",
-                        "12:30"
+                        "16:00",
+                        "17:30"
                     ],
                     [
                         "04-08-2025",
@@ -7867,8 +7927,18 @@
             "1": {
                 "Mon": [
                     [
-                        "14:30",
-                        "16:00"
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "04-08-2025",
+                        "23-11-2025"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "13:00",
+                        "14:30"
                     ],
                     [
                         "04-08-2025",
@@ -7877,8 +7947,8 @@
                 ],
                 "Fri": [
                     [
-                        "14:30",
-                        "16:00"
+                        "13:00",
+                        "14:30"
                     ],
                     [
                         "04-08-2025",
@@ -8720,46 +8790,51 @@
         }
     },
     {
-        "Code": "FRE111",
-        "Level": "Undergraduate",
-        "Name": "Conversational French - I",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "FRE102 Introduction to French",
-        "Sections": {}
-    },
-    {
-        "Code": "JAP111",
-        "Level": "Undergraduate",
-        "Name": "Conversational Japanese - I",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "This course will serve as one of the core/method/major specific components for Bachelor of Art (BA) in Philosophy, History and Languages (PHL) and as a free elective and General Education Requirements (GER) for students across the schools at Ahmedabad University.",
-        "Sections": {}
-    },
-    {
         "Code": "RES101",
         "Level": "Undergraduate",
         "Name": "Introduction to Research Methodology",
         "Credits": "4",
         "Faculties": [
-            "Not added"
+            "Neelanjan Sircar"
         ],
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
         "Description": "This course introduces students to one of the ways in which we acquire knowledge about the world\u2014Doing Research. Research is an attempt to understand the world through systematic study\u2014that is, through identification of a problem, question, or hypothesis; selection of methods to investigate the question, collecting data, interpreting data, and reporting findings. The process of designing and doing research is a mix of various elements including the world view and social location of the researcher (researcher positionality), the selection of what one wants to investigate (research problem/question), and how one goes about doing it (research methods). This introductory and project-based course will familiarize students with the philosophical underpinnings of research, and enable them to identify, compare and contrast different qualitative and quantitative research methods suitable for answering a question, apply their understanding to design a research project in small groups, collect and analyse data, and demonstrate basics of academic writing.,",
-        "Sections": {}
+        "Sections": {
+            "1": {
+                "Tue": [
+                    [
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "04-08-2025",
+                        "23-11-2025"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "04-08-2025",
+                        "23-11-2025"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "04-08-2025",
+                        "23-11-2025"
+                    ]
+                ]
+            }
+        }
     },
     {
         "Code": "PSY280",
@@ -8987,10 +9062,10 @@
             "1": {
                 "Mon": [
                     [
+                        "13:00",
                         "14:30",
-                        "16:00",
-                        "16:00",
-                        "17:30"
+                        "14:30",
+                        "16:00"
                     ],
                     [
                         "04-08-2025",
@@ -9001,10 +9076,10 @@
                 ],
                 "Fri": [
                     [
+                        "13:00",
                         "14:30",
-                        "16:00",
-                        "16:00",
-                        "17:30"
+                        "14:30",
+                        "16:00"
                     ],
                     [
                         "04-08-2025",
@@ -9069,13 +9144,30 @@
         "Name": "Key Concepts in Social Theory",
         "Credits": "3",
         "Faculties": [
-            "Not added"
+            "Darshini Mahadevia"
         ],
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
         "Description": "Additional Instructions: None for PhD students in humanities and social sciences. Masters\u2019 and undergraduate students should have taken at least one writing course, and at least one SPS or PHL or HRT course.  ",
-        "Sections": {}
+        "Sections": {
+            "1": {
+                "Mon": [
+                    [
+                        "11:00",
+                        "12:30",
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "04-08-2025",
+                        "23-11-2025",
+                        "04-08-2025",
+                        "23-11-2025"
+                    ]
+                ]
+            }
+        }
     },
     {
         "Code": "PSY321",
@@ -9189,43 +9281,6 @@
         }
     },
     {
-        "Code": "MAT442",
-        "Level": "Undergraduate",
-        "Name": "Complex Analysis",
-        "Credits": "3",
-        "Faculties": [
-            "Pravakar  Paul"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "MAT 146 Intermediate Calculus [1255],AND, MAT142 Introductory Calculus [1166],OR,MAT281 Multivariable Calculus [1920],OR,MAT334 Introductory Real Analysis [2363],Additional Instructions: or Class 12 Mathematics ",
-        "Sections": {
-            "1": {
-                "Tue": [
-                    [
-                        "16:00",
-                        "17:30"
-                    ],
-                    [
-                        "04-08-2025",
-                        "23-11-2025"
-                    ]
-                ],
-                "Thu": [
-                    [
-                        "16:00",
-                        "17:30"
-                    ],
-                    [
-                        "04-08-2025",
-                        "23-11-2025"
-                    ]
-                ]
-            }
-        }
-    },
-    {
         "Code": "PVA181",
         "Level": "Undergraduate",
         "Name": "Music and Society",
@@ -9239,7 +9294,7 @@
         "Description": "This course invites students to reflect on the many significances and functions of music in contemporary societies. From personalized playlists to public concerts to national anthems, music is an integral part of human social life today. It sways our emotions in numerous manners, contributes to the shaping of identities, offers sources of livelihood to many, and provides a soundtrack for everyday activities. Drawing upon academic and popular readings as well as audio-visual sources, we will explore musical examples from diverse locations, cultures and historical moments across the globe. The course will lend a keen ear to how music mediates aspects of social life pertaining, in particular, to: identity, pleasure, technology, economics, politics, and faith,",
         "Sections": {
             "1": {
-                "Mon": [
+                "Tue": [
                     [
                         "11:00",
                         "12:30"
@@ -9249,7 +9304,7 @@
                         "23-11-2025"
                     ]
                 ],
-                "Wed": [
+                "Thu": [
                     [
                         "11:00",
                         "12:30"
@@ -9520,8 +9575,8 @@
             "1": {
                 "Tue": [
                     [
-                        "16:00",
-                        "17:30"
+                        "11:00",
+                        "12:30"
                     ],
                     [
                         "04-08-2025",
@@ -9530,8 +9585,8 @@
                 ],
                 "Thu": [
                     [
-                        "16:00",
-                        "17:30"
+                        "11:00",
+                        "12:30"
                     ],
                     [
                         "04-08-2025",
@@ -9643,16 +9698,6 @@
                     [
                         "14:30",
                         "16:00"
-                    ],
-                    [
-                        "04-08-2025",
-                        "23-11-2025"
-                    ]
-                ],
-                "Wed": [
-                    [
-                        "11:00",
-                        "12:30"
                     ],
                     [
                         "04-08-2025",
@@ -9893,13 +9938,44 @@
         "Name": "Introduction to Plant Biology",
         "Credits": "3",
         "Faculties": [
-            "Not added"
+            "Bhuvan Pathak"
         ],
         "Semester": "Monsoon",
-        "isBiSem": false,
+        "isBiSem": true,
         "Prerequisite": null,
         "Description": "This is a general introduction to the plant\u2019s fascinating world. This course introduces students to the fundamentals of plant nomenclature, classification, reproduction, and anatomy with an emphasis on flowering plants (angiosperms).\u00a0,",
-        "Sections": {}
+        "Sections": {
+            "1": {
+                "Tue": [
+                    [
+                        "13:00",
+                        "14:30",
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "06-10-2025",
+                        "28-11-2025",
+                        "05-01-2026",
+                        "17-02-2026"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "13:00",
+                        "14:30",
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "06-10-2025",
+                        "28-11-2025",
+                        "05-01-2026",
+                        "17-02-2026"
+                    ]
+                ]
+            }
+        }
     },
     {
         "Code": "PVA203",
@@ -9915,7 +9991,7 @@
         "Description": "COM102 Advanced Writing [947],OR,COM106 Academic Writing [1357]",
         "Sections": {
             "1": {
-                "Tue": [
+                "Mon": [
                     [
                         "11:00",
                         "12:30"
@@ -9925,7 +10001,7 @@
                         "23-11-2025"
                     ]
                 ],
-                "Thu": [
+                "Wed": [
                     [
                         "11:00",
                         "12:30"
@@ -10349,6 +10425,16 @@
                         "23-11-2025"
                     ]
                 ],
+                "Wed": [
+                    [
+                        "13:00",
+                        "14:30"
+                    ],
+                    [
+                        "04-08-2025",
+                        "23-11-2025"
+                    ]
+                ],
                 "Thu": [
                     [
                         "13:00",
@@ -10481,13 +10567,44 @@
         "Name": "Precalculus",
         "Credits": "3",
         "Faculties": [
-            "Not added"
+            "To Be Announced"
         ],
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
         "Description": "MAT142 Introductory Calculus, BPS101 Mathematics for Biological Sciences/MAT110 Introductory College Mathematics, MAT 146 Intermediate Calculus, MAT 256 Differential Equations/MAT256 Differential Equations",
-        "Sections": {}
+        "Sections": {
+            "1": {
+                "Mon": [
+                    [
+                        "08:00",
+                        "09:30",
+                        "08:00",
+                        "09:30"
+                    ],
+                    [
+                        "06-10-2025",
+                        "28-11-2025",
+                        "05-01-2026",
+                        "17-02-2026"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "08:00",
+                        "09:30",
+                        "08:00",
+                        "09:30"
+                    ],
+                    [
+                        "06-10-2025",
+                        "28-11-2025",
+                        "05-01-2026",
+                        "17-02-2026"
+                    ]
+                ]
+            }
+        }
     },
     {
         "Code": "BIO605",
@@ -10500,7 +10617,7 @@
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "This course is for Ph.D. and advanced undergraduate students from Biology and Life Science and allied disciplines, such as epidemiology. The aim is to understand and apply basic to advanced-level statistics concepts for analyzing biological data. The main objective is to avoid the perception that statistics is just a series of formulas that students need to \"get over with\" and to present it as a way of thinking\u2014thinking about ways to gather and analyze data. There is no better way to do that than to base a course on real data analysis with the popular programming language R. So, analysis of real data sets available through the textbook would be a key component of teaching and evaluation. Data from various fields in biology will be used as examples and exercises and as aids in learning how to use statistical procedures., ",
+        "Description": "RES501 Introduction to Research Methodology [1789],OR,TODS501 Probability and Statistics/TOD501 Probability and Statistics [992]",
         "Sections": {
             "1": {
                 "Tue": [
@@ -10684,9 +10801,13 @@
                 "Mon": [
                     [
                         "16:00",
-                        "17:30"
+                        "17:30",
+                        "17:30",
+                        "19:00"
                     ],
                     [
+                        "04-08-2025",
+                        "23-11-2025",
                         "04-08-2025",
                         "23-11-2025"
                     ]
@@ -10694,9 +10815,13 @@
                 "Fri": [
                     [
                         "16:00",
-                        "17:30"
+                        "17:30",
+                        "17:30",
+                        "19:00"
                     ],
                     [
+                        "04-08-2025",
+                        "23-11-2025",
                         "04-08-2025",
                         "23-11-2025"
                     ]
@@ -10795,32 +10920,67 @@
         }
     },
     {
-        "Code": "SPS451",
+        "Code": "BIO261",
         "Level": "Undergraduate",
-        "Name": "Right to the City",
-        "Credits": "3",
+        "Name": "Plant Biology Practical",
+        "Credits": "1.5",
         "Faculties": [
-            "Not added"
+            "To Be Announced"
         ],
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "COM101 Effective Reading and Comprehension Skills [1]",
-        "Sections": {}
-    },
-    {
-        "Code": "SPS651",
-        "Level": "Graduate Master's",
-        "Name": "Right to the City",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "Additional Instructions: SPS 260 or Equivalent ",
-        "Sections": {}
+        "Description": "This course is designed in conjunction with the core theory BIO260-Introduction to Plant Biology Course. This will cover the practicals to study and understand the evolution from lower to higher forms of living species in eukaryotes such as from fungus to flowering plants. The flowering plants (angiosperms) will include studies of plant morphology, anatomy, and physiology of different plant systems of monocots and dicots.\u00a0,",
+        "Sections": {
+            "1": {
+                "Tue": [
+                    [
+                        "14:30",
+                        "16:00",
+                        "14:30",
+                        "16:00",
+                        "16:00",
+                        "17:30",
+                        "16:00",
+                        "17:30"
+                    ],
+                    [
+                        "06-10-2025",
+                        "28-11-2025",
+                        "05-01-2026",
+                        "17-02-2026",
+                        "06-10-2025",
+                        "28-11-2025",
+                        "05-01-2026",
+                        "17-02-2026"
+                    ]
+                ]
+            },
+            "2": {
+                "Thu": [
+                    [
+                        "14:30",
+                        "16:00",
+                        "14:30",
+                        "16:00",
+                        "16:00",
+                        "17:30",
+                        "16:00",
+                        "17:30"
+                    ],
+                    [
+                        "05-01-2026",
+                        "17-02-2026",
+                        "06-10-2025",
+                        "28-11-2025",
+                        "06-10-2025",
+                        "28-11-2025",
+                        "05-01-2026",
+                        "17-02-2026"
+                    ]
+                ]
+            }
+        }
     },
     {
         "Code": "MAT215",
@@ -10865,13 +11025,36 @@
         "Name": "Combinatorial Representation Theory",
         "Credits": "3",
         "Faculties": [
-            "Not added"
+            "Manjil  Saikia"
         ],
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
         "Description": "MAT631 Algebraic Combinatorics [2589],OR,MAT711 Advanced Algebra I [2628],Additional Instructions: MAT312 Abstract Algebra & MAT431/MAT631 Algebraic Combinatorics ",
-        "Sections": {}
+        "Sections": {
+            "1": {
+                "Mon": [
+                    [
+                        "16:00",
+                        "17:30"
+                    ],
+                    [
+                        "04-08-2025",
+                        "23-11-2025"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "16:00",
+                        "17:30"
+                    ],
+                    [
+                        "04-08-2025",
+                        "23-11-2025"
+                    ]
+                ]
+            }
+        }
     },
     {
         "Code": "PSY796",
@@ -10888,32 +11071,41 @@
         "Sections": {}
     },
     {
-        "Code": "BIO335",
-        "Level": "Undergraduate",
-        "Name": "Introductory Structural Biology",
-        "Credits": "3",
-        "Faculties": [
-            "Not added"
-        ],
-        "Semester": "Monsoon",
-        "isBiSem": false,
-        "Prerequisite": null,
-        "Description": "BIO101 Introductory Biology [1118],OR,BIO209 Basic Biochemistry [2437],Additional Instructions: BIO107 Concepts of Biology/BIO101 Introductory Biology",
-        "Sections": {}
-    },
-    {
         "Code": "BIO360",
         "Level": "Undergraduate",
         "Name": "Introduction to Biological Rhythms",
         "Credits": "3",
         "Faculties": [
-            "Not added"
+            "Subhabrata Moitra"
         ],
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
         "Description": "BIO250 Brain and Behaviour [1269]",
-        "Sections": {}
+        "Sections": {
+            "1": {
+                "Mon": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "04-08-2025",
+                        "23-11-2025"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "11:00",
+                        "12:30"
+                    ],
+                    [
+                        "04-08-2025",
+                        "23-11-2025"
+                    ]
+                ]
+            }
+        }
     },
     {
         "Code": "BIO666",
@@ -11254,8 +11446,8 @@
             "1": {
                 "Mon": [
                     [
-                        "08:00",
-                        "09:30"
+                        "11:00",
+                        "12:30"
                     ],
                     [
                         "04-08-2025",
@@ -11264,8 +11456,8 @@
                 ],
                 "Fri": [
                     [
-                        "08:00",
-                        "09:30"
+                        "11:00",
+                        "12:30"
                     ],
                     [
                         "04-08-2025",
@@ -11547,7 +11739,7 @@
             "Pramath Anamby"
         ],
         "Semester": "Monsoon",
-        "isBiSem": false,
+        "isBiSem": true,
         "Prerequisite": null,
         "Description": "Additional Instructions: Class 12th with mathematics or MAT142 is necessary. ",
         "Sections": {
@@ -12124,10 +12316,10 @@
             "1": {
                 "Thu": [
                     [
-                        "14:30",
-                        "16:00",
-                        "16:00",
-                        "17:30"
+                        "09:30",
+                        "11:00",
+                        "11:00",
+                        "12:30"
                     ],
                     [
                         "04-08-2025",
@@ -12756,7 +12948,7 @@
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "The course starts with a refresher on fundamental data structures and techniques for design and analysis of data structures with a rich set of  applications in research and industry. Topics include the analysis of the complexity of algorithms, Linked Lists, Stacks, Queues, Binary Search Trees, Heaps and Balanced Search Trees for storing data, sorting,  searching AVL trees, 2-3 trees and B+ trees, tuples and dictionaries. We will also discuss several key algorithms, and practice several real-world problems in data structures and algorithms. We will then move on to advanced topics in Data Structures such as Disjoint Sets Data Structures (including union-find),\u00a0 Trie Data Structure (including all operations and complexity analysis) and Segment Trees. We will also discuss divide-and-conquer and dynamic programming strategies.\u00a0, ",
+        "Description": "The course starts with a refresher on fundamental data structures and techniques for design and analysis of data structures with a rich set of  applications in research and industry. Topics include the analysis of the complexity of algorithms, Linked Lists, Stacks, Queues, Binary Search Trees, Heaps and Balanced Search Trees for storing data, sorting,  searching AVL trees, 2-3 trees and B+ trees, tuples and dictionaries. We will also discuss several key algorithms, and practice several real-world problems in data structures and algorithms. We will then move on to advanced topics in Data Structures such as Disjoint Sets Data Structures (including union-find),\u00a0 Trie Data Structure (including all operations and complexity analysis) and Segment Trees. We will also discuss divide-and-conquer and dynamic programming strategies.\u00a0,",
         "Sections": {}
     },
     {
@@ -12770,7 +12962,7 @@
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "This laboratory-based course gives hands-on experience with design and implementation of Artificial Intelligence (AI)\u00a0 and Machine Learning (ML) based systems. , ",
+        "Description": "This laboratory-based course gives hands-on experience with design and implementation of Artificial Intelligence (AI)\u00a0 and Machine Learning (ML) based systems. ,",
         "Sections": {}
     },
     {
@@ -13742,8 +13934,8 @@
             "1": {
                 "Tue": [
                     [
-                        "11:00",
-                        "12:30"
+                        "16:00",
+                        "17:30"
                     ],
                     [
                         "04-08-2025",
@@ -13752,8 +13944,8 @@
                 ],
                 "Thu": [
                     [
-                        "11:00",
-                        "12:30"
+                        "16:00",
+                        "17:30"
                     ],
                     [
                         "04-08-2025",
@@ -14002,7 +14194,7 @@
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "Not added",
+        "Description": "CSE203 Object Oriented Programming [2782],AND, CSE302 Computer Organization and Architecture [2769],AND, CSE305 Data Structures [2615]",
         "Sections": {
             "1": {
                 "Thu": [
@@ -14035,20 +14227,6 @@
                 ]
             },
             "2": {
-                "Mon": [
-                    [
-                        "13:00",
-                        "14:00",
-                        "14:00",
-                        "15:00"
-                    ],
-                    [
-                        "04-08-2025",
-                        "23-11-2025",
-                        "04-08-2025",
-                        "23-11-2025"
-                    ]
-                ],
                 "Thu": [
                     [
                         "11:00",
@@ -14061,10 +14239,18 @@
                 ],
                 "Fri": [
                     [
+                        "11:00",
+                        "12:00",
+                        "12:00",
+                        "13:00",
                         "13:00",
                         "14:30"
                     ],
                     [
+                        "04-08-2025",
+                        "23-11-2025",
+                        "04-08-2025",
+                        "23-11-2025",
                         "04-08-2025",
                         "23-11-2025"
                     ]
@@ -14078,7 +14264,7 @@
         "Name": "Process Design and Economics",
         "Credits": "2",
         "Faculties": [
-            "Deepshikha Singh",
+            "Ramya Srinivasan",
             "To Be Announced"
         ],
         "Semester": "Monsoon",
@@ -14198,10 +14384,10 @@
             "1": {
                 "Wed": [
                     [
+                        "08:00",
                         "09:30",
-                        "11:00",
-                        "11:00",
-                        "12:30"
+                        "09:30",
+                        "11:00"
                     ],
                     [
                         "04-08-2025",
@@ -14426,26 +14612,26 @@
         "Description": "CSE103 The World of Computer Science and Engineering [2677],AND, CSE203 Object Oriented Programming [2782],AND, CSE211 Discrete Mathematics [2781],AND, ENR106 Introduction to Programming [2684]",
         "Sections": {
             "1": {
-                "Mon": [
-                    [
-                        "09:00",
-                        "10:00",
-                        "10:00",
-                        "11:00"
-                    ],
-                    [
-                        "04-08-2025",
-                        "23-11-2025",
-                        "04-08-2025",
-                        "23-11-2025"
-                    ]
-                ],
                 "Tue": [
                     [
                         "08:00",
                         "09:30"
                     ],
                     [
+                        "04-08-2025",
+                        "23-11-2025"
+                    ]
+                ],
+                "Wed": [
+                    [
+                        "11:00",
+                        "12:00",
+                        "12:00",
+                        "13:00"
+                    ],
+                    [
+                        "04-08-2025",
+                        "23-11-2025",
                         "04-08-2025",
                         "23-11-2025"
                     ]
@@ -14512,6 +14698,42 @@
         "Prerequisite": null,
         "Description": "It is a fundamental course to introduce the basic principles of digitallogic design and covers the following broad topics",
         "Sections": {
+            "1": {
+                "Mon": [
+                    [
+                        "09:00",
+                        "10:00",
+                        "10:00",
+                        "11:00"
+                    ],
+                    [
+                        "04-08-2025",
+                        "23-11-2025",
+                        "04-08-2025",
+                        "23-11-2025"
+                    ]
+                ],
+                "Tue": [
+                    [
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "04-08-2025",
+                        "23-11-2025"
+                    ]
+                ],
+                "Thu": [
+                    [
+                        "14:30",
+                        "16:00"
+                    ],
+                    [
+                        "04-08-2025",
+                        "23-11-2025"
+                    ]
+                ]
+            },
             "2": {
                 "Mon": [
                     [
@@ -14535,42 +14757,6 @@
                     [
                         "11:00",
                         "12:30"
-                    ],
-                    [
-                        "04-08-2025",
-                        "23-11-2025"
-                    ]
-                ]
-            },
-            "1": {
-                "Tue": [
-                    [
-                        "14:30",
-                        "16:00"
-                    ],
-                    [
-                        "04-08-2025",
-                        "23-11-2025"
-                    ]
-                ],
-                "Wed": [
-                    [
-                        "11:00",
-                        "12:00",
-                        "12:00",
-                        "13:00"
-                    ],
-                    [
-                        "04-08-2025",
-                        "23-11-2025",
-                        "04-08-2025",
-                        "23-11-2025"
-                    ]
-                ],
-                "Thu": [
-                    [
-                        "14:30",
-                        "16:00"
                     ],
                     [
                         "04-08-2025",
@@ -14613,7 +14799,8 @@
         "Name": "Calculus",
         "Credits": "3",
         "Faculties": [
-            "Mitaxi Mehta"
+            "Mitaxi Mehta",
+            "To Be Announced"
         ],
         "Semester": "Monsoon",
         "isBiSem": false,
@@ -14624,7 +14811,7 @@
                 "Mon": [
                     [
                         "08:00",
-                        "09:30"
+                        "09:00"
                     ],
                     [
                         "04-08-2025",
@@ -14634,7 +14821,17 @@
                 "Wed": [
                     [
                         "08:00",
-                        "09:30"
+                        "09:00"
+                    ],
+                    [
+                        "04-08-2025",
+                        "23-11-2025"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "08:00",
+                        "09:00"
                     ],
                     [
                         "04-08-2025",
@@ -14646,7 +14843,7 @@
                 "Mon": [
                     [
                         "08:00",
-                        "09:30"
+                        "09:00"
                     ],
                     [
                         "04-08-2025",
@@ -14656,7 +14853,17 @@
                 "Wed": [
                     [
                         "08:00",
-                        "09:30"
+                        "09:00"
+                    ],
+                    [
+                        "04-08-2025",
+                        "23-11-2025"
+                    ]
+                ],
+                "Fri": [
+                    [
+                        "08:00",
+                        "09:00"
                     ],
                     [
                         "04-08-2025",
@@ -14726,9 +14933,9 @@
         }
     },
     {
-        "Code": "FYS102",
-        "Level": "Undergraduate",
-        "Name": "At Home in the World? Tracing the Indian Diaspora of Indenture",
+        "Code": "EPI611",
+        "Level": "Graduate Master's",
+        "Name": "Principles of Epidemiology",
         "Credits": "3",
         "Faculties": [
             "Not added"
@@ -14736,7 +14943,7 @@
         "Semester": "Monsoon",
         "isBiSem": false,
         "Prerequisite": null,
-        "Description": "First Year Interdisciplinary Seminar on Critical Thinking and WritingThis course is an introduction to the early Indian diaspora, with a special focus on the late 19th and early 20th century indenture migration to the sugarcane plantations in the British colonies. Beginning with an overview of the global Indian diaspora, the course will then focus on migration caused due to the system of indenture. After the abolition of slavery, Indians were transported under the system of indenture (girmit) to the islands of Fiji, Mauritius and the Commonwealth Caribbean islands of Trinidad, Tobago and Guyana to work on the sugarcane plantations. Displaced from their place of origin, and often referred to as the girmityas, they grappled with the ideas of home and belongingness, often invoking nostalgia and longing for a lost homeland. The course includes different forms of readings that range from research essays and short stories, to interviews with writers, and even poetry rendition. Based on classroom discussions and written assignments, this course will enable the students to critically engage with the history of the lesser known Indian diaspora, that of indenture and servitude. ",
+        "Description": "Students will be introduced to the fundamental concepts and methods of epidemiology. The course will cover epidemiological methods, concepts and terminologies, the distribution and determinants of health and disease in populations, and epidemiology's role in public health practice.",
         "Sections": {}
     },
     {
@@ -14751,6 +14958,20 @@
         "isBiSem": false,
         "Prerequisite": null,
         "Description": "This course offers hands-on training in applying epidemiological principles to conduct population-based research, encompassing questionnaire design, developing data collection tools, ethical considerations, sampling in the field setting, study participant recruitment and retention, interviewing, clinical assessment techniques, research team and field data management.,",
+        "Sections": {}
+    },
+    {
+        "Code": "EPI701",
+        "Level": "Graduate Doctoral",
+        "Name": "Study design and proposal writing for population based research",
+        "Credits": "3",
+        "Faculties": [
+            "Not added"
+        ],
+        "Semester": "Monsoon",
+        "isBiSem": false,
+        "Prerequisite": null,
+        "Description": "This course focuses on designing population-based research studies and proposal development. It covers a wide range of topics from formulating research questions that stem from societal problems, conducting literature reviews to understand gaps, and designing different types of observational studies and intervention studies. Students will alongside write sections of a research proposal.,",
         "Sections": {}
     }
 ]

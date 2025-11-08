@@ -102,7 +102,7 @@ export default function Login() {
       {isBanned && <Navigate to="/Banned" />}
       {/* {<Navigate to="/Home" />} */}
       <div className="footer">
-        Contribute to this project on&nbsp;
+        Star this project on&nbsp;
         <a target="_" href="https://github.com/JeelRajodiya/AU-ClassCombinator">
           Github
         </a>

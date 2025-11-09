@@ -21,7 +21,6 @@ def parse_schedule(schedule_cell):
     sections_data = []
     
     # Split the entire text block by "Section X"
-    # This gives us a list like: ['', '1', '...data for 1...', '2', '...data for 2...']
     parts = re.split(r'Section\s+(\w+)', schedule_text, flags=re.IGNORECASE)
 
     if len(parts) < 2:  # No "Section" keyword found
@@ -64,7 +63,6 @@ def parse_schedule(schedule_cell):
             })
             
             # Try to associate the first found date range with the section
-            # This logic assumes the first date range applies to the whole section
             if section_obj['dateRange'] is None and date_matches:
                 start_date_str, end_date_str = date_matches[0]
                 section_obj['dateRange'] = {
@@ -72,9 +70,6 @@ def parse_schedule(schedule_cell):
                     "end": convert_date(end_date_str)
                 }
         
-        # If the date range was for a specific slot (and not the whole section)
-        # the logic could be enhanced, but this is a solid start.
-        # From the HTML, it seems one date range applies to all slots in a section.
         if not section_obj['dateRange'] and date_matches:
              start_date_str, end_date_str = date_matches[0]
              section_obj['dateRange'] = {
@@ -98,95 +93,108 @@ def parse_courses_from_html(html_content):
     # --- 1. Get Semester and Year ---
     semester = "Unknown"
     year = 0
-    select_element = soup.find('select', {'id': 'AcdSessionID'})
-    selected_option = select_element.find('option', {'selected': True}) if select_element else None
+    selected_option = soup.find('select', {'id': 'AcdSessionID'}).find('option', {'selected': True})
     
     if selected_option:
-        # e.g., "Winter Semester 2026"
         sem_year_match = re.search(r'(Monsoon|Summer|Winter)\s+Semester\s+(\d{4})', selected_option.text)
         if sem_year_match:
             semester = sem_year_match.group(1)
             year = int(sem_year_match.group(2))
 
-    # --- 2. Find the Course Table ---
-    table = soup.find('table', {'id': 'datatable-1'})
-    if not table:
-        print("Error: Could not find the course table with id 'datatable-1'.")
+    # --- 2. Find ALL Course Tables ---
+    tables = soup.find_all('table', {'class': 'datatable'})
+    
+    if not tables:
+        print("Error: Could not find any course tables with class 'datatable'.")
         return []
 
-    # --- 3. Iterate over Course Rows ---
-    for row in table.find('tbody').find_all('tr'):
-        cols = row.find_all('td')
-        if len(cols) < 11:
-            continue # Skip invalid rows
-
-        code = "Unknown"  # Initialize code before try block
-        try:
-            # --- 4. Extract Data from Columns ---
+    # --- 3. Iterate over EACH table, then EACH row ---
+    for table in tables:  
+        
+        # Check if table has a tbody, otherwise skip
+        tbody = table.find('tbody')
+        if not tbody:
+            continue
             
-            # Col 1: Course Code & Level (e.g., "COM101<br>[Undergraduate]")
-            code_cell = cols[1]
-            code = code_cell.contents[0].strip()
-            level_tag = code_cell.find('br')
-            level = level_tag.next_sibling.strip().strip('[]') if level_tag and level_tag.next_sibling else None
+        for row in tbody.find_all('tr'): 
+            cols = row.find_all('td')
+            if len(cols) < 11:
+                continue 
 
-            # Col 2: Course Name
-            name = cols[2].text.strip()
-
-            # Col 3: Credits
             try:
-                credits = float(cols[3].text.strip())
-            except ValueError:
-                credits = None
+                # --- 4. Extract Data from Columns ---
+                
+                # Col 1: Course Code & Level (e.g., "COM101<br>[Undergraduate]")
+                code_cell = cols[1]
+                code = code_cell.contents[0].strip()
+                level_tag = code_cell.find('br')
+                level = level_tag.next_sibling.strip().strip('[]') if level_tag and level_tag.next_sibling else None
 
-            # Col 4: Faculty (handles multiple <br> separated names)
-            faculties = [f.strip() for f in cols[4].stripped_strings if f.strip() and "Not added" not in f]
+                # Col 2: Course Name
+                name = cols[2].text.strip()
 
-            # Col 6: Prerequisite
-            prerequisite = cols[6].text.strip()
+                # Col 3: Credits
+                try:
+                    credits = float(cols[3].text.strip())
+                except ValueError:
+                    credits = None
 
-            # Col 7: Antirequisite
-            antirequisite = cols[7].text.strip()
+                # Col 4: Faculty (handles multiple <br> separated names)
+                faculties = [f.strip() for f in cols[4].stripped_strings if f.strip() and "Not added" not in f]
 
-            # Col 8: Description (find the <span> inside)
-            desc_span = cols[8].find('span')
-            description = desc_span.text.strip() if desc_span else ""
+                # Col 6: Prerequisite
+                prerequisite = cols[6].text.strip()
 
-            # Col 9: GER Category
-            ger_category = cols[9].text.strip()
-            if ger_category == 'Not Applicable':
-                ger_category = None
+                # Col 7: Antirequisite
+                antirequisite = cols[7].text.strip()
 
-            # Col 10: Schedule (The complex one)
-            sections = parse_schedule(cols[10])
-            
-            # --- 5. Assemble the JSON Document ---
-            course_doc = {
-                "code": code,
-                "name": name,
-                "level": level,
-                "credits": credits,
-                "faculties": faculties,
-                "semester": semester,
-                "year": year,
-                "prerequisite": prerequisite,
-                "antirequisite": antirequisite,
-                "description": description,
-                "gerCategory": ger_category,
-                "sections": sections
-            }
-            courses_list.append(course_doc)
+                # Col 8: Description (find the <span> inside)
+                desc_span = cols[8].find('span')
+                # This logic correctly handles "Not added" or empty <span>
+                description = desc_span.text.strip() if desc_span else ""
+                if description == "non": # Handle the "non" case from ENR303
+                    description = ""
 
-        except Exception as e:
-            print(f"Error parsing row for course code {code}: {e}")
+                # Col 9: GER Category
+                ger_category = cols[9].text.strip()
+                if ger_category == 'Not Applicable' or not ger_category:
+                    ger_category = None
+
+                # Col 10: Schedule (The complex one)
+                sections = parse_schedule(cols[10])
+                
+                # --- 5. Assemble the JSON Document ---
+                course_doc = {
+                    "code": code,
+                    "name": name,
+                    "level": level,
+                    "credits": credits,
+                    "faculties": faculties,
+                    "semester": semester,
+                    "year": year,
+                    "prerequisite": prerequisite,
+                    "antirequisite": antirequisite,
+                    "description": description,
+                    "gerCategory": ger_category,
+                    "sections": sections
+                }
+                courses_list.append(course_doc)
+
+            except Exception as e:
+                # Try to get the course code for better error logging
+                try:
+                    code_for_error = cols[1].contents[0].strip()
+                except:
+                    code_for_error = "UNKNOWN"
+                print(f"Error parsing row for course code {code_for_error}: {e}")
 
     return courses_list
 
 
 # --- Main execution ---
 if __name__ == "__main__":
-    HTML_FILE_NAME = "course_directory_winter.html"  # Your HTML file
-    JSON_FILE_NAME = "courses.json"  # The output file
+    HTML_FILE_NAME = "courses.html"  # HTML file
+    JSON_FILE_NAME = "courses.json"  # Output file
 
     try:
         with open(HTML_FILE_NAME, 'r', encoding='utf-8') as f:
@@ -198,7 +206,7 @@ if __name__ == "__main__":
         with open(JSON_FILE_NAME, 'w', encoding='utf-8') as f:
             json.dump(parsed_courses, f, indent=4)
 
-        print(f"Success! Extracted {len(parsed_courses)} courses.")
+        print(f"Success! Extracted {len(parsed_courses)} courses.") 
         print(f"Data saved to '{JSON_FILE_NAME}'.")
 
     except FileNotFoundError:

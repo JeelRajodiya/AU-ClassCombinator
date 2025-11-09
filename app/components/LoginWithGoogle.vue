@@ -1,21 +1,28 @@
 <script setup lang="ts">
-definePageMeta({
-  auth: { unauthenticatedOnly: true, navigateAuthenticatedTo: "/" },
-});
-const { signIn } = useAuth();
+// definePageMeta({
+//   auth: { unauthenticatedOnly: true, navigateAuthenticatedTo: "/" },
+// });
+const { signIn, signOut, status } = useAuth();
 
 const handleLogin = async () => {
-  await signIn("google", { callbackUrl: "/" });
+  await signIn("google", { callbackUrl: "/Home", redirect: true });
+};
+
+const handleLogout = async () => {
+  await signOut({ callbackUrl: "/", redirect: true });
 };
 </script>
 
 <template>
   <UButton
-    variant="solid"
-    color="primary"
-    class="w-full justify-center text-xl font-bold p-2"
+    size="lg"
     @click="handleLogin"
+    class="max-w-fit font-black text-xl px-4 py-3 rounded-xl"
+    v-if="status !== 'authenticated'"
   >
     Login with Google
+  </UButton>
+  <UButton size="sm" @click="handleLogout" class="max-w-fit font-black" v-else>
+    Logout
   </UButton>
 </template>

@@ -5,11 +5,14 @@ export default defineNuxtConfig({
   modules: ["@nuxt/ui", "@sidebase/nuxt-auth"],
   css: ["~/assets/css/main.css"],
   auth: {
+    isEnabled: true,
+    disableServerSideAuth: false,
+    originEnvKey: "AUTH_ORIGIN",
+
     provider: {
       type: "authjs",
       trustHost: false,
       defaultProvider: "google",
-      addDefaultCallbackUrl: true,
     },
     globalAppMiddleware: true,
   },

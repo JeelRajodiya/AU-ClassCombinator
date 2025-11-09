@@ -60,17 +60,36 @@ def main():
 
   print(f"Pushing data from {json_file} to the database...")
   # now we can push the data to db
-  skipped = 0
+  from pymongo import UpdateOne
   
   with open(json_file) as f:
       courses = json.load(f)
-      if isinstance(courses, list):
-          
-          result = collection.insert_many(courses)
-          print(f"Inserted {len(result.inserted_ids)} documents into the collection.")
-      else:
-          result = collection.insert_one(courses)
-          print(f"Inserted document with id {result.inserted_id} into the collection.")
+      
+      if not isinstance(courses, list):
+          courses = [courses]
+      
+      total_courses = len(courses)
+      if total_courses == 0:
+          print("No courses to push.")
+          return
+
+      operations = []
+      for course in courses:
+          filter_query = {
+              "code": course.get("code"),
+              "semester": course.get("semester"),
+              "year": course.get("year")
+          }
+          update_data = {"$set": course}
+          operations.append(UpdateOne(filter_query, update_data, upsert=True))
+      
+      try:
+          result = collection.bulk_write(operations, ordered=False)
+          inserted_count = result.upserted_count
+          updated_count = result.modified_count
+          print(f"Total courses processed: {total_courses}, Inserted: {inserted_count}, Updated: {updated_count}")
+      except Exception as e:
+          print(f"An error occurred: {e}")
 
   
   

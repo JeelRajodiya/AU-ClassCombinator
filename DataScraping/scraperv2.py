@@ -168,7 +168,6 @@ def parse_courses_from_html(html_content):
                 
                 # --- 5. Assemble the JSON Document ---
                 course_doc = {
-                    "_id": str(ObjectId()),
                     "code": code,
                     "name": name,
                     "level": level,

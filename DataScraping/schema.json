@@ -7,10 +7,6 @@
   "items": {
     "type": "object",
     "properties": {
-      "_id": {
-        "type": "string",
-        "description": "Unique identifier for the course."
-      },
       "code": {
         "type": "string",
         "description": "Course code (e.g., 'COM101')."
@@ -119,7 +115,6 @@
       }
     },
     "required": [
-      "_id",
       "code",
       "name",
       "level",

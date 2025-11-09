@@ -1,2 +1,5 @@
 *.html
 *.json
+
+# include schema file
+!schema.json

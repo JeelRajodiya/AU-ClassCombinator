@@ -1,3 +1,5 @@
 <template>
-  <div>ClassCombinatorV2</div>
+  <UApp>
+    <NuxtPage />
+  </UApp>
 </template>

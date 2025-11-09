@@ -1,7 +1,9 @@
 import json
 import re
 from bs4 import BeautifulSoup
+
 from datetime import datetime
+from bson.objectid import ObjectId
 
 def convert_date(date_str):
     """Converts a DD-MM-YYYY date to YYYY-MM-DD (ISO format)."""
@@ -93,7 +95,8 @@ def parse_courses_from_html(html_content):
     # --- 1. Get Semester and Year ---
     semester = "Unknown"
     year = 0
-    selected_option = soup.find('select', {'id': 'AcdSessionID'}).find('option', {'selected': True})
+    select_element = soup.find('select', {'id': 'AcdSessionID'})
+    selected_option = select_element.find('option', {'selected': True}) if select_element else None
     
     if selected_option:
         sem_year_match = re.search(r'(Monsoon|Summer|Winter)\s+Semester\s+(\d{4})', selected_option.text)
@@ -126,9 +129,9 @@ def parse_courses_from_html(html_content):
                 
                 # Col 1: Course Code & Level (e.g., "COM101<br>[Undergraduate]")
                 code_cell = cols[1]
-                code = code_cell.contents[0].strip()
+                code = str(code_cell.contents[0]).strip()
                 level_tag = code_cell.find('br')
-                level = level_tag.next_sibling.strip().strip('[]') if level_tag and level_tag.next_sibling else None
+                level = str(level_tag.next_sibling).strip().strip('[]') if level_tag and level_tag.next_sibling else None
 
                 # Col 2: Course Name
                 name = cols[2].text.strip()
@@ -165,6 +168,7 @@ def parse_courses_from_html(html_content):
                 
                 # --- 5. Assemble the JSON Document ---
                 course_doc = {
+                    "_id": str(ObjectId()),
                     "code": code,
                     "name": name,
                     "level": level,
@@ -183,7 +187,7 @@ def parse_courses_from_html(html_content):
             except Exception as e:
                 # Try to get the course code for better error logging
                 try:
-                    code_for_error = cols[1].contents[0].strip()
+                    code_for_error = str(cols[1].contents[0]).strip()
                 except:
                     code_for_error = "UNKNOWN"
                 print(f"Error parsing row for course code {code_for_error}: {e}")
@@ -191,26 +195,53 @@ def parse_courses_from_html(html_content):
     return courses_list
 
 
-# --- Main execution ---
-if __name__ == "__main__":
-    HTML_FILE_NAME = "courses.html"  # HTML file
-    JSON_FILE_NAME = "courses.json"  # Output file
+def main():
+    """
+    Main function to handle command-line arguments and run the parser.
+    """
+    import argparse
+    import sys
+
+    parser = argparse.ArgumentParser(
+        description="Parse course information from an HTML file."
+    )
+    parser.add_argument(
+        "html_file",
+        help="Path to the HTML file to parse (e.g., 'course_directory_monsoon.html')"
+    )
+    parser.add_argument(
+        "-o", "--output",
+        help="Path to the output JSON file. Defaults to the input filename with a .json extension."
+    )
+    
+    if len(sys.argv) == 1:
+        # If no arguments are provided, print the help message
+        parser.print_help(sys.stderr)
+        sys.exit(1)
+
+    args = parser.parse_args()
 
     try:
-        with open(HTML_FILE_NAME, 'r', encoding='utf-8') as f:
+        with open(args.html_file, 'r', encoding='utf-8') as f:
             html_content = f.read()
-
-        print(f"Reading '{HTML_FILE_NAME}'...")
-        parsed_courses = parse_courses_from_html(html_content)
-        
-        with open(JSON_FILE_NAME, 'w', encoding='utf-8') as f:
-            json.dump(parsed_courses, f, indent=4)
-
-        print(f"Success! Extracted {len(parsed_courses)} courses.") 
-        print(f"Data saved to '{JSON_FILE_NAME}'.")
-
     except FileNotFoundError:
-        print(f"Error: The file '{HTML_FILE_NAME}' was not found.")
-        print("Please save your HTML file in the same directory as this script.")
+        print(f"Error: The file '{args.html_file}' was not found.", file=sys.stderr)
+        sys.exit(1)
     except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+        print(f"Error reading file: {e}", file=sys.stderr)
+        sys.exit(1)
+
+    courses_data = parse_courses_from_html(html_content)
+
+    output_file = args.output or args.html_file.replace('.html', '.json').replace('.htm', '.json')
+
+    try:
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(courses_data, f, indent=2, ensure_ascii=False)
+        print(f"Successfully parsed {len(courses_data)} courses. Data saved to '{output_file}'.")
+    except Exception as e:
+        print(f"Error writing to JSON file: {e}", file=sys.stderr)
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()

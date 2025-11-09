@@ -9,5 +9,3 @@ dependencies = [
     "bson>=0.5.10",
     "lxml>=6.0.2",
 ]
-[project.scripts]
-scrape = "scrapperv2.py"

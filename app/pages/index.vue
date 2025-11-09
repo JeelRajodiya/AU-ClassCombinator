@@ -9,6 +9,7 @@
         <div class="text-muted">Class Combinator is here to help you out!</div>
       </div>
     </div>
+    <LoginWithGoogle class="mt-8 w-64" />
   </div>
 </template>
 
@@ -19,5 +20,6 @@
   align-items: center;
   height: 100%;
   width: 100%;
+  flex-direction: column;
 }
 </style>

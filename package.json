@@ -11,9 +11,14 @@
   },
   "dependencies": {
     "@nuxt/ui": "^4.1.0",
+    "@sidebase/nuxt-auth": "1.1.0",
+    "next-auth": "4.21.1",
     "nuxt": "^4.2.1",
     "tailwindcss": "^4.1.17",
     "vue": "^3.5.22",
     "vue-router": "^4.6.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0"
   }
 }

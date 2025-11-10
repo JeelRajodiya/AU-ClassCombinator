@@ -1,15 +1,12 @@
 <script setup lang="ts">
-// definePageMeta({
-//   auth: { unauthenticatedOnly: true, navigateAuthenticatedTo: "/" },
-// });
 const { signIn, signOut, status } = useAuth();
 
 const handleLogin = async () => {
-  await signIn("google", { callbackUrl: "/Home", redirect: true });
+  await signIn("google", { callbackUrl: "/", redirect: true });
 };
 
 const handleLogout = async () => {
-  await signOut({ callbackUrl: "/", redirect: true });
+  await signOut({ callbackUrl: "/login", redirect: true });
 };
 </script>
 

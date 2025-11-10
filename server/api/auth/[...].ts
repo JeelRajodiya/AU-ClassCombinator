@@ -33,14 +33,14 @@ export default NuxtAuthHandler({
     },
     /* on redirect to another url */
 
-    async redirect({ url, baseUrl }) {
-      console.log("Redirect callback:", { url, baseUrl });
-      // Allows relative callback URLs
-      if (url.startsWith("/")) return `${baseUrl}${url}`;
-      // Allows callback URLs on the same origin
-      else if (new URL(url).origin === new URL(baseUrl).origin) return url;
-      return baseUrl;
-    },
+    // async redirect({ url, baseUrl }) {
+    //   console.log("Redirect callback:", { url, baseUrl });
+    //   // Allows relative callback URLs
+    //   if (url.startsWith("/")) return `${baseUrl}${url}`;
+    //   // Allows callback URLs on the same origin
+    //   else if (new URL(url).origin === new URL(baseUrl).origin) return url;
+    //   return baseUrl;
+    // },
     /* on session retrival */
     async session({ session, user, token }) {
       return session;

@@ -14,6 +14,6 @@ export default defineNuxtConfig({
       trustHost: false,
       defaultProvider: "google",
     },
-    globalAppMiddleware: true,
+    globalAppMiddleware: false,
   },
 });

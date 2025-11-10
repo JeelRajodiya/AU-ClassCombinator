@@ -1,2 +1,8 @@
 Users.csv
 playground
+.nuxt
+.output
+node_modules
+rough.md 
+*.env
+parser

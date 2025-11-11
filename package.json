@@ -12,6 +12,7 @@
   "dependencies": {
     "@nuxt/ui": "^4.1.0",
     "@sidebase/nuxt-auth": "1.1.0",
+    "mongoose": "^8.19.3",
     "next-auth": "4.21.1",
     "nuxt": "^4.2.1",
     "tailwindcss": "^4.1.17",

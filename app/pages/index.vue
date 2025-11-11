@@ -6,8 +6,20 @@
 const { getSession } = useAuth();
 const session = await getSession();
 console.log("Session in Index Page:", session);
-const semesters = ref(["Winter 2026", "Monsoon 2025"]);
-const selectedSem = ref("Winter 2026");
+const selectedSemester = ref();
+
+const {
+  data: semesterList,
+  error,
+  pending,
+} = await useFetch<string[]>("/api/getSemesterList");
+
+if (error.value) {
+  console.error("Error fetching semester list:", error.value);
+}
+if (semesterList.value && semesterList.value.length > 0) {
+  selectedSemester.value = semesterList.value[0];
+}
 </script>
 
 <template>
@@ -23,14 +35,15 @@ const selectedSem = ref("Winter 2026");
           class="w-full"
         />
         <USelect
-          v-model="selectedSem"
-          :items="semesters"
+          :loading="pending"
+          v-model="selectedSemester"
+          :items="semesterList"
           arrow
           icon="i-lucide-book"
         />
       </div>
     </div>
-    <!-- Hi {{ session?.user?.name || "Guest" }}!     <LoginWithGoogle /> -->
+    Hi {{ session?.user?.name || "Guest" }}! <LoginWithGoogle />
   </div>
 </template>
 

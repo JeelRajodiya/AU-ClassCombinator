@@ -1,6 +1,9 @@
 // file: ~/server/api/auth/[...].ts
 import GoogleProvider from "next-auth/providers/google";
 import { NuxtAuthHandler } from "#auth";
+import dbConnect from "~~/server/db";
+import User from "~~/server/models/User";
+import { log, time, timeEnd } from "console";
 
 if (!process.env.NUXT_AUTH_SECRET) {
   throw new Error("NUXT_AUTH_SECRET is not defined in environment variables");
@@ -28,7 +31,7 @@ export default NuxtAuthHandler({
   callbacks: {
     /* on before signin */
     async signIn({ user, account, profile, email, credentials }) {
-      console.log("SignIn callback:", { user });
+      // Removed database upsert to avoid blocking sign-in
       return true;
     },
     /* on redirect to another url */
@@ -42,11 +45,46 @@ export default NuxtAuthHandler({
     //   return baseUrl;
     // },
     /* on session retrival */
-    async session({ session, user, token }) {
+    async session({ session, token }) {
+      console.time("session!");
+      dbConnect().then(() => {
+        // Fire-and-forget database update
+        User.updateOne(
+          { email: session.user?.email },
+          { $inc: { sessionCalls: 1 } }
+        ).catch((err) =>
+          console.error("Failed to increment sessionCalls", err)
+        );
+      });
+
+      console.timeEnd("session!");
+      log("session!");
+
       return session;
     },
     /* on JWT token creation or mutation */
     async jwt({ token, user, account, profile, isNewUser }) {
+      time("jwt!");
+      if (user) {
+        try {
+          await dbConnect();
+
+          // Upsert user into database lazily after sign-in
+          await User.findOneAndUpdate(
+            { email: user.email },
+            {
+              name: user.name,
+              email: user.email,
+            },
+            { upsert: true, new: true }
+          );
+
+          //     console.log("User upserted:", { user });
+        } catch (error) {
+          console.error("Error upserting user:", error);
+        }
+      }
+      timeEnd("jwt!");
       return token;
     },
   },

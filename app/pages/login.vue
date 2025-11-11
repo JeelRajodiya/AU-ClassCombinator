@@ -7,13 +7,16 @@
 <template>
   <div class="landing-page">
     <div class="wrapper">
-      <Logo />
-      <div class="text-xl flex flex-col items-center">
-        <div><b>Winter 2026</b> Registration ahead?</div>
-        <div class="text-muted">Class Combinator is here to help you out!</div>
+      <div>
+        <Logo />
+        <div class="text-xl flex flex-col items-center">
+          <div><b>Winter 2026</b> Registration ahead?</div>
+          <div class="text-muted">
+            Class Combinator is here to help you out!
+          </div>
+        </div>
       </div>
-
-      <LoginWithGoogle class="mt-8 w-64" />
+      <LoginWithGoogle />
     </div>
   </div>
 </template>
@@ -26,6 +29,7 @@
   height: 100%;
   width: 100%;
   flex-direction: column;
+  padding-bottom: 10em;
 }
 
 .wrapper {
@@ -33,5 +37,6 @@
   flex-direction: column;
   align-items: center;
   width: min-content;
+  gap: 1.5rem;
 }
 </style>

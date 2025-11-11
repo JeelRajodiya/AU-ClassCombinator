@@ -4,3 +4,7 @@
   --font-sans: "Inter", sans-serif;
   --font-mono: "Fira Code", monospace;
 }
+
+:root {
+  --ui-radius: 0.5rem;
+}

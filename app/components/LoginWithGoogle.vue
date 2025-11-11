@@ -14,10 +14,11 @@ const handleLogout = async () => {
   <UButton
     size="lg"
     @click="handleLogin"
-    class="max-w-fit font-black text-xl px-4 py-3 rounded-xl"
+    class="max-w-fit font-black text-md px-4 py-1.5"
     v-if="status !== 'authenticated'"
+    trailing-icon="i-streamline-logos:google-logo-solid"
   >
-    Login with Google
+    Login
   </UButton>
   <UButton size="sm" @click="handleLogout" class="max-w-fit font-black" v-else>
     Logout

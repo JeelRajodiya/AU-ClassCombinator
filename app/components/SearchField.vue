@@ -16,6 +16,7 @@ const emits = defineEmits({ "update:modelValue": (value: string) => true });
     placeholder="Search courses..."
     variant="subtle"
     class="w-full"
+    :ui="{ base: 'py-3' }"
     :value="modelValue"
     @input="$emit('update:modelValue', $event.target.value)"
   />

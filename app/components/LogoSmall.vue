@@ -1,5 +1,5 @@
 <template>
-  <div class="logo">
+  <div class="logo" @click="navigateTo('/')" style="cursor: pointer">
     <div>Class</div>
     <div>Combinator</div>
 

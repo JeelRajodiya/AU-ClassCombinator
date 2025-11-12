@@ -20,9 +20,7 @@ watch(searchTerm, (newTerm) => {
     if (newTerm.trim() !== "") {
       const query = new URLSearchParams();
       query.append("q", newTerm);
-      if (selectedSem.value) {
-        query.append("semester", selectedSem.value);
-      }
+
       navigateTo(`/search?${query.toString()}`);
     }
   }, 1500);

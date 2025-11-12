@@ -1,6 +1,8 @@
+import dbConnect from "../db";
 import Course from "../models/Course";
 
 async function getUniqueSemesters() {
+  await dbConnect();
   try {
     const pipeline = [
       {

@@ -9,7 +9,10 @@ const { selectedSem, setSelectedSem } = useSelectedSemester();
     <div class="layout">
       <div class="flex gap-16">
         <LogoSmall />
-        <div><SearchField v-model="searchTerm" /></div>
+        <div>
+          <SearchField v-model="searchTerm" />
+          <SearchResults />
+        </div>
       </div>
     </div>
   </div>

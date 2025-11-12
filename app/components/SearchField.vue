@@ -1,3 +1,14 @@
+<script setup lang="ts">
+const props = defineProps({
+  modelValue: {
+    type: String,
+    required: true,
+  },
+});
+
+const emits = defineEmits({ "update:modelValue": (value: string) => true });
+</script>
+
 <template>
   <UInput
     icon="i-lucide-search"
@@ -9,13 +20,3 @@
     @input="$emit('update:modelValue', $event.target.value)"
   />
 </template>
-<script setup lang="ts">
-const props = defineProps({
-  modelValue: {
-    type: String,
-    required: true,
-  },
-});
-
-const emits = defineEmits({ "update:modelValue": (value: string) => true });
-</script>

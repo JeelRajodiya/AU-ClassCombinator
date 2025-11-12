@@ -49,7 +49,7 @@ watch(searchTerm, (newTerm) => {
 </script>
 
 <template>
-  <div class="page center">
+  <div class="page center pb-24">
     <div class="layout center">
       <Logo class="logo" />
       <div class="center flex-col w-full gap-4 search">
@@ -69,31 +69,4 @@ watch(searchTerm, (newTerm) => {
   </div>
 </template>
 
-<style scoped>
-.page {
-  flex-direction: column;
-  gap: 1rem;
-  height: 100%;
-  padding-bottom: 10rem;
-}
-
-.layout {
-  gap: 1rem;
-  flex-direction: column;
-  transition: all 0.4s ease-in-out;
-}
-
-.logo {
-  transition: all 0.4s ease-in-out;
-}
-
-.search {
-  transition: all 0.4s ease-in-out;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-</style>
+<style scoped></style>

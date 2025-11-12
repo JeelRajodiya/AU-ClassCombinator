@@ -1,9 +1,18 @@
 <script setup lang="ts">
 const route = useRoute();
-const searchTerm = (route.query.q as string) || "";
+const searchTerm = ref((route.query.q as string) || "");
 const { selectedSem, setSelectedSem } = useSelectedSemester();
 </script>
 
 <template>
-  <div>{{ searchTerm }} {{ selectedSem }}</div>
+  <div class="page p-8">
+    <div class="layout">
+      <div class="flex gap-16">
+        <LogoSmall />
+        <div><SearchField v-model="searchTerm" /></div>
+      </div>
+    </div>
+  </div>
 </template>
+
+<style lang="css" scoped></style>

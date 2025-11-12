@@ -1,4 +1,6 @@
-import { trimStart } from "lodash";
+import { toTitleCase, sortWeekdays } from "./utils/timeUtils";
+import { checkForConflict } from "./utils/conflictChecker";
+import { getNumberCombinations } from "./utils/combinationGenerator";
 
 type Course = {
   Code: string;
@@ -63,91 +65,6 @@ class CourseDirectory {
       }
     }
   }
-  private strToTime(str: string) {
-    let time = str.split(":");
-    let hour = parseInt(time[0]);
-    let min = parseInt(time[1]);
-    return hour * 60 + min;
-  }
-  private strToDate(str: string) {
-    let date = str.split("-");
-    let day = parseInt(date[0]);
-    let month = parseInt(trimStart(date[1], "0"));
-    let year = parseInt(date[2]);
-    return new Date(year, month, day);
-  }
-  private organizeTime(time: string[]) {
-    let organizedTime: string[][] = [];
-    for (let i = 0; i < time.length; i += 2) {
-      organizedTime.push([time[i], time[i + 1]]);
-    }
-    // convert [ [ "13:00","14:30"] , ["14:30","16:00"] ] to [["13:00","16:00]]
-    for (let i = 0; i < organizedTime.length - 1; i++) {
-      if (organizedTime[i][1] === organizedTime[i + 1][0]) {
-        organizedTime[i][1] = organizedTime[i + 1][1];
-        organizedTime.splice(i + 1, 1);
-        i--;
-      }
-    }
-    // Remove duplicate time pairs
-    let organizedTime2: string[][] = [];
-    for (let i = 0; i < organizedTime.length; i++) {
-      if (!organizedTime2.includes(organizedTime[i])) {
-        organizedTime2.push(organizedTime[i]);
-      }
-    }
-
-    return organizedTime;
-  }
-  private checkTimeConflictByPairs(
-    course1Pair: string[],
-    course2Pair: string[]
-  ): boolean {
-    let course1StartTime = this.strToTime(course1Pair[0]);
-    let course1EndTime = this.strToTime(course1Pair[1]);
-    let course2StartTime = this.strToTime(course2Pair[0]);
-    let course2EndTime = this.strToTime(course2Pair[1]);
-    if (
-      (course1StartTime <= course2StartTime &&
-        course2StartTime < course1EndTime) ||
-      (course2StartTime <= course1StartTime &&
-        course1StartTime < course2EndTime)
-    ) {
-      return true;
-    }
-    return false;
-  }
-  private checkForTimeConflict(course1Time: string[], course2Time: string[]) {
-    let course1TimeOrganized = this.organizeTime(course1Time);
-    let course2TimeOrganized = this.organizeTime(course2Time);
-    for (let i = 0; i < course1TimeOrganized.length; i++) {
-      for (let j = 0; j < course2TimeOrganized.length; j++) {
-        if (
-          this.checkTimeConflictByPairs(
-            course1TimeOrganized[i],
-            course2TimeOrganized[j]
-          )
-        ) {
-          return true;
-        }
-      }
-    }
-    return false;
-  }
-  private checkForDateConflict(course1Date: string[], course2Date: string[]) {
-    let course1StartDate = this.strToDate(course1Date[0]);
-    let course1EndDate = this.strToDate(course1Date[1]);
-    let course2StartDate = this.strToDate(course2Date[0]);
-    let course2EndDate = this.strToDate(course2Date[1]);
-    if (
-      (course1StartDate <= course2StartDate &&
-        course2StartDate <= course1EndDate) ||
-      (course1StartDate <= course2EndDate && course2EndDate <= course1EndDate)
-    ) {
-      return true;
-    }
-    return false;
-  }
 
   private getDateAndTimeOfCourse(code: string, section: number) {
     const sectionStr = String(section);
@@ -155,21 +72,8 @@ class CourseDirectory {
     const sectionObj = course?.Sections[sectionStr];
     return sectionObj;
   }
-  private checkForDayConflict(course1Day: string[][], course2Day: string[][]) {
-    const course1Date = course1Day[1];
-    const course1Time = course1Day[0];
-    const course2Date = course2Day[1];
-    const course2Time = course2Day[0];
 
-    const dateConflict = this.checkForDateConflict(course1Date, course2Date);
-    const timeConflict = this.checkForTimeConflict(course1Time, course2Time);
-    if (dateConflict && timeConflict) {
-      return true;
-    }
-    return false;
-  }
-
-  public checkForConflict(
+  public checkConflict(
     code1: string,
     section1: number,
     code2: string,
@@ -177,25 +81,10 @@ class CourseDirectory {
   ) {
     const course1Data = this.getDateAndTimeOfCourse(code1, section1);
     const course2Data = this.getDateAndTimeOfCourse(code2, section2);
-    let sameDays = [];
-    for (let day of Object.keys(course1Data!)) {
-      if (course2Data?.hasOwnProperty(day)) {
-        sameDays.push(day);
-      }
-    }
-    if (sameDays.length === 0) {
+    if (!course1Data || !course2Data) {
       return false;
     }
-    for (let day of sameDays) {
-      const course1Day = course1Data![day];
-      const course2Day = course2Data![day];
-      const conflict = this.checkForDayConflict(course1Day, course2Day);
-      if (conflict) {
-        return true;
-      }
-    }
-
-    return false;
+    return checkForConflict(course1Data, course2Data);
   }
   private getTotalSections(code: string) {
     const course = this.getActiveSemCourseByCode(code);
@@ -203,41 +92,14 @@ class CourseDirectory {
       (section) => `${code}-${parseInt(section)}`
     );
   }
-  private getNumberCombinations(arr: string[][], n: number) {
-    let i,
-      j,
-      k,
-      elem,
-      l = arr.length,
-      childperm,
-      ret: string[][] = [];
-    if (n == 1) {
-      for (i = 0; i < arr.length; i++) {
-        for (j = 0; j < arr[i].length; j++) {
-          ret.push([arr[i][j]]);
-        }
-      }
-      return ret;
-    } else {
-      for (i = 0; i < l; i++) {
-        elem = arr.shift();
-        for (j = 0; j < elem!.length; j++) {
-          childperm = this.getNumberCombinations(arr.slice(), n - 1);
-          for (k = 0; k < childperm.length; k++) {
-            ret.push([elem![j]].concat(childperm[k]));
-          }
-        }
-      }
-      return ret;
-    }
-  }
+
   public generatePossibleCombinations(codes: string[]) {
     let totalSections = [];
     for (let code of codes) {
       totalSections.push(this.getTotalSections(code));
     }
 
-    const combinationWithClashes = this.getNumberCombinations(
+    const combinationWithClashes = getNumberCombinations(
       totalSections,
       codes.length
     );
@@ -261,7 +123,7 @@ class CourseDirectory {
           let section1 = Number(course1[1]);
           let section2 = Number(course2[1]);
 
-          if (this.checkForConflict(code1, section1, code2, section2)) {
+          if (this.checkConflict(code1, section1, code2, section2)) {
             doesHaveClashes = true;
           }
         }
@@ -271,11 +133,6 @@ class CourseDirectory {
       }
     }
     return finalCombinations;
-  }
-  private toTitleCase(str: string) {
-    return str.replace(/\w\S*/g, function (txt) {
-      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    });
   }
   public search(query: string) {
     const courses = this.getSemActive();
@@ -289,10 +146,10 @@ class CourseDirectory {
       if (course.Description.includes(query)) {
         score += 3;
       }
-      if (course.Faculties.join(" ").includes(this.toTitleCase(query))) {
+      if (course.Faculties.join(" ").includes(toTitleCase(query))) {
         score += 2;
       }
-      if (course.Name.includes(this.toTitleCase(query))) {
+      if (course.Name.includes(toTitleCase(query))) {
         score += 4;
       }
 
@@ -346,12 +203,7 @@ class CourseDirectory {
         }
       }
     }
-    return this.sortWeekdays(days);
-  }
-  private sortWeekdays(weekdays: string[]): string[] {
-    const daysInOrder = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    weekdays.sort((a, b) => daysInOrder.indexOf(a) - daysInOrder.indexOf(b));
-    return weekdays;
+    return sortWeekdays(days);
   }
 
   public sumCredits(selected: string[]): number {

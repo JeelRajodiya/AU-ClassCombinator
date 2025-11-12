@@ -1,12 +1,17 @@
-# parsing the html
-# dumping the data into a txt file
+"""HTML Course Data Scraper
+Parses course directory HTML files and converts them to JSON format.
+"""
 from bs4 import BeautifulSoup
 import json
-# import re
 import os
 
 
 def scrape(file_name):
+    """Scrapes course data from HTML file and converts to JSON.
+    
+    Args:
+        file_name: Name of the HTML file (without extension)
+    """
     htmlFile = open(f"{file_name}.html", "r", encoding="utf8")
     html = htmlFile.read()
 
@@ -24,33 +29,16 @@ def scrape(file_name):
     textFile.close()
     os.remove(f"{file_name}.txt")
 
-    # first three letters of a course code are characters and the rest are numbers
-    # function that identifies if a string is a course code
     def isCourseCode(string):
+        """Check if string is a valid course code (3 letters + 3 digits)."""
         string = string.replace(" ", "")
-        if len(string) == 6 and string[:3].isalpha() and string[3:].isdigit():
-            return True
+        return len(string) == 6 and string[:3].isalpha() and string[3:].isdigit()
 
-        return False
-
-    # testing the accuracy of the isCourseCode function
-    # this block of code will print all the course codes found in the unprocessed text file
-
-    # textFile = open(f"{file_name}.txt", "r", encoding="utf8")
     courses = []
-
     for line in lines:
         if isCourseCode(line.split(",")[0]):
             courses.append(line.split(",")[0])
-    # winter 329/331 course found
-    # winter 283/282
     print(len(courses), "Course found!")
-    # print(courses)
-    # converting the text file into a json file
-    # basic foundation for the json file
-
-    # each course from the txt file is added to the array as a string
-    # each string is a course that contains all the information about the course
 
     courseArray = []
     course = ""
@@ -62,12 +50,10 @@ def scrape(file_name):
             course = ""
         course += line
 
-    # removing the first empty string from the array
     courseArray = list(filter(lambda a: a.replace(" ", "") != "", courseArray))
 
-    # this function will return the type of the string like course code, section, day, date, time, etc
-
     def detectType(s: str):
+        """Detect the type of a field (Section, Day, Date, Time, etc.)."""
         Days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
         if s == "Section":
             return "Section"
@@ -82,10 +68,7 @@ def scrape(file_name):
         elif s.isdigit():
             return "Section No."
         else:
-
             return "Useless"
-
-    # main txt to json logic starts here
 
     lines = []
     Code = ''
@@ -133,35 +116,22 @@ def scrape(file_name):
         lines = course.split("\n")
         lines = list(filter(lambda a: a.replace(" ", "") != "", lines))
 
-        # Code = lines[0].split(",")[0]
-        # Level = lines[0].split(",")[1]
-        # Level = Level.strip(" ").strip("[").strip("]")
-        # Name = lines[1]
-        # Credits = lines[2]
-        # Faculties = lines[3].split(",")
-        # Semester = lines[4]
-
-        # Ensure lines[0] has a valid format before accessing it
         if len(lines) < 1 or "," not in lines[0]:
             print(f"Skipping malformed course data: {course}")
             continue
 
-        # Parse the first line safely
         parts = lines[0].split(",")
         Code = parts[0].strip()
         Level = parts[1].strip(" []") if len(parts) > 1 else "Unknown"
 
-        
         Name = lines[1] if len(lines) > 1 else "Unknown"
         Credits = lines[2] if len(lines) > 2 else "Unknown"
         Faculties = [faculty.strip() for faculty in lines[3].split(",")] if len(lines) > 3 else ["Not added"]
         Semester = lines[4] if len(lines) > 4 else "Unknown"
 
-        # if there is no faculty added to the course then the course is not added to the json file
         if Faculties[0] == "Not added" and float(Credits) < 2:
             continue
 
-        # if there is a prerequisite then it is added to the json file then the index of the description is changed
         if len(lines) > 5 and "PREQ_OR" in lines[5]:
             try:
                 Prerequisite = lines[5].split(",")[1]
@@ -172,15 +142,12 @@ def scrape(file_name):
             Prerequisite = None
             n = 4
 
-        # Description = lines[n + 1]
         Description = lines[n+1] if len(lines) > n+1 else "No description available"
 
-        # print(Code)
         for i in lines[n + 2:]:
             i = i.strip(",")
             i = i.replace(" ", ",")
             i = i.split(",")
-            # print(Code)
 
             i = list(filter(lambda a: a != "Quarter]", i))
             i = list(filter(lambda a: a != "[First", i))
@@ -189,17 +156,13 @@ def scrape(file_name):
             i = list(map(lambda a: a.replace("[", ""), i))
             i = list(map(lambda a: a.replace("]", ""), i))
             i = list(map(lambda a: a.strip(","), i))
-            # print(i)
             try:
                 for j in i:
-
                     j = j.strip(" ")
                     typeOfJ = detectType(j)
-                    # print(j,typeOfJ)
 
                     if j == "Bi-Semester":
                         continue
-                    # print(j)
                     if typeOfJ == "Section No.":
                         activeSection = j
                         Sections[j] = {}
@@ -208,25 +171,19 @@ def scrape(file_name):
                         activeDay = j
                         if Sections[activeSection].get(activeDay) == None:
                             Sections[activeSection][activeDay] = [[], []]
-                        # Sections[activeSection][activeDay] = [[],[]]
                     elif typeOfJ == "Time":
-                        # if Sections[activeSection][activeDay][0].count(j) == 0:
                         Sections[activeSection][activeDay][0].append(j)
-                        # Sections[activeSection][activeDay][0].append(j)
                     elif typeOfJ == "Date":
-                        # if Sections[activeSection][activeDay][1].count(j) == 0:
                         Sections[activeSection][activeDay][1].append(j)
                     elif typeOfJ == "To":
                         pass
                     elif typeOfJ == "Useless":
                         pass
             except:
-                # raise Exception("Error in course: "+Code)
                 pass
 
-        # This line will remove empty entry in Sections dictionary (other course's id is behaving as section for previous code) 
+        # Remove empty section entries
         Sections = {k: v for k, v in Sections.items() if not (isinstance(v, dict) and not v)}
-        # print(Sections)
 
         oneCourseJson = {
             "Code": Code,
@@ -245,18 +202,15 @@ def scrape(file_name):
     with open(f'{file_name.split("_")[2]}.json', 'w') as outfile:
         json.dump(finalJson, outfile, indent=4)
 
-        # print(lines[5], lines[6],12)
-        # print(Code, Level, Name, Credits, Faculties,Semester, Prerequisite, Description)
-
 
 def scrape_semesters(file_names):
+    """Scrape multiple semester files.
+    
+    Args:
+        file_names: List of file names to scrape
+    """
     for file_name in file_names:
         scrape(file_name)
-    # semesters = []
-    # for file_name in file_names:
-    # 	semesters.extend(
-    # 	    json.loads(open(f'{file_name.split("_")[2]}.json').read()))
-    # json.dump(semesters, open("semesters.json", "w"), indent=4)
 
 
 filenames = ["course_directory_winter"]

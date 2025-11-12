@@ -27,7 +27,7 @@ if (
 
 const searchTerm = ref("");
 
-// on searchTerm change, we'll wait for 300ms of inactivity before applying any effects
+// on searchTerm change, we'll wait for 1500 of inactivity before applying any effects
 // debounce the searchTerm effect
 let searchTimeout: ReturnType<typeof setTimeout> | null = null;
 watch(searchTerm, (newTerm) => {
@@ -44,7 +44,7 @@ watch(searchTerm, (newTerm) => {
       }
       navigateTo(`/search?${query.toString()}`);
     }
-  }, 300);
+  }, 1500);
 });
 </script>
 
@@ -53,14 +53,7 @@ watch(searchTerm, (newTerm) => {
     <div class="layout center">
       <Logo class="logo" />
       <div class="center flex-col w-full gap-4 search">
-        <UInput
-          icon="i-lucide-search"
-          size="xl"
-          placeholder="Search courses..."
-          variant="subtle"
-          class="w-full"
-          v-model="searchTerm"
-        />
+        <SearchField v-model="searchTerm" />
         <USelect
           v-if="semesterList && semesterList.length > 0"
           :loading="pending"

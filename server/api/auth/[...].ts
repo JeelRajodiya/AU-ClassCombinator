@@ -46,7 +46,6 @@ export default NuxtAuthHandler({
     // },
     /* on session retrival */
     async session({ session, token }) {
-      console.time("session!");
       dbConnect().then(() => {
         // Fire-and-forget database update
         User.updateOne(
@@ -57,14 +56,10 @@ export default NuxtAuthHandler({
         );
       });
 
-      console.timeEnd("session!");
-      log("session!");
-
       return session;
     },
     /* on JWT token creation or mutation */
     async jwt({ token, user, account, profile, isNewUser }) {
-      time("jwt!");
       if (user) {
         try {
           await dbConnect();
@@ -84,7 +79,6 @@ export default NuxtAuthHandler({
           console.error("Error upserting user:", error);
         }
       }
-      timeEnd("jwt!");
       return token;
     },
   },

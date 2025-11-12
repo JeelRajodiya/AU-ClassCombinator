@@ -50,7 +50,6 @@ async function getUniqueSemesters() {
     // 4. Map the results to a simple array of strings
     const semesterList = results.map((item) => item.semesterYear);
 
-    console.log(semesterList);
     // Output: ["Winter 2025", "Monsoon 2025", "Winter 2024"]
 
     return semesterList;

@@ -1,29 +1,10 @@
 <script setup lang="ts">
-// definePageMeta({
-//   auth: { authenticatedOnly: true, navigateUnauthenticatedTo: "/Login" },
-// });
+import SemesterSwitch from "~/components/SemesterSwitch.vue";
 
 const { getSession } = useAuth();
 const session = await getSession();
 console.log("Session in Index Page:", session);
-const { selectedSem, setSelectedSem } = useSelectedSemester();
-
-const {
-  data: semesterList,
-  error,
-  pending,
-} = await useFetch<string[]>("/api/getSemesterList");
-
-if (error.value) {
-  console.error("Error fetching semester list:", error.value);
-}
-if (
-  semesterList.value &&
-  semesterList.value.length > 0 &&
-  semesterList.value[0]
-) {
-  setSelectedSem(semesterList.value[0]);
-}
+const { selectedSem } = useSelectedSemester();
 
 const searchTerm = ref("");
 
@@ -54,15 +35,7 @@ watch(searchTerm, (newTerm) => {
       <Logo class="logo" />
       <div class="center flex-col w-full gap-4 search">
         <SearchField v-model="searchTerm" />
-        <USelect
-          v-if="semesterList && semesterList.length > 0"
-          :loading="pending"
-          v-model="selectedSem"
-          :items="semesterList"
-          arrow
-          icon="i-lucide-book"
-        />
-        <div v-else class="text-red-500">No semesters available.</div>
+        <SemesterSwitch />
       </div>
     </div>
     Hi {{ session?.user?.name || "Guest" }}! <LoginWithGoogle />

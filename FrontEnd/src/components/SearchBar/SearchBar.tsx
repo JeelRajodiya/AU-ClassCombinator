@@ -2,7 +2,10 @@ import * as React from "react";
 import "./SearchBar.css";
 import SearchIcon from "@mui/icons-material/Search";
 
-export default function SearchBar(props: { query: string; setQuery: any }) {
+export default function SearchBar(props: { 
+	query: string; 
+	setQuery: React.Dispatch<React.SetStateAction<string>>; 
+}) {
 	return (
 		<div id="searchBar-container">
 			<input

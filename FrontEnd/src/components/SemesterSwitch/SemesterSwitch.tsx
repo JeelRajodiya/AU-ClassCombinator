@@ -4,10 +4,10 @@ import CourseDirectory from "../../Course_Directory";
 import "./SemesterSwitch.css";
 export default function SemesterSwitch(props: {
   cd: CourseDirectory;
-  setCD: any;
+  setCD: React.Dispatch<React.SetStateAction<CourseDirectory>>;
   query: string;
-  setQuery: any;
-  setSelected: any;
+  setQuery: React.Dispatch<React.SetStateAction<string>>;
+  setSelected: React.Dispatch<React.SetStateAction<string[]>>;
 }) {
   return (
     <div className="semester-switch">

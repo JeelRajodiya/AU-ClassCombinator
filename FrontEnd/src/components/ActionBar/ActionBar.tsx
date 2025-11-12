@@ -4,10 +4,10 @@ import "./ActionBar.css";
 
 type ActionBarProps = {
 	selected: string[];
-	setSelected: any;
+	setSelected: React.Dispatch<React.SetStateAction<string[]>>;
 	combinations: string[][];
 	isCombinatorOpen: boolean;
-	setIsCombinatorOpen: any;
+	setIsCombinatorOpen: React.Dispatch<React.SetStateAction<boolean>>;
 	cd: CourseDirectory;
 };
 

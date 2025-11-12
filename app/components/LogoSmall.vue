@@ -10,6 +10,7 @@
 <style scoped>
 .logo {
   font-weight: bold;
+  letter-spacing: -0.1rem;
 }
 .logo div {
   font-size: 1.5rem;

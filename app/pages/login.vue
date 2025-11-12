@@ -7,7 +7,7 @@
 <template>
   <div class="landing-page">
     <div class="wrapper">
-      <div>
+      <div class="flex flex-col gap-4">
         <Logo />
         <div class="text-xl flex flex-col items-center">
           <div><b>Winter 2026</b> Registration ahead?</div>

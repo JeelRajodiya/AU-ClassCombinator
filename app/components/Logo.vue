@@ -9,6 +9,7 @@
   font-size: 4rem;
   letter-spacing: -0.3rem;
   font-weight: bold;
+  line-height: 110%;
 }
 
 span {

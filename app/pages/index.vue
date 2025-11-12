@@ -30,13 +30,11 @@ watch(searchTerm, (newTerm) => {
 <template>
   <div class="page center pb-24">
     <div class="layout center">
-      <Logo class="logo" />
-      <div class="center flex-col w-full gap-4 search">
-        <SearchField v-model="searchTerm" />
-        <SemesterSwitch />
-      </div>
+      <Logo class="logo" /> <SearchField v-model="searchTerm" />
+      <SemesterSwitch />
+      <!-- <div class="center flex-col w-full gap-4 search"></div> -->
     </div>
-    Hi {{ session?.user?.name || "Guest" }}! <LoginWithGoogle />
+    <!-- Hi {{ session?.user?.name || "Guest" }}! <LoginWithGoogle /> -->
   </div>
 </template>
 

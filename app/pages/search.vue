@@ -7,7 +7,7 @@ const { selectedSem, setSelectedSem } = useSelectedSemester();
 <template>
   <div class="page p-8">
     <div class="flex gap-8">
-      <div class="flex wrapper flex-5">
+      <div class="flex wrapper flex-5 gap-4">
         <LogoSmall class="w-fit pr-16" />
         <div class="w-full flex flex-col gap-2">
           <SearchField v-model="searchTerm" />

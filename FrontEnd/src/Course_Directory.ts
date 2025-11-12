@@ -1,5 +1,4 @@
-// import * as fs from "fs";
-import loadsh, { filter } from "lodash";
+import { trimStart } from "lodash";
 
 type Course = {
   Code: string;
@@ -18,6 +17,7 @@ type Course = {
   isBiSem: boolean;
 };
 export type { Course };
+
 class CourseDirectory {
   private winter: Course[];
   private monsoon: Course[];
@@ -27,17 +27,6 @@ class CourseDirectory {
   constructor(winter: any, monsoon: any) {
     this.winter = winter;
     this.monsoon = monsoon;
-    // if (
-    // 	localStorage.getItem("activeSem") === "winter" ||
-    // 	localStorage.getItem("activeSem") === null
-    // ) {
-    // 	this.activeSem = this.winter;
-    // 	this.activeSemName = "Winter";
-    // } else {
-    // 	this.activeSem = this.monsoon;
-    // 	this.activeSemName = "Monsoon";
-    // }
-
     this.activeSem = this.winter;
     this.activeSemName = "Winter";
   }
@@ -83,9 +72,8 @@ class CourseDirectory {
   private strToDate(str: string) {
     let date = str.split("-");
     let day = parseInt(date[0]);
-    let month = parseInt(loadsh.trimStart(date[1], "0"));
+    let month = parseInt(trimStart(date[1], "0"));
     let year = parseInt(date[2]);
-    // console.log(date);
     return new Date(year, month, day);
   }
   private organizeTime(time: string[]) {
@@ -101,8 +89,7 @@ class CourseDirectory {
         i--;
       }
     }
-    // remove duplicate time pairs
-
+    // Remove duplicate time pairs
     let organizedTime2: string[][] = [];
     for (let i = 0; i < organizedTime.length; i++) {
       if (!organizedTime2.includes(organizedTime[i])) {
@@ -110,7 +97,6 @@ class CourseDirectory {
       }
     }
 
-    // console.log(time, "=>", organizedTime);
     return organizedTime;
   }
   private checkTimeConflictByPairs(
@@ -132,16 +118,8 @@ class CourseDirectory {
     return false;
   }
   private checkForTimeConflict(course1Time: string[], course2Time: string[]) {
-    // console.log(course1Time, this.organizeTime(course1Time), "Ok");
-
     let course1TimeOrganized = this.organizeTime(course1Time);
     let course2TimeOrganized = this.organizeTime(course2Time);
-    // console.log(
-    // 	course1StartTime,
-    // 	course1EndTime,
-    // 	course2StartTime,
-    // 	course2EndTime
-    // );
     for (let i = 0; i < course1TimeOrganized.length; i++) {
       for (let j = 0; j < course2TimeOrganized.length; j++) {
         if (
@@ -161,12 +139,6 @@ class CourseDirectory {
     let course1EndDate = this.strToDate(course1Date[1]);
     let course2StartDate = this.strToDate(course2Date[0]);
     let course2EndDate = this.strToDate(course2Date[1]);
-    // console.log(
-    // 	course1StartDate,
-    // 	course1EndDate,
-    // 	course2StartDate,
-    // 	course2EndDate
-    // );
     if (
       (course1StartDate <= course2StartDate &&
         course2StartDate <= course1EndDate) ||
@@ -181,7 +153,6 @@ class CourseDirectory {
     const sectionStr = String(section);
     const course = this.getActiveSemCourseByCode(code);
     const sectionObj = course?.Sections[sectionStr];
-    // console.log(sectionObj);
     return sectionObj;
   }
   private checkForDayConflict(course1Day: string[][], course2Day: string[][]) {
@@ -192,7 +163,6 @@ class CourseDirectory {
 
     const dateConflict = this.checkForDateConflict(course1Date, course2Date);
     const timeConflict = this.checkForTimeConflict(course1Time, course2Time);
-    // console.log(dateConflict, timeConflict);
     if (dateConflict && timeConflict) {
       return true;
     }
@@ -220,7 +190,6 @@ class CourseDirectory {
       const course1Day = course1Data![day];
       const course2Day = course2Data![day];
       const conflict = this.checkForDayConflict(course1Day, course2Day);
-      // console.log(conflict, day);
       if (conflict) {
         return true;
       }
@@ -273,7 +242,6 @@ class CourseDirectory {
       codes.length
     );
 
-    // console.log(combinationWithClashes);
     const finalCombinations: string[][] = [];
     let parseCombinationCode = (c: string) => c.split("-");
     for (let i = 0; i < combinationWithClashes.length; i++) {
@@ -315,7 +283,6 @@ class CourseDirectory {
     for (let course of courses) {
       let score = 0;
 
-      // Match score based on different criteria
       if (course.Code.replace(" ", "").includes(query.toUpperCase())) {
         score += 5; // Code match has higher weight
       }
@@ -329,17 +296,13 @@ class CourseDirectory {
         score += 4;
       }
 
-      // Push the course along with its score to the results array
       if (score > 0) {
         results.push({ course, score });
       }
     }
     results.sort((a, b) => b.score - a.score);
 
-    // Extract only the course objects from the sorted results
-    const sortedCourses = results.map((result) => result.course);
-
-    return sortedCourses;
+    return results.map((result) => result.course);
   }
   public getScheduleFromCodeAndSection(codeNSec: string): string[] {
     const [code, sec] = codeNSec.split("-");
@@ -349,7 +312,6 @@ class CourseDirectory {
     const days = Object.keys(section!);
     const times = days.map((day) => section![day][0]);
 
-    // console.log(times);
     const formattedTimes = times.map((time) => {
       if (time.length % 2 === 0 && time.length > 2) {
         let allTimes = [];
@@ -367,7 +329,6 @@ class CourseDirectory {
     for (let i = 0; i < days.length; i++) {
       formattedResult.push(`${days[i]} ${formattedTimes[i]} `);
     }
-    // console.log(formattedResult);
     return formattedResult;
   }
   public getUsedDays(codeNSecs: string[]): string[] {

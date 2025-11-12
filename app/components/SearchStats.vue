@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-8">
+  <div class="flex flex-col gap-8 h-fit">
     <SemesterSwitch class="w-fit" />
     <USeparator orientation="horizontal" class="w-48 pt-16" />
     <div class="flex flex-col gap-4">
@@ -15,6 +15,6 @@
 </template>
 
 <style scoped>
-.search-stats {
-}
+/* .search-stats {
+} */
 </style>

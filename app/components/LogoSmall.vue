@@ -11,6 +11,7 @@
 .logo {
   font-weight: bold;
   letter-spacing: -0.1rem;
+  height: fit-content;
 }
 .logo div {
   font-size: 1.5rem;

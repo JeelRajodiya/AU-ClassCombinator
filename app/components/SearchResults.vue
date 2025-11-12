@@ -26,7 +26,11 @@ const items = [
     color="neutral"
     :items="items"
     variant="link"
-    :ui="{ trigger: 'grow', list: 'w-fit ', root: 'items-start' }"
+    :ui="{
+      trigger: 'grow',
+      list: 'w-fit ',
+      root: 'items-start',
+    }"
     class="gap-4"
   >
     <template #all="{ item }">

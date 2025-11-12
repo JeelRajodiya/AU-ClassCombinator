@@ -41,18 +41,18 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="page p-8">
+  <div class="page px-8">
     <div class="flex gap-8">
-      <div class="flex wrapper flex-5 gap-4">
-        <LogoSmall class="w-fit pr-16" />
-        <div class="w-full flex flex-col gap-2">
-          <SearchField v-model="searchTerm" />
-          <SearchResults :results="searchResults" />
+      <div class="flex flex-5 flex-col">
+        <div class="flex gap-4 top-4 sticky bg-neutral">
+          <LogoSmall class="w-fit pr-16" />
+          <SearchField v-model="searchTerm" class="h-fit" />
+          <!-- <USeparator orientation="vertical" class="pt-48 h-96" /> -->
         </div>
-        <USeparator orientation="vertical" class="pt-48 h-96" />
-      </div>
 
-      <SearchStats class="flex-2" />
+        <SearchResults :results="searchResults" class="pl-52" />
+      </div>
+      <SearchStats class="flex-2 sticky top-8" />
     </div>
   </div>
 </template>

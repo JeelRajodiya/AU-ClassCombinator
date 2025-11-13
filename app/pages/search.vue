@@ -38,21 +38,25 @@ onMounted(() => {
 onUnmounted(() => {
   if (debounceTimeout.value) clearTimeout(debounceTimeout.value);
 });
+// have two tabs, all and selected
+const activeTab = ref<"all" | "selected">("all");
 </script>
 
 <template>
-  <div class="page px-8">
+  <div class="page">
     <div class="flex gap-8">
       <div class="flex flex-5 flex-col">
-        <div class="flex gap-4 top-4 sticky bg-neutral">
+        <div class="flex gap-4 p-4 top-0 sticky z-10 bg-neutral">
           <LogoSmall class="w-fit pr-16" />
-          <SearchField v-model="searchTerm" class="h-fit" />
+          <div class="flex flex-col w-full gap-2">
+            <SearchField v-model="searchTerm" class="h-fit" />
+            <ResultTabs v-model:active-tab="activeTab" />
+          </div>
+
           <!-- <USeparator orientation="vertical" class="pt-48 h-96" /> -->
         </div>
-
-        <SearchResults :results="searchResults" class="pl-52" />
       </div>
-      <SearchStats class="flex-2 sticky top-8" />
+      <SearchStats class="flex-2 sticky top-8 py-4" />
     </div>
   </div>
 </template>

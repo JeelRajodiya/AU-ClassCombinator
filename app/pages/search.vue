@@ -47,9 +47,9 @@ const activeTab = ref<"all" | "selected">("all");
     <div class="flex align-top gap-8">
       <div class="flex flex-5 flex-col">
         <div class="flex gap-4">
-          <LogoSmall class="w-fit pl-4 pr-16 top-4 sticky" />
+          <LogoSmall class="w-fit pl-8 pr-16 top-8 sticky" />
           <div>
-            <div class="flex flex-col w-full top-0 pt-4 sticky z-10 bg-default">
+            <div class="flex flex-col w-full top-0 pt-8 sticky z-10 bg-default">
               <SearchField v-model="searchTerm" class="h-fit" />
               <ResultTabs v-model:active-tab="activeTab" />
             </div>
@@ -70,7 +70,7 @@ const activeTab = ref<"all" | "selected">("all");
           <!-- <USeparator orientation="vertical" class="pt-48 h-96" /> -->
         </div>
       </div>
-      <SearchStats class="flex-2 sticky top-0 py-4" />
+      <SearchStats class="flex-2 sticky top-0 py-8" />
     </div>
   </div>
 </template>

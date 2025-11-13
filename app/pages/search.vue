@@ -44,19 +44,33 @@ const activeTab = ref<"all" | "selected">("all");
 
 <template>
   <div class="page">
-    <div class="flex gap-8">
+    <div class="flex align-top gap-8">
       <div class="flex flex-5 flex-col">
-        <div class="flex gap-4 p-4 top-0 sticky z-10 bg-neutral">
-          <LogoSmall class="w-fit pr-16" />
-          <div class="flex flex-col w-full gap-2">
-            <SearchField v-model="searchTerm" class="h-fit" />
-            <ResultTabs v-model:active-tab="activeTab" />
+        <div class="flex gap-4">
+          <LogoSmall class="w-fit pl-4 pr-16 top-4 sticky" />
+          <div>
+            <div class="flex flex-col w-full top-0 pt-4 sticky z-10 bg-default">
+              <SearchField v-model="searchTerm" class="h-fit" />
+              <ResultTabs v-model:active-tab="activeTab" />
+            </div>
+            <div class="space-y-4">
+              <div
+                v-for="course in searchResults"
+                :key="course.code"
+                class="p-4 border rounded"
+              >
+                <h3 class="font-bold">{{ course.code }}: {{ course.name }}</h3>
+                <p>{{ course.description }}</p>
+                <p>Credits: {{ course.credits }}</p>
+                <p>Faculties: {{ course.faculties.join(", ") }}</p>
+              </div>
+            </div>
           </div>
 
           <!-- <USeparator orientation="vertical" class="pt-48 h-96" /> -->
         </div>
       </div>
-      <SearchStats class="flex-2 sticky top-8 py-4" />
+      <SearchStats class="flex-2 sticky top-0 py-4" />
     </div>
   </div>
 </template>

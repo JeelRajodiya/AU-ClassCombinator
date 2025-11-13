@@ -7,7 +7,7 @@ interface ISearchParams {
   page?: number;
   maxResults?: number;
 }
-const MAX_RESULTS_DEFAULT = 10;
+const MAX_RESULTS_DEFAULT = 5;
 export const searchCourses = async ({
   searchQuery,
   year,

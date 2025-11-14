@@ -51,16 +51,21 @@ const formatDateRange = (dateRange) => {
     <div
       v-for="section in sections"
       :key="section.sectionId"
-      class="overflow-hidden border border-default"
+      class="overflow-hidden"
     >
-      <h3
-        class="px-6 py-2 text-lg font-bold border-t border-default text-center"
-      >
-        Section {{ section.sectionId }}
-      </h3>
-
-      <div class="border border-default">
-        <table class="w-full border-collapse text-sm">
+      <div class="">
+        <table class="w-full text-sm">
+          <thead>
+            <tr>
+              <th colspan="2" class="p-0">
+                <h3
+                  class="px-6 py-2 text-lg font-bold border-t border-x border-default text-center"
+                >
+                  Section {{ section.sectionId }}
+                </h3>
+              </th>
+            </tr>
+          </thead>
           <tbody>
             <template v-for="(slot, index) in section.slots" :key="index">
               <tr>

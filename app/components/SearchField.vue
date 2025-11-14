@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const router = useRouter();
 const props = defineProps({
   modelValue: {
     type: String,
@@ -28,11 +29,19 @@ const emits = defineEmits({ "update:modelValue": (value: string) => true });
     />
     <UButton
       class="py-3 px-4"
-      icon="i-lucide-search"
+      :icon="
+        modelValue != router.currentRoute.value.query.q
+          ? 'i-lucide-search'
+          : 'i-lucide-x'
+      "
       size="xl"
       variant="subtle"
       color="neutral"
-      @click="searchFunction(modelValue)"
+      @click="
+        modelValue != router.currentRoute.value.query.q
+          ? searchFunction(modelValue)
+          : emits('update:modelValue', '')
+      "
     />
   </UFieldGroup>
 </template>

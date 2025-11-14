@@ -13,7 +13,7 @@ if (searchTerm.value.trim()) {
   loading.value = true;
 }
 
-const activeTab = ref<"all" | "selected">("all");
+const activeTab = ref<"search" | "selected">("search");
 
 const performSearch = async () => {
   if (!searchTerm.value.trim() || !selectedSem.value) return;
@@ -31,7 +31,7 @@ const performSearch = async () => {
     });
     searchResults.value = results;
     // Update URL query parameters
-    activeTab.value = "all";
+    activeTab.value = "search";
     router.push({
       query: { q: searchTerm.value },
     });
@@ -85,7 +85,7 @@ const toggleCourse = (course: ICourseDTO) => {
               />
               <ResultTabs v-model:active-tab="activeTab" />
             </div>
-            <div class="p-2 flex flex-col gap-4" v-if="activeTab === 'all'">
+            <div class="p-2 flex flex-col gap-4" v-if="activeTab === 'search'">
               <CourseCard
                 v-for="course in searchResults"
                 :course="course"

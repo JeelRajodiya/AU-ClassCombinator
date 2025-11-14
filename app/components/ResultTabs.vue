@@ -1,22 +1,22 @@
 <script setup lang="ts">
 import type { TabsItem } from "@nuxt/ui";
 
-const emit = defineEmits<{ "update:activeTab": [value: "all" | "selected"] }>();
+const emit = defineEmits<{ "update:activeTab": [value: "search" | "selected"] }>();
 
 const props = defineProps({
   activeTab: {
-    type: String as () => "all" | "selected",
-    default: "all",
+    type: String as () => "search" | "selected",
+    default: "search",
   },
 });
 
 const items = [
   {
-    label: "All",
-    value: "all" as const,
+    label: "Search",
+    value: "search" as const,
   },
   {
-    label: "Selected",
+    label: "Selected Courses",
     value: "selected" as const,
   },
 ] satisfies TabsItem[];
@@ -33,7 +33,9 @@ const items = [
       root: 'items-start mb-0 pb-0 ',
     }"
     :model-value="activeTab"
-    @update:model-value="emit('update:activeTab', $event as 'all' | 'selected')"
+    @update:model-value="
+      emit('update:activeTab', $event as 'search' | 'selected')
+    "
   >
   </UTabs>
 </template>

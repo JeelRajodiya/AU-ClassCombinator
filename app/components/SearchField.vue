@@ -4,6 +4,10 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  searchFunction: {
+    type: Function,
+    default: () => {},
+  },
 });
 
 const emits = defineEmits({ "update:modelValue": (value: string) => true });
@@ -18,6 +22,7 @@ const emits = defineEmits({ "update:modelValue": (value: string) => true });
     class="w-full"
     :ui="{ base: 'py-3 shadow-sm' }"
     :value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
+    @input="emits('update:modelValue', $event.target.value)"
+    @keydown.enter="searchFunction($event.target.value)"
   />
 </template>

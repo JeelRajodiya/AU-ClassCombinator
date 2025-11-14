@@ -31,7 +31,7 @@ const performSearch = async () => {
     searchResults.value = results;
     // Update URL query parameters
     router.push({
-      query: { q: searchTerm.value, semester: selectedSem.value },
+      query: { q: searchTerm.value },
     });
   } catch (error) {
     console.error("Search error:", error);
@@ -68,7 +68,11 @@ const activeTab = ref<"all" | "selected">("all");
           <LogoSmall class="w-fit pl-8 pr-16 top-8 sticky" />
           <div class="w-full">
             <div class="flex flex-col w-full top-0 pt-8 sticky z-10 bg-default">
-              <SearchField v-model="searchTerm" class="h-fit" />
+              <SearchField
+                v-model="searchTerm"
+                class="h-fit"
+                :search-function="performSearch"
+              />
               <ResultTabs v-model:active-tab="activeTab" />
             </div>
             <div

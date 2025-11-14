@@ -6,7 +6,6 @@ const router = useRouter();
 const searchTerm = ref((route.query.q as string) || "");
 const { selectedSem, setSelectedSem } = useSelectedSemester();
 const searchResults = ref<ICourseDTO[]>([]);
-const debounceTimeout = ref<NodeJS.Timeout | null>(null);
 const loading = ref(false);
 
 // Set loading to true if there's an initial search term
@@ -41,20 +40,10 @@ const performSearch = async () => {
   }
 };
 
-watch([searchTerm, selectedSem], () => {
-  if (debounceTimeout.value) clearTimeout(debounceTimeout.value);
-  debounceTimeout.value = setTimeout(performSearch, 1500);
-});
-
-// Initial search if searchTerm is present
 onMounted(() => {
   if (searchTerm.value.trim()) {
     performSearch();
   }
-});
-
-onUnmounted(() => {
-  if (debounceTimeout.value) clearTimeout(debounceTimeout.value);
 });
 // have two tabs, all and selected
 const activeTab = ref<"all" | "selected">("all");

@@ -25,7 +25,7 @@ watch(searchTerm, (newTerm) => {
   searchTimeout = setTimeout(() => {
     // redirect to /search-results with query params searchTerm and selectedSemester
     performSearch();
-  }, 1500);
+  }, 3000);
 });
 </script>
 

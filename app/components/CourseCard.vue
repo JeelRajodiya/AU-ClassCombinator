@@ -2,11 +2,20 @@
 import { type ICourseDTO } from "../../server/models/Course";
 const props = defineProps<{
   course: ICourseDTO;
+  isSelected: boolean;
+}>();
+const emit = defineEmits<{
+  select: [course: ICourseDTO];
 }>();
 </script>
 
 <template>
-  <UCard class="shadow-sm">
+  <UCard
+    class="shadow-sm"
+    variant="outline"
+    @click="$emit('select', course)"
+    :class="isSelected ? 'border-primary border' : ''"
+  >
     <template #header>
       <div class="flex flex-row justify-between">
         <span class="font-bold text-lg">
@@ -42,6 +51,7 @@ const props = defineProps<{
             variant="outline"
             trailing-icon="i-lucide-chevron-down"
             block
+            @click.stop
           />
 
           <template #content>
@@ -58,6 +68,7 @@ const props = defineProps<{
             variant="outline"
             trailing-icon="i-lucide-chevron-down"
             block
+            @click.stop
           />
 
           <template #content>

@@ -47,6 +47,16 @@ onMounted(() => {
 });
 // have two tabs, all and selected
 const activeTab = ref<"all" | "selected">("all");
+const selectedCourses = ref<ICourseDTO[]>([]);
+
+const toggleCourse = (course: ICourseDTO) => {
+  const index = selectedCourses.value.findIndex((c) => c.code === course.code);
+  if (index > -1) {
+    selectedCourses.value.splice(index, 1);
+  } else {
+    selectedCourses.value.push(course);
+  }
+};
 </script>
 
 <template>
@@ -64,40 +74,73 @@ const activeTab = ref<"all" | "selected">("all");
               />
               <ResultTabs v-model:active-tab="activeTab" />
             </div>
-            <div
-              class="p-2 flex flex-col gap-4"
-              v-if="!loading && searchResults.length > 0"
-            >
+            <div class="p-2 flex flex-col gap-4" v-if="activeTab === 'all'">
               <CourseCard
                 v-for="course in searchResults"
                 :course="course"
-                v-if="activeTab === 'all'"
+                v-if="!loading && searchResults.length > 0"
+                @select="toggleCourse($event)"
+                class="cursor-pointer"
+                :isSelected="
+                  selectedCourses.some((c) => c.code === course.code)
+                "
               />
-              <div v-if="activeTab === 'selected'">
-                <!-- Placeholder for selected courses -->
-                <p class="text-muted">Selected courses will appear here.</p>
+              <div
+                v-else-if="loading"
+                class="flex flex-col items-center justify-center h-96 w-full text-muted gap-4 p-2"
+              >
+                <UIcon name="i-lucide-loader" size="48" class="animate-spin" />
+                <p class="text-lg">Loading results...</p>
+              </div>
+              <div
+                v-else-if="searchResults.length == 0"
+                class="flex flex-col items-center justify-center h-96 text-muted gap-4 p-2"
+              >
+                <UIcon name="i-lucide-search" size="48" />
+                <p class="text-lg">No results found</p>
               </div>
             </div>
             <div
-              v-if="loading"
-              class="flex flex-col items-center justify-center h-96 w-full text-muted gap-4 p-2"
+              class="p-2 flex flex-col gap-4"
+              v-else-if="activeTab === 'selected'"
             >
-              <UIcon name="i-lucide-loader" size="48" class="animate-spin" />
-              <p class="text-lg">Loading results...</p>
-            </div>
-            <div
-              v-else-if="searchResults.length == 0"
-              class="flex flex-col items-center justify-center h-96 text-muted gap-4 p-2"
-            >
-              <UIcon name="i-lucide-search" size="48" />
-              <p class="text-lg">No results found</p>
+              <CourseCard
+                v-for="course in selectedCourses"
+                v-if="selectedCourses.length > 0"
+                :key="course.code"
+                :course="course"
+                @select="toggleCourse($event)"
+                class="cursor-pointer"
+                :isSelected="
+                  selectedCourses.some((c) => c.code === course.code)
+                "
+              />
+              <div
+                v-else
+                class="flex flex-col items-center justify-center h-96 text-muted gap-4 p-2"
+              >
+                <UIcon name="i-lucide-bookmark-minus" size="48" />
+                <div>
+                  <p class="text-lg text-center">No selected courses</p>
+                  <p class="text-center">
+                    Click on a course card to select or deselect it.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- <USeparator orientation="vertical" class="pt-48 h-96" /> -->
         </div>
       </div>
-      <SearchStats class="flex-2 sticky top-0 py-8" />
+      <SearchStats
+        class="flex-2 sticky top-0 py-8"
+        :selected-courses-count="selectedCourses.length"
+        :total-credits="
+          selectedCourses.reduce((sum, course) => sum + course.credits, 0)
+        "
+        :total-combinations="2"
+      />
     </div>
   </div>
 </template>

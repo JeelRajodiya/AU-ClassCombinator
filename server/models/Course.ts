@@ -42,8 +42,8 @@ const SectionSchema = new Schema<ISection>({
   slots: { type: [SlotSchema], required: true },
 });
 
-// Interface for Course
-export interface ICourse extends Document {
+// Shape common to both plain objects and mongoose documents
+export interface ICourseCore {
   code: string;
   name: string;
   level: string;
@@ -57,6 +57,12 @@ export interface ICourse extends Document {
   gerCategory?: string | null;
   sections: ISection[];
 }
+
+// Interface for Course Document (used by Mongoose)
+export interface ICourse extends ICourseCore, Document {}
+
+// Plain object returned via APIs / frontend consumption
+export type ICourseDTO = ICourseCore & { _id: string };
 
 // Schema for Course
 const CourseSchema = new Schema<ICourse>({

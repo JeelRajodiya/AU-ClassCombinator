@@ -29,8 +29,8 @@ const items = [
     variant="link"
     :ui="{
       trigger: 'grow',
-      list: 'w-fit ',
-      root: 'items-start mb-0 pb-0',
+      list: 'w-fit  ',
+      root: 'items-start mb-0 pb-0 ',
     }"
     :model-value="activeTab"
     @update:model-value="emit('update:activeTab', $event as 'all' | 'selected')"

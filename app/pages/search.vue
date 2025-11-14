@@ -1,25 +1,43 @@
 <script setup lang="ts">
+import type { ICourseDTO } from "~~/server/models/Course";
+
 const route = useRoute();
+const router = useRouter();
 const searchTerm = ref((route.query.q as string) || "");
 const { selectedSem, setSelectedSem } = useSelectedSemester();
-const searchResults = ref<any[]>([]);
+const searchResults = ref<ICourseDTO[]>([]);
 const debounceTimeout = ref<NodeJS.Timeout | null>(null);
+const loading = ref(false);
+
+// Set loading to true if there's an initial search term
+if (searchTerm.value.trim()) {
+  loading.value = true;
+}
 
 const performSearch = async () => {
   if (!searchTerm.value.trim() || !selectedSem.value) return;
 
+  loading.value = true;
+  searchResults.value = [];
+
   try {
-    const results = await $fetch("/api/search", {
+    const results = await $fetch<ICourseDTO[]>("/api/search", {
       query: {
         q: searchTerm.value,
         semester: selectedSem.value,
         page: 1,
       },
     });
-    searchResults.value = results as any[];
+    searchResults.value = results;
+    // Update URL query parameters
+    router.push({
+      query: { q: searchTerm.value, semester: selectedSem.value },
+    });
   } catch (error) {
     console.error("Search error:", error);
     searchResults.value = [];
+  } finally {
+    loading.value = false;
   }
 };
 
@@ -53,8 +71,33 @@ const activeTab = ref<"all" | "selected">("all");
               <SearchField v-model="searchTerm" class="h-fit" />
               <ResultTabs v-model:active-tab="activeTab" />
             </div>
-            <div class="p-2 flex flex-col gap-4">
-              <CourseCard v-for="course in searchResults" :course="course" />
+            <div
+              class="p-2 flex flex-col gap-4"
+              v-if="!loading && searchResults.length > 0"
+            >
+              <CourseCard
+                v-for="course in searchResults"
+                :course="course"
+                v-if="activeTab === 'all'"
+              />
+              <div v-if="activeTab === 'selected'">
+                <!-- Placeholder for selected courses -->
+                <p class="text-muted">Selected courses will appear here.</p>
+              </div>
+            </div>
+            <div
+              v-if="loading"
+              class="flex flex-col items-center justify-center h-96 w-full text-muted gap-4 p-2"
+            >
+              <UIcon name="i-lucide-loader" size="48" class="animate-spin" />
+              <p class="text-lg">Loading results...</p>
+            </div>
+            <div
+              v-else-if="searchResults.length == 0"
+              class="flex flex-col items-center justify-center h-96 text-muted gap-4 p-2"
+            >
+              <UIcon name="i-lucide-search" size="48" />
+              <p class="text-lg">No results found</p>
             </div>
           </div>
 

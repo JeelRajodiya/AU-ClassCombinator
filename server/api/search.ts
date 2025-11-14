@@ -1,4 +1,4 @@
-import Course, { ICourse } from "../models/Course";
+import Course, { type ICourseDTO } from "../models/Course";
 
 interface ISearchParams {
   searchQuery?: string;
@@ -14,7 +14,7 @@ export const searchCourses = async ({
   semester,
   page = 1,
   maxResults = MAX_RESULTS_DEFAULT,
-}: ISearchParams): Promise<ICourse[]> => {
+}: ISearchParams): Promise<ICourseDTO[]> => {
   try {
     // Define the base filter with the required fixed fields.
     // We use 'any' here to dynamically build the query object.
@@ -42,10 +42,11 @@ export const searchCourses = async ({
     }
 
     // Execute the query using the constructed filter
-    const courses = await Course.find(filter)
+    const courses = (await Course.find(filter)
       .skip((page - 1) * maxResults)
       .limit(maxResults)
-      .exec();
+      .lean()
+      .exec()) as unknown as ICourseDTO[];
 
     return courses;
   } catch (error) {

@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { type ICourse } from "../../server/models/Course";
+import { type ICourseDTO } from "../../server/models/Course";
 const props = defineProps<{
-  course: ICourse;
+  course: ICourseDTO;
 }>();
 </script>
 
 <template>
-  <UCard>
+  <UCard class="shadow-sm">
     <template #header>
       <div class="flex flex-row justify-between">
         <span class="font-bold text-lg">

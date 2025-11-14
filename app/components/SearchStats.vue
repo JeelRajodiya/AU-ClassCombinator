@@ -12,6 +12,10 @@ const props = defineProps({
     type: Number,
     required: true,
   },
+  resetSelections: {
+    type: Function,
+    required: true,
+  },
 });
 </script>
 
@@ -34,6 +38,18 @@ const props = defineProps({
         icon="i-lucide-combine"
         label="Total Combinations:"
         :value="props.totalCombinations"
+      />
+    </div>
+    <div>
+      <UButton
+        label="Reset Selectiions"
+        class="bg-error-300 mt-8"
+        color="error"
+        icon="i-lucide-refresh-ccw"
+        variant="solid"
+        size="sm"
+        :disabled="props.selectedCoursesCount === 0"
+        @click="props.resetSelections()"
       />
     </div>
   </div>

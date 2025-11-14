@@ -13,6 +13,7 @@ if (searchTerm.value.trim()) {
   loading.value = true;
 }
 
+const activeTab = ref<"all" | "selected">("all");
 const performSearch = async () => {
   if (!searchTerm.value.trim() || !selectedSem.value) return;
 
@@ -29,6 +30,7 @@ const performSearch = async () => {
     });
     searchResults.value = results;
     // Update URL query parameters
+    activeTab.value = "all";
     router.push({
       query: { q: searchTerm.value },
     });
@@ -46,7 +48,6 @@ onMounted(() => {
   }
 });
 // have two tabs, all and selected
-const activeTab = ref<"all" | "selected">("all");
 const selectedCourses = ref<ICourseDTO[]>([]);
 
 const toggleCourse = (course: ICourseDTO) => {
@@ -140,6 +141,11 @@ const toggleCourse = (course: ICourseDTO) => {
           selectedCourses.reduce((sum, course) => sum + course.credits, 0)
         "
         :total-combinations="2"
+        :reset-selections="
+          () => {
+            selectedCourses = [];
+          }
+        "
       />
     </div>
   </div>

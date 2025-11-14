@@ -1,6 +1,4 @@
 <script setup>
-import { computed } from "vue";
-
 // Define the props this component accepts
 defineProps({
   sections: {
@@ -62,33 +60,46 @@ const formatDateRange = (dateRange) => {
       </h3>
 
       <div class="border border-default">
-        <div
-          v-for="(slot, index) in section.slots"
-          :key="index"
-          class="grid grid-cols-[130px_1fr] items-start"
-        >
-          <div class="font-bold border border-default h-full center border-l-0">
-            {{ getFullDayName(slot.day) }}
-          </div>
-
-          <div class="">
-            <div class="flex items-center">
-              <span class="w-24 p-4 py-2 text-sm center h-full">Time</span>
-              <span class="text-sm p-4 py-2 border border-default w-full"
-                >{{ slot.startTime }} – {{ slot.endTime }}</span
-              >
-            </div>
-            <div class="flex items-center">
-              <span
-                class="w-24 text-sm center h-full p-4 py-2 border border-default"
-                >Dates</span
-              >
-              <span class="text-sm p-4 py-2 border border-default w-full">{{
-                formatDateRange(section.dateRange)
-              }}</span>
-            </div>
-          </div>
-        </div>
+        <table class="w-full border-collapse text-sm">
+          <tbody>
+            <template v-for="(slot, index) in section.slots" :key="index">
+              <tr>
+                <th
+                  rowspan="2"
+                  class="font-bold border border-default px-4 py-3 w-[130px] align-middle"
+                >
+                  {{ getFullDayName(slot.day) }}
+                </th>
+                <td class="border border-default p-0">
+                  <div class="flex items-stretch">
+                    <span
+                      class="w-24 p-4 py-2 text-sm center border-r border-default"
+                    >
+                      Time
+                    </span>
+                    <span class="text-sm p-4 py-2 flex-1">
+                      {{ slot.startTime }} – {{ slot.endTime }}
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-default p-0">
+                  <div class="flex items-stretch">
+                    <span
+                      class="w-24 p-4 py-2 text-sm center border-r border-default"
+                    >
+                      Dates
+                    </span>
+                    <span class="text-sm p-4 py-2 flex-1">
+                      {{ formatDateRange(section.dateRange) }}
+                    </span>
+                  </div>
+                </td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
       </div>
 
       <div

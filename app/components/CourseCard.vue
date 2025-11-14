@@ -45,9 +45,7 @@ const props = defineProps<{
           />
 
           <template #content>
-            <div
-              class="border-dashed border border-muted rounded-lg text-muted p-4"
-            >
+            <div class="rounded-lg text-muted p-4">
               <CardScheduleTable :sections="course.sections" />
             </div>
           </template>

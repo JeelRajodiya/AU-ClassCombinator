@@ -14,6 +14,7 @@ if (searchTerm.value.trim()) {
 }
 
 const activeTab = ref<"all" | "selected">("all");
+
 const performSearch = async () => {
   if (!searchTerm.value.trim() || !selectedSem.value) return;
 
@@ -49,6 +50,15 @@ onMounted(() => {
 });
 // have two tabs, all and selected
 const selectedCourses = ref<ICourseDTO[]>([]);
+// this will hold a shadow copy of selected courses when the selected tab is active
+const shadowSelectedCourses = ref<ICourseDTO[]>([]);
+watch(activeTab, (newTab) => {
+  if (newTab === "selected") {
+    shadowSelectedCourses.value = [...selectedCourses.value];
+  } else {
+    shadowSelectedCourses.value = [];
+  }
+});
 
 const toggleCourse = (course: ICourseDTO) => {
   const index = selectedCourses.value.findIndex((c) => c.code === course.code);
@@ -106,7 +116,7 @@ const toggleCourse = (course: ICourseDTO) => {
               v-else-if="activeTab === 'selected'"
             >
               <CourseCard
-                v-for="course in selectedCourses"
+                v-for="course in shadowSelectedCourses"
                 v-if="selectedCourses.length > 0"
                 :key="course.code"
                 :course="course"

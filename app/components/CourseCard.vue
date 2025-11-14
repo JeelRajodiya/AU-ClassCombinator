@@ -75,7 +75,8 @@ const emit = defineEmits<{
             <div
               class="border-dashed border border-muted rounded-lg text-muted p-4"
             >
-              <p>{{ course.description }}</p>
+              <p v-if="course.description">{{ course.description }}</p>
+              <p v-else>No description available.</p>
             </div>
           </template>
         </UCollapsible>

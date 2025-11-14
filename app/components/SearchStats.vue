@@ -41,16 +41,43 @@ const props = defineProps({
       />
     </div>
     <div>
-      <UButton
-        label="Reset Selectiions"
-        class="bg-error-300 mt-8"
-        color="error"
-        icon="i-lucide-refresh-ccw"
-        variant="solid"
-        size="sm"
-        :disabled="props.selectedCoursesCount === 0"
-        @click="props.resetSelections()"
-      />
+      <UPopover>
+        <UButton
+          label="Reset Selections"
+          color="error"
+          class="mt-8"
+          icon="i-lucide-refresh-ccw"
+          variant="solid"
+          size="xs"
+          :disabled="props.selectedCoursesCount === 0"
+        />
+        <template #content="{ close }">
+          <div
+            class="p-4 max-w-xs shadow-2xl border border-accented rounded-md"
+          >
+            <p class="mb-4">Are you sure?</p>
+            <div class="flex justify-end gap-2">
+              <UButton
+                label="Cancel"
+                variant="ghost"
+                color="neutral"
+                size="sm"
+                @click="close"
+              />
+              <UButton
+                label="Confirm"
+                color="error"
+                variant="solid"
+                size="sm"
+                @click="
+                  props.resetSelections();
+                  close();
+                "
+              />
+            </div>
+          </div>
+        </template>
+      </UPopover>
     </div>
   </div>
 </template>

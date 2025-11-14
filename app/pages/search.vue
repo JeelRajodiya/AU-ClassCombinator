@@ -117,7 +117,7 @@ const toggleCourse = (course: ICourseDTO) => {
             >
               <CourseCard
                 v-for="course in shadowSelectedCourses"
-                v-if="selectedCourses.length > 0"
+                v-if="shadowSelectedCourses.length > 0"
                 :key="course.code"
                 :course="course"
                 @select="toggleCourse($event)"

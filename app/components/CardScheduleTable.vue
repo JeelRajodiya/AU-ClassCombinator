@@ -56,7 +56,7 @@ const formatDateRange = (dateRange) => {
       class="overflow-hidden border border-default"
     >
       <h3
-        class="border-b px-6 py-4 text-lg font-bold border-default text-center"
+        class="px-6 py-2 text-lg font-bold border-t border-default text-center"
       >
         Section {{ section.sectionId }}
       </h3>
@@ -67,22 +67,23 @@ const formatDateRange = (dateRange) => {
           :key="index"
           class="grid grid-cols-[130px_1fr] items-start"
         >
-          <div class="pt-1 font-medium border border-default h-full center">
+          <div class="font-bold border border-default h-full center border-l-0">
             {{ getFullDayName(slot.day) }}
           </div>
 
           <div class="">
             <div class="flex items-center">
-              <span class="w-16 p-4 text-sm center h-full">Time</span>
-              <span class="text-sm p-4 border border-default w-full"
+              <span class="w-24 p-4 py-2 text-sm center h-full">Time</span>
+              <span class="text-sm p-4 py-2 border border-default w-full"
                 >{{ slot.startTime }} – {{ slot.endTime }}</span
               >
             </div>
             <div class="flex items-center">
-              <span class="w-16 text-sm center h-full p-4 border border-default"
+              <span
+                class="w-24 text-sm center h-full p-4 py-2 border border-default"
                 >Dates</span
               >
-              <span class="text-sm p-4 border border-default w-full">{{
+              <span class="text-sm p-4 py-2 border border-default w-full">{{
                 formatDateRange(section.dateRange)
               }}</span>
             </div>

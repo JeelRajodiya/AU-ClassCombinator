@@ -53,7 +53,7 @@ const activeTab = ref<"all" | "selected">("all");
               <SearchField v-model="searchTerm" class="h-fit" />
               <ResultTabs v-model:active-tab="activeTab" />
             </div>
-            <div class="py-4 flex flex-col gap-4">
+            <div class="p-2 flex flex-col gap-4">
               <CourseCard v-for="course in searchResults" :course="course" />
             </div>
           </div>

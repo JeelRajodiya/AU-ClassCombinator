@@ -21,9 +21,16 @@ const emit = defineEmits<{
         <span class="font-bold text-lg">
           {{ props.course.code }}: {{ props.course.name }}
         </span>
-        <span class="font-bold text-muted"
-          >{{ props.course.credits }} Credits</span
-        >
+        <span class="flex flex-row items-center gap-4">
+          <span class="font-bold text-muted"
+            >{{ props.course.credits }} Credits</span
+          >
+          <Icon
+            :name="isSelected ? 'i-lucide-check' : 'i-lucide-circle'"
+            :size="24"
+            :class="isSelected ? 'text-primary' : 'text-muted'"
+          />
+        </span>
       </div>
     </template>
     <div class="flex flex-col gap-4">

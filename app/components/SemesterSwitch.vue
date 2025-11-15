@@ -5,7 +5,7 @@ const {
   data: semesterList,
   error,
   pending,
-} = await useFetch<string[]>("/api/getSemesterList");
+} = await useFetch<string[]>("/api/semesters");
 
 if (error.value) {
   console.error("Error fetching semester list:", error.value);
@@ -29,5 +29,5 @@ if (
     arrow
     icon="i-lucide-book"
   />
-  <div v-else class="text-red-500">No semesters available.</div>
+  <div v-else class="text-error">No semesters available.</div>
 </template>

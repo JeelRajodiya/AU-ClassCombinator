@@ -14,17 +14,48 @@ const props = defineProps({
 });
 
 const emits = defineEmits({ "update:modelValue": (value: string) => true });
-
-const handleClear = () => {
+function handleClear() {
   emits("update:modelValue", "");
   nextTick(() => {
-    // UInput wraps the actual input element, so we need to access it
     const input = inputRef.value?.$el?.querySelector("input");
     if (input) {
       input.focus();
     }
   });
-};
+}
+
+async function handleSearch(value: string) {
+  if (!value.trim()) return;
+  const query = typeof value === "string" ? value : props.modelValue;
+  try {
+    await Promise.resolve(props.searchFunction(query));
+  } finally {
+    nextTick(() => {
+      const input = inputRef.value?.$el?.querySelector("input");
+      if (input) {
+        input.blur();
+      }
+    });
+  }
+}
+
+function handleKeyDown(event: KeyboardEvent) {
+  if (event.key === "/" && document.activeElement?.tagName !== "INPUT") {
+    event.preventDefault();
+    const input = inputRef.value?.$el?.querySelector("input");
+    if (input) {
+      input.focus();
+    }
+  }
+}
+
+onMounted(() => {
+  window.addEventListener("keydown", handleKeyDown);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("keydown", handleKeyDown);
+});
 </script>
 
 <template>
@@ -39,7 +70,7 @@ const handleClear = () => {
       :ui="{ base: 'py-3 shadow-sm' }"
       :value="modelValue"
       @input="emits('update:modelValue', $event.target.value)"
-      @keydown.enter="searchFunction($event.target.value)"
+      @keydown.enter="handleSearch($event.target.value)"
     />
     <UButton
       class="py-3 px-4"
@@ -53,7 +84,7 @@ const handleClear = () => {
       color="neutral"
       @click="
         modelValue != router.currentRoute.value.query.q
-          ? searchFunction(modelValue)
+          ? handleSearch(modelValue)
           : handleClear()
       "
     />

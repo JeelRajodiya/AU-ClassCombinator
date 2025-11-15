@@ -40,22 +40,20 @@ const props = defineProps({
         :value="props.totalCombinations"
       />
     </div>
-    <div>
-      <UPopover>
+    <div class="flex flex-col gap-4 w-fit">
+      <UPopover arrow :content="{ side: 'top' }">
         <UButton
           label="Reset Selections"
           color="error"
-          class="mt-8"
+          class="mt-8 w-fit"
           icon="i-lucide-refresh-ccw"
           variant="solid"
           size="xs"
           :disabled="props.selectedCoursesCount === 0"
         />
         <template #content="{ close }">
-          <div
-            class="p-4 max-w-xs shadow-2xl border border-accented rounded-md"
-          >
-            <p class="mb-4">Are you sure?</p>
+          <div class="p-4 max-w-xs shadow-lg border border-accented rounded-md">
+            <p class="mb-2 text-center">Are you sure?</p>
             <div class="flex justify-end gap-2">
               <UButton
                 label="Cancel"
@@ -78,6 +76,7 @@ const props = defineProps({
           </div>
         </template>
       </UPopover>
+      <UButton label="View Schedules" trailing-icon="i-lucide-arrow-right" />
     </div>
   </div>
 </template>

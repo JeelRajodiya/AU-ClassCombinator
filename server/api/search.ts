@@ -1,3 +1,4 @@
+import dbConnect from "../db";
 import Course, { type ICourseDTO } from "../models/Course";
 
 interface ISearchParams {
@@ -42,6 +43,7 @@ export const searchCourses = async ({
     }
 
     // Execute the query using the constructed filter
+    await dbConnect();
     const courses = (await Course.find(filter)
       .skip((page - 1) * maxResults)
       .limit(maxResults)

@@ -79,9 +79,14 @@
                   "type": "string",
                   "format": "date",
                   "description": "End date in YYYY-MM-DD format."
+                },
+                "oneDayBitMask": {
+                  "type": "string",
+                  "pattern": "^[01]{366}$",
+                  "description": "366-bit binary string where each bit represents one day of the academic year (starting from August 1st). Bits set to '1' indicate days when the course is active."
                 }
               },
-              "required": ["start", "end"],
+              "required": ["start", "end", "oneDayBitMask"],
               "additionalProperties": false
             },
             "slots": {
@@ -100,9 +105,19 @@
                   "endTime": {
                     "type": "string",
                     "description": "End time in HH:MM format (e.g., '09:30')."
+                  },
+                  "fiveMinuteBitMask": {
+                    "type": "string",
+                    "pattern": "^[01]{2016}$",
+                    "description": "2016-bit binary string representing time slots across the week. Each bit represents 5 minutes. Week layout: Monday (bits 0-287), Tuesday (288-575), Wednesday (576-863), Thursday (864-1151), Friday (1152-1439), Saturday (1440-1727), Sunday (1728-2015). Bits set to '1' indicate when the slot is active."
                   }
                 },
-                "required": ["day", "startTime", "endTime"],
+                "required": [
+                  "day",
+                  "startTime",
+                  "endTime",
+                  "fiveMinuteBitMask"
+                ],
                 "additionalProperties": false
               },
               "description": "Schedule slots for the section."

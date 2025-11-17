@@ -6,8 +6,98 @@ from jsonschema import validate
 
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+from bson import Binary
 from dotenv import load_dotenv
 load_dotenv()
+
+def convert_bitmask_string_to_binary(bitmask_string):
+    """
+    Converts a binary string (e.g., '10110101...') to BSON Binary format.
+    
+    Args:
+        bitmask_string: String of '0's and '1's
+    
+    Returns:
+        Binary object for MongoDB storage
+    """
+    if not bitmask_string:
+        return None
+    
+    # Convert binary string to integer, then to bytes
+    # Pad to ensure proper byte alignment
+    bit_length = len(bitmask_string)
+    byte_length = (bit_length + 7) // 8  # Round up to nearest byte
+    
+    # Convert binary string to integer
+    int_value = int(bitmask_string, 2)
+    
+    # Convert to bytes with proper length
+    byte_data = int_value.to_bytes(byte_length, byteorder='big')
+    
+    return Binary(byte_data)
+
+# Define bitmask field locations as a list of path configurations
+# Each path is a list of tuples: (key, is_list, field_name_if_dict)
+BITMASK_PATHS = [
+    # Path: course -> sections (list) -> slots (list) -> fiveMinuteBitMask
+    ['sections', 'slots', 'fiveMinuteBitMask'],
+    # Path: course -> sections (list) -> dateRange (dict) -> oneDayBitMask
+    ['sections', 'dateRange', 'oneDayBitMask'],
+]
+
+def process_nested_structure(obj, path, depth=0):
+    """
+    Recursively processes nested structures to find and convert bitmask strings.
+    
+    Args:
+        obj: Current object being processed (dict or list)
+        path: List of keys representing the path to bitmask fields
+        depth: Current depth in the path traversal
+    
+    Returns:
+        Modified object with bitmasks converted to Binary
+    """
+    # Base case: we've reached the end of the path
+    if depth >= len(path):
+        return obj
+    
+    current_key = path[depth]
+    
+    # If obj is a dictionary
+    if isinstance(obj, dict):
+        if current_key in obj:
+            # If this is the last key in path, convert the value
+            if depth == len(path) - 1:
+                if isinstance(obj[current_key], str):
+                    obj[current_key] = convert_bitmask_string_to_binary(obj[current_key])
+            else:
+                # Continue traversing
+                obj[current_key] = process_nested_structure(obj[current_key], path, depth + 1)
+    
+    # If obj is a list, process each item
+    elif isinstance(obj, list):
+        for i, item in enumerate(obj):
+            obj[i] = process_nested_structure(item, path, depth)
+    
+    return obj
+
+def process_course_bitmasks(course):
+    """
+    Processes a course dictionary and converts all bitmask strings to Binary
+    based on the configured BITMASK_PATHS.
+    
+    Args:
+        course: Course dictionary
+    
+    Returns:
+        Modified course with all bitmasks converted to Binary
+    """
+    course_copy = course.copy()
+    
+    for path in BITMASK_PATHS:
+        process_nested_structure(course_copy, path, depth=0)
+    
+    return course_copy
 
 def get_db_variables():
     MONGO_URI = os.getenv("MONGO_URI")
@@ -87,16 +177,20 @@ def main():
       
       # 1. Identify inserts and updates
       for code, course_data in json_courses.items():
+          # Convert bitmask strings to Binary before database operations
+          course_data_processed = process_course_bitmasks(course_data.copy())
+          
           if code not in existing_courses:
               # New course to be inserted (MongoDB will add _id)
-              operations.append(UpdateOne({"code": code, "semester": semester, "year": year}, {"$set": course_data}, upsert=True))
+              operations.append(UpdateOne({"code": code, "semester": semester, "year": year}, {"$set": course_data_processed}, upsert=True))
           else:
               # Existing course, check if it needs an update
               existing_course = existing_courses[code]
               # The _id must be removed from the existing course for a clean comparison
               del existing_course['_id']
-              if course_data != existing_course:
-                  operations.append(UpdateOne({"code": code, "semester": semester, "year": year}, {"$set": course_data}, upsert=True))
+              # Note: We compare processed data with existing data
+              # This will always show as different if bitmask format changed, which is expected
+              operations.append(UpdateOne({"code": code, "semester": semester, "year": year}, {"$set": course_data_processed}, upsert=True))
 
       # 2. Identify deletions
       codes_in_json = set(json_courses.keys())

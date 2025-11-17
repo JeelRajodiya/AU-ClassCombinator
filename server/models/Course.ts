@@ -5,6 +5,14 @@ export interface ISlot {
   day: string;
   startTime: string;
   endTime: string;
+  fiveMinuteBitMask: Buffer;
+}
+
+// Interface for Slot DTO (without bitmask)
+export interface ISlotDTO {
+  day: string;
+  startTime: string;
+  endTime: string;
 }
 
 // Schema for Slot
@@ -12,10 +20,18 @@ const SlotSchema = new Schema<ISlot>({
   day: { type: String, required: true },
   startTime: { type: String, required: true },
   endTime: { type: String, required: true },
+  fiveMinuteBitMask: { type: Buffer, required: true },
 });
 
 // Interface for DateRange
 export interface IDateRange {
+  start: Date;
+  end: Date;
+  oneDayBitMask: Buffer;
+}
+
+// Interface for DateRange DTO (without bitmask)
+export interface IDateRangeDTO {
   start: Date;
   end: Date;
 }
@@ -24,6 +40,7 @@ export interface IDateRange {
 const DateRangeSchema = new Schema<IDateRange>({
   start: { type: Date, required: true },
   end: { type: Date, required: true },
+  oneDayBitMask: { type: Buffer, required: true },
 });
 
 // Interface for Section
@@ -32,6 +49,14 @@ export interface ISection {
   quarter?: string | null;
   dateRange: IDateRange;
   slots: ISlot[];
+}
+
+// Interface for Section DTO (without bitmasks)
+export interface ISectionDTO {
+  sectionId: string;
+  quarter?: string | null;
+  dateRange: IDateRangeDTO;
+  slots: ISlotDTO[];
 }
 
 // Schema for Section
@@ -61,8 +86,11 @@ export interface ICourseCore {
 // Interface for Course Document (used by Mongoose)
 export interface ICourse extends ICourseCore, Document {}
 
-// Plain object returned via APIs / frontend consumption
-export type ICourseDTO = ICourseCore & { _id: string };
+// Plain object returned via APIs / frontend consumption (without bitmasks)
+export type ICourseDTO = Omit<ICourseCore, "sections"> & {
+  _id: string;
+  sections: ISectionDTO[];
+};
 
 // Schema for Course
 const CourseSchema = new Schema<ICourse>({

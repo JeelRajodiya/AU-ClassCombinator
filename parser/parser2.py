@@ -12,6 +12,105 @@ def convert_date(date_str):
     except ValueError:
         return None
 
+def generate_five_minute_bitmask(day, start_time, end_time):
+    """
+    Generates a 2016-bit binary string representing a time slot in the week.
+    Each bit represents 5 minutes. Format: 'HH:MM'
+    
+    Args:
+        day: Day of the week (Mon, Tue, Wed, Thu, Fri, Sat, Sun)
+        start_time: Start time in HH:MM format
+        end_time: End time in HH:MM format
+    
+    Returns:
+        Binary string of length 2016
+    """
+    # Map day names to day offsets
+    day_map = {
+        'Mon': 0,
+        'Tue': 1,
+        'Wed': 2,
+        'Thu': 3,
+        'Fri': 4,
+        'Sat': 5,
+        'Sun': 6
+    }
+    
+    # Initialize bitmask with all zeros
+    bitmask = ['0'] * 2016
+    
+    # Get day offset
+    day_offset = day_map.get(day, 0)
+    
+    # Parse start and end times
+    start_hour, start_minute = map(int, start_time.split(':'))
+    end_hour, end_minute = map(int, end_time.split(':'))
+    
+    # Convert to total minutes from start of day
+    start_total_minutes = start_hour * 60 + start_minute
+    end_total_minutes = end_hour * 60 + end_minute
+    
+    # Calculate bit positions
+    # Each day has 288 bits (12 bits per hour * 24 hours)
+    day_bit_offset = day_offset * 288
+    
+    # Calculate start and end bit indices within the day
+    start_bit_in_day = start_total_minutes // 5
+    end_bit_in_day = end_total_minutes // 5
+    
+    # Calculate absolute bit positions
+    start_bit = day_bit_offset + start_bit_in_day
+    end_bit = day_bit_offset + end_bit_in_day
+    
+    # Set bits from start to end (exclusive end)
+    for i in range(start_bit, end_bit):
+        if i < 2016:
+            bitmask[i] = '1'
+    
+    return ''.join(bitmask)
+
+def generate_one_day_bitmask(start_date_str, end_date_str):
+    """
+    Generates a 366-bit binary string representing which days of the academic year
+    a course runs. The academic year starts on August 1st (bit 0).
+    
+    Args:
+        start_date_str: Start date in YYYY-MM-DD format
+        end_date_str: End date in YYYY-MM-DD format
+    
+    Returns:
+        Binary string of length 366 (to account for leap years)
+    """
+    if not start_date_str or not end_date_str:
+        return '0' * 366
+    
+    try:
+        start_date = datetime.strptime(start_date_str, '%Y-%m-%d')
+        end_date = datetime.strptime(end_date_str, '%Y-%m-%d')
+    except ValueError:
+        return '0' * 366
+    
+    # Initialize bitmask with all zeros (366 days to handle leap years)
+    bitmask = ['0'] * 366
+    
+    # Determine the academic year start (August 1st of the appropriate year)
+    # If the course is before August, use previous year's August 1st
+    if start_date.month < 8:
+        academic_year_start = datetime(start_date.year - 1, 8, 1)
+    else:
+        academic_year_start = datetime(start_date.year, 8, 1)
+    
+    # Calculate day offsets from August 1st
+    start_day_offset = (start_date - academic_year_start).days
+    end_day_offset = (end_date - academic_year_start).days
+    
+    # Set bits for the date range (inclusive of both start and end dates)
+    for day in range(start_day_offset, end_day_offset + 1):
+        if 0 <= day < 366:
+            bitmask[day] = '1'
+    
+    return ''.join(bitmask)
+
 def parse_schedule(schedule_cell):
     """
     Parses the complex schedule cell into a structured list of sections.
@@ -58,25 +157,36 @@ def parse_schedule(schedule_cell):
         )
 
         for j, slot_match in enumerate(slot_matches):
+            day = slot_match.group(1)
+            start_time = slot_match.group(2)
+            end_time = slot_match.group(3)
+            
             section_obj['slots'].append({
-                "day": slot_match.group(1),
-                "startTime": slot_match.group(2),
-                "endTime": slot_match.group(3)
+                "day": day,
+                "startTime": start_time,
+                "endTime": end_time,
+                "fiveMinuteBitMask": generate_five_minute_bitmask(day, start_time, end_time)
             })
             
             # Try to associate the first found date range with the section
             if section_obj['dateRange'] is None and date_matches:
                 start_date_str, end_date_str = date_matches[0]
+                start_date_iso = convert_date(start_date_str)
+                end_date_iso = convert_date(end_date_str)
                 section_obj['dateRange'] = {
-                    "start": convert_date(start_date_str),
-                    "end": convert_date(end_date_str)
+                    "start": start_date_iso,
+                    "end": end_date_iso,
+                    "oneDayBitMask": generate_one_day_bitmask(start_date_iso, end_date_iso)
                 }
         
         if not section_obj['dateRange'] and date_matches:
              start_date_str, end_date_str = date_matches[0]
+             start_date_iso = convert_date(start_date_str)
+             end_date_iso = convert_date(end_date_str)
              section_obj['dateRange'] = {
-                "start": convert_date(start_date_str),
-                "end": convert_date(end_date_str)
+                "start": start_date_iso,
+                "end": end_date_iso,
+                "oneDayBitMask": generate_one_day_bitmask(start_date_iso, end_date_iso)
             }
 
 

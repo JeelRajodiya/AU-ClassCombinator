@@ -3,31 +3,22 @@ import Course from "../models/Course";
 import Combinator from "../../utils/combinator";
 
 export default defineEventHandler(async (event) => {
-  // the user will send list of course codes, I'll generate combinations for them
+  // the user will send list of course ids, I'll generate combinations for them
   // post method
 
   const body = await readBody(event);
-  console.log("Request body:", body);
-  if (!body.courseCodes || !Array.isArray(body.courseCodes)) {
+  if (!body.ids || !Array.isArray(body.ids)) {
     throw createError({
       statusCode: 400,
-      statusMessage: "Invalid request body: 'courseCodes' array is required.",
+      statusMessage: "Invalid request body: 'ids' array is required.",
     });
   }
 
-  const courseCodes: string[] = body.courseCodes;
+  const courseIds: string[] = body.ids;
 
   try {
-    // const ids = [
-    //   "691c3d8abd3441973ad038ff",
-    //   "691c3d8abd3441973ad03901",
-    //   "691c3d8abd3441973ad03904",
-    //   // "691c3d8abd3441973ad0390b",
-    // ];
     const c = new Combinator();
-    console.time("generateCombinations");
-    const result = await c.generate(courseCodes);
-    console.timeEnd("generateCombinations");
+    const result = await c.generate(courseIds);
     return result;
   } catch (error) {
     console.error("Error generating combinations:", error);

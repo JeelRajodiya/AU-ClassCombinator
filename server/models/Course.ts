@@ -1,4 +1,5 @@
 import mongoose, { Schema, Document, ObjectId } from "mongoose";
+import { Binary } from "mongodb";
 
 // Interface for Slot
 export interface ISlot {
@@ -21,7 +22,7 @@ const SlotSchema = new Schema<ISlot>({
 export interface IDateRange {
   start: Date;
   end: Date;
-  oneDayBitMask: Buffer;
+  oneDayBitMask: Binary;
 }
 
 // Interface for DateRange DTO (without bitmask)
@@ -38,7 +39,7 @@ const DateRangeSchema = new Schema<IDateRange>({
 export interface ISection {
   sectionId: string;
   quarter?: string | null;
-  fiveMinuteBitMask: Buffer;
+  fiveMinuteBitMask: Binary;
   dateRange: IDateRange;
   slots: ISlot[];
 }

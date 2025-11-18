@@ -13,7 +13,7 @@ type NeighborsType = { [courseId: string]: Set<string> };
 type AdjacencyType = {
   [sectionId: string]: { [courseId: string]: Set<string> };
 };
-// the combinations will be array of arrays of section ids
+// key is course id, value is section id
 type AssignmentType = { [courseId: string]: string };
 
 interface ICombinator {
@@ -112,6 +112,29 @@ class Combinator implements ICombinator {
     }
 
     this.courses = courses.map((course) => course.toObject());
+
+    // Initialize domains, neighbors, and sectionById
+    this.domains = {};
+    this.neighbors = {};
+    this.sectionById = {};
+
+    for (const course of this.courses) {
+      const courseId = course._id.toString();
+      this.domains[courseId] = new Set();
+      this.neighbors[courseId] = new Set();
+
+      for (const section of course.sections) {
+        const sectionID = this.getSectionID(courseId, section.sectionId);
+        this.domains[courseId].add(sectionID);
+        this.sectionById[sectionID] = section;
+      }
+
+      for (const otherCourse of this.courses) {
+        if (otherCourse._id.toString() !== courseId) {
+          this.neighbors[courseId].add(otherCourse._id.toString());
+        }
+      }
+    }
   }
   buildCompatibilityMatrix() {
     for (const course of this.courses) {
@@ -147,13 +170,14 @@ class Combinator implements ICombinator {
     // 2. One for the days of the year. One bit represents one day.
     // A clash occurs if and only if there's an overlap in BOTH time and day.
 
-    const slotMask1 = sectionA.fiveMinuteBitMask;
-    const slotMask2 = sectionB.fiveMinuteBitMask;
-    const dayMask1 = sectionA.dateRange.oneDayBitMask;
-    const dayMask2 = sectionB.dateRange.oneDayBitMask;
+    const slotMask1 = sectionA.fiveMinuteBitMask.buffer;
+    const slotMask2 = sectionB.fiveMinuteBitMask.buffer;
+    const dayMask1 = sectionA.dateRange.oneDayBitMask.buffer;
+    const dayMask2 = sectionB.dateRange.oneDayBitMask.buffer;
 
     // Check for time conflict
     let timeConflict = false;
+
     for (let i = 0; i < slotMask1.length; i++) {
       if ((slotMask1[i] & slotMask2[i]) !== 0) {
         timeConflict = true;
@@ -214,15 +238,89 @@ class Combinator implements ICombinator {
   }
 
   async generate(courseIds: string[]) {
+    this.allSolutions = [];
     await this.fetchCoursesByIds(courseIds);
 
     this.buildCompatibilityMatrix();
 
-    console.log("Successfully generated compatibility matrix.");
-    return {
-      compatibilityMatrix: this.compatibilityMatrix,
-    };
+    if (!this.runAC3()) {
+      return [];
+    }
+
+    this.buildAdjacencyList();
+    this.backtrack({}, 0);
+
+    return this.allSolutions;
+  }
+
+  revise(courseId_i: string, courseId_j: string): boolean {
+    let revised = false;
+    const domain_i = this.domains[courseId_i];
+    const domain_j = this.domains[courseId_j];
+
+    for (const sectionId_i of domain_i) {
+      let hasSupport = false;
+      for (const sectionId_j of domain_j) {
+        if (this.compatibilityMatrix[sectionId_i][sectionId_j]) {
+          hasSupport = true;
+          break;
+        }
+      }
+      if (!hasSupport) {
+        domain_i.delete(sectionId_i);
+        revised = true;
+      }
+    }
+    return revised;
+  }
+
+  buildAdjacencyList(): void {
+    this.adjacency = {};
+    for (const course of this.courses) {
+      const courseId = course._id.toString();
+      for (const sectionId of this.domains[courseId]) {
+        this.adjacency[sectionId] = {};
+        for (const otherCourse of this.courses) {
+          const otherCourseId = otherCourse._id.toString();
+          if (courseId === otherCourseId) continue;
+
+          this.adjacency[sectionId][otherCourseId] = new Set();
+          for (const otherSectionId of this.domains[otherCourseId]) {
+            if (this.compatibilityMatrix[sectionId][otherSectionId]) {
+              this.adjacency[sectionId][otherCourseId].add(otherSectionId);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  backtrack(assignment: AssignmentType, courseIndex: number): void {
+    if (courseIndex === this.courses.length) {
+      this.allSolutions.push({ ...assignment });
+      return;
+    }
+
+    const course = this.courses[courseIndex];
+    const courseId = course._id.toString();
+    const domain = this.domains[courseId];
+
+    for (const sectionId of domain) {
+      let consistent = true;
+      for (const assignedCourseId in assignment) {
+        const assignedSectionId = assignment[assignedCourseId];
+        if (!this.compatibilityMatrix[sectionId][assignedSectionId]) {
+          consistent = false;
+          break;
+        }
+      }
+
+      if (consistent) {
+        assignment[courseId] = sectionId;
+        this.backtrack(assignment, courseIndex + 1);
+        delete assignment[courseId];
+      }
+    }
   }
 }
-// ids: 691c3d8abd3441973ad038ff,691c3d8abd3441973ad03901, 691c3d8abd3441973ad03904, 691c3d8abd3441973ad0390b
 export default Combinator;

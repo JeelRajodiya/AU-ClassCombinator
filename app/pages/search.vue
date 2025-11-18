@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { log } from "console";
 import type { ICourseDTO } from "~~/server/models/Course";
 
 const route = useRoute();
@@ -68,6 +69,38 @@ const toggleCourse = (course: ICourseDTO) => {
     selectedCourses.value.push(course);
   }
 };
+
+const combinationsLoading = ref(false);
+
+const totalCombinations = ref(0);
+
+watch(
+  selectedCourses,
+  async () => {
+    if (selectedCourses.value.length === 0) {
+      totalCombinations.value = 0;
+      return;
+    }
+    combinationsLoading.value = true;
+    // create a list of ids of selected courses
+    const ids = selectedCourses.value.map((course) => course._id);
+
+    if (ids.length === 0) {
+      totalCombinations.value = 0;
+      return;
+    }
+
+    // now send post request to /api/combinations with the ids
+    const response = await $fetch<any[]>("/api/combinations", {
+      method: "POST",
+      body: { ids },
+    });
+    // log("Combinations response:", response);
+    totalCombinations.value = response.length;
+    combinationsLoading.value = false;
+  },
+  { deep: true }
+);
 </script>
 
 <template>
@@ -150,7 +183,8 @@ const toggleCourse = (course: ICourseDTO) => {
         :total-credits="
           selectedCourses.reduce((sum, course) => sum + course.credits, 0)
         "
-        :total-combinations="2"
+        :total-combinations="totalCombinations"
+        :combinations-loading="combinationsLoading"
         :reset-selections="
           () => {
             selectedCourses = [];

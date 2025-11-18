@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import combinations from "~~/server/api/combinations";
+
 const props = defineProps({
   totalCredits: {
     type: Number,
@@ -15,6 +17,12 @@ const props = defineProps({
   resetSelections: {
     type: Function,
     required: true,
+  },
+
+  combinationsLoading: {
+    type: Boolean,
+    required: false,
+    default: false,
   },
 });
 </script>
@@ -38,6 +46,8 @@ const props = defineProps({
         icon="i-lucide-combine"
         label="Total Combinations:"
         :value="props.totalCombinations"
+        :isLoading="props.combinationsLoading"
+        :zeroIndicator="true"
       />
     </div>
     <div class="flex flex-col gap-4 w-fit">

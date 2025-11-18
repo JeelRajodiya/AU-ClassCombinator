@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from "mongoose";
+import mongoose, { Schema, Document, ObjectId } from "mongoose";
 
 // Interface for Slot
 export interface ISlot {
@@ -75,7 +75,7 @@ export interface ICourseCore {
 }
 
 // Interface for Course Document (used by Mongoose)
-export interface ICourse extends ICourseCore, Document {}
+export interface ICourse extends ICourseCore, Document<ObjectId> {}
 
 // Plain object returned via APIs / frontend consumption (without bitmasks)
 export type ICourseDTO = Omit<ICourseCore, "sections"> & {

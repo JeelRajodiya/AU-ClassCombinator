@@ -5,22 +5,16 @@ export interface ISlot {
   day: string;
   startTime: string;
   endTime: string;
-  fiveMinuteBitMask: Buffer;
 }
 
-// Interface for Slot DTO (without bitmask)
-export interface ISlotDTO {
-  day: string;
-  startTime: string;
-  endTime: string;
-}
+// Interface for Slot DTO (same as ISlot now, no bitmask)
+export type ISlotDTO = ISlot;
 
 // Schema for Slot
 const SlotSchema = new Schema<ISlot>({
   day: { type: String, required: true },
   startTime: { type: String, required: true },
   endTime: { type: String, required: true },
-  fiveMinuteBitMask: { type: Buffer, required: true },
 });
 
 // Interface for DateRange
@@ -31,10 +25,7 @@ export interface IDateRange {
 }
 
 // Interface for DateRange DTO (without bitmask)
-export interface IDateRangeDTO {
-  start: Date;
-  end: Date;
-}
+export type IDateRangeDTO = Omit<IDateRange, "oneDayBitMask">;
 
 // Schema for DateRange
 const DateRangeSchema = new Schema<IDateRange>({
@@ -47,22 +38,22 @@ const DateRangeSchema = new Schema<IDateRange>({
 export interface ISection {
   sectionId: string;
   quarter?: string | null;
+  fiveMinuteBitMask: Buffer;
   dateRange: IDateRange;
   slots: ISlot[];
 }
 
 // Interface for Section DTO (without bitmasks)
-export interface ISectionDTO {
-  sectionId: string;
-  quarter?: string | null;
+export type ISectionDTO = Omit<ISection, "dateRange" | "fiveMinuteBitMask"> & {
   dateRange: IDateRangeDTO;
   slots: ISlotDTO[];
-}
+};
 
 // Schema for Section
 const SectionSchema = new Schema<ISection>({
   sectionId: { type: String, required: true },
   quarter: { type: String, default: null },
+  fiveMinuteBitMask: { type: Buffer, required: true },
   dateRange: { type: DateRangeSchema, required: true },
   slots: { type: [SlotSchema], required: true },
 });

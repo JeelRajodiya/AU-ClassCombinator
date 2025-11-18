@@ -39,8 +39,8 @@ def convert_bitmask_string_to_binary(bitmask_string):
 # Define bitmask field locations as a list of path configurations
 # Each path is a list of tuples: (key, is_list, field_name_if_dict)
 BITMASK_PATHS = [
-    # Path: course -> sections (list) -> slots (list) -> fiveMinuteBitMask
-    ['sections', 'slots', 'fiveMinuteBitMask'],
+    # Path: course -> sections (list) -> fiveMinuteBitMask
+    ['sections', 'fiveMinuteBitMask'],
     # Path: course -> sections (list) -> dateRange (dict) -> oneDayBitMask
     ['sections', 'dateRange', 'oneDayBitMask'],
 ]

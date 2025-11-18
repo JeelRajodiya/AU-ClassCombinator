@@ -136,6 +136,7 @@ def parse_schedule(schedule_cell):
             "sectionId": section_id,
             "quarter": None,
             "dateRange": None,
+            "fiveMinuteBitMask": None,
             "slots": []
         }
 
@@ -156,16 +157,22 @@ def parse_schedule(schedule_cell):
             section_text
         )
 
+        # Collect individual bitmasks to combine later
+        individual_bitmasks = []
+        
         for j, slot_match in enumerate(slot_matches):
             day = slot_match.group(1)
             start_time = slot_match.group(2)
             end_time = slot_match.group(3)
             
+            # Generate bitmask for this slot
+            slot_bitmask = generate_five_minute_bitmask(day, start_time, end_time)
+            individual_bitmasks.append(slot_bitmask)
+            
             section_obj['slots'].append({
                 "day": day,
                 "startTime": start_time,
-                "endTime": end_time,
-                "fiveMinuteBitMask": generate_five_minute_bitmask(day, start_time, end_time)
+                "endTime": end_time
             })
             
             # Try to associate the first found date range with the section
@@ -189,6 +196,12 @@ def parse_schedule(schedule_cell):
                 "oneDayBitMask": generate_one_day_bitmask(start_date_iso, end_date_iso)
             }
 
+        # Combine all slot bitmasks into a single section-level bitmask using bitwise OR
+        if individual_bitmasks:
+            combined_int = 0
+            for bitmask in individual_bitmasks:
+                combined_int |= int(bitmask, 2)
+            section_obj['fiveMinuteBitMask'] = format(combined_int, '02016b')
 
         if section_obj['slots']: # Only add if we found slots
             sections_data.append(section_obj)

@@ -67,6 +67,11 @@
               "oneOf": [{ "type": "string" }, { "type": "null" }],
               "description": "Quarter information (or null if not specified)."
             },
+            "fiveMinuteBitMask": {
+              "type": "string",
+              "pattern": "^[01]{2016}$",
+              "description": "2016-bit binary string representing combined time slots across the week for all slots in this section. Each bit represents 5 minutes. Week layout: Monday (bits 0-287), Tuesday (288-575), Wednesday (576-863), Thursday (864-1151), Friday (1152-1439), Saturday (1440-1727), Sunday (1728-2015). Bits set to '1' indicate when any slot in this section is active."
+            },
             "dateRange": {
               "type": "object",
               "properties": {
@@ -105,25 +110,15 @@
                   "endTime": {
                     "type": "string",
                     "description": "End time in HH:MM format (e.g., '09:30')."
-                  },
-                  "fiveMinuteBitMask": {
-                    "type": "string",
-                    "pattern": "^[01]{2016}$",
-                    "description": "2016-bit binary string representing time slots across the week. Each bit represents 5 minutes. Week layout: Monday (bits 0-287), Tuesday (288-575), Wednesday (576-863), Thursday (864-1151), Friday (1152-1439), Saturday (1440-1727), Sunday (1728-2015). Bits set to '1' indicate when the slot is active."
                   }
                 },
-                "required": [
-                  "day",
-                  "startTime",
-                  "endTime",
-                  "fiveMinuteBitMask"
-                ],
+                "required": ["day", "startTime", "endTime"],
                 "additionalProperties": false
               },
               "description": "Schedule slots for the section."
             }
           },
-          "required": ["sectionId", "dateRange", "slots"],
+          "required": ["sectionId", "fiveMinuteBitMask", "dateRange", "slots"],
           "additionalProperties": false
         },
         "description": "List of available sections for the course."

@@ -45,9 +45,7 @@ export const searchCourses = async ({
     // Execute the query using the constructed filter
     await dbConnect();
     const courses = (await Course.find(filter)
-      .select(
-        "-sections.slots.fiveMinuteBitMask -sections.dateRange.oneDayBitMask"
-      )
+      .select("-sections.fiveMinuteBitMask -sections.dateRange.oneDayBitMask")
       .skip((page - 1) * maxResults)
       .limit(maxResults)
       .lean()

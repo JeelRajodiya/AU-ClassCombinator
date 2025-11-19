@@ -73,7 +73,7 @@ const toggleCourse = (course: ICourseDTO) => {
 const combinationsLoading = ref(false);
 
 const totalCombinations = ref(0);
-
+const { combinations, setCombinations } = useCombinations();
 watch(
   selectedCourses,
   async () => {
@@ -97,6 +97,7 @@ watch(
     });
     // log("Combinations response:", response);
     totalCombinations.value = response.length;
+    setCombinations(response);
     combinationsLoading.value = false;
   },
   { deep: true }

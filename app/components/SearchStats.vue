@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import combinations from "~~/server/api/combinations";
+import { Link } from "../../.nuxt/components";
 
 const props = defineProps({
   totalCredits: {
@@ -86,7 +87,11 @@ const props = defineProps({
           </div>
         </template>
       </UPopover>
-      <UButton label="View Schedules" trailing-icon="i-lucide-arrow-right" />
+      <UButton
+        label="View Schedules"
+        trailing-icon="i-lucide-arrow-right"
+        to="/combinations"
+      />
     </div>
   </div>
 </template>

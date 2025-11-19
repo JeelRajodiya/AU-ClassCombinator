@@ -1,4 +1,4 @@
-import { ICourse, ISection } from "../server/models/Course";
+import type { ICourse, ISection } from "../server/models/Course";
 import dbConnect from "../server/db";
 import Course from "../server/models/Course";
 
@@ -14,7 +14,7 @@ type AdjacencyType = {
   [sectionId: string]: { [courseId: string]: Set<string> };
 };
 // key is course id, value is section id
-type AssignmentType = { [courseId: string]: string };
+export type AssignmentType = { [courseId: string]: string };
 
 interface ICombinator {
   // --- Properties ---
@@ -179,7 +179,9 @@ class Combinator implements ICombinator {
     let timeConflict = false;
 
     for (let i = 0; i < slotMask1.length; i++) {
-      if ((slotMask1[i] & slotMask2[i]) !== 0) {
+      const val1 = slotMask1[i];
+      const val2 = slotMask2[i];
+      if (val1 !== undefined && val2 !== undefined && (val1 & val2) !== 0) {
         timeConflict = true;
         break;
       }
@@ -192,7 +194,9 @@ class Combinator implements ICombinator {
     // If there is a time conflict, check for day conflict
     let dayConflict = false;
     for (let i = 0; i < dayMask1.length; i++) {
-      if ((dayMask1[i] & dayMask2[i]) !== 0) {
+      const val1 = dayMask1[i];
+      const val2 = dayMask2[i];
+      if (val1 !== undefined && val2 !== undefined && (val1 & val2) !== 0) {
         dayConflict = true;
         break;
       }
@@ -211,7 +215,11 @@ class Combinator implements ICombinator {
     for (let i = 0; i < courseIds.length; i++) {
       for (let j = 0; j < courseIds.length; j++) {
         if (i !== j) {
-          queue.push([courseIds[i], courseIds[j]]);
+          const id1 = courseIds[i];
+          const id2 = courseIds[j];
+          if (id1 && id2) {
+            queue.push([id1, id2]);
+          }
         }
       }
     }
@@ -219,12 +227,16 @@ class Combinator implements ICombinator {
     while (queue.length > 0) {
       const [courseId_i, courseId_j] = queue.shift()!;
       if (this.revise(courseId_i, courseId_j)) {
-        if (this.domains[courseId_i].size === 0) {
+        const domain = this.domains[courseId_i];
+        if (!domain || domain.size === 0) {
           return false; // Domain wiped out, no solution possible
         }
-        for (const neighborId of this.neighbors[courseId_i]) {
-          if (neighborId !== courseId_j) {
-            queue.push([neighborId, courseId_i]);
+        const neighbors = this.neighbors[courseId_i];
+        if (neighbors) {
+          for (const neighborId of neighbors) {
+            if (neighborId !== courseId_j) {
+              queue.push([neighborId, courseId_i]);
+            }
           }
         }
       }
@@ -258,10 +270,13 @@ class Combinator implements ICombinator {
     const domain_i = this.domains[courseId_i];
     const domain_j = this.domains[courseId_j];
 
+    if (!domain_i || !domain_j) return false;
+
     for (const sectionId_i of domain_i) {
       let hasSupport = false;
       for (const sectionId_j of domain_j) {
-        if (this.compatibilityMatrix[sectionId_i][sectionId_j]) {
+        const compat = this.compatibilityMatrix[sectionId_i];
+        if (compat && compat[sectionId_j]) {
           hasSupport = true;
           break;
         }
@@ -278,15 +293,22 @@ class Combinator implements ICombinator {
     this.adjacency = {};
     for (const course of this.courses) {
       const courseId = course._id.toString();
-      for (const sectionId of this.domains[courseId]) {
+      const domain = this.domains[courseId];
+      if (!domain) continue;
+
+      for (const sectionId of domain) {
         this.adjacency[sectionId] = {};
         for (const otherCourse of this.courses) {
           const otherCourseId = otherCourse._id.toString();
           if (courseId === otherCourseId) continue;
 
           this.adjacency[sectionId][otherCourseId] = new Set();
-          for (const otherSectionId of this.domains[otherCourseId]) {
-            if (this.compatibilityMatrix[sectionId][otherSectionId]) {
+          const otherDomain = this.domains[otherCourseId];
+          if (!otherDomain) continue;
+
+          for (const otherSectionId of otherDomain) {
+            const compat = this.compatibilityMatrix[sectionId];
+            if (compat && compat[otherSectionId]) {
               this.adjacency[sectionId][otherCourseId].add(otherSectionId);
             }
           }
@@ -302,14 +324,20 @@ class Combinator implements ICombinator {
     }
 
     const course = this.courses[courseIndex];
+    if (!course) return; // Should not happen if index is valid
+
     const courseId = course._id.toString();
     const domain = this.domains[courseId];
+    if (!domain) return; // Should not happen if initialized correctly
 
     for (const sectionId of domain) {
       let consistent = true;
       for (const assignedCourseId in assignment) {
         const assignedSectionId = assignment[assignedCourseId];
-        if (!this.compatibilityMatrix[sectionId][assignedSectionId]) {
+        if (!assignedSectionId) continue;
+
+        const compat = this.compatibilityMatrix[sectionId];
+        if (!compat || !compat[assignedSectionId]) {
           consistent = false;
           break;
         }

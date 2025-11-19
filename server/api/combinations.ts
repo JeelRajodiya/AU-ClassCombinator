@@ -1,7 +1,4 @@
-import dbConnect from "../db";
-import Course from "../models/Course";
 import Combinator from "../../utils/combinator";
-
 export default defineEventHandler(async (event) => {
   // the user will send list of course ids, I'll generate combinations for them
   // post method

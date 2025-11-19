@@ -48,6 +48,10 @@ onMounted(() => {
   if (searchTerm.value.trim()) {
     performSearch();
   }
+  // Fetch details if we have selected courses (restoring state)
+  if (selectedCourseIds.value.length > 0) {
+    fetchSelectedDetails();
+  }
 });
 
 // Global selected courses state
@@ -74,6 +78,25 @@ const fetchSelectedDetails = async () => {
     console.error("Error fetching selected course details:", error);
   } finally {
     detailsLoading.value = false;
+  }
+};
+
+// Wrapper to handle toggling and updating local details immediately
+const handleToggleCourse = (course: ICourseDTO) => {
+  if (isSelected(course._id)) {
+    // Removing
+    toggleCourse(course._id);
+    // Remove from details if present
+    selectedCourseDetails.value = selectedCourseDetails.value.filter(
+      (c) => c._id !== course._id
+    );
+  } else {
+    // Adding
+    toggleCourse(course._id);
+    // Add to details if not already present
+    if (!selectedCourseDetails.value.some((c) => c._id === course._id)) {
+      selectedCourseDetails.value.push(course);
+    }
   }
 };
 
@@ -141,7 +164,7 @@ watch(
                 v-for="course in searchResults"
                 :course="course"
                 v-if="!loading && searchResults.length > 0"
-                @select="toggleCourse($event._id)"
+                @select="handleToggleCourse(course)"
                 class="cursor-pointer"
                 :isSelected="isSelected(course._id)"
               />

@@ -87,11 +87,22 @@ const props = defineProps({
           </div>
         </template>
       </UPopover>
-      <UButton
-        label="View Schedules"
-        trailing-icon="i-lucide-arrow-right"
-        to="/combinations"
-      />
+      <UTooltip
+        :text="
+          props.selectedCoursesCount == 0
+            ? 'Select courses to view combinations'
+            : props.totalCombinations == 0
+            ? 'No valid combinations available for the selected courses'
+            : 'View possible course combinations'
+        "
+      >
+        <UButton
+          label="View Schedules"
+          trailing-icon="i-lucide-arrow-right"
+          :disabled="selectedCoursesCount == 0 || totalCombinations == 0"
+          to="/combinations"
+        />
+      </UTooltip>
     </div>
   </div>
 </template>

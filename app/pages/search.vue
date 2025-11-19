@@ -49,46 +49,64 @@ onMounted(() => {
     performSearch();
   }
 });
-// have two tabs, all and selected
-const selectedCourses = ref<ICourseDTO[]>([]);
-// this will hold a shadow copy of selected courses when the selected tab is active
-const shadowSelectedCourses = ref<ICourseDTO[]>([]);
-watch(activeTab, (newTab) => {
-  if (newTab === "selected") {
-    shadowSelectedCourses.value = [...selectedCourses.value];
-  } else {
-    shadowSelectedCourses.value = [];
-  }
-});
 
-const toggleCourse = (course: ICourseDTO) => {
-  const index = selectedCourses.value.findIndex((c) => c.code === course.code);
-  if (index > -1) {
-    selectedCourses.value.splice(index, 1);
-  } else {
-    selectedCourses.value.push(course);
+// Global selected courses state
+const { selectedCourseIds, toggleCourse, isSelected, clearCourses } =
+  useSelectedCourses();
+
+// Local details for selected courses (fetched only when needed)
+const selectedCourseDetails = ref<ICourseDTO[]>([]);
+const detailsLoading = ref(false);
+
+const fetchSelectedDetails = async () => {
+  if (selectedCourseIds.value.length === 0) {
+    selectedCourseDetails.value = [];
+    return;
+  }
+  detailsLoading.value = true;
+  try {
+    const courses = await $fetch<ICourseDTO[]>("/api/courses", {
+      method: "POST",
+      body: selectedCourseIds.value,
+    });
+    selectedCourseDetails.value = courses;
+  } catch (error) {
+    console.error("Error fetching selected course details:", error);
+  } finally {
+    detailsLoading.value = false;
   }
 };
 
+// Watch activeTab to fetch details when switching to "selected"
+watch(activeTab, (newTab) => {
+  if (newTab === "selected") {
+    fetchSelectedDetails();
+  }
+});
+
 const combinationsLoading = ref(false);
-
-const totalCombinations = ref(0);
 const { combinations, setCombinations } = useCombinations();
-watch(
-  selectedCourses,
-  async () => {
-    if (selectedCourses.value.length === 0) {
-      totalCombinations.value = 0;
-      return;
-    }
-    combinationsLoading.value = true;
-    // create a list of ids of selected courses
-    const ids = selectedCourses.value.map((course) => course._id);
+const totalCombinations = computed(() => combinations.value.length);
 
-    if (ids.length === 0) {
-      totalCombinations.value = 0;
+// Watch selectedCourseIds to fetch combinations
+watch(
+  selectedCourseIds,
+  async () => {
+    if (selectedCourseIds.value.length === 0) {
+      setCombinations([]);
+      // Only clear details if NOT in selected tab to maintain view
+      if (activeTab.value !== "selected") {
+        selectedCourseDetails.value = [];
+      }
       return;
     }
+
+    // We do NOT re-fetch details here if activeTab is 'selected'.
+    // This ensures that deselected courses remain visible until the user leaves the tab.
+    // When switching back to 'selected' tab, the watch(activeTab) will trigger a fresh fetch.
+
+    combinationsLoading.value = true;
+    const ids = selectedCourseIds.value;
 
     // now send post request to /api/combinations with the ids
     const response = await $fetch<any[]>("/api/combinations", {
@@ -96,7 +114,6 @@ watch(
       body: { ids },
     });
     // log("Combinations response:", response);
-    totalCombinations.value = response.length;
     setCombinations(response);
     combinationsLoading.value = false;
   },
@@ -124,11 +141,9 @@ watch(
                 v-for="course in searchResults"
                 :course="course"
                 v-if="!loading && searchResults.length > 0"
-                @select="toggleCourse($event)"
+                @select="toggleCourse($event._id)"
                 class="cursor-pointer"
-                :isSelected="
-                  selectedCourses.some((c) => c.code === course.code)
-                "
+                :isSelected="isSelected(course._id)"
               />
               <div
                 v-else-if="loading"
@@ -149,16 +164,17 @@ watch(
               class="p-2 flex flex-col gap-4"
               v-else-if="activeTab === 'selected'"
             >
+              <div v-if="detailsLoading" class="flex justify-center p-8">
+                <UIcon name="i-lucide-loader" size="32" class="animate-spin" />
+              </div>
               <CourseCard
-                v-for="course in shadowSelectedCourses"
-                v-if="shadowSelectedCourses.length > 0"
+                v-else-if="selectedCourseDetails.length > 0"
+                v-for="course in selectedCourseDetails"
                 :key="course.code"
                 :course="course"
-                @select="toggleCourse($event)"
+                @select="toggleCourse(course._id)"
                 class="cursor-pointer"
-                :isSelected="
-                  selectedCourses.some((c) => c.code === course.code)
-                "
+                :isSelected="isSelected(course._id)"
               />
               <div
                 v-else
@@ -180,17 +196,13 @@ watch(
       </div>
       <SearchStats
         class="flex-2 sticky top-0 py-8"
-        :selected-courses-count="selectedCourses.length"
+        :selected-courses-count="selectedCourseIds.length"
         :total-credits="
-          selectedCourses.reduce((sum, course) => sum + course.credits, 0)
+          selectedCourseDetails.reduce((sum, course) => sum + course.credits, 0)
         "
         :total-combinations="totalCombinations"
         :combinations-loading="combinationsLoading"
-        :reset-selections="
-          () => {
-            selectedCourses = [];
-          }
-        "
+        :reset-selections="clearCourses"
       />
     </div>
   </div>

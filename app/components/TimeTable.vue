@@ -14,29 +14,87 @@ export interface TimetableEvent {
   color?: string; // Optional: to color code different courses
 }
 
-interface TimetableConfig {
-  startHour: number; // e.g., 8 (for 08:00)
-  endHour: number; // e.g., 19 (for 19:00)
-  slotSize: number; // e.g., 60 (for 60 minutes)
-}
+const props = defineProps({
+  events: {
+    type: Array as () => TimetableEvent[],
+    required: true,
+  },
+});
 
-const props = withDefaults(
-  defineProps<{ events: TimetableEvent[]; config?: TimetableConfig }>(),
-  {
-    config: () => ({
-      startHour: 8,
-      endHour: 18,
-      slotSize: 60,
-    }),
+// iterate through startTime and find the minimum time as startHour, the startTime is a string in ISO format
+
+const eventStartHours = props.events
+  .map((event) => event.startTime)
+  .filter((time): time is string => typeof time === "string")
+  .map((time) => parseInt(time.split(":")[0]!, 10));
+
+const startHour = Math.min(...eventStartHours, 8); // default to 8 AM if no events
+
+const eventEndHours = props.events
+  .map((event) => event.endTime)
+  .filter((time): time is string => typeof time === "string")
+  .map((time) => parseInt(time.split(":")[0]!, 10));
+
+const endHour = Math.max(...eventEndHours, 18); // default to 6 PM if no events
+
+const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+// iterate through the table items, findout the min slot size in minutes
+const eventSlotSizes = props.events.map((event) => {
+  const start = event.startTime.split(":");
+  const end = event.endTime.split(":");
+  const startMinutes = parseInt(start[0]!, 10) * 60 + parseInt(start[1]!, 10);
+  const endMinutes = parseInt(end[0]!, 10) * 60 + parseInt(end[1]!, 10);
+  return endMinutes - startMinutes;
+});
+const slotSize = Math.min(...eventSlotSizes, 90); // default to 90 minutes
+const timeSlots = Array.from(
+  { length: (endHour - startHour) * (60 / slotSize) },
+  (_, i) => {
+    const totalMinutes = startHour * 60 + i * slotSize;
+    const hours = Math.floor(totalMinutes / 60)
+      .toString()
+      .padStart(2, "0");
+    const minutes = (totalMinutes % 60).toString().padStart(2, "0");
+    return `${hours}:${minutes}`;
   }
 );
-
-const config = computed(() => props.config);
 </script>
 <template>
-  {{ events }}
-  <div v-for="event in props.events" :key="event.id">
-    <h3>{{ event.title }}</h3>
-    <p>{{ event.day }}: {{ event.startTime }} - {{ event.endTime }}</p>
+  <div class="timetable">
+    <div class="header">
+      <span class="header-cell text-muted">Time</span>
+      <span
+        v-for="day in days"
+        :key="day"
+        :class="[
+          'header-cell',
+          { 'text-error': day === 'Sat' || day === 'Sun' },
+        ]"
+      >
+        {{ day }}
+      </span>
+    </div>
+    <div>
+      <div v-for="time in timeSlots" :key="time" class="flex">
+        {{ time }}
+      </div>
+    </div>
   </div>
 </template>
+
+<style scoped>
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.timetable {
+  max-width: 500px;
+}
+
+.header-cell {
+  text-align: center;
+  font-weight: bold;
+  min-width: 100px;
+}
+</style>

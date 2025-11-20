@@ -56,8 +56,6 @@ const timeTables = computed(() => {
 });
 </script>
 <template>
-  {{ combinations }}
-  {{ timeTables }}
   <TimeTable
     :events="timeTables[0]"
     v-if="timeTables[0] && timeTables[0].length > 0"

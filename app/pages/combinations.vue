@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { ICourseDTO } from "~~/server/models/Course";
 import CourseManager from "../../utils/courseManager";
+import type { TimetableEvent } from "~/components/TimeTable.vue";
 
 const { combinations, setCombinations } = useCombinations();
 const { selectedCourseIds } = useSelectedCourses();
@@ -25,8 +26,40 @@ const { data: courses } = await useFetch<ICourseDTO[]>("/api/courses", {
 const courseManager = computed(() => {
   return new CourseManager(courses.value || []);
 });
+
+const timeTables = computed(() => {
+  const events: TimetableEvent[][] = [];
+  combinations.value.forEach((combination) => {
+    // combination is an assignment type, which is an object
+    const combinationTable: TimetableEvent[] = [];
+    Object.entries(combination).forEach(([courseId, sectionId]) => {
+      const course = courseManager.value.getCourseById(courseId);
+      if (!course) return;
+      const sectionNo = courseManager.value.getSectionNoBySectionId(sectionId);
+      console.log(`Course: ${course?.code}, Section: ${sectionNo}`);
+      const slots = courseManager.value.getSlotsBySectionId(sectionId);
+      if (!slots) return;
+
+      slots.forEach((slot) => {
+        combinationTable.push({
+          id: `${course._id}-${sectionNo}-${slot.day}-${slot.startTime}`,
+          title: `${course.code}-${sectionNo}`,
+          day: slot.day,
+          startTime: slot.startTime,
+          endTime: slot.endTime,
+        });
+      });
+    });
+    events.push(combinationTable);
+  });
+  return events;
+});
 </script>
 <template>
-  {{ courses }}
   {{ combinations }}
+  {{ timeTables }}
+  <TimeTable
+    :events="timeTables[0]"
+    v-if="timeTables[0] && timeTables[0].length > 0"
+  />
 </template>

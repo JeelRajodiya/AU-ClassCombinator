@@ -4,7 +4,7 @@
 // course code, section no. and their time slot.
 // TimeTable.vue (Script Setup)
 
-interface TimetableEvent {
+export interface TimetableEvent {
   id: string | number;
   title: string; // e.g., "FAC121-1"
   subtitle?: string; // e.g., "Lecture Hall A" (optional)
@@ -20,16 +20,23 @@ interface TimetableConfig {
   slotSize: number; // e.g., 60 (for 60 minutes)
 }
 
-const props = defineProps<{
-  events: TimetableEvent[];
-  config?: TimetableConfig; // Make optional with defaults
-}>();
+const props = withDefaults(
+  defineProps<{ events: TimetableEvent[]; config?: TimetableConfig }>(),
+  {
+    config: () => ({
+      startHour: 8,
+      endHour: 18,
+      slotSize: 60,
+    }),
+  }
+);
 
-// Set defaults if needed
-const config = withDefaults(defineProps<TimetableConfig>(), {
-  startHour: 8,
-  endHour: 18,
-  slotSize: 60,
-});
+const config = computed(() => props.config);
 </script>
-<template></template>
+<template>
+  {{ events }}
+  <div v-for="event in props.events" :key="event.id">
+    <h3>{{ event.title }}</h3>
+    <p>{{ event.day }}: {{ event.startTime }} - {{ event.endTime }}</p>
+  </div>
+</template>

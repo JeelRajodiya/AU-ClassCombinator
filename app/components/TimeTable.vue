@@ -219,7 +219,12 @@ const getEventColor = (title: string) => {
 
       <!-- Days grid -->
       <div class="days-grid">
-        <div v-for="day in days" :key="day" class="day-column">
+        <div
+          v-for="day in days"
+          :key="day"
+          class="day-column"
+          :style="{ '--slot-count': timeSlots.length }"
+        >
           <!-- Background grid cells -->
           <div
             v-for="(slot, index) in timeSlots"
@@ -239,9 +244,6 @@ const getEventColor = (title: string) => {
             }"
           >
             <div class="event-title">{{ event.title }}</div>
-            <div v-if="event.subtitle" class="event-subtitle">
-              {{ event.subtitle }}
-            </div>
             <div class="event-time">
               {{ event.startTime }} - {{ event.endTime }}
             </div>
@@ -258,7 +260,7 @@ const getEventColor = (title: string) => {
   max-width: 1200px;
   margin: 0 auto;
   border: 1px solid var(--ui-border);
-  border-radius: 8px;
+  border-radius: var(--ui-radius);
   overflow: hidden;
   background: var(--ui-bg);
 }
@@ -274,13 +276,10 @@ const getEventColor = (title: string) => {
 .day-header-cell {
   padding: 12px 8px;
   text-align: center;
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--ui-text);
 }
 
 .weekend-header {
-  color: rgb(var(--ui-error) / 0.9);
+  color: var(--ui-error);
 }
 
 .time-header-cell {
@@ -301,7 +300,7 @@ const getEventColor = (title: string) => {
   height: 80px;
   padding: 8px;
   border-bottom: 1px solid var(--ui-border-muted);
-  font-size: 13px;
+
   color: var(--ui-text-muted);
   display: flex;
   align-items: flex-start;
@@ -314,7 +313,8 @@ const getEventColor = (title: string) => {
 
 .day-column {
   display: grid;
-  grid-template-rows: repeat(auto-fill, 80px);
+  grid-template-rows: repeat(var(--slot-count, 1), 80px);
+  grid-auto-rows: 0;
   position: relative;
   border-right: 1px solid var(--ui-border-muted);
 }
@@ -336,19 +336,12 @@ const getEventColor = (title: string) => {
   font-size: 12px;
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.2s;
   margin: 0 4px;
   min-height: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   z-index: 1;
-}
-
-.event-block:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  z-index: 2;
 }
 
 .event-title {

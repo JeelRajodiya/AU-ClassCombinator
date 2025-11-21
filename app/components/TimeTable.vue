@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed, ref, onMounted, onUnmounted } from "vue";
 import type { Day } from "~~/server/models/Course";
 
 export interface TimetableEvent {
@@ -6,8 +7,8 @@ export interface TimetableEvent {
   title: string;
   subtitle?: string;
   day: Day;
-  startTime: string; // "08:00" (24h format)
-  endTime: string; // "09:30"
+  startTime: string;
+  endTime: string;
   color?: string;
 }
 
@@ -18,146 +19,49 @@ const props = defineProps({
   },
 });
 
+const containerRef = ref<HTMLElement | null>(null);
 const days: Day[] = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-
-// Helper function to convert time string to minutes since midnight
-const timeToMinutes = (time: string): number => {
-  const [hours, minutes] = time.split(":").map(Number);
-
-  if (
-    hours === undefined ||
-    minutes === undefined ||
-    isNaN(hours) ||
-    isNaN(minutes) ||
-    hours < 0 ||
-    hours >= 24 ||
-    minutes < 0 ||
-    minutes >= 60
-  ) {
-    throw new Error(`Invalid time format: ${time}`);
-  }
-  return hours * 60 + minutes;
+const dayColumnMap: Record<Day, number> = {
+  Mon: 2,
+  Tue: 3,
+  Wed: 4,
+  Thu: 5,
+  Fri: 6,
+  Sat: 7,
+  Sun: 8,
 };
 
-// Helper function to convert minutes to time string
-const minutesToTime = (minutes: number): string => {
-  const hours = Math.floor(minutes / 60)
-    .toString()
-    .padStart(2, "0");
-  const mins = (minutes % 60).toString().padStart(2, "0");
-  return `${hours}:${mins}`;
+// Extract unique time edges from all events
+const uniqueEdges = computed(() => {
+  const times = new Set<string>();
+  props.events.forEach((e) => {
+    times.add(e.startTime);
+    times.add(e.endTime);
+  });
+  return Array.from(times).sort();
+});
+
+// Map time string to grid row index (header is row 1, so first time is row 2)
+const getTimeRow = (time: string) => {
+  return uniqueEdges.value.indexOf(time) + 2;
 };
 
-// Find the time range for the timetable
-const timeRange = computed(() => {
-  if (props.events.length === 0) {
-    return { startMinutes: 8 * 60, endMinutes: 18 * 60 }; // 8 AM to 6 PM
-  }
-
-  let minStart = Infinity;
-  let maxEnd = -Infinity;
-
-  props.events.forEach((event) => {
-    const start = timeToMinutes(event.startTime);
-    const end = timeToMinutes(event.endTime);
-    minStart = Math.min(minStart, start);
-    maxEnd = Math.max(maxEnd, end);
-  });
-
-  // Round to nearest hour
-  const startMinutes = Math.floor(minStart / 60) * 60;
-  const endMinutes = Math.ceil(maxEnd / 60) * 60;
-
-  return { startMinutes, endMinutes };
-});
-
-// Calculate slot size based on shortest event duration
-const slotSizeMinutes = computed(() => {
-  if (props.events.length === 0) return 30;
-
-  const durations = props.events.map((event) => {
-    const start = timeToMinutes(event.startTime);
-    const end = timeToMinutes(event.endTime);
-    return end - start;
-  });
-
-  const minDuration = Math.min(...durations);
-
-  // Find the greatest common divisor for better slot alignment
-  // Use common academic time slots: 30, 60, 90 minutes
-  if (minDuration >= 90) return 90;
-  if (minDuration >= 60) return 60;
-  return 30;
-});
-
-// Generate time slots
-const timeSlots = computed(() => {
-  const slots: number[] = [];
-  const { startMinutes, endMinutes } = timeRange.value;
-
-  for (
-    let minutes = startMinutes;
-    minutes < endMinutes;
-    minutes += slotSizeMinutes.value
-  ) {
-    slots.push(minutes);
-  }
-
-  return slots;
-});
-
-// Calculate event positioning for each day
-const eventsByDay = computed(() => {
-  const byDay: Record<
-    Day,
-    Array<
-      TimetableEvent & {
-        rowStart: number;
-        rowSpan: number;
-        topOffset: number;
-        heightPercent: number;
-      }
-    >
-  > = {
-    Mon: [],
-    Tue: [],
-    Wed: [],
-    Thu: [],
-    Fri: [],
-    Sat: [],
-    Sun: [],
-  };
-
-  props.events.forEach((event) => {
-    const startMinutes = timeToMinutes(event.startTime);
-    const endMinutes = timeToMinutes(event.endTime);
-    const { startMinutes: rangeStart } = timeRange.value;
-
-    // Find which row this event starts in
-    const minutesFromStart = startMinutes - rangeStart;
-    const rowStart = Math.floor(minutesFromStart / slotSizeMinutes.value);
-
-    // Calculate exact position within the grid
-    const topOffset =
-      (minutesFromStart % slotSizeMinutes.value) / slotSizeMinutes.value;
-
-    // Calculate how many slots this event spans
-    const eventDuration = endMinutes - startMinutes;
-    const heightPercent = (eventDuration / slotSizeMinutes.value) * 100;
-
-    byDay[event.day].push({
+// Prepare event items with grid positioning
+const eventItems = computed(() => {
+  return props.events.map((event) => {
+    const rowStart = getTimeRow(event.startTime);
+    const rowEnd = getTimeRow(event.endTime);
+    const col = dayColumnMap[event.day];
+    return {
       ...event,
-      rowStart,
-      rowSpan: Math.ceil(eventDuration / slotSizeMinutes.value),
-      topOffset,
-      heightPercent,
-    });
+      style: {
+        gridArea: `${rowStart} / ${col} / ${rowEnd} / ${col + 1}`,
+      },
+    };
   });
-
-  return byDay;
 });
 
-// Generate random colors for events using Tailwind color utilities
+// Color logic
 const eventColors = computed(() => {
   const colors: Record<string, string> = {};
   const baseColors = [
@@ -169,85 +73,82 @@ const eventColors = computed(() => {
     "bg-cyan-500/20 border-cyan-500",
     "bg-yellow-500/20 border-yellow-500",
   ];
-
   let colorIndex = 0;
   props.events.forEach((event) => {
-    // Extract course code from title (e.g., "FAC121-1" -> "FAC121")
     const courseCode = event.title.split("-")[0];
-    if (!colors[courseCode!]) {
-      colors[courseCode!] = baseColors[colorIndex % baseColors.length]!;
+    if (courseCode && !colors[courseCode]) {
+      colors[courseCode] = baseColors[colorIndex % baseColors.length]!;
       colorIndex++;
     }
   });
-
   return colors;
 });
 
 const getEventColor = (title: string) => {
   const courseCode = title.split("-")[0];
-  return eventColors.value[courseCode!] || "bg-gray-500/20 border-gray-500";
+  return (
+    eventColors.value[courseCode || ""] || "bg-gray-500/20 border-gray-500"
+  );
 };
+
+// Update dashed line width
+const updateLineWidth = () => {
+  if (containerRef.value) {
+    // Calculate width spanning from column 2 to end
+    // We can approximate or use scrollWidth.
+    // The React code used scrollWidth - 60.
+    // Here we want it to start after the time column (50px).
+    const width = containerRef.value.scrollWidth - 50;
+    containerRef.value.style.setProperty("--line-width", `${width}px`);
+  }
+};
+
+onMounted(() => {
+  updateLineWidth();
+  window.addEventListener("resize", updateLineWidth);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", updateLineWidth);
+});
 </script>
 
 <template>
-  <div class="timetable-container">
-    <div class="timetable-header">
-      <div class="time-header-cell">Time</div>
-      <div
-        v-for="day in days"
-        :key="day"
-        :class="[
-          'day-header-cell',
-          { 'weekend-header': day === 'Sat' || day === 'Sun' },
-        ]"
-      >
+  <div class="container-main">
+    <div
+      ref="containerRef"
+      class="container-grid"
+      :style="{
+        gridTemplateRows: `30px repeat(${uniqueEdges.length}, 1fr)`,
+      }"
+    >
+      <!-- Header Row -->
+      <div class="grid-item-empty"></div>
+      <div v-for="day in days" :key="day" class="days">
         {{ day }}
       </div>
-    </div>
 
-    <div class="timetable-body">
-      <!-- Time column -->
-      <div class="time-column">
-        <div
-          v-for="(slotMinutes, index) in timeSlots"
-          :key="index"
-          class="time-slot"
-        >
-          {{ minutesToTime(slotMinutes) }}
-        </div>
+      <!-- Time Column & Lines -->
+      <div
+        v-for="(time, index) in uniqueEdges"
+        :key="time"
+        class="time"
+        :style="{ gridRow: index + 2 }"
+      >
+        {{ time }}
       </div>
 
-      <!-- Days grid -->
-      <div class="days-grid">
-        <div
-          v-for="day in days"
-          :key="day"
-          class="day-column"
-          :style="{ '--slot-count': timeSlots.length }"
-        >
-          <!-- Background grid cells -->
-          <div
-            v-for="(slot, index) in timeSlots"
-            :key="`slot-${index}`"
-            class="grid-cell"
-          />
-
-          <!-- Events positioned absolutely -->
-          <div
-            v-for="event in eventsByDay[day]"
-            :key="event.id"
-            :class="['event-block', getEventColor(event.title)]"
-            :style="{
-              gridRow: `${event.rowStart + 1} / span ${event.rowSpan}`,
-              marginTop: `${event.topOffset * 100}%`,
-              height: `${event.heightPercent}%`,
-            }"
-          >
-            <div class="event-title">{{ event.title }}</div>
-            <div class="event-time">
-              {{ event.startTime }} - {{ event.endTime }}
-            </div>
-          </div>
+      <!-- Events -->
+      <div
+        v-for="event in eventItems"
+        :key="event.id"
+        class="grid-item"
+        :class="getEventColor(event.title)"
+        :style="event.style"
+      >
+        <div class="event-title">{{ event.title }}</div>
+        <div class="event-time">
+          {{ event.startTime }} - {{ event.endTime }}
         </div>
       </div>
     </div>
@@ -255,125 +156,97 @@ const getEventColor = (title: string) => {
 </template>
 
 <style scoped>
-.timetable-container {
+.container-main {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
+  background-color: var(--ui-bg);
+  border-radius: var(--ui-radius);
   border: 1px solid var(--ui-border);
-  border-radius: var(--ui-radius);
-  overflow: hidden;
-  background: var(--ui-bg);
+  padding-top: 10px;
+  overflow-x: auto;
 }
 
-.timetable-header {
+.container-grid {
   display: grid;
-  grid-template-columns: 100px repeat(7, 1fr);
-  border-bottom: 2px solid var(--ui-border-accented);
-  background: var(--ui-bg);
+  width: 100%;
+  min-width: 600px;
+  grid-template-columns: 50px repeat(7, 1fr);
+  grid-auto-flow: row;
 }
 
-.time-header-cell,
-.day-header-cell {
-  padding: 12px 8px;
-  text-align: center;
-}
-
-.weekend-header {
-  color: var(--ui-error);
-}
-
-.time-header-cell {
-  border-right: 1px solid var(--ui-border-muted);
-}
-
-.timetable-body {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-}
-
-.time-column {
-  border-right: 1px solid var(--ui-border-muted);
-  background: var(--ui-bg);
-}
-
-.time-slot {
-  height: 80px;
-  padding: 8px;
-  border-bottom: 1px solid var(--ui-border-muted);
-
-  color: var(--ui-text-muted);
+.days {
   display: flex;
-  align-items: flex-start;
-}
-
-.days-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-}
-
-.day-column {
-  display: grid;
-  grid-template-rows: repeat(var(--slot-count, 1), 80px);
-  grid-auto-rows: 0;
-  position: relative;
-}
-
-.day-column:last-child {
-  border-right: none;
-}
-
-.grid-cell {
-  height: 80px;
-  border-bottom: 1px solid var(--ui-border-muted);
-}
-
-.event-block {
-  position: relative;
-  padding: 6px 8px;
-  border-radius: var(--ui-radius);
+  justify-content: center;
+  align-items: center;
+  color: var(--ui-text-muted);
   font-size: 12px;
-  overflow: hidden;
-  cursor: pointer;
-  margin: 0 4px;
-  min-height: 40px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.time {
+  position: relative;
+  color: var(--ui-text-muted);
+  font-size: 10px;
+  margin-left: 10px;
+  margin-top: -6px;
+  height: 0;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+.time::after {
+  content: "";
+  position: absolute;
+  width: var(--line-width, 100%);
+  border-top: 1px dashed var(--ui-border-muted);
+  top: 6px;
+  left: 40px;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.grid-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 2px;
+  padding: 2px 4px;
+  border-radius: var(--ui-radius);
+  font-size: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   z-index: 1;
+  min-height: 30px;
+  overflow: hidden;
 }
 
 .event-title {
   font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: 2px;
+  line-height: 1;
   color: var(--ui-text);
+  font-size: 10px;
 }
 
 .event-time {
-  font-size: 10px;
-  opacity: 0.7;
-  margin-top: auto;
+  font-size: 8px;
+  opacity: 0.8;
   color: var(--ui-text-muted);
+  margin-top: 2px;
 }
 
 @media (max-width: 768px) {
-  .timetable-header {
-    grid-template-columns: 80px repeat(7, minmax(60px, 1fr));
+  .container-grid {
+    grid-template-columns: 40px repeat(7, 1fr);
   }
-
-  .timetable-body {
-    grid-template-columns: 80px 1fr;
+  .time {
+    font-size: 9px;
+    margin-left: 4px;
   }
-
-  .day-header-cell,
-  .time-header-cell {
-    padding: 8px 4px;
-    font-size: 12px;
-  }
-
-  .event-block {
-    padding: 4px;
-    font-size: 10px;
+  .time::after {
+    left: 36px;
   }
 }
 </style>

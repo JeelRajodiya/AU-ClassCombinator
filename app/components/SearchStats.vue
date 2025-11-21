@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import combinations from "~~/server/api/combinations";
-import { Link } from "../../.nuxt/components";
 
 const props = defineProps({
   totalCredits: {

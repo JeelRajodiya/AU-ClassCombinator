@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { PropType } from "vue";
 import combinations from "~~/server/api/combinations";
 
 const props = defineProps({
@@ -24,12 +25,25 @@ const props = defineProps({
     required: false,
     default: false,
   },
+  page: {
+    type: String as PropType<"search" | "combinations">,
+    required: false,
+    default: "search",
+  },
 });
+
+const router = useRouter();
+// back to search
+const backToSearch = () => {
+  // go back using router back
+  router.back();
+};
 </script>
 
 <template>
   <div class="flex flex-col gap-8 h-fit">
-    <SemesterSwitch class="w-fit" />
+    <SemesterSwitch class="w-fit" v-if="props.page == 'search'" />
+
     <USeparator orientation="horizontal" class="w-48 pt-16" />
     <div class="flex flex-col gap-4">
       <StatItem
@@ -50,7 +64,20 @@ const props = defineProps({
         :zeroIndicator="true"
       />
     </div>
-    <div class="flex flex-col gap-4 w-fit">
+    <UButton
+      class="w-fit"
+      label="Back to Search"
+      color="secondary"
+      icon="i-lucide-arrow-left"
+      :disabled="selectedCoursesCount == 0 || totalCombinations == 0"
+      @click="backToSearch()"
+      v-if="props.page == 'combinations'"
+    />
+    <div
+      class="flex flex-col gap-4 w-fit"
+      v-if="props.page == 'combinations'"
+    ></div>
+    <div class="flex flex-col gap-4 w-fit" v-if="props.page == 'search'">
       <UPopover arrow :content="{ side: 'top' }">
         <UButton
           label="Reset Selections"

@@ -153,6 +153,7 @@ watch(
     :total-combinations="totalCombinations"
     :combinations-loading="combinationsLoading"
     :reset-selections="clearCourses"
+    page="search"
   >
     <div class="flex flex-col w-full top-0 pt-8 sticky z-10 bg-default">
       <SearchField

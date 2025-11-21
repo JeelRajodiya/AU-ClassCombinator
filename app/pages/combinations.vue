@@ -67,13 +67,24 @@ const totalCredits = computed(() => {
     :total-combinations="totalCombinations"
     :combinations-loading="false"
     :reset-selections="clearCourses"
+    page="combinations"
   >
-    <div class="flex flex-col gap-6 p-5 items-start">
-      <TimeTable
-        :events="timeTable"
-        v-for="(timeTable, index) in timeTables"
-        :key="index"
-      />
+    <div class="flex flex-col p-5 gap-6">
+      <div class="font-bold text-3xl text-center">
+        Possible Schedules ({{ totalCombinations }})
+      </div>
+      <div class="flex flex-col gap-6 items-start">
+        <div
+          v-for="(timeTable, index) in timeTables"
+          :key="index"
+          class="border border-default rounded-lg p-8 flex flex-col gap-4 items-center w-full"
+        >
+          <div class="text-center font-bold text-lg">
+            Combination {{ index + 1 }}
+          </div>
+          <TimeTable :events="timeTable" />
+        </div>
+      </div>
     </div>
   </SearchLayout>
 </template>

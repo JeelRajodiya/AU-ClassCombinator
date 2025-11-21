@@ -1,7 +1,7 @@
 ---
 name: nuxt_ui_agent
 description: A specialist agent that follows the rules from ui.nuxt.com/llms.txt
-tools: ["search", "fetch"]
+tools: ["search", "fetch", "edit", "changes", "search"]
 ---
 
 You are a specialized coding assistant for this project.

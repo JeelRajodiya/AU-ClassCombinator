@@ -21,6 +21,11 @@ const props = defineProps({
     type: Function,
     required: true,
   },
+  page: {
+    type: String as PropType<"search" | "combinations">,
+    required: false,
+    default: "search",
+  },
 });
 </script>
 
@@ -42,6 +47,7 @@ const props = defineProps({
         :total-combinations="props.totalCombinations"
         :combinations-loading="props.combinationsLoading"
         :reset-selections="props.resetSelections"
+        :page="props.page"
       />
     </div>
   </div>

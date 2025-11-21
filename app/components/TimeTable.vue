@@ -64,14 +64,26 @@ const eventItems = computed(() => {
 // Color logic
 const eventColors = computed(() => {
   const colors: Record<string, string> = {};
+  const gridItemBGOpacity = "20";
+  const bgVariant = 500;
   const baseColors = [
-    "bg-blue-500/20 border-blue-500",
-    "bg-green-500/20 border-green-500",
-    "bg-purple-500/20 border-purple-500",
-    "bg-orange-500/20 border-orange-500",
-    "bg-pink-500/20 border-pink-500",
-    "bg-cyan-500/20 border-cyan-500",
-    "bg-yellow-500/20 border-yellow-500",
+    `bg-red-${bgVariant}/${gridItemBGOpacity} border-red-${bgVariant}`,
+    `bg-orange-${bgVariant}/${gridItemBGOpacity} border-orange-${bgVariant}`,
+    `bg-amber-${bgVariant}/${gridItemBGOpacity} border-amber-${bgVariant}`,
+    `bg-yellow-${bgVariant}/${gridItemBGOpacity} border-yellow-${bgVariant}`,
+    `bg-lime-${bgVariant}/${gridItemBGOpacity} border-lime-${bgVariant}`,
+    `bg-green-${bgVariant}/${gridItemBGOpacity} border-green-${bgVariant}`,
+    `bg-emerald-${bgVariant}/${gridItemBGOpacity} border-emerald-${bgVariant}`,
+    `bg-teal-${bgVariant}/${gridItemBGOpacity} border-teal-${bgVariant}`,
+    `bg-cyan-${bgVariant}/${gridItemBGOpacity} border-cyan-${bgVariant}`,
+    `bg-sky-${bgVariant}/${gridItemBGOpacity} border-sky-${bgVariant}`,
+    `bg-blue-${bgVariant}/${gridItemBGOpacity} border-blue-${bgVariant}`,
+    `bg-indigo-${bgVariant}/${gridItemBGOpacity} border-indigo-${bgVariant}`,
+    `bg-violet-${bgVariant}/${gridItemBGOpacity} border-violet-${bgVariant}`,
+    `bg-purple-${bgVariant}/${gridItemBGOpacity} border-purple-${bgVariant}`,
+    `bg-fuchsia-${bgVariant}/${gridItemBGOpacity} border-fuchsia-${bgVariant}`,
+    `bg-pink-${bgVariant}/${gridItemBGOpacity} border-pink-${bgVariant}`,
+    `bg-rose-${bgVariant}/${gridItemBGOpacity} border-rose-${bgVariant}`,
   ];
   let colorIndex = 0;
   props.events.forEach((event) => {
@@ -114,17 +126,17 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="container-main">
+  <div class="container-main rounded-lg">
     <div
       ref="containerRef"
       class="container-grid"
       :style="{
-        gridTemplateRows: `30px repeat(${uniqueEdges.length}, 1fr)`,
+        gridTemplateRows: `50px repeat(${uniqueEdges.length}, 60px)`,
       }"
     >
       <!-- Header Row -->
       <div class="grid-item-empty"></div>
-      <div v-for="day in days" :key="day" class="days">
+      <div v-for="day in days" :key="day" class="days text-sm font-bold">
         {{ day }}
       </div>
 
@@ -132,7 +144,7 @@ onUnmounted(() => {
       <div
         v-for="(time, index) in uniqueEdges"
         :key="time"
-        class="time"
+        class="time text-xs text-muted"
         :style="{ gridRow: index + 2 }"
       >
         {{ time }}
@@ -146,8 +158,8 @@ onUnmounted(() => {
         :class="getEventColor(event.title)"
         :style="event.style"
       >
-        <div class="event-title">{{ event.title }}</div>
-        <div class="event-time">
+        <div class="event-title text-sm font-semibold">{{ event.title }}</div>
+        <div class="event-time text-xs opacity-75">
           {{ event.startTime }} - {{ event.endTime }}
         </div>
       </div>
@@ -158,10 +170,10 @@ onUnmounted(() => {
 <style scoped>
 .container-main {
   width: 100%;
-  max-width: 1000px;
+  max-width: 800px;
   margin: 0 auto;
   background-color: var(--ui-bg);
-  border-radius: var(--ui-radius);
+
   border: 1px solid var(--ui-border);
   padding-top: 10px;
   overflow-x: auto;
@@ -180,15 +192,12 @@ onUnmounted(() => {
   justify-content: center;
   align-items: center;
   color: var(--ui-text-muted);
-  font-size: 12px;
-  font-weight: 600;
   padding-bottom: 10px;
 }
 
 .time {
   position: relative;
   color: var(--ui-text-muted);
-  font-size: 10px;
   margin-left: 10px;
   margin-top: -6px;
   height: 0;
@@ -216,23 +225,17 @@ onUnmounted(() => {
   margin: 2px;
   padding: 2px 4px;
   border-radius: var(--ui-radius);
-  font-size: 10px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   z-index: 1;
   min-height: 30px;
   overflow: hidden;
 }
 
 .event-title {
-  font-weight: 600;
   line-height: 1;
   color: var(--ui-text);
-  font-size: 10px;
 }
 
 .event-time {
-  font-size: 8px;
-  opacity: 0.8;
   color: var(--ui-text-muted);
   margin-top: 2px;
 }
@@ -242,7 +245,6 @@ onUnmounted(() => {
     grid-template-columns: 40px repeat(7, 1fr);
   }
   .time {
-    font-size: 9px;
     margin-left: 4px;
   }
   .time::after {

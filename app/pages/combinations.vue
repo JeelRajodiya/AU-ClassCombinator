@@ -3,8 +3,8 @@ import type { ICourseDTO } from "~~/server/models/Course";
 import CourseManager from "../../utils/courseManager";
 import type { TimetableEvent } from "~/components/TimeTable.vue";
 
-const { combinations, setCombinations } = useCombinations();
-const { selectedCourseIds } = useSelectedCourses();
+const { combinations } = useCombinations();
+const { selectedCourseIds, clearCourses } = useSelectedCourses();
 
 // the combinations will look like this
 // [ {course_id: course_id.section_no, course2_id: course2_id.section_no, course3_id: course3_id.section_no},
@@ -54,12 +54,26 @@ const timeTables = computed(() => {
   });
   return events;
 });
+
+const totalCombinations = computed(() => combinations.value.length);
+const totalCredits = computed(() => {
+  return (courses.value || []).reduce((sum, course) => sum + course.credits, 0);
+});
 </script>
 <template>
-  <div class="p-5">
-    <TimeTable
-      :events="timeTables[0]"
-      v-if="timeTables[0] && timeTables[0].length > 0"
-    />
-  </div>
+  <SearchLayout
+    :selected-courses-count="selectedCourseIds.length"
+    :total-credits="totalCredits"
+    :total-combinations="totalCombinations"
+    :combinations-loading="false"
+    :reset-selections="clearCourses"
+  >
+    <div class="flex flex-col gap-6 p-5 items-start">
+      <TimeTable
+        :events="timeTable"
+        v-for="(timeTable, index) in timeTables"
+        :key="index"
+      />
+    </div>
+  </SearchLayout>
 </template>

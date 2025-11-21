@@ -171,7 +171,7 @@ onUnmounted(() => {
 .container-main {
   width: 100%;
   max-width: 800px;
-  margin: 0 auto;
+
   background-color: var(--ui-bg);
 
   border: 1px solid var(--ui-border);

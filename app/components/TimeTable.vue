@@ -316,7 +316,6 @@ const getEventColor = (title: string) => {
   grid-template-rows: repeat(var(--slot-count, 1), 80px);
   grid-auto-rows: 0;
   position: relative;
-  border-right: 1px solid var(--ui-border-muted);
 }
 
 .day-column:last-child {
@@ -331,8 +330,7 @@ const getEventColor = (title: string) => {
 .event-block {
   position: relative;
   padding: 6px 8px;
-  border-left: 3px solid;
-  border-radius: 4px;
+  border-radius: var(--ui-radius);
   font-size: 12px;
   overflow: hidden;
   cursor: pointer;
@@ -349,13 +347,6 @@ const getEventColor = (title: string) => {
   line-height: 1.2;
   margin-bottom: 2px;
   color: var(--ui-text);
-}
-
-.event-subtitle {
-  font-size: 11px;
-  opacity: 0.8;
-  margin-bottom: 2px;
-  color: var(--ui-text-toned);
 }
 
 .event-time {

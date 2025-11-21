@@ -1,14 +1,15 @@
 <script setup lang="ts">
+import type { Day } from "~~/server/models/Course";
+
 // I want to show the time table of a combination
 // the data I have to display is
 // course code, section no. and their time slot.
 // TimeTable.vue (Script Setup)
-
 export interface TimetableEvent {
   id: string | number;
   title: string; // e.g., "FAC121-1"
   subtitle?: string; // e.g., "Lecture Hall A" (optional)
-  day: string; // "Mon", "Tue", etc. matches your column headers
+  day: Day; // "Mon", "Tue", etc. matches your column headers
   startTime: string; // "08:00" (24h format is best for calculations)
   endTime: string; // "09:30"
   color?: string; // Optional: to color code different courses
@@ -74,27 +75,76 @@ const timeSlots = Array.from(
         {{ day }}
       </span>
     </div>
-    <div>
-      <div v-for="time in timeSlots" :key="time" class="flex">
-        {{ time }}
+    <div class="flex flex-row w-full justify-items-start">
+      <div class="time-slots">
+        <div v-for="time in timeSlots" :key="time" class="flex">
+          {{ time }}
+        </div>
+      </div>
+
+      <div class="table-items w-full mt-1">
+        <!-- we'll insert items, such that one item is a dotted line, next is a row of course codes and so on.. -->
+        <div v-for="time in timeSlots" :key="time" class="table-row">
+          <div class="dashed-line"></div>
+          <div class="flex">
+            <div
+              v-for="day in days"
+              :key="day"
+              class="table-cell relative w-full h-10 border"
+            >
+              <!-- find the slot from the timetable, where day === {{ day }} and time === {{ time }} -->
+              <div v-for="event in events" :key="event.id" class="">
+                <div
+                  v-if="event.day === day && event.startTime === time"
+                  class="font-bold"
+                >
+                  {{ event.title }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+.dashed-line {
+  border-top: 1px dashed #ccc;
+  width: 100%;
+  margin: 4px 0;
+  width: 100%;
+}
+.table-items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 .header {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  padding: 8px 0;
 }
 
 .timetable {
-  max-width: 500px;
+  max-width: 1080px;
 }
 
 .header-cell {
   text-align: center;
   font-weight: bold;
-  min-width: 100px;
+  min-width: 124px;
+  padding: 8px;
+}
+.time-slots {
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+  min-width: 124px;
+  color: var(--text-color-muted);
+
+  align-items: center;
 }
 </style>

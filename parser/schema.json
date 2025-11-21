@@ -101,6 +101,7 @@
                 "properties": {
                   "day": {
                     "type": "string",
+                    "enum": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
                     "description": "Day of the week (e.g., 'Mon')."
                   },
                   "startTime": {

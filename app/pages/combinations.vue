@@ -56,8 +56,10 @@ const timeTables = computed(() => {
 });
 </script>
 <template>
-  <TimeTable
-    :events="timeTables[0]"
-    v-if="timeTables[0] && timeTables[0].length > 0"
-  />
+  <div class="p-5">
+    <TimeTable
+      :events="timeTables[0]"
+      v-if="timeTables[0] && timeTables[0].length > 0"
+    />
+  </div>
 </template>

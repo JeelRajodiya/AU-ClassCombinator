@@ -1,9 +1,10 @@
 import mongoose, { Schema, Document, ObjectId } from "mongoose";
 import { Binary } from "mongodb";
 
+export type Day = "Mon" | "Tue" | "Wed" | "Thu" | "Fri" | "Sat" | "Sun";
 // Interface for Slot
 export interface ISlot {
-  day: string;
+  day: Day;
   startTime: string;
   endTime: string;
 }

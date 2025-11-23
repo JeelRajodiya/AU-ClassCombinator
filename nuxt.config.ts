@@ -11,7 +11,7 @@ export default defineNuxtConfig({
         {
           name: "description",
           content:
-            "Ahmedabad University Class Combinator. Generate class timetables based on your course selections from auris directory.",
+            "Ahmedabad University Class Combinator. Generate class timetables based on your course selections from auris data.",
         },
         {
           name: "keywords",

@@ -102,4 +102,5 @@ const CourseSchema = new Schema<ICourse>({
 });
 
 // Export the model
-export default mongoose.model<ICourse>("Course", CourseSchema);
+export default mongoose.models.Course ||
+  mongoose.model<ICourse>("Course", CourseSchema);

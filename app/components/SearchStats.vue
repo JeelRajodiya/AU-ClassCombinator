@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { PropType } from "vue";
-import combinations from "~~/server/api/combinations";
 import type CourseManager from "~~/utils/courseManager";
 
 const props = defineProps({

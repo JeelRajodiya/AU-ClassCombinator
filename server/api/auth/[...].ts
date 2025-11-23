@@ -5,27 +5,35 @@ import dbConnect from "~~/server/db";
 import User from "~~/server/models/User";
 import { log, time, timeEnd } from "console";
 
-if (!process.env.NUXT_AUTH_SECRET) {
+const config = useRuntimeConfig();
+
+// Fallback to process.env if runtime config is missing (e.g. during build or if .env not loaded yet)
+const authSecret = config.authSecret || process.env.NUXT_AUTH_SECRET;
+const googleClientId = config.googleClientId || process.env.GOOGLE_CLIENT_ID;
+const googleClientSecret =
+  config.googleClientSecret || process.env.GOOGLE_CLIENT_SECRET;
+
+if (!authSecret) {
   throw new Error("NUXT_AUTH_SECRET is not defined in environment variables");
 }
 
-if (!process.env.GOOGLE_CLIENT_ID) {
+if (!googleClientId) {
   throw new Error("GOOGLE_CLIENT_ID is not defined in environment variables");
 }
 
-if (!process.env.GOOGLE_CLIENT_SECRET) {
+if (!googleClientSecret) {
   throw new Error(
     "GOOGLE_CLIENT_SECRET is not defined in environment variables"
   );
 }
 
 export default NuxtAuthHandler({
-  secret: process.env.NUXT_AUTH_SECRET,
+  secret: authSecret,
   providers: [
     // @ts-expect-error Use .default here for it to work during SSR.
     GoogleProvider.default({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      clientId: googleClientId,
+      clientSecret: googleClientSecret,
     }),
   ],
   callbacks: {

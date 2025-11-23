@@ -1,16 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, onMounted, onUnmounted } from "vue";
-import type { Day } from "~~/server/models/Course";
-
-export interface TimetableEvent {
-  id: string | number;
-  title: string;
-  subtitle?: string;
-  day: Day;
-  startTime: string;
-  endTime: string;
-  color?: string;
-}
+import type { TimetableEvent } from "~~/types/combinator";
+import type { Day } from "~~/types/course";
 
 const props = defineProps({
   events: {

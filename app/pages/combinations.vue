@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { ICourseDTO } from "~~/server/models/Course";
+import type { ICourseDTO } from "~~/types/course";
 import CourseManager from "../../utils/courseManager";
-import type { TimetableEvent } from "~/components/TimeTable.vue";
+import type { TimetableEvent } from "~~/types/combinator";
 
 const { combinations } = useCombinations();
 const { selectedCourseIds, clearCourses } = useSelectedCourses();

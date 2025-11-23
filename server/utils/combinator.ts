@@ -1,4 +1,5 @@
-import type { ICourse, ISection } from "../models/Course";
+import type { ICourse, ISection } from "../../types/course";
+import type { AssignmentType } from "../../types/combinator";
 import dbConnect from "../db";
 import Course from "../models/Course";
 
@@ -13,8 +14,6 @@ type NeighborsType = { [courseId: string]: Set<string> };
 type AdjacencyType = {
   [sectionId: string]: { [courseId: string]: Set<string> };
 };
-// key is course id, value is section id
-export type AssignmentType = { [courseId: string]: string };
 
 interface ICombinator {
   // --- Properties ---

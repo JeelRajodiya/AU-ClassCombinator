@@ -1,4 +1,4 @@
-import type { AssignmentType } from "../../server/utils/combinator";
+import type { AssignmentType } from "../../types/combinator";
 import { useState } from "#app";
 export default function useCombinations() {
   // it will set the semester to whatever is passed

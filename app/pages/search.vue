@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { log } from "console";
-import type { ICourseDTO } from "~~/server/models/Course";
+import type { ICourseDTO } from "~~/types/course";
 
 const route = useRoute();
 const router = useRouter();

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type ICourseDTO } from "../../server/models/Course";
+import type { ICourseDTO } from "~~/types/course";
 const props = defineProps<{
   course: ICourseDTO;
   isSelected: boolean;

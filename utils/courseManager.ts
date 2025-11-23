@@ -1,5 +1,4 @@
-import type { ICourseDTO } from "../server/models/Course";
-import type { ISlotDTO } from "../server/models/Course";
+import type { ICourseDTO, ISlotDTO } from "../types/course";
 
 interface CourseManager {
   courses: ICourseDTO[];

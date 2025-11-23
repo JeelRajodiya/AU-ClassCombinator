@@ -1,6 +1,7 @@
 import { defineEventHandler, readBody, createError } from "h3";
 import dbConnect from "../db";
-import Course, { type ICourseDTO } from "../models/Course";
+import Course from "../models/Course";
+import type { ICourseDTO } from "../../types/course";
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);

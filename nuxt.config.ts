@@ -7,6 +7,18 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: "Class Combinator",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Ahmedabad University Class Combinator. Generate class timetables based on your course selections from auris directory.",
+        },
+        {
+          name: "keywords",
+          content:
+            "Ahmedabad University, AU, Class Combinator, Course Scheduler, Timetable Generator, Auris Directory, Course Combinations, Class Schedule Planner, Class Combinator, AU Class Combinator, ClassCombinator",
+        },
+      ],
     },
   },
   runtimeConfig: {

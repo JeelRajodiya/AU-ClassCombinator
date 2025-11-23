@@ -1,6 +1,6 @@
-import type { ICourse, ISection } from "../server/models/Course";
-import dbConnect from "../server/db";
-import Course from "../server/models/Course";
+import type { ICourse, ISection } from "../models/Course";
+import dbConnect from "../db";
+import Course from "../models/Course";
 
 type CoursesType = ICourse[];
 type CompatibilityMatrixType = {

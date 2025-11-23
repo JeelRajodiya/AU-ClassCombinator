@@ -1,5 +1,5 @@
 import { defineEventHandler, readBody, createError } from "h3";
-import Combinator from "../../utils/combinator";
+import Combinator from "../utils/combinator";
 export default defineEventHandler(async (event) => {
   // the user will send list of course ids, I'll generate combinations for them
   // post method

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import CourseManager from "~~/utils/courseManager";
+
 const props = defineProps({
   selectedCoursesCount: {
     type: Number,
@@ -26,7 +28,15 @@ const props = defineProps({
     required: false,
     default: "search",
   },
+  courseManager: {
+    type: Object as PropType<CourseManager>,
+    required: false,
+  },
 });
+
+if (props.page === "combinations" && !props.courseManager) {
+  throw new Error("courseManager prop is required when page is 'combinations'");
+}
 </script>
 
 <template>
@@ -48,6 +58,7 @@ const props = defineProps({
         :combinations-loading="props.combinationsLoading"
         :reset-selections="props.resetSelections"
         :page="props.page"
+        :course-manager="props.courseManager"
       />
     </div>
   </div>

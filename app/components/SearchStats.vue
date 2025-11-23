@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { PropType } from "vue";
 import combinations from "~~/server/api/combinations";
+import type CourseManager from "~~/utils/courseManager";
 
 const props = defineProps({
   totalCredits: {
@@ -30,7 +31,15 @@ const props = defineProps({
     required: false,
     default: "search",
   },
+  courseManager: {
+    type: Object as PropType<CourseManager>,
+    required: false,
+  },
 });
+
+if (props.page === "combinations" && !props.courseManager) {
+  throw new Error("courseManager prop is required when page is 'combinations'");
+}
 
 const router = useRouter();
 // back to search
@@ -38,6 +47,8 @@ const backToSearch = () => {
   // go back using router back
   router.back();
 };
+
+const { removeCourse } = useSelectedCourses();
 </script>
 
 <template>
@@ -129,6 +140,30 @@ const backToSearch = () => {
           to="/combinations"
         />
       </UTooltip>
+    </div>
+    <div v-else class="flex flex-col gap-4 w-fit max-w-xs">
+      <div v-for="course in courseManager!.courses">
+        <div class="flex gap-4 items-center">
+          <div :key="course.code" class="text-muted text-sm">
+            {{ course.code }}: {{ course.name }}
+          </div>
+          <UButton
+            icon="i-lucide-x"
+            size="sm"
+            color="error"
+            variant="ghost"
+            class="text-error items-start"
+            @click="removeCourse(course._id)"
+          ></UButton>
+        </div>
+        <USelectMenu
+          v-model="value"
+          multiple
+          :items="items"
+          class="w-48"
+          :search-input="false"
+        />
+      </div>
     </div>
   </div>
 </template>

@@ -67,6 +67,7 @@ const totalCredits = computed(() => {
     :total-combinations="totalCombinations"
     :combinations-loading="false"
     :reset-selections="clearCourses"
+    :course-manager="courseManager"
     page="combinations"
   >
     <div class="flex flex-col p-5 gap-6">

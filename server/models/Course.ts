@@ -33,7 +33,7 @@ export type IDateRangeDTO = Omit<IDateRange, "oneDayBitMask">;
 const DateRangeSchema = new Schema<IDateRange>({
   start: { type: Date, required: true },
   end: { type: Date, required: true },
-  oneDayBitMask: { type: Buffer, required: true },
+  oneDayBitMask: { type: Schema.Types.Buffer, required: true },
 });
 
 // Interface for Section
@@ -55,7 +55,7 @@ export type ISectionDTO = Omit<ISection, "dateRange" | "fiveMinuteBitMask"> & {
 const SectionSchema = new Schema<ISection>({
   sectionId: { type: String, required: true },
   quarter: { type: String, default: null },
-  fiveMinuteBitMask: { type: Buffer, required: true },
+  fiveMinuteBitMask: { type: Schema.Types.Buffer, required: true },
   dateRange: { type: DateRangeSchema, required: true },
   slots: { type: [SlotSchema], required: true },
 });

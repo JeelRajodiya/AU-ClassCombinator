@@ -1,3 +1,4 @@
+import { defineEventHandler } from "h3";
 import dbConnect from "../db";
 import Course from "../models/Course";
 

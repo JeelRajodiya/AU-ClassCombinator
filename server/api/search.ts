@@ -1,3 +1,4 @@
+import { defineEventHandler, getQuery } from "h3";
 import dbConnect from "../db";
 import Course, { type ICourseDTO } from "../models/Course";
 

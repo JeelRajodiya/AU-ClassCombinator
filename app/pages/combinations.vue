@@ -5,6 +5,7 @@ import type { TimetableEvent } from "~/components/TimeTable.vue";
 
 const { combinations } = useCombinations();
 const { selectedCourseIds, clearCourses } = useSelectedCourses();
+const { initializeCourse, getSelectedSections } = useSelectedSections();
 
 // the combinations will look like this
 // [ {course_id: course_id.section_no, course2_id: course2_id.section_no, course3_id: course3_id.section_no},
@@ -25,6 +26,18 @@ const { data: courses } = await useFetch<ICourseDTO[]>("/api/courses", {
 
 const courseManager = computed(() => {
   return new CourseManager(courses.value || []);
+});
+
+// Initialize section selections for all courses
+onMounted(() => {
+  if (courses.value) {
+    courses.value.forEach((course) => {
+      const allSectionIds = course.sections.map(
+        (section) => `${course._id}.${section.sectionId}`
+      );
+      initializeCourse(course._id, allSectionIds);
+    });
+  }
 });
 
 const timeTables = computed(() => {

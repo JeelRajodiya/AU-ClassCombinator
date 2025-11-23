@@ -48,7 +48,72 @@ const backToSearch = () => {
   router.back();
 };
 
-const { removeCourse } = useSelectedCourses();
+const { removeCourse: removeSelectedCourse } = useSelectedCourses();
+const {
+  selectedSections,
+  initializeCourse,
+  setSelectedSections,
+  getSelectedSections,
+  clearCourse,
+} = useSelectedSections();
+const { filterCombinationsBySections } = useCombinations();
+
+const removeCourse = (courseId: string) => {
+  removeSelectedCourse(courseId);
+  clearCourse(courseId);
+  filterCombinationsBySections(selectedSections.value);
+};
+
+// Initialize selected sections for each course
+const sectionSelections = computed(() => {
+  if (props.page !== "combinations" || !props.courseManager) return {};
+
+  const selections: Record<string, string[]> = {};
+
+  props.courseManager.courses.forEach((course) => {
+    const allSectionIds = course.sections.map(
+      (section) => `${course._id}.${section.sectionId}`
+    );
+
+    // Initialize if not already done
+    initializeCourse(course._id, allSectionIds);
+
+    // Get current selection
+    selections[course._id] = getSelectedSections(course._id);
+  });
+
+  return selections;
+});
+
+// Get section options for each course
+const getSectionOptions = (courseId: string) => {
+  if (!props.courseManager) return [];
+
+  const course = props.courseManager.getCourseById(courseId);
+  if (!course) return [];
+
+  return course.sections.map((section) => ({
+    label: `Section ${section.sectionId}`,
+    value: `${courseId}.${section.sectionId}`,
+  }));
+};
+
+// Handle section selection change
+const handleSectionChange = (
+  courseId: string,
+  selectedValues: { label: string; value: string }[]
+) => {
+  const values = selectedValues.map((item) => item.value);
+  setSelectedSections(courseId, values);
+  filterCombinationsBySections(selectedSections.value);
+};
+
+// Get selected section objects for USelectMenu
+const getSelectedSectionObjects = (courseId: string) => {
+  const selectedValues = sectionSelections.value[courseId] || [];
+  const options = getSectionOptions(courseId);
+  return options.filter((option) => selectedValues.includes(option.value));
+};
 </script>
 
 <template>
@@ -141,27 +206,34 @@ const { removeCourse } = useSelectedCourses();
         />
       </UTooltip>
     </div>
-    <div v-else class="flex flex-col gap-4 w-fit max-w-xs">
-      <div v-for="course in courseManager!.courses">
-        <div class="flex gap-4 items-center">
-          <div :key="course.code" class="text-muted text-sm">
-            {{ course.code }}: {{ course.name }}
+    <div v-else class="flex flex-col gap-8 w-fit max-w-sm">
+      <div
+        v-for="course in courseManager!.courses"
+        :key="course._id"
+        class="flex flex-col gap-2"
+      >
+        <div class="flex gap-2 items-center justify-between">
+          <div class="text-sm font-medium">
+            {{ course.code }}
+            <br />
+            {{ course.name }}
           </div>
           <UButton
             icon="i-lucide-x"
-            size="sm"
+            size="xs"
             color="error"
             variant="ghost"
-            class="text-error items-start"
             @click="removeCourse(course._id)"
-          ></UButton>
+          />
         </div>
         <USelectMenu
-          v-model="value"
+          :model-value="getSelectedSectionObjects(course._id)"
+          @update:model-value="(value: any) => handleSectionChange(course._id, value)"
           multiple
-          :items="items"
-          class="w-48"
           :search-input="false"
+          :items="getSectionOptions(course._id)"
+          placeholder="Select sections"
+          class="w-full"
         />
       </div>
     </div>

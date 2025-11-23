@@ -1,4 +1,8 @@
 <script setup lang="ts">
+useHead({
+  titleTemplate: (title) =>
+    title ? `${title} - Combinations` : "Combinations",
+});
 import type { ICourseDTO } from "~~/types/course";
 import CourseManager from "../../utils/courseManager";
 import type { TimetableEvent } from "~~/types/combinator";

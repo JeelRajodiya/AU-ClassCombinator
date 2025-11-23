@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { log } from "console";
+useHead({
+  titleTemplate: (title) => (title ? `${title} - Search` : "Search"),
+});
 import type { ICourseDTO } from "~~/types/course";
 
 const route = useRoute();

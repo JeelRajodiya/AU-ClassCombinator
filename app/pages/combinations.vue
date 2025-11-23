@@ -77,7 +77,7 @@ const totalCredits = computed(() => {
         <div
           v-for="(timeTable, index) in timeTables"
           :key="index"
-          class="border border-default rounded-lg p-8 flex flex-col gap-4 items-center w-full"
+          class="border border-default rounded-lg p-8 flex flex-col gap-4 items-center w-full shadow-sm"
         >
           <div class="text-center font-bold text-lg">
             Combination {{ index + 1 }}

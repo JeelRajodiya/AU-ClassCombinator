@@ -65,25 +65,23 @@ const eventItems = computed(() => {
 const eventColors = computed(() => {
   const colors: Record<string, string> = {};
   const gridItemBGOpacity = "20";
-  const bgVariant = 500;
   const baseColors = [
-    `bg-red-${bgVariant}/${gridItemBGOpacity} border-red-${bgVariant}`,
-    `bg-orange-${bgVariant}/${gridItemBGOpacity} border-orange-${bgVariant}`,
-    `bg-amber-${bgVariant}/${gridItemBGOpacity} border-amber-${bgVariant}`,
-    `bg-yellow-${bgVariant}/${gridItemBGOpacity} border-yellow-${bgVariant}`,
-    `bg-lime-${bgVariant}/${gridItemBGOpacity} border-lime-${bgVariant}`,
-    `bg-green-${bgVariant}/${gridItemBGOpacity} border-green-${bgVariant}`,
-    `bg-emerald-${bgVariant}/${gridItemBGOpacity} border-emerald-${bgVariant}`,
-    `bg-teal-${bgVariant}/${gridItemBGOpacity} border-teal-${bgVariant}`,
-    `bg-cyan-${bgVariant}/${gridItemBGOpacity} border-cyan-${bgVariant}`,
-    `bg-sky-${bgVariant}/${gridItemBGOpacity} border-sky-${bgVariant}`,
-    `bg-blue-${bgVariant}/${gridItemBGOpacity} border-blue-${bgVariant}`,
-    `bg-indigo-${bgVariant}/${gridItemBGOpacity} border-indigo-${bgVariant}`,
-    `bg-violet-${bgVariant}/${gridItemBGOpacity} border-violet-${bgVariant}`,
-    `bg-purple-${bgVariant}/${gridItemBGOpacity} border-purple-${bgVariant}`,
-    `bg-fuchsia-${bgVariant}/${gridItemBGOpacity} border-fuchsia-${bgVariant}`,
-    `bg-pink-${bgVariant}/${gridItemBGOpacity} border-pink-${bgVariant}`,
-    `bg-rose-${bgVariant}/${gridItemBGOpacity} border-rose-${bgVariant}`,
+    "bg-red-400/10 border border-red-400/30",
+    "bg-orange-400/10 border border-orange-400/30",
+
+    "bg-yellow-400/10 border border-yellow-400/30",
+    "bg-lime-400/10 border border-lime-400/30",
+    "bg-green-400/10 border border-green-400/30",
+
+    "bg-teal-400/10 border border-teal-400/30",
+
+    "bg-sky-400/10 border border-sky-400/30",
+    "bg-blue-400/10 border border-blue-400/30",
+    "bg-indigo-400/10 border border-indigo-400/30",
+
+    "bg-purple-400/10 border border-purple-400/30",
+
+    "bg-pink-400/10 border border-pink-400/30",
   ];
   let colorIndex = 0;
   props.events.forEach((event) => {

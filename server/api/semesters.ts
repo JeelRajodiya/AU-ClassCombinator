@@ -58,7 +58,7 @@ async function getUniqueSemesters() {
 
 export default defineEventHandler(async (event) => {
   return handleApiError(
-    async () => await getUniqueSemesters(),
+    () => getUniqueSemesters(),
     "Error fetching unique semesters:"
   );
 });

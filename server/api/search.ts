@@ -83,8 +83,8 @@ export default defineEventHandler(async (event) => {
   }
 
   return handleApiError(
-    async () =>
-      await searchCourses({
+    () =>
+      searchCourses({
         searchQuery: searchTerm,
         year,
         semester,

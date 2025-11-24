@@ -172,11 +172,9 @@ class Combinator implements ICombinator {
     mask1: Uint8Array,
     mask2: Uint8Array
   ): boolean {
-    const maxLength = Math.max(mask1.length, mask2.length);
-    for (let i = 0; i < maxLength; i++) {
-      const val1 = mask1[i] ?? 0;
-      const val2 = mask2[i] ?? 0;
-      if ((val1 & val2) !== 0) {
+    const minLength = Math.min(mask1.length, mask2.length);
+    for (let i = 0; i < minLength; i++) {
+      if ((mask1[i] & mask2[i]) !== 0) {
         return true;
       }
     }

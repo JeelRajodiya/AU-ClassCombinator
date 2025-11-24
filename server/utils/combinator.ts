@@ -164,6 +164,8 @@ class Combinator implements ICombinator {
 
   /**
    * Helper method to check if two bit mask buffers have any overlapping bits.
+   * Uses minLength to ensure we only check indices that exist in both arrays,
+   * avoiding undefined access issues that existed in the original implementation.
    * @param mask1 - First bit mask buffer
    * @param mask2 - Second bit mask buffer
    * @returns true if there's an overlap, false otherwise

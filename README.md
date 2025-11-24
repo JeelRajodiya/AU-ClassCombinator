@@ -4,4 +4,4 @@ I originally built this project for my freshman CSE100 course. Due to its utilit
 
 Live demo is available at https://classcombinator.vercel.app
 
-The project is still maintained only because people found it useful. If you like the project, please give it a star on GitHub and share it with your friends!
+The project is still actively maintained because so many people continue to find it useful. If you like the project, please give it a star on GitHub and share it with your friends!

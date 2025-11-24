@@ -2,6 +2,10 @@ import { defineEventHandler, readBody, createError } from "h3";
 import dbConnect from "../db";
 import Course from "../models/Course";
 import type { ICourseDTO } from "../../types/course";
+import {
+  handleApiError,
+  COURSE_PROJECTION_WITHOUT_BITMASK,
+} from "../utils/apiHelpers";
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
@@ -13,21 +17,13 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  try {
+  return handleApiError(async () => {
     await dbConnect();
-    const courses = (await Course.find({
+    return (await Course.find({
       _id: { $in: body },
     })
-      .select("-sections.fiveMinuteBitMask -sections.dateRange.oneDayBitMask")
+      .select(COURSE_PROJECTION_WITHOUT_BITMASK)
       .lean()
       .exec()) as unknown as ICourseDTO[];
-
-    return courses;
-  } catch (error) {
-    console.error("Error fetching courses:", error);
-    throw createError({
-      statusCode: 500,
-      statusMessage: "Internal Server Error",
-    });
-  }
+  }, "Error fetching courses:");
 });

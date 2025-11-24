@@ -1,5 +1,7 @@
 import { defineEventHandler, readBody, createError } from "h3";
 import Combinator from "../utils/combinator";
+import { handleApiError } from "../utils/apiHelpers";
+
 export default defineEventHandler(async (event) => {
   // the user will send list of course ids, I'll generate combinations for them
   // post method
@@ -14,15 +16,8 @@ export default defineEventHandler(async (event) => {
 
   const courseIds: string[] = body.ids;
 
-  try {
+  return handleApiError(async () => {
     const c = new Combinator();
-    const result = await c.generate(courseIds);
-    return result;
-  } catch (error) {
-    console.error("Error generating combinations:", error);
-    throw createError({
-      statusCode: 500,
-      statusMessage: "Internal Server Error",
-    });
-  }
+    return await c.generate(courseIds);
+  }, "Error generating combinations:");
 });

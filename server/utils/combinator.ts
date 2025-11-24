@@ -162,6 +162,26 @@ class Combinator implements ICombinator {
     }
   }
 
+  /**
+   * Helper method to check if two bit mask buffers have any overlapping bits.
+   * @param mask1 - First bit mask buffer
+   * @param mask2 - Second bit mask buffer
+   * @returns true if there's an overlap, false otherwise
+   */
+  private hasBitMaskOverlap(
+    mask1: Uint8Array,
+    mask2: Uint8Array
+  ): boolean {
+    for (let i = 0; i < mask1.length; i++) {
+      const val1 = mask1[i];
+      const val2 = mask2[i];
+      if (val1 !== undefined && val2 !== undefined && (val1 & val2) !== 0) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   areSectionsCompatible(sectionA: ISection, sectionB: ISection): boolean {
     // Using bit masks to represent the timings of the classes, this makes checking for conflicts very easy and fast.
     // Two masks are used:
@@ -175,31 +195,14 @@ class Combinator implements ICombinator {
     const dayMask2 = sectionB.dateRange.oneDayBitMask.buffer;
 
     // Check for time conflict
-    let timeConflict = false;
-
-    for (let i = 0; i < slotMask1.length; i++) {
-      const val1 = slotMask1[i];
-      const val2 = slotMask2[i];
-      if (val1 !== undefined && val2 !== undefined && (val1 & val2) !== 0) {
-        timeConflict = true;
-        break;
-      }
-    }
+    const timeConflict = this.hasBitMaskOverlap(slotMask1, slotMask2);
 
     if (!timeConflict) {
       return true; // No time conflict, so they are compatible
     }
 
     // If there is a time conflict, check for day conflict
-    let dayConflict = false;
-    for (let i = 0; i < dayMask1.length; i++) {
-      const val1 = dayMask1[i];
-      const val2 = dayMask2[i];
-      if (val1 !== undefined && val2 !== undefined && (val1 & val2) !== 0) {
-        dayConflict = true;
-        break;
-      }
-    }
+    const dayConflict = this.hasBitMaskOverlap(dayMask1, dayMask2);
 
     // If there's a time conflict, they are compatible only if there is NO day conflict.
     // So, we return the opposite of dayConflict.

@@ -1,30 +1,10 @@
 <script setup lang="ts">
 import type { PropType } from "vue";
 import type CourseManager from "~~/utils/courseManager";
+import { useCourseSelectionStore } from "~/stores/courseSelection";
+import { useSemesterStore } from "~/stores/semester";
 
 const props = defineProps({
-  totalCredits: {
-    type: Number,
-    required: true,
-  },
-  selectedCoursesCount: {
-    type: Number,
-    required: true,
-  },
-  totalCombinations: {
-    type: Number,
-    required: true,
-  },
-  resetSelections: {
-    type: Function,
-    required: true,
-  },
-
-  combinationsLoading: {
-    type: Boolean,
-    required: false,
-    default: false,
-  },
   page: {
     type: String as PropType<"search" | "combinations">,
     required: false,
@@ -40,6 +20,10 @@ if (props.page === "combinations" && !props.courseManager) {
   throw new Error("courseManager prop is required when page is 'combinations'");
 }
 
+// Use Pinia stores
+const courseStore = useCourseSelectionStore();
+const semesterStore = useSemesterStore();
+
 const router = useRouter();
 // back to search
 const backToSearch = () => {
@@ -47,20 +31,9 @@ const backToSearch = () => {
   router.back();
 };
 
-const { removeCourse: removeSelectedCourse } = useSelectedCourses();
-const {
-  selectedSections,
-  initializeCourse,
-  setSelectedSections,
-  getSelectedSections,
-  clearCourse,
-} = useSelectedSections();
-const { filterCombinationsBySections } = useCombinations();
-
 const removeCourse = (courseId: string) => {
-  removeSelectedCourse(courseId);
-  clearCourse(courseId);
-  filterCombinationsBySections(selectedSections.value);
+  courseStore.removeCourse(courseId);
+  courseStore.filterCombinationsBySections();
 };
 
 // Initialize selected sections for each course
@@ -75,10 +48,10 @@ const sectionSelections = computed(() => {
     );
 
     // Initialize if not already done
-    initializeCourse(course._id, allSectionIds);
+    courseStore.initializeCourseSection(course._id, allSectionIds);
 
     // Get current selection
-    selections[course._id] = getSelectedSections(course._id);
+    selections[course._id] = courseStore.getSelectedSections(course._id);
   });
 
   return selections;
@@ -103,8 +76,8 @@ const handleSectionChange = (
   selectedValues: { label: string; value: string }[]
 ) => {
   const values = selectedValues.map((item) => item.value);
-  setSelectedSections(courseId, values);
-  filterCombinationsBySections(selectedSections.value);
+  courseStore.setSelectedSections(courseId, values);
+  courseStore.filterCombinationsBySections();
 };
 
 // Get selected section objects for USelectMenu
@@ -124,18 +97,18 @@ const getSelectedSectionObjects = (courseId: string) => {
       <StatItem
         icon="i-lucide-coins"
         label="Total Credits:"
-        :value="props.totalCredits"
+        :value="courseStore.totalCredits"
       />
       <StatItem
         icon="i-lucide-book"
         label="Selected Courses:"
-        :value="props.selectedCoursesCount"
+        :value="courseStore.selectedCoursesCount"
       />
       <StatItem
         icon="i-lucide-combine"
         label="Total Combinations:"
-        :value="props.totalCombinations"
-        :isLoading="props.combinationsLoading"
+        :value="courseStore.totalCombinations"
+        :isLoading="courseStore.combinationsLoading"
         :zeroIndicator="true"
       />
     </div>
@@ -144,7 +117,10 @@ const getSelectedSectionObjects = (courseId: string) => {
       label="Back to Search"
       color="secondary"
       icon="i-lucide-arrow-left"
-      :disabled="selectedCoursesCount == 0 || totalCombinations == 0"
+      :disabled="
+        courseStore.selectedCoursesCount == 0 ||
+        courseStore.totalCombinations == 0
+      "
       @click="backToSearch()"
       v-if="props.page == 'combinations'"
     />
@@ -161,7 +137,7 @@ const getSelectedSectionObjects = (courseId: string) => {
           icon="i-lucide-refresh-ccw"
           variant="solid"
           size="xs"
-          :disabled="props.selectedCoursesCount === 0"
+          :disabled="courseStore.selectedCoursesCount === 0"
         />
         <template #content="{ close }">
           <div class="p-4 max-w-xs shadow-lg border border-accented rounded-md">
@@ -180,7 +156,7 @@ const getSelectedSectionObjects = (courseId: string) => {
                 variant="solid"
                 size="sm"
                 @click="
-                  props.resetSelections();
+                  courseStore.clearCourses();
                   close();
                 "
               />
@@ -190,9 +166,9 @@ const getSelectedSectionObjects = (courseId: string) => {
       </UPopover>
       <UTooltip
         :text="
-          props.selectedCoursesCount == 0
+          courseStore.selectedCoursesCount == 0
             ? 'Select courses to view combinations'
-            : props.totalCombinations == 0
+            : courseStore.totalCombinations == 0
             ? 'No valid combinations available for the selected courses'
             : 'View possible course combinations'
         "
@@ -200,7 +176,10 @@ const getSelectedSectionObjects = (courseId: string) => {
         <UButton
           label="View Schedules"
           trailing-icon="i-lucide-arrow-right"
-          :disabled="selectedCoursesCount == 0 || totalCombinations == 0"
+          :disabled="
+            courseStore.selectedCoursesCount == 0 ||
+            courseStore.totalCombinations == 0
+          "
           to="/combinations"
         />
       </UTooltip>

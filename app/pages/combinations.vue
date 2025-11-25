@@ -5,11 +5,11 @@ useHead({
 });
 import type { ICourseDTO } from "~~/types/course";
 import CourseManager from "../../utils/courseManager";
-import type { TimetableEvent } from "~~/types/combinator";
+import type { TimetableEvent, AssignmentType } from "~~/types/combinator";
+import { useCourseSelectionStore } from "~/stores/courseSelection";
 
-const { combinations } = useCombinations();
-const { selectedCourseIds, clearCourses } = useSelectedCourses();
-const { initializeCourse, getSelectedSections } = useSelectedSections();
+// Use Pinia store
+const courseStore = useCourseSelectionStore();
 
 // the combinations will look like this
 // [ {course_id: course_id.section_no, course2_id: course2_id.section_no, course3_id: course3_id.section_no},
@@ -25,7 +25,7 @@ const { initializeCourse, getSelectedSections } = useSelectedSections();
 
 const { data: courses } = await useFetch<ICourseDTO[]>("/api/courses", {
   method: "POST",
-  body: selectedCourseIds.value,
+  body: courseStore.selectedCourseIds,
 });
 
 const courseManager = computed(() => {
@@ -39,14 +39,14 @@ onMounted(() => {
       const allSectionIds = course.sections.map(
         (section) => `${course._id}.${section.sectionId}`
       );
-      initializeCourse(course._id, allSectionIds);
+      courseStore.initializeCourseSection(course._id, allSectionIds);
     });
   }
 });
 
 const timeTables = computed(() => {
   const events: TimetableEvent[][] = [];
-  combinations.value.forEach((combination) => {
+  courseStore.combinations.forEach((combination: AssignmentType) => {
     // combination is an assignment type, which is an object
     const combinationTable: TimetableEvent[] = [];
     Object.entries(combination).forEach(([courseId, sectionId]) => {
@@ -71,25 +71,12 @@ const timeTables = computed(() => {
   });
   return events;
 });
-
-const totalCombinations = computed(() => combinations.value.length);
-const totalCredits = computed(() => {
-  return (courses.value || []).reduce((sum, course) => sum + course.credits, 0);
-});
 </script>
 <template>
-  <SearchLayout
-    :selected-courses-count="selectedCourseIds.length"
-    :total-credits="totalCredits"
-    :total-combinations="totalCombinations"
-    :combinations-loading="false"
-    :reset-selections="clearCourses"
-    :course-manager="courseManager"
-    page="combinations"
-  >
+  <SearchLayout :course-manager="courseManager" page="combinations">
     <div class="flex flex-col p-5 gap-6">
       <div class="font-bold text-3xl text-center">
-        Possible Schedules ({{ totalCombinations }})
+        Possible Schedules ({{ courseStore.totalCombinations }})
       </div>
       <div class="flex flex-col gap-6 items-start">
         <div

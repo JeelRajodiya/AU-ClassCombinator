@@ -1,5 +1,8 @@
 <script setup lang="ts">
-const { selectedSem, setSelectedSem } = useSelectedSemester();
+import { useSemesterStore } from "~/stores/semester";
+
+// Use Pinia store
+const semesterStore = useSemesterStore();
 
 const {
   data: semesterList,
@@ -15,7 +18,7 @@ if (
   semesterList.value.length > 0 &&
   semesterList.value[0]
 ) {
-  setSelectedSem(semesterList.value[0]);
+  semesterStore.setSelectedSemester(semesterList.value[0]);
 }
 </script>
 
@@ -24,7 +27,7 @@ if (
   <USelect
     v-if="semesterList && semesterList.length > 0"
     :loading="pending"
-    v-model="selectedSem"
+    v-model="semesterStore.selectedSemester"
     :items="semesterList"
     arrow
     icon="i-lucide-book"

@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import SemesterSwitch from "~/components/SemesterSwitch.vue";
+import { useSemesterStore } from "~/stores/semester";
 
 const { getSession } = useAuth();
 const session = await getSession();
 console.log("Session in Index Page:", session);
-const { selectedSem } = useSelectedSemester();
+
+// Use Pinia store for semester (for consistency, even if not directly used here)
+const semesterStore = useSemesterStore();
 
 const searchTerm = ref("");
 const performSearch = () => {

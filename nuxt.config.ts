@@ -24,7 +24,7 @@ if (missingEnvVars.length > 0) {
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ["@nuxt/ui", "@sidebase/nuxt-auth", "nuxt-gtag"],
+  modules: ["@nuxt/ui", "@sidebase/nuxt-auth", "nuxt-gtag", "@pinia/nuxt"],
   css: ["~/assets/css/main.css"],
   gtag: {
     enabled: true,

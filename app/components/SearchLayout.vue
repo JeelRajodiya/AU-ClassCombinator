@@ -2,27 +2,6 @@
 import CourseManager from "~~/utils/courseManager";
 
 const props = defineProps({
-  selectedCoursesCount: {
-    type: Number,
-    required: true,
-  },
-  totalCredits: {
-    type: Number,
-    required: true,
-  },
-  totalCombinations: {
-    type: Number,
-    required: true,
-  },
-  combinationsLoading: {
-    type: Boolean,
-    required: false,
-    default: false,
-  },
-  resetSelections: {
-    type: Function,
-    required: true,
-  },
   page: {
     type: String as PropType<"search" | "combinations">,
     required: false,
@@ -52,11 +31,6 @@ if (props.page === "combinations" && !props.courseManager) {
       </div>
       <SearchStats
         class="flex-2 sticky top-0 py-8"
-        :selected-courses-count="props.selectedCoursesCount"
-        :total-credits="props.totalCredits"
-        :total-combinations="props.totalCombinations"
-        :combinations-loading="props.combinationsLoading"
-        :reset-selections="props.resetSelections"
         :page="props.page"
         :course-manager="props.courseManager"
       />

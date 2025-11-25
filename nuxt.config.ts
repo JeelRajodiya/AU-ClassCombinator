@@ -1,4 +1,26 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+// Build-time validation for required environment variables
+// Throws an error at config evaluation (build) if the required env var is missing.
+// This ensures the build fails early when the Google Analytics measurement ID is not set.
+const REQUIRED_ENV_VARS = [
+  "NUXT_PUBLIC_GTAG_ID",
+  "NUXT_AUTH_SECRET",
+  "GOOGLE_CLIENT_ID",
+  "GOOGLE_CLIENT_SECRET",
+  "MONGO_URI",
+  "AUTH_ORIGIN",
+];
+const missingEnvVars = REQUIRED_ENV_VARS.filter((v) => !process.env[v]);
+if (missingEnvVars.length > 0) {
+  throw new Error(
+    `Missing required environment variables for build: ${missingEnvVars.join(
+      ", "
+    )}. Please set them (e.g., in your .env file or your build environment).
+    If you want to allow missing GA in development, set NUXT_PUBLIC_GTAG_ID to a dummy value or configure the check to run only in production.`
+  );
+}
+
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },

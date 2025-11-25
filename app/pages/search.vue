@@ -2,54 +2,29 @@
 useHead({
   titleTemplate: (title) => (title ? `${title} - Search` : "Search"),
 });
-import type { ICourseDTO } from "~~/types/course";
+import { storeToRefs } from "pinia";
 import { useCourseSelectionStore } from "~/stores/courseSelection";
-import { useSemesterStore } from "~/stores/semester";
-
-const route = useRoute();
-const router = useRouter();
-const searchTerm = ref((route.query.q as string) || "");
-const searchResults = ref<ICourseDTO[]>([]);
-const loading = ref(false);
+import { useSearch } from "~/composables/useSearch";
+import { useCourseDetails } from "~/composables/useCourseDetails";
 
 // Use Pinia stores
 const courseStore = useCourseSelectionStore();
-const semesterStore = useSemesterStore();
+const { selectedCourseIds } = storeToRefs(courseStore);
 
-// Set loading to true if there's an initial search term
-if (searchTerm.value.trim()) {
-  loading.value = true;
-}
+// Composables
+const {
+  searchTerm,
+  searchResults,
+  loading: searchLoading,
+  performSearch,
+} = useSearch();
+const {
+  details: selectedDetails,
+  loading: detailsLoading,
+  fetchDetails,
+} = useCourseDetails(selectedCourseIds);
 
 const activeTab = ref<"search" | "selected">("search");
-
-const performSearch = async () => {
-  if (!searchTerm.value.trim() || !semesterStore.selectedSemester) return;
-
-  loading.value = true;
-  searchResults.value = [];
-
-  try {
-    const results = await $fetch<ICourseDTO[]>("/api/search", {
-      query: {
-        q: searchTerm.value,
-        semester: semesterStore.selectedSemester,
-        page: 1,
-      },
-    });
-    searchResults.value = results;
-    // Update URL query parameters
-    activeTab.value = "search";
-    router.push({
-      query: { q: searchTerm.value },
-    });
-  } catch (error) {
-    console.error("Search error:", error);
-    searchResults.value = [];
-  } finally {
-    loading.value = false;
-  }
-};
 
 onMounted(() => {
   if (searchTerm.value.trim()) {
@@ -57,14 +32,14 @@ onMounted(() => {
   }
   // Fetch details if we have selected courses (restoring state)
   if (courseStore.selectedCourseIds.length > 0) {
-    courseStore.fetchSelectedDetails();
+    fetchDetails();
   }
 });
 
 // Watch activeTab to fetch details when switching to "selected"
 watch(activeTab, (newTab) => {
   if (newTab === "selected") {
-    courseStore.fetchSelectedDetails();
+    fetchDetails();
   }
 });
 
@@ -92,13 +67,13 @@ watch(
       <CourseCard
         v-for="course in searchResults"
         :course="course"
-        v-if="!loading && searchResults.length > 0"
+        v-if="!searchLoading && searchResults.length > 0"
         @select="courseStore.toggleCourseWithDetails(course)"
         class="cursor-pointer"
         :isSelected="courseStore.isSelected(course._id)"
       />
       <div
-        v-else-if="loading"
+        v-else-if="searchLoading"
         class="flex flex-col items-center justify-center h-96 w-full text-muted gap-4 p-2"
       >
         <UIcon name="i-lucide-loader" size="48" class="animate-spin" />
@@ -113,12 +88,12 @@ watch(
       </div>
     </div>
     <div class="p-2 flex flex-col gap-4" v-else-if="activeTab === 'selected'">
-      <div v-if="courseStore.detailsLoading" class="flex justify-center p-8">
+      <div v-if="detailsLoading" class="flex justify-center p-8">
         <UIcon name="i-lucide-loader" size="32" class="animate-spin" />
       </div>
       <CourseCard
-        v-else-if="courseStore.selectedCourseDetails.length > 0"
-        v-for="course in courseStore.selectedCourseDetails"
+        v-else-if="selectedDetails.length > 0"
+        v-for="course in selectedDetails"
         :key="course.code"
         :course="course"
         @select="courseStore.toggleCourse(course._id)"

@@ -1,7 +1,27 @@
 <script lang="ts" setup>
-// definePageMeta({
-//   auth: { unauthenticatedOnly: true, navigateAuthenticatedTo: "/" },
-// });
+definePageMeta({
+  auth: { unauthenticatedOnly: true, navigateAuthenticatedTo: "/" },
+});
+
+const route = useRoute();
+const router = useRouter();
+
+onMounted(() => {
+  // Clean up the URL if the callbackUrl is just the homepage
+  if (route.query.callbackUrl) {
+    const callbackUrl = route.query.callbackUrl as string;
+    // Check for various forms of the homepage URL
+    if (
+      callbackUrl === "/" ||
+      callbackUrl === window.location.origin ||
+      callbackUrl === window.location.origin + "/"
+    ) {
+      const query = { ...route.query };
+      delete query.callbackUrl;
+      router.replace({ query });
+    }
+  }
+});
 </script>
 
 <template>

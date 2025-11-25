@@ -29,6 +29,9 @@ if (!googleClientSecret) {
 
 export default NuxtAuthHandler({
   secret: authSecret,
+  pages: {
+    signIn: "/login",
+  },
   providers: [
     // @ts-expect-error Use .default here for it to work during SSR.
     GoogleProvider.default({
@@ -54,6 +57,7 @@ export default NuxtAuthHandler({
     // },
     /* on session retrival */
     async session({ session, token }) {
+      console.time("Session callback duration");
       dbConnect().then(() => {
         // Fire-and-forget database update
         User.updateOne(
@@ -63,6 +67,7 @@ export default NuxtAuthHandler({
           console.error("Failed to increment sessionCalls", err)
         );
       });
+      console.timeEnd("Session callback duration");
 
       return session;
     },
@@ -70,6 +75,7 @@ export default NuxtAuthHandler({
     async jwt({ token, user, account, profile, isNewUser }) {
       if (user) {
         try {
+          console.time("JWT callback duration");
           await dbConnect();
 
           // Upsert user into database lazily after sign-in

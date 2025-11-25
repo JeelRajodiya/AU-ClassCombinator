@@ -72,8 +72,7 @@ export default defineNuxtConfig({
     provider: {
       type: "authjs",
       trustHost: false,
-      defaultProvider: "google",
     },
-    globalAppMiddleware: false,
+    globalAppMiddleware: true,
   },
 });

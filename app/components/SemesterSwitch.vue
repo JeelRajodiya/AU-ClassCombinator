@@ -1,5 +1,6 @@
 <script setup lang="ts">
-const { selectedSem, setSelectedSem } = useSelectedSemester();
+// Use centralized store
+const { selectedSemester, setSelectedSemester } = useCourseStore();
 
 const {
   data: semesterList,
@@ -15,7 +16,7 @@ if (
   semesterList.value.length > 0 &&
   semesterList.value[0]
 ) {
-  setSelectedSem(semesterList.value[0]);
+  setSelectedSemester(semesterList.value[0]);
 }
 </script>
 
@@ -24,7 +25,7 @@ if (
   <USelect
     v-if="semesterList && semesterList.length > 0"
     :loading="pending"
-    v-model="selectedSem"
+    v-model="selectedSemester"
     :items="semesterList"
     arrow
     icon="i-lucide-book"

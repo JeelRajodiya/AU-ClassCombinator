@@ -7,7 +7,6 @@ import type { ICourseDTO } from "~~/types/course";
 const route = useRoute();
 const router = useRouter();
 const searchTerm = ref((route.query.q as string) || "");
-const { selectedSem, setSelectedSem } = useSelectedSemester();
 const searchResults = ref<ICourseDTO[]>([]);
 const loading = ref(false);
 
@@ -18,8 +17,24 @@ if (searchTerm.value.trim()) {
 
 const activeTab = ref<"search" | "selected">("search");
 
+// Use centralized store
+const store = useCourseStore();
+const {
+  selectedSemester,
+  selectedCourseIds,
+  selectedCourseDetails,
+  detailsLoading,
+  combinationsLoading,
+  totalCombinations,
+  isSelected,
+  toggleCourse,
+  clearCourses,
+  fetchCourseDetails,
+  fetchCombinations,
+} = store;
+
 const performSearch = async () => {
-  if (!searchTerm.value.trim() || !selectedSem.value) return;
+  if (!searchTerm.value.trim() || !selectedSemester.value) return;
 
   loading.value = true;
   searchResults.value = [];
@@ -28,7 +43,7 @@ const performSearch = async () => {
     const results = await $fetch<ICourseDTO[]>("/api/search", {
       query: {
         q: searchTerm.value,
-        semester: selectedSem.value,
+        semester: selectedSemester.value,
         page: 1,
       },
     });
@@ -52,111 +67,37 @@ onMounted(() => {
   }
   // Fetch details if we have selected courses (restoring state)
   if (selectedCourseIds.value.length > 0) {
-    fetchSelectedDetails();
+    fetchCourseDetails();
   }
 });
 
-// Global selected courses state
-const { selectedCourseIds, toggleCourse, isSelected, clearCourses } =
-  useSelectedCourses();
-
-// Local details for selected courses (fetched only when needed)
-const selectedCourseDetails = ref<ICourseDTO[]>([]);
-const detailsLoading = ref(false);
-
-const fetchSelectedDetails = async () => {
-  if (selectedCourseIds.value.length === 0) {
-    selectedCourseDetails.value = [];
-    return;
-  }
-  detailsLoading.value = true;
-  try {
-    const courses = await $fetch<ICourseDTO[]>("/api/courses", {
-      method: "POST",
-      body: selectedCourseIds.value,
-    });
-    selectedCourseDetails.value = courses;
-  } catch (error) {
-    console.error("Error fetching selected course details:", error);
-  } finally {
-    detailsLoading.value = false;
-  }
-};
-
-// Wrapper to handle toggling and updating local details immediately
+// Wrapper to handle toggling
 const handleToggleCourse = (course: ICourseDTO) => {
-  if (isSelected(course._id)) {
-    // Removing
-    toggleCourse(course._id);
-    // Remove from details if present
-    selectedCourseDetails.value = selectedCourseDetails.value.filter(
-      (c) => c._id !== course._id
-    );
-  } else {
-    // Adding
-    toggleCourse(course._id);
-    // Add to details if not already present
-    if (!selectedCourseDetails.value.some((c) => c._id === course._id)) {
-      selectedCourseDetails.value.push(course);
-    }
-  }
+  toggleCourse(course);
 };
 
 // Watch activeTab to fetch details when switching to "selected"
 watch(activeTab, (newTab) => {
   if (newTab === "selected") {
-    fetchSelectedDetails();
+    fetchCourseDetails();
   }
 });
-
-const combinationsLoading = ref(false);
-const { combinations, setCombinations } = useCombinations();
-const totalCombinations = computed(() => combinations.value.length);
 
 // Watch selectedCourseIds to fetch combinations
 watch(
   selectedCourseIds,
   async () => {
     if (selectedCourseIds.value.length === 0) {
-      setCombinations([]);
-      // Only clear details if NOT in selected tab to maintain view
-      if (activeTab.value !== "selected") {
-        selectedCourseDetails.value = [];
-      }
       return;
     }
-
-    // We do NOT re-fetch details here if activeTab is 'selected'.
-    // This ensures that deselected courses remain visible until the user leaves the tab.
-    // When switching back to 'selected' tab, the watch(activeTab) will trigger a fresh fetch.
-
-    combinationsLoading.value = true;
-    const ids = selectedCourseIds.value;
-
-    // now send post request to /api/combinations with the ids
-    const response = await $fetch<any[]>("/api/combinations", {
-      method: "POST",
-      body: { ids },
-    });
-    // log("Combinations response:", response);
-    setCombinations(response);
-    combinationsLoading.value = false;
+    await fetchCombinations();
   },
   { deep: true }
 );
 </script>
 
 <template>
-  <SearchLayout
-    :selected-courses-count="selectedCourseIds.length"
-    :total-credits="
-      selectedCourseDetails.reduce((sum, course) => sum + course.credits, 0)
-    "
-    :total-combinations="totalCombinations"
-    :combinations-loading="combinationsLoading"
-    :reset-selections="clearCourses"
-    page="search"
-  >
+  <SearchLayout page="search">
     <div class="flex flex-col w-full top-0 pt-8 sticky z-10 bg-default">
       <SearchField
         v-model="searchTerm"
@@ -198,7 +139,7 @@ watch(
         v-for="course in selectedCourseDetails"
         :key="course.code"
         :course="course"
-        @select="toggleCourse(course._id)"
+        @select="toggleCourse(course)"
         class="cursor-pointer"
         :isSelected="isSelected(course._id)"
       />

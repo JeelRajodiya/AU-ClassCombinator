@@ -3,39 +3,32 @@ useHead({
   titleTemplate: (title) =>
     title ? `${title} - Combinations` : "Combinations",
 });
-import type { ICourseDTO } from "~~/types/course";
-import CourseManager from "../../utils/courseManager";
 import type { TimetableEvent } from "~~/types/combinator";
 
-const { combinations } = useCombinations();
-const { selectedCourseIds, clearCourses } = useSelectedCourses();
-const { initializeCourse, getSelectedSections } = useSelectedSections();
+// Use centralized store
+const store = useCourseStore();
+const {
+  combinations,
+  selectedCourseIds,
+  selectedCourseDetails,
+  courseManager,
+  clearCourses,
+  initializeCourse,
+  fetchCourseDetails,
+} = store;
 
-// the combinations will look like this
-// [ {course_id: course_id.section_no, course2_id: course2_id.section_no, course3_id: course3_id.section_no},
-//   {course_id: course_id.section_no, course2_id: course2_id.section_no, course3_id: course3_id.section_no},
-//   ...
-// ]
+// Fetch course details if not already loaded
+onMounted(async () => {
+  if (
+    selectedCourseDetails.value.length === 0 &&
+    selectedCourseIds.value.length > 0
+  ) {
+    await fetchCourseDetails();
+  }
 
-// now the courses will look like
-// [
-// { _id: course_id, code: course_code, name: course_name, sections: [{section_no: section_no, time_slots: [{day: day, start_time: start_time, end_time: end_time}]}] }
-// ...
-// ]
-
-const { data: courses } = await useFetch<ICourseDTO[]>("/api/courses", {
-  method: "POST",
-  body: selectedCourseIds.value,
-});
-
-const courseManager = computed(() => {
-  return new CourseManager(courses.value || []);
-});
-
-// Initialize section selections for all courses
-onMounted(() => {
-  if (courses.value) {
-    courses.value.forEach((course) => {
+  // Initialize section selections for all courses
+  if (selectedCourseDetails.value.length > 0) {
+    selectedCourseDetails.value.forEach((course) => {
       const allSectionIds = course.sections.map(
         (section) => `${course._id}.${section.sectionId}`
       );
@@ -47,7 +40,6 @@ onMounted(() => {
 const timeTables = computed(() => {
   const events: TimetableEvent[][] = [];
   combinations.value.forEach((combination) => {
-    // combination is an assignment type, which is an object
     const combinationTable: TimetableEvent[] = [];
     Object.entries(combination).forEach(([courseId, sectionId]) => {
       const course = courseManager.value.getCourseById(courseId);
@@ -74,19 +66,15 @@ const timeTables = computed(() => {
 
 const totalCombinations = computed(() => combinations.value.length);
 const totalCredits = computed(() => {
-  return (courses.value || []).reduce((sum, course) => sum + course.credits, 0);
+  return selectedCourseDetails.value.reduce(
+    (sum, course) => sum + course.credits,
+    0
+  );
 });
 </script>
+
 <template>
-  <SearchLayout
-    :selected-courses-count="selectedCourseIds.length"
-    :total-credits="totalCredits"
-    :total-combinations="totalCombinations"
-    :combinations-loading="false"
-    :reset-selections="clearCourses"
-    :course-manager="courseManager"
-    page="combinations"
-  >
+  <SearchLayout page="combinations">
     <div class="flex flex-col p-5 gap-6">
       <div class="font-bold text-3xl text-center">
         Possible Schedules ({{ totalCombinations }})

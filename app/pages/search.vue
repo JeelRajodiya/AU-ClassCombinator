@@ -95,6 +95,22 @@ watch(
   },
   { deep: true }
 );
+
+const toast = useToast();
+
+function handleCourseSelection(course: ICourseDTO) {
+  if (course.sections.length == 0) {
+    toast.add({
+      title: `Cannot select ${course.code}: No sections`,
+      description: `Auris did not provide section data for ${course.code} in ${selectedSemester.value}. This course cannot be added to your selection. If you believe sections are available, please note that updates may take some time to reflect.`,
+      icon: "streamline-plump-color:sad-face",
+      duration: 10000,
+    });
+    return;
+  }
+
+  toggleCourseById(course._id, course);
+}
 </script>
 
 <template>
@@ -112,7 +128,7 @@ watch(
         v-for="course in searchResults"
         :course="course"
         v-if="!loading && searchResults.length > 0"
-        @select="handleToggleCourse(course)"
+        @select="handleCourseSelection(course)"
         class="cursor-pointer"
         :isSelected="isSelected(course._id)"
       />
@@ -140,7 +156,7 @@ watch(
         v-for="course in selectedCourseDetails"
         :key="course.code"
         :course="course"
-        @select="toggleCourseById(course._id, course)"
+        @select="handleCourseSelection(course)"
         class="cursor-pointer"
         :isSelected="isSelected(course._id)"
       />

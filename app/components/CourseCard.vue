@@ -7,6 +7,28 @@ const props = defineProps<{
 const emit = defineEmits<{
   select: [course: ICourseDTO];
 }>();
+
+const details = computed(() => {
+  const items = [
+    {
+      label: "Faculties:",
+      value: props.course.faculties.join(", ")
+        ? props.course.faculties.join(", ")
+        : "N/A",
+    },
+  ];
+  if (props.course.gerCategory) {
+    items.push({ label: "GER Category:", value: props.course.gerCategory });
+  }
+  if (props.course.prerequisite) {
+    items.push({ label: "Prerequisite:", value: props.course.prerequisite });
+  }
+  if (props.course.antirequisite) {
+    items.push({ label: "Antirequisite:", value: props.course.antirequisite });
+  }
+  return items;
+});
+const isDisabled = props.course.sections.length === 0;
 </script>
 
 <template>
@@ -18,35 +40,32 @@ const emit = defineEmits<{
   >
     <template #header>
       <div class="flex flex-row justify-between">
-        <span class="font-bold text-lg">
+        <span class="font-bold text-lg" :class="isDisabled ? 'text-muted' : ''">
           {{ props.course.code }}: {{ props.course.name }}
         </span>
         <span class="flex flex-row items-center gap-4">
           <span class="font-bold text-muted"
             >{{ props.course.credits }} Credits</span
           >
+
           <Icon
             :name="isSelected ? 'i-lucide-check' : 'i-lucide-circle'"
             :size="24"
             :class="isSelected ? 'text-primary' : 'text-muted'"
+            v-if="!isDisabled"
           />
         </span>
       </div>
     </template>
     <div class="flex flex-col gap-4">
       <div>
-        <CourseCardItem label="Faculties:">
-          {{ course.faculties.join(", ") }}
-        </CourseCardItem>
-        <CourseCardItem v-if="course.gerCategory" label="GER Category:">
-          {{ course.gerCategory }}
-        </CourseCardItem>
-
-        <CourseCardItem v-if="course.prerequisite" label="Prerequisite:">
-          {{ course.prerequisite }}
-        </CourseCardItem>
-        <CourseCardItem v-if="course.antirequisite" label="Antirequisite:">
-          {{ course.antirequisite }}
+        <CourseCardItem
+          v-for="item in details"
+          :key="item.label"
+          :label="item.label"
+          :class="isDisabled ? 'text-muted' : ''"
+        >
+          {{ item.value }}
         </CourseCardItem>
       </div>
       <div class="flex gap-4 flex-col">
@@ -62,8 +81,14 @@ const emit = defineEmits<{
           />
 
           <template #content>
-            <div class="rounded-lg text-muted p-4">
+            <div
+              class="rounded-lg text-muted p-4"
+              v-if="course.sections.length > 0"
+            >
               <CardScheduleTable :sections="course.sections" />
+            </div>
+            <div v-else class="rounded-lg text-muted p-4">
+              <p>No sections available. You cannot select this course.</p>
             </div>
           </template>
         </UCollapsible>

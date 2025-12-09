@@ -32,6 +32,7 @@ const {
   clearCourses,
   fetchCourseDetails,
   fetchCombinations,
+  needsDataRefresh,
 } = store;
 
 const performSearch = async () => {
@@ -62,13 +63,18 @@ const performSearch = async () => {
   }
 };
 
-onMounted(() => {
+onMounted(async () => {
   if (searchTerm.value.trim()) {
     performSearch();
   }
-  // Fetch details if we have selected courses (restoring state)
+  // Fetch details and combinations if we have selected courses (restoring state from storage)
   if (selectedCourseIds.value.length > 0) {
     fetchCourseDetails();
+    // If data was restored from storage, fetch combinations too
+    if (needsDataRefresh.value) {
+      await fetchCombinations();
+      needsDataRefresh.value = false;
+    }
   }
 });
 

@@ -15,15 +15,23 @@ const {
   clearCourses,
   initializeCourse,
   fetchCourseDetails,
+  fetchCombinations,
+  needsDataRefresh,
 } = store;
 
-// Fetch course details if not already loaded
+// Fetch course details and combinations if not already loaded
 onMounted(async () => {
   if (
     selectedCourseDetails.value.length === 0 &&
     selectedCourseIds.value.length > 0
   ) {
     await fetchCourseDetails();
+  }
+
+  // If data was restored from storage, also fetch combinations
+  if (needsDataRefresh.value && selectedCourseIds.value.length > 0) {
+    await fetchCombinations();
+    needsDataRefresh.value = false;
   }
 
   // Initialize section selections for all courses

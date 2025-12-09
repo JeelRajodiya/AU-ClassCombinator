@@ -1,7 +1,8 @@
-import { useState, computed } from "#imports";
+import { useState, computed, watch } from "#imports";
 import type { ICourseDTO } from "~~/types/course";
 import type { AssignmentType } from "~~/types/combinator";
 import CourseManager from "~~/utils/courseManager";
+import { useLocalStorage } from "./useLocalStorage";
 
 /**
  * Centralized store for all course-related state.
@@ -50,6 +51,54 @@ export const useCourseStore = () => {
     "store:combinationsLoading",
     () => false
   );
+
+  // ============== LOCAL STORAGE SYNC ==============
+
+  const localStorage = useLocalStorage();
+
+  // Flag to track if initial load from storage has been done
+  const storageInitialized = useState<boolean>(
+    "store:storageInitialized",
+    () => false
+  );
+
+  // Flag to indicate courses were restored from storage and need data fetching
+  const needsDataRefresh = useState<boolean>(
+    "store:needsDataRefresh",
+    () => false
+  );
+
+  // Initialize from local storage on first load (client-side only)
+  if (import.meta.client && !storageInitialized.value) {
+    const storedCourseIds = localStorage.getStoredCourseIds();
+    const storedSemester = localStorage.getStoredSemester();
+
+    if (storedCourseIds && storedCourseIds.length > 0) {
+      selectedCourseIds.value = storedCourseIds;
+      needsDataRefresh.value = true; // Signal that data needs to be fetched
+    }
+
+    if (storedSemester) {
+      selectedSemester.value = storedSemester;
+    }
+
+    storageInitialized.value = true;
+  }
+
+  // Watch for changes and sync to local storage
+  if (import.meta.client) {
+    watch(
+      selectedCourseIds,
+      (newIds) => {
+        localStorage.saveCourseIds(newIds);
+      },
+      { deep: true }
+    );
+
+    watch(selectedSemester, (newSemester) => {
+      localStorage.saveSemester(newSemester);
+    });
+  }
 
   // ============== COMPUTED ==============
 
@@ -252,6 +301,7 @@ export const useCourseStore = () => {
     allCombinations,
     detailsLoading,
     combinationsLoading,
+    needsDataRefresh,
 
     // Computed
     courseManager,

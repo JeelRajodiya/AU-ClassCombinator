@@ -88,7 +88,7 @@ const getSelectedSectionObjects = (courseId: string) => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-8 h-fit">
+  <div class="flex flex-col gap-8">
     <SemesterSwitch class="w-fit" v-if="props.page == 'search'" />
 
     <USeparator orientation="horizontal" class="w-48 pt-16" />
@@ -212,6 +212,5 @@ const getSelectedSectionObjects = (courseId: string) => {
 </template>
 
 <style scoped>
-/* .search-stats {
-} */
+/* Styles handled in SearchLayout.vue */
 </style>

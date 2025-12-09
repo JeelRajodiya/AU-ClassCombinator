@@ -19,7 +19,22 @@ defineProps({
           </div>
         </div>
       </div>
-      <SearchStats class="flex-2 sticky top-0 py-8" :page="page" />
+      <SearchStats
+        class="search-stats-container flex-2 sticky top-0 py-8 h-screen overflow-y-auto"
+        :page="page"
+      />
     </div>
   </div>
 </template>
+
+<style scoped>
+/* Hide scrollbar but keep functionality */
+.search-stats-container {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.search-stats-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+</style>

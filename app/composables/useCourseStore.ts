@@ -90,22 +90,52 @@ export const useCourseStore = () => {
     }
   };
 
-  const removeCourse = (id: string) => {
+  /**
+   * Removes a course from selection (IDs only).
+   * Does NOT remove from selectedCourseDetails - that happens on next fetch.
+   * This allows UI to show deselected courses until user leaves the view.
+   */
+  const removeCourseId = (id: string) => {
     const index = selectedCourseIds.value.indexOf(id);
     if (index > -1) {
       selectedCourseIds.value.splice(index, 1);
-      // Also remove from details
-      selectedCourseDetails.value = selectedCourseDetails.value.filter(
-        (c) => c._id !== id
-      );
       // Clear section selections for this course
       selectedSections.value.delete(id);
     }
   };
 
+  /**
+   * Removes a course completely - from both IDs and details.
+   * Used when removing from combinations page or explicitly clearing.
+   */
+  const removeCourse = (id: string) => {
+    removeCourseId(id);
+    // Also remove from details
+    selectedCourseDetails.value = selectedCourseDetails.value.filter(
+      (c) => c._id !== id
+    );
+  };
+
+  /**
+   * Toggle course selection from search results.
+   * When adding, adds to both IDs and details.
+   * When removing, removes from both IDs and details.
+   */
   const toggleCourse = (course: ICourseDTO) => {
     if (isSelected(course._id)) {
       removeCourse(course._id);
+    } else {
+      addCourse(course);
+    }
+  };
+
+  /**
+   * Toggle course by ID only (for Selected tab).
+   * Keeps the course visible in selectedCourseDetails until a refresh.
+   */
+  const toggleCourseById = (id: string, course: ICourseDTO) => {
+    if (isSelected(id)) {
+      removeCourseId(id); // Only remove from IDs, not details
     } else {
       addCourse(course);
     }
@@ -237,6 +267,7 @@ export const useCourseStore = () => {
     addCourse,
     removeCourse,
     toggleCourse,
+    toggleCourseById,
     clearCourses,
 
     // Section selection actions

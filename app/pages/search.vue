@@ -28,6 +28,7 @@ const {
   totalCombinations,
   isSelected,
   toggleCourse,
+  toggleCourseById,
   clearCourses,
   fetchCourseDetails,
   fetchCombinations,
@@ -139,7 +140,7 @@ watch(
         v-for="course in selectedCourseDetails"
         :key="course.code"
         :course="course"
-        @select="toggleCourse(course)"
+        @select="toggleCourseById(course._id, course)"
         class="cursor-pointer"
         :isSelected="isSelected(course._id)"
       />

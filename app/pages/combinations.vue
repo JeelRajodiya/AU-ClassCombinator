@@ -17,6 +17,7 @@ const {
   fetchCourseDetails,
   fetchCombinations,
   needsDataRefresh,
+  combinationsLoading,
 } = store;
 
 // Fetch course details and combinations if not already loaded
@@ -83,11 +84,14 @@ const totalCredits = computed(() => {
 
 <template>
   <SearchLayout page="combinations">
-    <div class="flex flex-col p-5 gap-6">
+    <div class="flex flex-col p-5 gap-6" v-if="totalCombinations !== 0">
       <div class="font-bold text-3xl text-center">
         Possible Schedules ({{ totalCombinations }})
       </div>
-      <div class="flex flex-col gap-6 items-start">
+      <div v-if="combinationsLoading" class="flex justify-center p-8">
+        <UIcon name="i-lucide-loader" size="48" class="animate-spin" />
+      </div>
+      <div class="flex flex-col gap-6 items-start" v-else>
         <div
           v-for="(timeTable, index) in timeTables"
           :key="index"
@@ -98,6 +102,20 @@ const totalCredits = computed(() => {
           </div>
           <TimeTable :events="timeTable" />
         </div>
+      </div>
+    </div>
+    <div
+      v-else
+      class="flex justify-center items-center h-128 p-8 flex-col gap-2 text-muted"
+    >
+      <Icon name="streamline-plump-color:sad-face-flat" size="64"></Icon>
+      <h1
+        class="text-4xl font-bold flex flex-row justify-center items-center gap-2"
+      >
+        No Combinations
+      </h1>
+      <div>
+        Please select different sections or courses to view combinations
       </div>
     </div>
   </SearchLayout>

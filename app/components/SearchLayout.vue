@@ -12,7 +12,7 @@ defineProps({
   <div class="page">
     <div class="flex align-top gap-8">
       <div class="flex flex-5 flex-col">
-        <div class="flex gap-4">
+        <div class="flex gap-4 h-full">
           <LogoSmall class="w-fit pl-8 pr-16 top-8 sticky" />
           <div class="w-full">
             <slot />

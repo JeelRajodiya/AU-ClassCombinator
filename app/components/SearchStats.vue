@@ -24,6 +24,7 @@ const {
   setSelectedSections,
   getSelectedSections,
   filterCombinationsBySections,
+  fetchCombinations,
 } = store;
 
 const router = useRouter();
@@ -32,8 +33,9 @@ const backToSearch = () => {
   router.back();
 };
 
-const handleRemoveCourse = (courseId: string) => {
+const handleRemoveCourse = async (courseId: string) => {
   removeCourse(courseId);
+  await fetchCombinations();
   filterCombinationsBySections();
 };
 
@@ -120,10 +122,7 @@ const getSelectedSectionObjects = (courseId: string) => {
       @click="backToSearch()"
       v-if="props.page == 'combinations'"
     />
-    <div
-      class="flex flex-col gap-4 w-fit"
-      v-if="props.page == 'combinations'"
-    ></div>
+
     <div class="flex flex-col gap-4 w-fit" v-if="props.page == 'search'">
       <UPopover arrow :content="{ side: 'top' }">
         <UButton
@@ -178,6 +177,7 @@ const getSelectedSectionObjects = (courseId: string) => {
       </UTooltip>
     </div>
     <div v-else class="flex flex-col gap-8 w-fit max-w-sm">
+      <div class="flex flex-col gap-4 w-fit"></div>
       <div
         v-for="course in courseManager.courses"
         :key="course._id"

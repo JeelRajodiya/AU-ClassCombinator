@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // Use centralized store
-const { selectedSemester, setSelectedSemester } = useCourseStore();
+const { selectedSemester, setSelectedSemester, selectedCourseIds } =
+  useCourseStore();
 
 const {
   data: semesterList,
@@ -12,16 +13,21 @@ if (error.value) {
   console.error("Error fetching semester list:", error.value);
 }
 
-// Only set to first semester if:
-// 1. Semester list is available
-// 2. Current selectedSemester is not in the list (invalid/expired) or is the default placeholder
+// Default to the latest semester (first in the list) when:
+// - the stored selection is missing from the list (invalid/expired), or
+// - the user has no courses selected (no in-progress selection to preserve)
 if (
   semesterList.value &&
   semesterList.value.length > 0 &&
-  semesterList.value[0] &&
-  !semesterList.value.includes(selectedSemester.value)
+  semesterList.value[0]
 ) {
-  setSelectedSemester(semesterList.value[0]);
+  const storedSemesterInvalid = !semesterList.value.includes(
+    selectedSemester.value
+  );
+  const noCoursesSelected = selectedCourseIds.value.length === 0;
+  if (storedSemesterInvalid || noCoursesSelected) {
+    setSelectedSemester(semesterList.value[0]);
+  }
 }
 </script>
 

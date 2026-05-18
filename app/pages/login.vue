@@ -6,6 +6,13 @@ definePageMeta({
 const route = useRoute();
 const router = useRouter();
 
+const { data: semesters } = await useFetch<string[]>("/api/semesters", {
+  default: () => ["Winter 2026"],
+});
+const latestSemester = computed(
+  () => semesters.value?.[0] ?? "Winter 2026"
+);
+
 onMounted(() => {
   // Clean up the URL if the callbackUrl is just the homepage
   if (route.query.callbackUrl) {
@@ -30,7 +37,7 @@ onMounted(() => {
       <div class="flex flex-col gap-4">
         <Logo />
         <div class="text-xl flex flex-col items-center">
-          <div><b>Winter 2026</b> Registration ahead?</div>
+          <div><b>{{ latestSemester }}</b> Registration ahead?</div>
           <div class="text-muted">
             Class Combinator is here to help you out!
           </div>

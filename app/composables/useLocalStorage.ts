@@ -1,6 +1,6 @@
 /**
  * Local storage utility for persisting course selections.
- * Data expires after 1 month from creation/update.
+ * Data expires after 2 months from creation/update.
  */
 
 interface StoredData<T> {
@@ -13,7 +13,7 @@ const STORAGE_KEYS = {
   SELECTED_SEMESTER: "courseDirectory:selectedSemester",
 } as const;
 
-const ONE_MONTH_MS = 30 * 24 * 60 * 60 * 1000; // 30 days in milliseconds
+const TWO_MONTHS_MS = 60 * 24 * 60 * 60 * 1000; // 60 days in milliseconds
 
 /**
  * Get data from local storage, checking expiry.
@@ -43,7 +43,7 @@ function getFromStorage<T>(key: string): T | null {
 }
 
 /**
- * Save data to local storage with expiry of 1 month.
+ * Save data to local storage with expiry of 2 months.
  */
 function saveToStorage<T>(key: string, value: T): void {
   if (typeof window === "undefined") return;
@@ -51,7 +51,7 @@ function saveToStorage<T>(key: string, value: T): void {
   try {
     const stored: StoredData<T> = {
       value,
-      expiry: Date.now() + ONE_MONTH_MS,
+      expiry: Date.now() + TWO_MONTHS_MS,
     };
     localStorage.setItem(key, JSON.stringify(stored));
   } catch (error) {

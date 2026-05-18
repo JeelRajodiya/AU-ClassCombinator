@@ -84,7 +84,7 @@ const totalCredits = computed(() => {
 
 <template>
   <SearchLayout page="combinations">
-    <div class="flex flex-col p-2 md:p-5 gap-4 md:gap-6" v-if="totalCombinations !== 0">
+    <div class="flex flex-col p-2 md:p-5 pb-28 md:pb-5 gap-4 md:gap-6" v-if="totalCombinations !== 0">
       <div class="font-bold text-2xl md:text-3xl text-center">
         Possible Schedules ({{ totalCombinations }})
       </div>

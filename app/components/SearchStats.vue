@@ -90,11 +90,11 @@ const getSelectedSectionObjects = (courseId: string) => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-8">
+  <div class="flex flex-col gap-2 md:gap-8">
     <SemesterSwitch class="w-fit" v-if="props.page == 'search'" />
 
-    <USeparator orientation="horizontal" class="w-48 pt-16" />
-    <div class="flex flex-col gap-4">
+    <USeparator orientation="horizontal" class="w-48 hidden md:block md:pt-16" />
+    <div class="flex flex-col gap-1 md:gap-4">
       <StatItem
         icon="i-lucide-coins"
         label="Total Credits:"
@@ -114,7 +114,7 @@ const getSelectedSectionObjects = (courseId: string) => {
       />
     </div>
     <UButton
-      class="w-fit"
+      class="hidden md:flex w-fit"
       label="Back to Search"
       color="secondary"
       icon="i-lucide-arrow-left"
@@ -123,12 +123,26 @@ const getSelectedSectionObjects = (courseId: string) => {
       v-if="props.page == 'combinations'"
     />
 
-    <div class="flex flex-col gap-4 w-full md:w-fit" v-if="props.page == 'search'">
+    <!-- Mobile floating back button (combinations page) -->
+    <Teleport to="body" v-if="props.page == 'combinations'">
+      <div class="md:hidden fixed bottom-6 right-6 z-40">
+        <UButton
+          icon="i-lucide-arrow-left"
+          color="secondary"
+          size="lg"
+          class="rounded-full shadow-lg w-12 h-12 justify-center p-0"
+          aria-label="Back to search"
+          @click="backToSearch()"
+        />
+      </div>
+    </Teleport>
+
+    <div class="hidden md:flex flex-col gap-4 w-fit" v-if="props.page == 'search'">
       <UPopover arrow :content="{ side: 'top' }">
         <UButton
           label="Reset Selections"
           color="error"
-          class="mt-4 md:mt-8 w-fit"
+          class="mt-8 w-fit"
           icon="i-lucide-refresh-ccw"
           variant="solid"
           size="xs"
@@ -173,12 +187,62 @@ const getSelectedSectionObjects = (courseId: string) => {
           trailing-icon="i-lucide-arrow-right"
           :disabled="selectedCoursesCount == 0 || totalCombinations == 0"
           to="/combinations"
-          block
-          class="md:w-fit"
         />
       </UTooltip>
     </div>
-    <div v-else class="flex flex-col gap-6 md:gap-8 w-full md:w-fit md:max-w-sm">
+
+    <!-- Mobile floating action buttons (search page only) -->
+    <Teleport to="body" v-if="props.page == 'search'">
+      <div
+        v-if="selectedCoursesCount > 0"
+        class="md:hidden fixed bottom-6 right-6 z-40 flex items-center gap-2"
+      >
+        <UPopover arrow :content="{ side: 'top' }">
+          <UButton
+            icon="i-lucide-refresh-ccw"
+            color="error"
+            variant="solid"
+            size="lg"
+            class="rounded-full shadow-lg w-12 h-12 justify-center p-0"
+            aria-label="Reset selections"
+          />
+          <template #content="{ close }">
+            <div class="p-4 max-w-xs shadow-lg border border-accented rounded-md">
+              <p class="mb-2 text-center">Are you sure?</p>
+              <div class="flex justify-end gap-2">
+                <UButton
+                  label="Cancel"
+                  variant="ghost"
+                  color="neutral"
+                  size="sm"
+                  @click="close"
+                />
+                <UButton
+                  label="Confirm"
+                  color="error"
+                  variant="solid"
+                  size="sm"
+                  @click="
+                    clearCourses();
+                    close();
+                  "
+                />
+              </div>
+            </div>
+          </template>
+        </UPopover>
+        <UButton
+          icon="i-lucide-arrow-right"
+          size="lg"
+          class="rounded-full shadow-lg w-12 h-12 justify-center p-0"
+          :disabled="totalCombinations == 0"
+          to="/combinations"
+          aria-label="View schedules"
+        />
+      </div>
+    </Teleport>
+
+    <div v-if="props.page == 'combinations'" class="flex flex-col gap-6 md:gap-8 w-full md:w-fit md:max-w-sm">
       <div class="flex flex-col gap-4 w-fit"></div>
       <div
         v-for="course in courseManager.courses"

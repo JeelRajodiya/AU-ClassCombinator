@@ -25,13 +25,13 @@ const props = defineProps({
 });
 </script>
 <template>
-  <div class="stat-item flex flex-row items-center text-md">
+  <div class="stat-item flex flex-row items-center text-sm md:text-base">
     <span class="text-muted flex items-center gap-2">
-      <UIcon :name="props.icon" class="size-4" />
+      <UIcon :name="props.icon" class="size-3.5 md:size-4" />
       {{ props.label }} &nbsp;
     </span>
     <span v-if="props.isLoading" class="flex items-center">
-      <UIcon name="i-lucide-loader" size="16" class="animate-spin bg-primary" />
+      <UIcon name="i-lucide-loader" size="14" class="animate-spin bg-primary" />
     </span>
     <span
       v-else

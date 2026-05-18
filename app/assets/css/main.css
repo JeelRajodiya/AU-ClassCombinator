@@ -8,6 +8,10 @@
 :root {
   --ui-radius: 0.4rem;
 }
+
+html {
+  font-size: clamp(14px, 12px + 0.5vw, 16px);
+}
 .page {
   display: flex;
   flex-direction: column;

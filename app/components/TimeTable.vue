@@ -147,8 +147,8 @@ onUnmounted(() => {
         :class="getEventColor(event.title)"
         :style="event.style"
       >
-        <div class="event-title text-sm font-semibold">{{ event.title }}</div>
-        <div class="event-time text-xs opacity-75">
+        <div class="event-title text-[11px] md:text-sm font-semibold">{{ event.title }}</div>
+        <div class="event-time text-[10px] md:text-xs opacity-75 hidden md:block">
           {{ event.startTime }} - {{ event.endTime }}
         </div>
       </div>
@@ -221,24 +221,35 @@ onUnmounted(() => {
 }
 
 .event-title {
-  line-height: 1;
+  line-height: 1.1;
   color: var(--ui-text);
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .event-time {
   color: var(--ui-text-muted);
   margin-top: 2px;
+  white-space: nowrap;
+  line-height: 1.1;
 }
 
 @media (max-width: 768px) {
   .container-grid {
-    grid-template-columns: 40px repeat(7, 1fr);
+    grid-template-columns: 36px repeat(7, 1fr);
   }
   .time {
-    margin-left: 4px;
+    margin-left: 2px;
+    font-size: 10px;
   }
   .time::after {
-    left: 36px;
+    left: 32px;
+  }
+  .grid-item {
+    margin: 1px;
+    padding: 1px 2px;
   }
 }
 </style>

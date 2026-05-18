@@ -129,7 +129,7 @@ function handleCourseSelection(course: ICourseDTO) {
       />
       <ResultTabs v-model:active-tab="activeTab" />
     </div>
-    <div class="p-1 md:p-2 flex flex-col gap-4" v-if="activeTab === 'search'">
+    <div class="p-1 md:p-2 pb-28 md:pb-2 flex flex-col gap-4" v-if="activeTab === 'search'">
       <CourseCard
         v-for="course in searchResults"
         :course="course"
@@ -153,7 +153,7 @@ function handleCourseSelection(course: ICourseDTO) {
         <p class="text-lg">No results found</p>
       </div>
     </div>
-    <div class="p-1 md:p-2 flex flex-col gap-4" v-else-if="activeTab === 'selected'">
+    <div class="p-1 md:p-2 pb-28 md:pb-2 flex flex-col gap-4" v-else-if="activeTab === 'selected'">
       <div v-if="detailsLoading" class="flex justify-center p-8">
         <UIcon name="i-lucide-loader" size="32" class="animate-spin" />
       </div>

@@ -84,20 +84,20 @@ const totalCredits = computed(() => {
 
 <template>
   <SearchLayout page="combinations">
-    <div class="flex flex-col p-5 gap-6" v-if="totalCombinations !== 0">
-      <div class="font-bold text-3xl text-center">
+    <div class="flex flex-col p-2 md:p-5 gap-4 md:gap-6" v-if="totalCombinations !== 0">
+      <div class="font-bold text-2xl md:text-3xl text-center">
         Possible Schedules ({{ totalCombinations }})
       </div>
       <div v-if="combinationsLoading" class="flex justify-center p-8">
         <UIcon name="i-lucide-loader" size="48" class="animate-spin" />
       </div>
-      <div class="flex flex-col gap-6 items-start" v-else>
+      <div class="flex flex-col gap-4 md:gap-6 items-start" v-else>
         <div
           v-for="(timeTable, index) in timeTables"
           :key="index"
-          class="border border-default rounded-lg p-8 flex flex-col gap-4 items-center w-full shadow-sm"
+          class="border border-default rounded-lg p-3 md:p-8 flex flex-col gap-3 md:gap-4 items-center w-full shadow-sm min-w-0"
         >
-          <div class="text-center font-bold text-lg">
+          <div class="text-center font-bold text-base md:text-lg">
             Combination {{ index + 1 }}
           </div>
           <TimeTable :events="timeTable" />
@@ -106,15 +106,15 @@ const totalCredits = computed(() => {
     </div>
     <div
       v-else
-      class="flex justify-center items-center h-128 p-8 flex-col gap-2 text-muted"
+      class="flex justify-center items-center min-h-[60vh] md:h-128 p-6 md:p-8 flex-col gap-2 text-muted text-center"
     >
       <Icon name="streamline-plump-color:sad-face-flat" size="64"></Icon>
       <h1
-        class="text-4xl font-bold flex flex-row justify-center items-center gap-2"
+        class="text-2xl md:text-4xl font-bold flex flex-row justify-center items-center gap-2"
       >
         No Combinations
       </h1>
-      <div>
+      <div class="text-sm md:text-base">
         Please select different sections or courses to view combinations
       </div>
     </div>

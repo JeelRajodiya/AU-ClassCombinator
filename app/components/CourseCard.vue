@@ -39,12 +39,15 @@ const isDisabled = props.course.sections.length === 0;
     :class="isSelected ? 'border-primary border' : ''"
   >
     <template #header>
-      <div class="flex flex-row justify-between">
-        <span class="font-bold text-lg" :class="isDisabled ? 'text-muted' : ''">
+      <div class="flex flex-row justify-between items-start gap-3 flex-wrap">
+        <span
+          class="font-bold text-base md:text-lg min-w-0 flex-1 break-words"
+          :class="isDisabled ? 'text-muted' : ''"
+        >
           {{ props.course.code }}: {{ props.course.name }}
         </span>
-        <span class="flex flex-row items-center gap-4">
-          <span class="font-bold text-muted"
+        <span class="flex flex-row items-center gap-3 md:gap-4 shrink-0">
+          <span class="font-bold text-muted text-sm md:text-base whitespace-nowrap"
             >{{ props.course.credits }} Credits</span
           >
 

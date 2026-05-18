@@ -32,11 +32,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="landing-page">
+  <div class="landing-page px-4">
     <div class="wrapper">
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 items-center">
         <Logo />
-        <div class="text-xl flex flex-col items-center">
+        <div class="text-base md:text-xl flex flex-col items-center text-center">
           <div><b>{{ latestSemester }}</b> Registration ahead?</div>
           <div class="text-muted">
             Class Combinator is here to help you out!
@@ -56,14 +56,21 @@ onMounted(() => {
   height: 100%;
   width: 100%;
   flex-direction: column;
-  padding-bottom: 10em;
+  padding-bottom: 4em;
+}
+
+@media (min-width: 768px) {
+  .landing-page {
+    padding-bottom: 10em;
+  }
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: min-content;
+  width: fit-content;
+  max-width: 100%;
   gap: 1.5rem;
 }
 </style>

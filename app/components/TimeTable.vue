@@ -166,12 +166,13 @@ onUnmounted(() => {
   border: 1px solid var(--ui-border);
   padding-top: 10px;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .container-grid {
   display: grid;
   width: 100%;
-  min-width: 600px;
+  min-width: 520px;
   grid-template-columns: 50px repeat(7, 1fr);
   grid-auto-flow: row;
 }

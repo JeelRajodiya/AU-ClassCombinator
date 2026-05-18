@@ -53,13 +53,13 @@ const formatDateRange = (dateRange) => {
       :key="section.sectionId"
       class="overflow-hidden"
     >
-      <div class="">
-        <table class="w-full text-sm">
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm min-w-[320px]">
           <thead>
             <tr>
               <th colspan="2" class="p-0">
                 <h3
-                  class="px-6 py-2 text-lg font-bold border-t border-x border-default text-center"
+                  class="px-4 md:px-6 py-2 text-base md:text-lg font-bold border-t border-x border-default text-center"
                 >
                   Section {{ section.sectionId }}
                 </h3>
@@ -71,18 +71,19 @@ const formatDateRange = (dateRange) => {
               <tr>
                 <th
                   rowspan="2"
-                  class="font-bold border border-default px-4 py-3 w-[130px] align-middle"
+                  class="font-bold border border-default px-2 md:px-4 py-2 md:py-3 w-[90px] md:w-[130px] align-middle text-xs md:text-sm"
                 >
-                  {{ getFullDayName(slot.day) }}
+                  <span class="md:hidden">{{ slot.day }}</span>
+                  <span class="hidden md:inline">{{ getFullDayName(slot.day) }}</span>
                 </th>
                 <td class="border border-default p-0">
                   <div class="flex items-stretch">
                     <span
-                      class="w-24 p-4 py-2 text-sm center border-r border-default"
+                      class="w-16 md:w-24 px-2 md:p-4 py-2 text-xs md:text-sm center border-r border-default"
                     >
                       Time
                     </span>
-                    <span class="text-sm p-4 py-2 flex-1">
+                    <span class="text-xs md:text-sm px-2 md:p-4 py-2 flex-1 break-words">
                       {{ slot.startTime }} – {{ slot.endTime }}
                     </span>
                   </div>
@@ -92,11 +93,11 @@ const formatDateRange = (dateRange) => {
                 <td class="border border-default p-0">
                   <div class="flex items-stretch">
                     <span
-                      class="w-24 p-4 py-2 text-sm center border-r border-default"
+                      class="w-16 md:w-24 px-2 md:p-4 py-2 text-xs md:text-sm center border-r border-default"
                     >
                       Dates
                     </span>
-                    <span class="text-sm p-4 py-2 flex-1">
+                    <span class="text-xs md:text-sm px-2 md:p-4 py-2 flex-1 break-words">
                       {{ formatDateRange(section.dateRange) }}
                     </span>
                   </div>

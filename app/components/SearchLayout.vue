@@ -9,18 +9,21 @@ defineProps({
 </script>
 
 <template>
-  <div class="page">
-    <div class="flex align-top gap-8">
-      <div class="flex flex-5 flex-col">
+  <div class="page px-3 md:px-0">
+    <div class="md:hidden pt-4">
+      <LogoSmall class="w-fit" />
+    </div>
+    <div class="flex flex-col md:flex-row md:align-top gap-4 md:gap-8">
+      <div class="flex md:flex-5 flex-col min-w-0">
         <div class="flex gap-4 h-full">
-          <LogoSmall class="w-fit pl-8 pr-16 top-8 sticky" />
-          <div class="w-full">
+          <LogoSmall class="hidden md:block w-fit pl-8 pr-16 top-8 sticky" />
+          <div class="w-full min-w-0">
             <slot />
           </div>
         </div>
       </div>
       <SearchStats
-        class="search-stats-container flex-2 sticky top-0 py-8 h-screen overflow-y-auto"
+        class="search-stats-container w-full md:flex-2 md:sticky md:top-0 md:py-8 md:h-screen md:overflow-y-auto pb-8"
         :page="page"
       />
     </div>

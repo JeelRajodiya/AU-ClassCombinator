@@ -31,8 +31,8 @@ watch(searchTerm, (newTerm) => {
 </script>
 
 <template>
-  <div class="page center pb-24">
-    <div class="layout center">
+  <div class="page center pb-12 md:pb-24 px-4">
+    <div class="layout center w-full max-w-xl">
       <Logo class="logo" />
       <SearchField v-model="searchTerm" :search-function="performSearch" />
       <SemesterSwitch />

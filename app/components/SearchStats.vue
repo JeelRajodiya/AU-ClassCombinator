@@ -123,12 +123,12 @@ const getSelectedSectionObjects = (courseId: string) => {
       v-if="props.page == 'combinations'"
     />
 
-    <div class="flex flex-col gap-4 w-fit" v-if="props.page == 'search'">
+    <div class="flex flex-col gap-4 w-full md:w-fit" v-if="props.page == 'search'">
       <UPopover arrow :content="{ side: 'top' }">
         <UButton
           label="Reset Selections"
           color="error"
-          class="mt-8 w-fit"
+          class="mt-4 md:mt-8 w-fit"
           icon="i-lucide-refresh-ccw"
           variant="solid"
           size="xs"
@@ -173,10 +173,12 @@ const getSelectedSectionObjects = (courseId: string) => {
           trailing-icon="i-lucide-arrow-right"
           :disabled="selectedCoursesCount == 0 || totalCombinations == 0"
           to="/combinations"
+          block
+          class="md:w-fit"
         />
       </UTooltip>
     </div>
-    <div v-else class="flex flex-col gap-8 w-fit max-w-sm">
+    <div v-else class="flex flex-col gap-6 md:gap-8 w-full md:w-fit md:max-w-sm">
       <div class="flex flex-col gap-4 w-fit"></div>
       <div
         v-for="course in courseManager.courses"

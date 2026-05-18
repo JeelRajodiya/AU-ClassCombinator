@@ -13,13 +13,13 @@ uv sync
 To parse HTML files and push data to the database, run:
 
 ```bash
-uv run perser2.py courses.html -o courses.json
+uv run parser2.py courses.html -o courses.json
 ```
 
 then push the data to the database with:
 
 ```bash
-uv run push_to_db.py courses.json
+uv run sync_to_db.py courses.json
 ```
 
 You can fetch the html data from the auris course directory itself.

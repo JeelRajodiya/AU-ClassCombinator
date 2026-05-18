@@ -7,8 +7,8 @@ from jsonschema import validate
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from bson import Binary
-from dotenv import load_dotenv
-load_dotenv()
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
 
 def convert_bitmask_string_to_binary(bitmask_string):
     """

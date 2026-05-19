@@ -2,7 +2,7 @@
   <UApp>
     <NuxtPage />
     <footer class="text-base md:text-lg text-default text-center py-4 px-4">
-      Source code on
+      Give a star on
       <a
         href="https://github.com/JeelRajodiya/AU-ClassCombinator"
         target="_blank"
